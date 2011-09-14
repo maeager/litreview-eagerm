@@ -1,0 +1,118 @@
+\documentclass[10pt,a4paper,twoside,openright]{book}
+
+\usepackage{nag}  
+\usepackage{../hg/manuscript/style/uomthesis}
+\input{../hg/manuscript/user-defined}
+
+\usepackage[acronym]{glossaries}
+\input{../hg/manuscript/misc/glossary} 
+\makeglossaries
+
+\usepackage{appendix}
+\graphicspath{{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+
+\usepackage[displaymath,floats,graphics,textmath,sections,footnotes,showlabels,psfixbb]{preview}
+\ifPreview
+\PreviewEnvironment[{*[][]{}}]{tabularx}
+\PreviewMacro[{*[][]{}}]{\yellownote}
+\fi 
+
+\lfoot{\footnotesize\today\ at \thistime}
+
+\pretolerance=150
+\tolerance=100
+\setlength{\emergencystretch}{3em}
+
+\overfullrule=1mm
+% \usepackage[notcite]{showkeys}
+\begin{document}
+
+		% TOC, LOF, LOT
+		{%
+			\singlespacing%
+			\tableofcontents%
+			\listoffigures%
+			% Do not include a list of tables if you have less
+			% than 10 tables, as per SGS suggestion.
+			\listoftables
+                        \printglossaries
+		   \clearpage%
+		}%
+
+\setcounter{chapter}{0}
+\chapter{Literature Review}
+
+\medskip{}
+%\centerline{\today\\ Draft Version:  \input{.hg/tags.cache}}
+
+
+
+
+
+%************************************************
+\chapter{Introduction}\label{Ch1:introduction}
+%************************************************
+%   This section should give a rough introduction to the themes
+%   included in the thesis and how the thesis is structured
+%*****************************************
+
+%\PARstart{A}{ } 
+
+\glsresetall[main,acronym]
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************
+
+%*****************************************
+
+\graphicspath{{../../figures/}{./gfx/}{/media/data/Work/thesis/SimpleResponsesChapter/}{/media/data/Work/thesis/SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/golgi/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/TV_Notch/}}
+
+
+
+\section{Literature Review}\label{Ch1:litreview}
+%*****************************************
+
+\section{Auditory System}\label{Ch1:AuditorySystem}
+
+\input{Peripheral.tex}
+
+\section{Cochlear Nucleus}\label{Ch1:CochelarNucleus}
+
+\input{TStellate.tex}
+\input{DStellate.tex}
+\input{Tuberculo.tex}
+\input{Golgi.tex}
+
+\section{Neural Modelling in the Cochlear Nucleus}
+
+\subsection{Neuron Models with Chopping Charateristics}
+
+\subsection{Microcircuits and Networks in the Cochlear Nucleus}
+
+
+
+
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************
+
+
+
+ \bibliographystyle{abbrvnat}%plainnat}%bmc_article} % Style BST file
+ \bibliography{../hg/manuscript/bib/MyBib}
+
+\newpage
+\listoftodos
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: tex-fold
+%%% TeX-PDF-mode: nil
+%%% TeX-master t
+%%% End: 
