@@ -10,8 +10,10 @@
 
 \usepackage{appendix}
 \graphicspath{{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+\usepackage{rotating,calc}
+\usepackage{booktabs,ltxtable,lscape}
 
-\usepackage[displaymath,floats,graphics,textmath,sections,footnotes,showlabels,psfixbb]{preview}
+ \usepackage[displaymath,floats,graphics,textmath,sections,footnotes,showlabels,psfixbb]{preview}
 \ifPreview
 \PreviewEnvironment[{*[][]{}}]{tabularx}
 \PreviewMacro[{*[][]{}}]{\yellownote}
@@ -75,15 +77,26 @@
 
 \section{Auditory System}\label{Ch1:AuditorySystem}
 
-\input{Peripheral.tex}
+%\input{Peripheral.tex}
 
 \section{Cochlear Nucleus}\label{Ch1:CochelarNucleus}
 
-\input{TStellate.tex}
-\input{DStellate.tex}
-\input{Tuberculo.tex}
-\input{Golgi.tex}
+\newpage
+\begin{landscape}
+%\afterpage
+{\small\LTXtable{230mm}{ConnectionsTable}}  
+\end{landscape}
 
+%\input{TStellate.tex}
+%\input{DStellate.tex}
+%\input{Tuberculo.tex}
+%\input{Golgi.tex}
+
+\section{Summary of Stellate Microciruit Connections}
+
+
+
+%*****************************************
 \section{Neural Modelling in the Cochlear Nucleus}
 
 \subsection{Neuron Models with Chopping Charateristics}
