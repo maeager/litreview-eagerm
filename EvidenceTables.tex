@@ -3,10 +3,13 @@
 \documentclass[10pt,a4paper]{article} 
 \usepackage[ascii]{inputenc}
 \usepackage[T3,T1]{fontenc} 
-\usepackage[english]{babel} 
+
 \usepackage[noenc]{tipa}
 \usepackage{tipx} 
 \usepackage[geometry,weather,misc,clock]{ifsym}
+%\usepackage{../hg/manuscript/style/uomthesis}
+\input{../hg/manuscript/user-defined}
+
 \usepackage{pifont} 
 \usepackage{eurosym} 
 \usepackage{amsmath}
@@ -15,16 +18,16 @@
 \usepackage{color}
 \usepackage{array,calc} 
 \usepackage{natbib} 
-\usepackage{tabularx,booktabs,supertabular,lscape}
+\usepackage{tabularx,supertabular}
+\usepackage{rotating,calc}
+\usepackage{booktabs,ltxtable,lscape}
 \usepackage{hhline} 
-\usepackage{hyperref} \hypersetup{dvips, colorlinks=true,
-  linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue}
-\usepackage[dvips]{graphicx}
-\newcommand\textsubscript[1]{\ensuremath{{}_{\text{#1}}}}
+
+
 % Text styles
-\newcommand\textstyleInternetlink[1]{\textcolor{blue}{#1}}
-\newcommand\textstylebibrecordhighlight[1]{#1}
-\newcommand\textstylePageNumber[1]{#1}
+%\newcommand\textstyleInternetlink[1]{\textcolor{blue}{#1}}
+%\newcommand\textstylebibrecordhighlight[1]{#1}
+%\newcommand\textstylePageNumber[1]{#1}
 % Outline numbering
 \setcounter{secnumdepth}{0} \makeatletter
 \newcommand\arraybslash{\let\\\@arraycr} \makeatother
@@ -42,524 +45,408 @@
 \newcommand{\um}{$\mu$m}
 \newcommand{\umsq}{$\mu$m$^2$}
 
-% Pages styles
-%\makeatletter 
-%\newcommand\ps@Standard{
-%  \renewcommand\@evenhead{\@oddhead} \renewcommand\@oddfoot{\hfill
-%%    }\textstylePageNumber{5/05/2011}} \renewcommand\@evenfoot{\@oddfoot}
-%  \renewcommand\thepage{\arabic{page}} } \makeatother \pagestyle{Standard}
-%\setlength\tabcolsep{1mm} \renewcommand\arraystretch{1.3} \newcounter{Table}
 
-%\renewcommand\theTable{\arabic{Table}} \title{Table 1: Evidence of Connections}
-
-\author{eagerm} \date{2009-02-05}
+\author{eagerm} 
 
 \begin{document}
+
+			\tableofcontents%
+
+\newpage
 \section{Cochlear Nucleus Evidence}
 Recent Reviews of characterised cells and projections
 \citep{CantBenson:2003,RyugoParks:2003,SmithMassieEtAl:2005,YoungOertel:2004,OertelWrightEtAl:2010}
 
 {\bfseries Table 1: Evidence of Connections}
 
+% \begin{landscape}
+%   \begin{tabularx}{\textwidth}{XXXXXXX}
+%   \toprule
+%  Connection & Transmitter/ Receptor & Synaptic Time Constant
+%     (msec) & Bandwidth (octaves or Q10) & No. of Synapses /Strength &
+%     Distribution & Delay\\ \midrule
+
+%                       ANI\ensuremath{\rightarrow}TS                       & 
+% Glutamate on fast AMPA receptors
+% \citep{FerragamoGoldingEtAl:1998a,WentholdHunterEtAl:1993},Monosynaptic
+% EPSPs that were blocked by DNQX , an antagonist of AMPA receptors
+% \citep{FerragamoGoldingEtAl:1998a}; Slow depolarizations, the source of
+% which has not been identified, that lasted between 0.2 and 1 s and were
+% blocked APV , the (NMDA) receptor
+% antagonist.\citep{FerragamoGoldingEtAl:1998a}; Glutamate and glutamine
+% antibodies \citep{HackneyOsenEtAl:1990} whole cell patch recordings NMDA
+% \ensuremath{\rightarrow} AMPA during development
+% \citep{BellinghamLimEtAl:1998} GluR3, GluR4 main AMPA subunits electron
+%              microscopic study \citep{WangWentholdEtAl:1998}              & Rise 0.15 Decay 0.36
+% \citep{GardnerTrussellEtAl:2001,Gardner:2000,GardnerTrussellEtAl:1999,Oertel:1983}
+%                                                                           & Narrow 0.23-0.39 oct \citep{PalmerJiangEtAl:1996} Q10 5.52{\textpm}1.4 in
+% guinea pigs \citep{JiangPalmerEtAl:1996} compared to Q10 of 6.3 in AN;
+% narrow and of input 75-100\um in mice \citep{OertelWuEtAl:1990} CS Q10\- =4,
+% CT Q10=2 (low cf), 3.67 (high CF) guinea pig \citep{PalmerWallaceEtAl:2003}
+%                      5.3 Q10 \citep{RhodeSmith:1986}                      & Small number
+% \citep{Cant:1981,FayPopper:1994,ReddCahillEtAl:2002,RyugoWrigthEtAl:1993,Ryugo:1992,RyugoParks:2003}
+% see table 1, cat \citep{SmithRhode:1989} estimate 5 to reach AP
+% \citep{FerragamoGoldingEtAl:1998a} highly variable 0-6 per soma possibly two
+%                   subtypes \citep{JosephsonMorest:1998}                   & Mainly dendritic; 30\% soma coverage
+% \citep{Cant:1981,Cant:1982,RyugoWrightEtAl:1993,TolbertMorest:1982a} see
+% Table 1 \citep{SmithRhode:1989} some cells had LS vesicles surrounding axon
+% initial segment \citep{JosephsonMorest:1998} type II ANFs as well
+%                         \citep{BensonBrown:2004}                          & 0.5msec
+% \citep{Brown:1993,BrownLedwith:1990,WickesbergOertel:1993} 0.48-0.92 msec,
+% mean 0.7 \citep{FerragamoGoldingEtAl:1998a} about 0.7 msec
+% \citep{Oertel:1983} Chopper latencies 3.6 {\textpm}0.38 msec
+% \citep{RhodeSmith:1986} latency 3.6{\textpm}1.2 msec anesthetised cat 3.5
+% msec unanesthetised \citep{RhodeKettner:1987} depolarisation min SPL
+% 31.7{\textpm}2.9, AP min SPL 41.8{\textpm}3.8 \citep{PaoliniClareyEtAl:2004}
+%                  \\\hline ANI\ensuremath{\rightarrow}DS                   & Glutamate on AMPA receptors
+%        \citep{FerragamoGoldingEtAl:1998a,WentholdHunterEtAl:1993}         & Rise 0.15 Decay
+%             0.36 \citep{GardnerTrussellEtAl:1999,Oertel:1983}             & 2 oct below, 1 oct above
+% \citep{PalmerJiangEtAl:1996} q10 3.56{\textpm}1.38
+% \citep{JiangPalmerEtAl:1996} q10 3.1 at 10kHz dual component, stronger below
+% CF \citep{PaoliniClark:1999} Q10 1.33-2.87 \citep{PalmerWallaceEtAl:2003} & 
+% Many weak inputs \citep{FerragamoGoldingEtAl:1998a} 30 somatic inputs (30\%
+%                round); see table 1 \citep{SmithRhode:1989}                & Dense somatic and dendritic
+% \citep{Cant:1981,Cant:1982,RyugoWrightEtAl:1993} see Table
+%                         1\citep{SmithRhode:1989}                          & As above, maybe less considering time to peak,
+% see latencies in \citep{PaoliniClark:1999} Oc latency 2.8 {\textpm}0.09 msec
+% \citep{RhodeSmith:1986} depolarisation min SPL 45.6{\textpm}2.7, AP min SPL
+% 56.6{\textpm}2.2 \citep{PaoliniClareyEtAl:2004}\\\hline
+
+%                       ANI\ensuremath{\rightarrow}TV                       & AMPA glutamate receptors
+%                         \citep{ZhangOertel:1993}                          &    0.4 \citep{GardnerTrussellEtAl:1999}    & Similar to
+% AN \citep{SpirouDavisEtAl:1999} mice dendrites lay in \~{}70\um of DCN
+%                         \citep{ZhangOertel:1993}                          & \citep{SpirouDavisEtAl:1999,ZhangOertel:1993} ;
+%      \~{}4 somatic contacts per cell, 10\% AN \citep{Alibardi:1999}       & 
+
+% Mainly dendritic {\textless} 100\um
+%  \citep{Alibardi:1999,Liberman:1993,RubioJuiz:2004,SpirouDavisEtAl:1999}  & As
+% above, maybe more to DCN; shocks illicit EPSPs 1.0-1.5 msec
+% \citep{ZhangOertel:1993}\\\hline
+%                       TS\ensuremath{\rightarrow}TS                        & AMPA and/or
+%        NMDA glutamate receptors \citep{FerragamoGoldingEtAl:1998a}        & Similar to
+%           primary endings but measured.  Will be more for NMDA.           & Local axon
+% collaterals have terminals only in dendritic band \citep{SmithRhode:1989} & 
+% Based on rarity of small round vesicles on CS cells, influence is weak
+% \citep{SmithRhode:1989} likely to come from 1 input
+%                    \citep{FerragamoGoldingEtAl:1998a}                     & dendritic; \citep{JosephsonMorest:1998}
+% in chinchilla SS ves \~{}5 per soma (high and low CF), more prevalent at the
+%                               axon hillock                                & Min. synaptic delay \\\hline
+%                       TS\ensuremath{\rightarrow}DS                        & 
+
+%  AMPA and/or NMDA glutamate receptors \citep{FerragamoGoldingEtAl:1998a}  & As
+%                                  above.                                   & Few local axonal collaterals lie in dendritic
+%                      plane. \citep{SmithRhode:1989}                       & Based on rarity of small round vesicles on
+% CS cells, influence is weak \citep{SmithRhode:1989} late EPSPs observed,
+% likely one-2 inputs \citep{FerragamoGoldingEtAl:1998a, OertelWuEtAl:1990} & 
+%                                     ?                                     & Min. synaptic delay \\ \hline
+%                       TS\ensuremath{\rightarrow}TV                        & AMPA
+% Glutamate
+% \citep{DoucetRossEtAl:1999,FerragamoGoldingEtAl:1998a,ZhangOertel:1993} No
+% TS terminals on TV cells in rats \citep{RubioJuiz:2004} In deep layer guinea
+% pig \citep{PalmerWallaceEtAl:2003} small round vesicles
+% \citep{Alibardi:1999} ;3 of 4 neurons had late EPSPs to AN shock, very young
+%                       mice \citep{ZhangOertel:1993}                       &       Similar to AN AMPA receptors.        & Strong
+% On-CF with weak off-CF See fig 13 \citep{OstapoffBensonEtAl:1999} ; mainly
+% in iso-band but poor classification in rats
+%         \citep{DoucetRossEtAl:1999,FriedlandPongstapornEtAl:2003}         & 
+% \citep{OstapoffBensonEtAl:1999} 3 of 4 shocks elicited late EPSPs
+%                         \citep{ZhangOertel:1993}                          & Mainly to fusiform cell layer, possibly on ends
+% of TV cell dendrites \citep{OertelWuEtAl:1990} CS and CT collaterals in deep
+% DCN possibly somatic \citep{PalmerWallaceEtAl:2003} somatic small round
+%   vesicles presumably from T stellates guinea pig \citep{Alibardi:1999}   & 0.15
+% sec min EPSP latency to VCN Glutamate puffs, main excitation at 0.3 sec Fig
+% 11a, AN shock produces late EPSPs about 3msec \citep{ZhangOertel:1993}
+% \\\hline
+%                       DS\ensuremath{\rightarrow}TS                        & Glycine FerragamoGoldingEtAl:1998a
+% could be mixed Gly/GABA \citep{AltschulerJuizEtAl:1993} pleomorphic vesicles
+%    of Oc apposed to sustained chopper, fig 14 \citep{SmithRhode:1989}     & 
+
+% 6-13 msec decay time
+% \citep{AwatramaniTurecekEtAl:2005,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
+%                                                                           & D stellate axon terminals cover 300 \um of VCN \citep{OertelWuEtAl:1990}
+% AVCN collaterals centred on soma isofreq slab as dend, 1 octave above and
+% below \citep{ArnottWallaceEtAl:2004} SBW =5.1kHz {\textpm}4.5 kHz all Ch, CS
+% 4.66{\textpm}4.45kHz 88{\textpm}19\% suppression, CT 6.28{\textpm} 4.65kHz
+%          96{\textpm}5\% suppression \citep{RhodeGreenberg:1994b}          & 
+% \citep{FerragamoGoldingEtAl:1998a} See Table 1 \citep{SmithRhode:1989} PL
+% \~{}70 (high) \~{}60 (low CF) per soma, \~{}1.7 per axon, FL \~{}20 (highCF)
+%                \~{}10 (lowCF) \citep{JosephsonMorest:1998}                & 1 or 2 on soma; many gly and
+% mixed gly/GABA on trunks; see Table 1\citep{SmithRhode:1989} more FL
+%     vesicles on soma in high CF regions \citep{JosephsonMorest:1998}      & 
+
+% \citep{FerragamoGoldingEtAl:1998a,NeedhamPaolini:2003} 1.2-3.5msec after
+% shock to AN \citep{Oertel:1983}\\\hline
+%                       DS\ensuremath{\rightarrow}DS                        & 
+%                    \citep{FerragamoGoldingEtAl:1998a}?                    & 6-13 msec decay time
+% \citep{AwatramaniTurecekEtAl:2005,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
+%                                                                           &                                            & None observed \citep{SmithRhode:1989} IPSPs seen in slice without DCN
+%                    \citep{FerragamoGoldingEtAl:1998a}                     &    See table 1 \citep{SmithRhode:1989}     & 
+% Min. synaptic delay \\\hline
+%                       DS\ensuremath{\rightarrow}TV                        & Glycinergic
+% \citep{DoucetRyugoEtAl:1999,OertelWuEtAl:1990,OstapoffMorestEtAl1999,SpirouDavisEtAl:1999,ZhangOertel:1993}
+%                                                                           & 
+
+% 6-13 msec decay time
+% \citep{AwatramaniTurecekEtAl:2005,FerragamoGoldingEtAl:1998a,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
+%                                                                           & Lateral sidebands equivalent to DS bandwidth
+% \citep{OstapoffMorestEtAl:1999,SpirouDavisEtAl:1999} in rats strong ventral
+% to iso-frequency band (ie stronger high \ensuremath{\rightarrow}low cf)
+% \citep{DoucetRyugoEtAl:1999,FriedlandPongstapornEtAl:2003} generally
+% tonotopic arrangement of OnC axons in DCN \citep{ArnottWallaceEtAl:2004}
+%     Notch Noise shows asymmetry in projection\citep{ReissYoung:2005}      & Few
+% somatic glycine inputs
+% \citep{OsenOttersenEtAl:1990,OstapoffMorestEtAl1999:1999,ZhangOertel:1993}
+% \~{}4 somatic contacts most of which were Glycine (FP) \citep{Alibardi:1999}
+%                                                                           & Few somatic glycine inputs
+% \citep{OsenOttersenEtAl:1990,OstapoffMorestEtAl:1999,ZhangOertel:1993} few
+%                  somatic contacts \citep{Alibardi:1999}                   & 
+
+% 0.15 msec min EPSP latency to VCN shock , assume IPSP latency similar
+% \citep{ZhangOertel:1993}\\\hline
+%                       TV\ensuremath{\rightarrow}TS                        & 
+% Glycine\citep{OertelWickesberg:1993,OstapoffMorestEtAl:1999,SaintBensonEtAl:1991,WickesbergOertel:1993}
+%                 GABA mixed \citep{OsenOttersenEtAl:1990}                  & 
+%    \citep{HartyManis:1998,OertelWickesberg:1993,WickesbergOertel:1993}    & 
+
+% Slightly lateral, lighter on-CF \citep{OstapoffMorestEtAl:1999} concentrated
+% on CF \citep{ZhangOertel:1993} FL vesicles more dense in high CF
+%                       \citep{JosephsonMorest:1998}                        & Many \citep{OstapoffMorestEtAl:1999} see
+% Table 1 \citep{SmithRhode:1989} PL \~{}70 (high) \~{}60 (low CF) per soma,
+% \~{}1.7 per axon, FL \~{}20 (highCF) \~{}10 (lowCF)
+%                       \citep{JosephsonMorest:1998}                        & Soma and mainly trunk
+% \citep{AltschulerJuizEtAl:1993} see Table 1\citep{SmithRhode:1989} more FL
+% vesicles on soma in high CF regions, some hillock contacts (75\% inhib)
+%                       \citep{JosephsonMorest:1998}                        & 2.5 msec from AN shock to inhibition
+% \citep{WickesbergOertel:1993} 600usec after AN excitation in choppers
+% \citep{Wickesberg:1996} 0.1-0.3 msec glut or shock VCN
+% \citep{ZhangOertel:1993}\\\hline
+%                       TV\ensuremath{\rightarrow}DS                        & 
+
+% Glycine \citep{OstapoffMorestEtAl:1999,SaintBensonEtAl:1991} Mixed
+%                Glycine/GABA \citep{OsenOttersenEtAl:1990}                 & \citep{OstapoffMorestEtAl:1999}
+%                                 as above                                  & Slightly lateral, lighter on-CF \citep{OstapoffMorestEtAl:1999}
+% concentrated on CF \citep{ZhangOertel:1993} No inhibitory sidebands evident
+%                                   in RA                                   &    See table 1 \citep{SmithRhode:1989}     & see Table 1
+%                          \citep{SmithRhode:1989}                          & As above in TV\ensuremath{\rightarrow}TS\\\hline
+%                      ANI,II\ensuremath{\rightarrow}G                      & 
+% \citep{Cant:1992,FerragamoGoldingEtAl:1998a,RyugoWrightEtAl:1993,Ryugo:1992,RyugoParks:2003}
+%             diffuse release sites \citep{HurdHutsonEtAl:1999}             & 
+%    \citep{GardnerTrussellEtAl:1999} slower \citep{HurdHutsonEtAl:1999}    & Wide
+% Dynamic range \citep{GhoshalKim:1997} dendritic field 50 and 100 $\mu $m
+%                    \citep{FerragamoGoldingEtAl:1998a}                     &                                            & Dendritic; contact dend 0.5-1 \um
+%                width) in GCD, SCC \citep{BensonBrown:2004}                & 1.3 msec minimum
+% \citep{FerragamoGoldingEtAl:1998a} typeII up to 10msec estimated from axon
+% width \citep{Brown:1993}\\\hline
+%                     Granule\ensuremath{\rightarrow}G                      & NMDA
+%                    \citep{FerragamoGoldingEtAl:1998a}                     &      \citep{GardnerTrussellEtAl:1999}      &   & 
+%                    \citep{FerragamoGoldingEtAl:1998a}                     &                                            & \\\hline
+% DS\ensuremath{\rightarrow}G,
+%                                 granule ?                                 &                  Glycine                   & 
+
+%                                                                           &                                            & D stellates have collaterals in GCD fig 4 \& 5 \citep{OertelWuEtAl:1990}
+%    Gly IPSP observed in 1 of 5 cells \citep{FerragamoGoldingEtAl:1998}    &                                            & 
+% Short, see Fig 3B in \citep{FerragamoGoldingEtAl:1998}\\\hline
+% Golgi/GABA
+%                       \ensuremath{\rightarrow}TS ?                        & Chinchilla
+%          \citep{FerragamoGoldingEtAl:1998,JosephsonMorest:1998}           & 
+
+%                    \citep{AwatramaniTurecekEtAl:2005}                     & High \ensuremath{\rightarrow}low CF
+%                       \citep{JosephsonMorest:1998}                        &    See table 1 \citep{SmithRhode:1989}     & See
+%                      table 1 \citep{SmithRhode:1989}                      & \\\hline
+% Golgi/GABA
+%                        \ensuremath{\rightarrow}DS                         & 
+% \citep{EvansZhao:1998,FerragamoGoldingEtAl:1998a,Mugnaini:1985,MugnainiOsenEtAl:1980,
+%                           SaintMorestEtAl:1989}                           &                                            & Wideband to wideband on CF
+% \citep{EvansZhao:1998} hyperpolarising effects above high freq edge in mid
+%                   CF neurons \citep{PaoliniClark:1999}                    & \~{}20 weak
+%                    inputs\citep{SaintMorestEtAl:1989}                     & 
+
+%    Dendrites reach into granule cell domain \citep{OertelWuEtAl:1990}     & 
+
+% Hyperpolarisation occurs 10-15 msec after click
+% \citep{PaoliniClark:1999}\\\hline
+% Non-Auditory \ensuremath{\rightarrow} GCD
+%                                                                           & Review see \citep{OhlroggeDoucetEtAl:2001} &   & & & & \\\hline
+%                      ACh\ensuremath{\rightarrow} TS                       & 
+
+%      Excitatory response to Acetylcholine \citep{FujinoOertel:2001}       & Nicotinic
+% and muscarinic receptors.  Inhibit {\textquoteleft}leaky{\textquoteright}
+% potassium currents (volt-insensitive)
+
+%                         \citep{FujinoOertel:2001}                         &              Presumably on CF              & ? & SS vesicles (perhaps
+%        ACh) contact the axon hillock \citep{JuizHelfertEtAl:1996a}        & \\\hline
+
+%                      ACh\ensuremath{\rightarrow} DS                       & No response to ACh
+% \citep{FujinoOertel:2001} Indirect excitation via granule cells
+%          \citep{MuldersPaoliniEtAl:2003,MuldersWinterEtAl:2002}           &                                            &   & & & 
+
+
+% \\ \bottomrule
+% \end{tabularx}
+% \end{landscape}
+
+
+
+\section{Cell Morphology}
+
 \begin{landscape}
-  \tablehead{\hline Connection & Transmitter/ Receptor & Synaptic Time Constant
-    (msec) & Bandwidth (octaves or Q10) & No. of Synapses /Strength &
-    Distribution & Delay\\\hline}
-  \begin{supertabular}{|m{2.121cm}|m{2.899cm}|m{2.243cm}|m{2.986cm}|m{2.294cm}|m{2.245cm}|m{3.303cm}|}
-                      ANI\ensuremath{\rightarrow}TS                       & 
-Glutamate on fast AMPA receptors
-\citep{FerragamoGoldingEtAl:1998a,WentholdHunterEtAl:1993},Monosynaptic
-EPSPs that were blocked by DNQX , an antagonist of AMPA receptors
-\citep{FerragamoGoldingEtAl:1998a}; Slow depolarizations, the source of
-which has not been identified, that lasted between 0.2 and 1 s and were
-blocked APV , the (NMDA) receptor
-antagonist.\citep{FerragamoGoldingEtAl:1998a}; Glutamate and glutamine
-antibodies \citep{HackneyOsenEtAl:1990} whole cell patch recordings NMDA
-\ensuremath{\rightarrow} AMPA during development
-\citep{BellinghamLimEtAl:1998} GluR3, GluR4 main AMPA subunits electron
-             microscopic study \citep{WangWentholdEtAl:1998}              & Rise 0.15 Decay 0.36
-\citep{GardnerTrussellEtAl:2001,Gardner:2000,GardnerTrussellEtAl:1999,Oertel:1983}
-                                                                          & Narrow 0.23-0.39 oct \citep{PalmerJiangEtAl:1996} Q10 5.52{\textpm}1.4 in
-guinea pigs \citep{JiangPalmerEtAl:1996} compared to Q10 of 6.3 in AN;
-narrow and of input 75-100\um in mice \citep{OertelWuEtAl:1990} CS Q10\- =4,
-CT Q10=2 (low cf), 3.67 (high CF) guinea pig \citep{PalmerWallaceEtAl:2003}
-                     5.3 Q10 \citep{RhodeSmith:1986}                      & Small number
-\citep{Cant:1981,FayPopper:1994,ReddCahillEtAl:2002,RyugoWrigthEtAl:1993,Ryugo:1992,RyugoParks:2003}
-see table 1, cat \citep{SmithRhode:1989} estimate 5 to reach AP
-\citep{FerragamoGoldingEtAl:1998a} highly variable 0-6 per soma possibly two
-                  subtypes \citep{JosephsonMorest:1998}                   & Mainly dendritic; 30\% soma coverage
-\citep{Cant:1981,Cant:1982,RyugoWrightEtAl:1993,TolbertMorest:1982a} see
-Table 1 \citep{SmithRhode:1989} some cells had LS vesicles surrounding axon
-initial segment \citep{JosephsonMorest:1998} type II ANFs as well
-                        \citep{BensonBrown:2004}                          & 0.5msec
-\citep{Brown:1993,BrownLedwith:1990,WickesbergOertel:1993} 0.48-0.92 msec,
-mean 0.7 \citep{FerragamoGoldingEtAl:1998a} about 0.7 msec
-\citep{Oertel:1983} Chopper latencies 3.6 {\textpm}0.38 msec
-\citep{RhodeSmith:1986} latency 3.6{\textpm}1.2 msec anesthetised cat 3.5
-msec unanesthetised \citep{RhodeKettner:1987} depolarisation min SPL
-31.7{\textpm}2.9, AP min SPL 41.8{\textpm}3.8 \citep{PaoliniClareyEtAl:2004}
-                 \\\hline ANI\ensuremath{\rightarrow}DS                   & Glutamate on AMPA receptors
-       \citep{FerragamoGoldingEtAl:1998a,WentholdHunterEtAl:1993}         & Rise 0.15 Decay
-            0.36 \citep{GardnerTrussellEtAl:1999,Oertel:1983}             & 2 oct below, 1 oct above
-\citep{PalmerJiangEtAl:1996} q10 3.56{\textpm}1.38
-\citep{JiangPalmerEtAl:1996} q10 3.1 at 10kHz dual component, stronger below
-CF \citep{PaoliniClark:1999} Q10 1.33-2.87 \citep{PalmerWallaceEtAl:2003} & 
-Many weak inputs \citep{FerragamoGoldingEtAl:1998a} 30 somatic inputs (30\%
-               round); see table 1 \citep{SmithRhode:1989}                & Dense somatic and dendritic
-\citep{Cant:1981,Cant:1982,RyugoWrightEtAl:1993} see Table
-                        1\citep{SmithRhode:1989}                          & As above, maybe less considering time to peak,
-see latencies in \citep{PaoliniClark:1999} Oc latency 2.8 {\textpm}0.09 msec
-\citep{RhodeSmith:1986} depolarisation min SPL 45.6{\textpm}2.7, AP min SPL
-56.6{\textpm}2.2 \citep{PaoliniClareyEtAl:2004}\\\hline
-
-                      ANI\ensuremath{\rightarrow}TV                       & AMPA glutamate receptors
-                        \citep{ZhangOertel:1993}                          &    0.4 \citep{GardnerTrussellEtAl:1999}    & Similar to
-AN \citep{SpirouDavisEtAl:1999} mice dendrites lay in \~{}70\um of DCN
-                        \citep{ZhangOertel:1993}                          & \citep{SpirouDavisEtAl:1999,ZhangOertel:1993} ;
-     \~{}4 somatic contacts per cell, 10\% AN \citep{Alibardi:1999}       & 
-
-Mainly dendritic {\textless} 100\um
- \citep{Alibardi:1999,Liberman:1993,RubioJuiz:2004,SpirouDavisEtAl:1999}  & As
-above, maybe more to DCN; shocks illicit EPSPs 1.0-1.5 msec
-\citep{ZhangOertel:1993}\\\hline
-                      TS\ensuremath{\rightarrow}TS                        & AMPA and/or
-       NMDA glutamate receptors \citep{FerragamoGoldingEtAl:1998a}        & Similar to
-          primary endings but measured.  Will be more for NMDA.           & Local axon
-collaterals have terminals only in dendritic band \citep{SmithRhode:1989} & 
-Based on rarity of small round vesicles on CS cells, influence is weak
-\citep{SmithRhode:1989} likely to come from 1 input
-                   \citep{FerragamoGoldingEtAl:1998a}                     & dendritic; \citep{JosephsonMorest:1998}
-in chinchilla SS ves \~{}5 per soma (high and low CF), more prevalent at the
-                              axon hillock                                & Min. synaptic delay \\\hline
-                      TS\ensuremath{\rightarrow}DS                        & 
-
- AMPA and/or NMDA glutamate receptors \citep{FerragamoGoldingEtAl:1998a}  & As
-                                 above.                                   & Few local axonal collaterals lie in dendritic
-                     plane. \citep{SmithRhode:1989}                       & Based on rarity of small round vesicles on
-CS cells, influence is weak \citep{SmithRhode:1989} late EPSPs observed,
-likely one-2 inputs \citep{FerragamoGoldingEtAl:1998a, OertelWuEtAl:1990} & 
-                                    ?                                     & Min. synaptic delay \\ \hline
-                      TS\ensuremath{\rightarrow}TV                        & AMPA
-Glutamate
-\citep{DoucetRossEtAl:1999,FerragamoGoldingEtAl:1998a,ZhangOertel:1993} No
-TS terminals on TV cells in rats \citep{RubioJuiz:2004} In deep layer guinea
-pig \citep{PalmerWallaceEtAl:2003} small round vesicles
-\citep{Alibardi:1999} ;3 of 4 neurons had late EPSPs to AN shock, very young
-                      mice \citep{ZhangOertel:1993}                       &       Similar to AN AMPA receptors.        & Strong
-On-CF with weak off-CF See fig 13 \citep{OstapoffBensonEtAl:1999} ; mainly
-in iso-band but poor classification in rats
-        \citep{DoucetRossEtAl:1999,FriedlandPongstapornEtAl:2003}         & 
-\citep{OstapoffBensonEtAl:1999} 3 of 4 shocks elicited late EPSPs
-                        \citep{ZhangOertel:1993}                          & Mainly to fusiform cell layer, possibly on ends
-of TV cell dendrites \citep{OertelWuEtAl:1990} CS and CT collaterals in deep
-DCN possibly somatic \citep{PalmerWallaceEtAl:2003} somatic small round
-  vesicles presumably from T stellates guinea pig \citep{Alibardi:1999}   & 0.15
-sec min EPSP latency to VCN Glutamate puffs, main excitation at 0.3 sec Fig
-11a, AN shock produces late EPSPs about 3msec \citep{ZhangOertel:1993}
-\\\hline
-                      DS\ensuremath{\rightarrow}TS                        & Glycine FerragamoGoldingEtAl:1998a
-could be mixed Gly/GABA \citep{AltschulerJuizEtAl:1993} pleomorphic vesicles
-   of Oc apposed to sustained chopper, fig 14 \citep{SmithRhode:1989}     & 
-
-6-13 msec decay time
-\citep{AwatramaniTurecekEtAl:2005,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
-                                                                          & D stellate axon terminals cover 300 \um of VCN \citep{OertelWuEtAl:1990}
-AVCN collaterals centred on soma isofreq slab as dend, 1 octave above and
-below \citep{ArnottWallaceEtAl:2004} SBW =5.1kHz {\textpm}4.5 kHz all Ch, CS
-4.66{\textpm}4.45kHz 88{\textpm}19\% suppression, CT 6.28{\textpm} 4.65kHz
-         96{\textpm}5\% suppression \citep{RhodeGreenberg:1994b}          & 
-\citep{FerragamoGoldingEtAl:1998a} See Table 1 \citep{SmithRhode:1989} PL
-\~{}70 (high) \~{}60 (low CF) per soma, \~{}1.7 per axon, FL \~{}20 (highCF)
-               \~{}10 (lowCF) \citep{JosephsonMorest:1998}                & 1 or 2 on soma; many gly and
-mixed gly/GABA on trunks; see Table 1\citep{SmithRhode:1989} more FL
-    vesicles on soma in high CF regions \citep{JosephsonMorest:1998}      & 
-
-\citep{FerragamoGoldingEtAl:1998a,NeedhamPaolini:2003} 1.2-3.5msec after
-shock to AN \citep{Oertel:1983}\\\hline
-                      DS\ensuremath{\rightarrow}DS                        & 
-                   \citep{FerragamoGoldingEtAl:1998a}?                    & 6-13 msec decay time
-\citep{AwatramaniTurecekEtAl:2005,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
-                                                                          &                                            & None observed \citep{SmithRhode:1989} IPSPs seen in slice without DCN
-                   \citep{FerragamoGoldingEtAl:1998a}                     &    See table 1 \citep{SmithRhode:1989}     & 
-Min. synaptic delay \\\hline
-                      DS\ensuremath{\rightarrow}TV                        & Glycinergic
-\citep{DoucetRyugoEtAl:1999,OertelWuEtAl:1990,OstapoffMorestEtAl1999,SpirouDavisEtAl:1999,ZhangOertel:1993}
-                                                                          & 
-
-6-13 msec decay time
-\citep{AwatramaniTurecekEtAl:2005,FerragamoGoldingEtAl:1998a,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
-                                                                          & Lateral sidebands equivalent to DS bandwidth
-\citep{OstapoffMorestEtAl:1999,SpirouDavisEtAl:1999} in rats strong ventral
-to iso-frequency band (ie stronger high \ensuremath{\rightarrow}low cf)
-\citep{DoucetRyugoEtAl:1999,FriedlandPongstapornEtAl:2003} generally
-tonotopic arrangement of OnC axons in DCN \citep{ArnottWallaceEtAl:2004}
-    Notch Noise shows asymmetry in projection\citep{ReissYoung:2005}      & Few
-somatic glycine inputs
-\citep{OsenOttersenEtAl:1990,OstapoffMorestEtAl1999:1999,ZhangOertel:1993}
-\~{}4 somatic contacts most of which were Glycine (FP) \citep{Alibardi:1999}
-                                                                          & Few somatic glycine inputs
-\citep{OsenOttersenEtAl:1990,OstapoffMorestEtAl:1999,ZhangOertel:1993} few
-                 somatic contacts \citep{Alibardi:1999}                   & 
-
-0.15 msec min EPSP latency to VCN shock , assume IPSP latency similar
-\citep{ZhangOertel:1993}\\\hline
-                      TV\ensuremath{\rightarrow}TS                        & 
-Glycine\citep{OertelWickesberg:1993,OstapoffMorestEtAl:1999,SaintBensonEtAl:1991,WickesbergOertel:1993}
-                GABA mixed \citep{OsenOttersenEtAl:1990}                  & 
-   \citep{HartyManis:1998,OertelWickesberg:1993,WickesbergOertel:1993}    & 
-Slightly lateral, lighter on-CF \citep{OstapoffMorestEtAl:1999} concentrated
-on CF \citep{ZhangOertel:1993} FL vesicles more dense in high CF
-                      \citep{JosephsonMorest:1998}                        & Many \citep{OstapoffMorestEtAl:1999} see
-Table 1 \citep{SmithRhode:1989} PL \~{}70 (high) \~{}60 (low CF) per soma,
-\~{}1.7 per axon, FL \~{}20 (highCF) \~{}10 (lowCF)
-                      \citep{JosephsonMorest:1998}                        & Soma and mainly trunk
-\citep{AltschulerJuizEtAl:1993} see Table 1\citep{SmithRhode:1989} more FL
-vesicles on soma in high CF regions, some hillock contacts (75\% inhib)
-                      \citep{JosephsonMorest:1998}                        & 2.5 msec from AN shock to inhibition
-\citep{WickesbergOertel:1993} 600usec after AN excitation in choppers
-\citep{Wickesberg:1996} 0.1-0.3 msec glut or shock VCN
-\citep{ZhangOertel:1993}\\\hline
-                      TV\ensuremath{\rightarrow}DS                        & 
-
-Glycine \citep{OstapoffMorestEtAl:1999,SaintBensonEtAl:1991} Mixed
-               Glycine/GABA \citep{OsenOttersenEtAl:1990}                 & \citep{OstapoffMorestEtAl:1999}
-                                as above                                  & Slightly lateral, lighter on-CF \citep{OstapoffMorestEtAl:1999}
-concentrated on CF \citep{ZhangOertel:1993} No inhibitory sidebands evident
-                                  in RA                                   &    See table 1 \citep{SmithRhode:1989}     & see Table 1
-                         \citep{SmithRhode:1989}                          & As above in TV\ensuremath{\rightarrow}TS\\\hline
-                     ANI,II\ensuremath{\rightarrow}G                      & 
-\citep{Cant:1992,FerragamoGoldingEtAl:1998a,RyugoWrightEtAl:1993,Ryugo:1992,RyugoParks:2003}
-            diffuse release sites \citep{HurdHutsonEtAl:1999}             & 
-   \citep{GardnerTrussellEtAl:1999} slower \citep{HurdHutsonEtAl:1999}    & Wide
-Dynamic range \citep{GhoshalKim:1997} dendritic field 50 and 100 $\mu $m
-                   \citep{FerragamoGoldingEtAl:1998a}                     &                                            & Dendritic; contact dend 0.5-1 \um
-               width) in GCD, SCC \citep{BensonBrown:2004}                & 1.3 msec minimum
-\citep{FerragamoGoldingEtAl:1998a} typeII up to 10msec estimated from axon
-width \citep{Brown:1993}\\\hline
-                    Granule\ensuremath{\rightarrow}G                      & NMDA
-                   \citep{FerragamoGoldingEtAl:1998a}                     &      \citep{GardnerTrussellEtAl:1999}      &   & 
-                   \citep{FerragamoGoldingEtAl:1998a}                     &                                            & \\\hline
-DS\ensuremath{\rightarrow}G,
-                                granule ?                                 &                  Glycine                   & 
-
-                                                                          &                                            & D stellates have collaterals in GCD fig 4 \& 5 \citep{OertelWuEtAl:1990}
-   Gly IPSP observed in 1 of 5 cells \citep{FerragamoGoldingEtAl:1998}    &                                            & 
-Short, see Fig 3B in \citep{FerragamoGoldingEtAl:1998}\\\hline
-Golgi/GABA
-                      \ensuremath{\rightarrow}TS ?                        & Chinchilla
-         \citep{FerragamoGoldingEtAl:1998,JosephsonMorest:1998}           & 
-
-                   \citep{AwatramaniTurecekEtAl:2005}                     & High \ensuremath{\rightarrow}low CF
-                      \citep{JosephsonMorest:1998}                        &    See table 1 \citep{SmithRhode:1989}     & See
-                     table 1 \citep{SmithRhode:1989}                      & \\\hline
-Golgi/GABA
-                       \ensuremath{\rightarrow}DS                         & 
-\citep{EvansZhao:1998,FerragamoGoldingEtAl:1998a,Mugnaini:1985,MugnainiOsenEtAl:1980,
-                          SaintMorestEtAl:1989}                           &                                            & Wideband to wideband on CF
-\citep{EvansZhao:1998} hyperpolarising effects above high freq edge in mid
-                  CF neurons \citep{PaoliniClark:1999}                    & \~{}20 weak
-                   inputs\citep{SaintMorestEtAl:1989}                     & 
-
-   Dendrites reach into granule cell domain \citep{OertelWuEtAl:1990}     & 
-
-Hyperpolarisation occurs 10-15 msec after click
-\citep{PaoliniClark:1999}\\\hline
-Non-Auditory \ensuremath{\rightarrow} GCD
-                                                                          & Review see \citep{OhlroggeDoucetEtAl:2001} &   & & & & \\\hline
-                     ACh\ensuremath{\rightarrow} TS                       & 
-
-     Excitatory response to Acetylcholine \citep{FujinoOertel:2001}       & Nicotinic
-and muscarinic receptors.  Inhibit {\textquoteleft}leaky{\textquoteright}
-potassium currents (volt-insensitive)
-
-                        \citep{FujinoOertel:2001}                         &              Presumably on CF              & ? & SS vesicles (perhaps
-       ACh) contact the axon hillock \citep{JuizHelfertEtAl:1996a}        & \\\hline
-
-                     ACh\ensuremath{\rightarrow} DS                       & No response to ACh
-\citep{FujinoOertel:2001} Indirect excitation via granule cells
-         \citep{MuldersPaoliniEtAl:2003,MuldersWinterEtAl:2002}           &                                            &   & & & 
-
-
-\\\hline
-\end{supertabular}
+%\afterpage
+{\small\LTXtable{210mm}{CellMorphologyTable}}  
 \end{landscape}
 
+% \begin{flushleft}
+
+%   \begin{tabularx}{\textwidth}{cXXXX}
+% \toprule 
+% Cells & Cell body xsection area & Soma diameter & Dendrite span &Other\\\midrule
+%                                TS                                & soma area 262.3{\textpm}62 planar cell in rat
+% \citep{DoucetRyugoEtAl:1999} area 249{\textpm}95\umsq \citep{DoucetRyugo:1997}
+% CS 648 \umsq \citep{SmithRhode:1989} cat 366{\textpm}100\umsq
+% \citep{ReddCahillEtAl:2002} soma xsectional area 200\umsq (CS), 240 (CT)
+% \citep{PalmerWallaceEtAl:2003} type I stellate (IC label) chinchilla DAP
+% (high CF) 192{\textpm}47 $\mu $m2,PV (low CF) 253{\textpm}63 $\mu $m2
+%                   \citep{JosephsonMorest:1998}                   & 16-20\um diam \citep{DoucetRyugo:1997} type I
+% stellate (IC label) chinchilla DAP (high CF) 14.5{\textpm}2.0 $\mu $m,
+% PV(low CF) 17.6{\textpm}2.7 $\mu $m \citep{JosephsonMorest:1998} & 2-3 main
+% dend, total dend length \~{}2000\um \citep{PalmerWallaceEtAl:2003} 75-100\um
+% and 150-300\um parallel,3-4 primary dendrites \citep{SmithRhode:1989}
+% dendrites emanated from soma in one direction (rarely bipolar) up to 200$\mu
+% $m, 2-5 $\mu $m in diam chinchilla \citep{JosephsonMorest:1998}  & axon width
+% .5-1.1\um \citep{OertelWuEtAl:1990} hillock initial segment averaged
+% 2.5{\textpm}0.96 $\mu $m proximal diam and up to 13 $\mu $m long, distal
+% initial segment 0.7{\textpm}0.2 $\mu $m,myelination began about 20 $\mu $m
+% from the soma \citep{JosephsonMorest:1998}\\\hline
+%                                TV                                & & 18.4{\textpm}3.2 \um diam guinea pig \citep{SaintBensonEtAl:1991} 13.34{\textpm}2.17 \um (11-16
+%             range) guinea pig \citep{Alibardi:1999}              & Dend and axonal arbors restricted
+%                      to isofrequency lamina                      & \\\hline
+%                                DS                                & 963 \umsq xsection OC
+% \citep{SmithRhode:1989} 501{\textpm}168 \umsq rat \citep{DoucetRyugoEtAl:1999}
+% 466{\textpm}137\umsq \citep{DoucetRyugo:1997} cat xsection 571{\textpm} 228
+% \umsq \citep{ReddCahillEtAl:2002} OC xsectional area 450\umsq
+%                  \citep{PalmerWallaceEtAl:2003}                  & guinea pig 27\um diameter
+% \citep{ArnottWallaceEtAl:2004} 22-26 \um diam \citep{DoucetRyugo:1997} 20-30
+%                  \um \citep{PaoliniClark:1999}                   & 
+% 250-350\um span of dend \citep{DoucetRyugo:1997} with aspinous dendrites, 4
+% of 5 cells had 4 main dendrites, total dend length 6222 to 7351 \um
+% (mean-6665 \um), dendrites extended widely in all directions,\~{}70 \um
+% perpendicular to AN,3-6 primary dendrites at right angles to AN
+%                     \citep{SmithRhode:1989}                      & axon width 0.7-1.2\um
+% \citep{OertelWuEtAl:1990}\\\hline
+%                              Golgi                               & 15 $\mu $m in diameter
+%                    FerragamoGoldingEtAl:1998                     & & Smooth, tapering dendrites, between 50 and 100
+% $\mu $m long, emanated in all directions \citep{FerragamoGoldingEtAl:1998}
+%         Also see \citep{Cant:1993,MugnainiOsenEtAl:1980}         & A dense, axonal plexus,
+% limited to the plane of the granule cell domain, extended about 250 $\mu $m
+% from the soma in all directions \citep{FerragamoGoldingEtAl:1998} \\
+% \bottomrule
+% \end{tabularx}
+% \end{flushleft} 
 
 
-Cell Morphology
+\section{ Intracellular  Physiology}
 
-\begin{flushleft}
-  \tablehead{\hline Cells & Cell body xsection area & Soma diameter & Dendrite span &
-    Other\\\hline}
-  \begin{supertabular}{|m{3.6859999cm}|m{3.6859999cm}|m{3.6859999cm}|m{3.6859999cm}|m{3.723cm}|}
-                               TS                                & soma area 262.3{\textpm}62 planar cell in rat
-\citep{DoucetRyugoEtAl:1999} area 249{\textpm}95\umsq \citep{DoucetRyugo:1997}
-CS 648 \umsq \citep{SmithRhode:1989} cat 366{\textpm}100\umsq
-\citep{ReddCahillEtAl:2002} soma xsectional area 200\umsq (CS), 240 (CT)
-\citep{PalmerWallaceEtAl:2003} type I stellate (IC label) chinchilla DAP
-(high CF) 192{\textpm}47 $\mu $m2,PV (low CF) 253{\textpm}63 $\mu $m2
-                  \citep{JosephsonMorest:1998}                   & 16-20\um diam \citep{DoucetRyugo:1997} type I
-stellate (IC label) chinchilla DAP (high CF) 14.5{\textpm}2.0 $\mu $m,
-PV(low CF) 17.6{\textpm}2.7 $\mu $m \citep{JosephsonMorest:1998} & 2-3 main
-dend, total dend length \~{}2000\um \citep{PalmerWallaceEtAl:2003} 75-100\um
-and 150-300\um parallel,3-4 primary dendrites \citep{SmithRhode:1989}
-dendrites emanated from soma in one direction (rarely bipolar) up to 200$\mu
-$m, 2-5 $\mu $m in diam chinchilla \citep{JosephsonMorest:1998}  & axon width
-.5-1.1\um \citep{OertelWuEtAl:1990} hillock initial segment averaged
-2.5{\textpm}0.96 $\mu $m proximal diam and up to 13 $\mu $m long, distal
-initial segment 0.7{\textpm}0.2 $\mu $m,myelination began about 20 $\mu $m
-from the soma \citep{JosephsonMorest:1998}\\\hline
-                               TV                                & & 18.4{\textpm}3.2 \um diam guinea pig \citep{SaintBensonEtAl:1991} 13.34{\textpm}2.17 \um (11-16
-            range) guinea pig \citep{Alibardi:1999}              & Dend and axonal arbors restricted
-                     to isofrequency lamina                      & \\\hline
-                               DS                                & 963 \umsq xsection OC
-\citep{SmithRhode:1989} 501{\textpm}168 \umsq rat \citep{DoucetRyugoEtAl:1999}
-466{\textpm}137\umsq \citep{DoucetRyugo:1997} cat xsection 571{\textpm} 228
-\umsq \citep{ReddCahillEtAl:2002} OC xsectional area 450\umsq
-                 \citep{PalmerWallaceEtAl:2003}                  & guinea pig 27\um diameter
-\citep{ArnottWallaceEtAl:2004} 22-26 \um diam \citep{DoucetRyugo:1997} 20-30
-                 \um \citep{PaoliniClark:1999}                   & 
-250-350\um span of dend \citep{DoucetRyugo:1997} with aspinous dendrites, 4
-of 5 cells had 4 main dendrites, total dend length 6222 to 7351 \um
-(mean-6665 \um), dendrites extended widely in all directions,\~{}70 \um
-perpendicular to AN,3-6 primary dendrites at right angles to AN
-                    \citep{SmithRhode:1989}                      & axon width 0.7-1.2\um
-\citep{OertelWuEtAl:1990}\\\hline
-                             Golgi                               & 15 $\mu $m in diameter
-                   FerragamoGoldingEtAl:1998                     & & Smooth, tapering dendrites, between 50 and 100
-$\mu $m long, emanated in all directions \citep{FerragamoGoldingEtAl:1998}
-        Also see \citep{Cant:1993,MugnainiOsenEtAl:1980}         & A dense, axonal plexus,
-limited to the plane of the granule cell domain, extended about 250 $\mu $m
-from the soma in all directions \citep{FerragamoGoldingEtAl:1998}
-\\\hline
-\end{supertabular}
-\end{flushleft} 
+\begin{landscape}
+%\afterpage
+{\small\LTXtable{210mm}{IntracellularTable}}  
+\end{landscape}
 
+% \begin{flushleft}
 
-{\bfseries Table : Intracellular  Physiology}
+%   \begin{tabularx}{\textwidth}{cXXXXXX}
+%  \toprule                           
+% Cells    & Current Clamp &        Membrane Currents         & Time Constant (msec) &   I-V    &    Input R    & Papers\\
+% \midrule
+%                                  TS                                   & Type 1, single exponential undershoot
+%       \citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984}        & No Low threshold
+% K \citep{ManisMarx:1991} IA has a role in modulating the rate of repetitive
+% firing.  Effect of Inhibition on T stellate cells could be to reset IA
+%                      \citep{RothmanManis:2003c}                       & 6.5{\textpm}5.7 msec \citep{ManisMarx:1991}
+% type I 9.1{\textpm}4.5 \citep{ManisMarx:1991} 6.2 to 18.0 msec
+% \citep{FengKuwadaEtAl:1994} 6.9{\textpm}3msec, 10-90\% rise time was
+%          1.05{\textpm}0.4msec \citep{IsaacsonWalmsley:1995}           & Linear
+%                        \citep{ManisMarx:1991}                         & 
 
-\begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{1.546cm}|m{3.224cm}|m{2.714cm}|m{2.2749999cm}|m{2.652cm}|m{2.652cm}|m{3.003cm}|}
-                            \hline Cells                              & Current Clamp &        Membrane Currents         & Time Constant (msec) & 
-                                 I-V                                  &    Input R    & Papers\\\hline
-                                 TS                                   & Type 1, single exponential undershoot
-      \citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984}        & No Low threshold
-K \citep{ManisMarx:1991} IA has a role in modulating the rate of repetitive
-firing.  Effect of Inhibition on T stellate cells could be to reset IA
-                     \citep{RothmanManis:2003c}                       & 6.5{\textpm}5.7 msec \citep{ManisMarx:1991}
-type I 9.1{\textpm}4.5 \citep{ManisMarx:1991} 6.2 to 18.0 msec
-\citep{FengKuwadaEtAl:1994} 6.9{\textpm}3msec, 10-90\% rise time was
-         1.05{\textpm}0.4msec \citep{IsaacsonWalmsley:1995}           & Linear
-                       \citep{ManisMarx:1991}                         & 
+% 447{\textpm}265 Mohm isolated guinea pig stellate cell type 1 current clamp
+% \citep{ManisMarx:1991} 44 to 151 M$\Omega $ (mean 89.4 {\textpm}24.4) mouse
+% slice prep \citep{FerragamoGoldingEtAl:1998a}
+% {\textquotedblright}stellate{\textquotedblright} 231{\textpm}113M$\Omega $,
+% 14.9{\textpm}9pF primary membrane capacitance, room temp rat
+% \citep{IsaacsonWalmsley:1995} dog {Bal, Baydas, Naziroglu 2009} 176+/- 35.9
+%             Mohm membrane time constant 8.8 +/-1.4 (n=21)             & \\\hline
+%                                  TV                                   & Linear,
+%   regular spiking, double exp. Undershoots \citep{ZhangOertel:1993}   & Double
+%               undershoots suggest ILT , Regular spiking               &               &     \citep{ZhangOertel:1993}     & 
+% 100M{\textpm}20, but then state 85{\textpm}10 in table 1
+%                       \citep{ZhangOertel:1993}                        & 
+% \citep{EvansNelson:1973,WickesbergOertel:1990,WickesbergOertel:1993,WickesbergOertel:1988,WickesbergWhitlonEtAl:1991,Wickesberg:1996,YoungBrownell:1976,YoungVoigt:1981,ZhangOertel:1993}\\\hline
+%                                  DS                                   & 
 
-447{\textpm}265 Mohm isolated guinea pig stellate cell type 1 current clamp
-\citep{ManisMarx:1991} 44 to 151 M$\Omega $ (mean 89.4 {\textpm}24.4) mouse
-slice prep \citep{FerragamoGoldingEtAl:1998a}
-{\textquotedblright}stellate{\textquotedblright} 231{\textpm}113M$\Omega $,
-14.9{\textpm}9pF primary membrane capacitance, room temp rat
-\citep{IsaacsonWalmsley:1995} dog {Bal, Baydas, Naziroglu 2009} 176+/- 35.9
-            Mohm membrane time constant 8.8 +/-1.4 (n=21)             & \\\hline
-                                 TV                                   & Linear,
-  regular spiking, double exp. Undershoots \citep{ZhangOertel:1993}   & Double
-              undershoots suggest ILT , Regular spiking               &               &     \citep{ZhangOertel:1993}     & 
-100M{\textpm}20, but then state 85{\textpm}10 in table 1
-                      \citep{ZhangOertel:1993}                        & 
-\citep{EvansNelson:1973,WickesbergOertel:1990,WickesbergOertel:1993,WickesbergOertel:1988,WickesbergWhitlonEtAl:1991,Wickesberg:1996,YoungBrownell:1976,YoungVoigt:1981,ZhangOertel:1993}\\\hline
-                                 DS                                   & 
+% {}-56{\textpm}3.2 mV RMP see fig 15 Double expon. Undershoot
+%                \citep{PaoliniClark:1999,WuOertel:1984}                & Type I-i have high thresholds
+% probably mediated by small ILT \citep{RothmanManis:2003c} Membrane
+% properties of Oc cell have not bee adequately characterised, bu the
+% information that is available (d stellate in mouse
+% \citep{OertelWuEtAl:1990}) suggests that the low-threshold potassium channel
+% that is important in extending the phase-locking range of bushy cells
+% \citep{ManisMarx:1991,Oertel:1983} is not present in Oc neurons
+%                      \citep{WhiteYoungEtAl:1994}                      &     Fast      & Linear \citep{PaoliniClark:1999} & 40M
+% ohm \citep{OertelWuEtAl:1990} 96.2 {\textpm} 27.8 M$\Omega $ mouse slice
+%                prep \citep{FerragamoGoldingEtAl:1998a}                & \\\hline
+%                                 Golgi                                 & Regular spiking
+% with overshooting action potentials and double exponential undershoot &               &                                  & 
+%              Inward rectifying FerragamoGoldingEtAl:1998              &   130 Mohm    & 
+% FerragamoGoldingEtAl:1998 \\
+% \bottomrule
+% \end{tabularx}
+% \end{flushleft} 
 
-{}-56{\textpm}3.2 mV RMP see fig 15 Double expon. Undershoot
-               \citep{PaoliniClark:1999,WuOertel:1984}                & Type I-i have high thresholds
-probably mediated by small ILT \citep{RothmanManis:2003c} Membrane
-properties of Oc cell have not bee adequately characterised, bu the
-information that is available (d stellate in mouse
-\citep{OertelWuEtAl:1990}) suggests that the low-threshold potassium channel
-that is important in extending the phase-locking range of bushy cells
-\citep{ManisMarx:1991,Oertel:1983} is not present in Oc neurons
-                     \citep{WhiteYoungEtAl:1994}                      &     Fast      & Linear \citep{PaoliniClark:1999} & 40M
-ohm \citep{OertelWuEtAl:1990} 96.2 {\textpm} 27.8 M$\Omega $ mouse slice
-               prep \citep{FerragamoGoldingEtAl:1998a}                & \\\hline
-                                Golgi                                 & Regular spiking
-with overshooting action potentials and double exponential undershoot &               &                                  & 
-             Inward rectifying FerragamoGoldingEtAl:1998              &   130 Mohm    & 
-FerragamoGoldingEtAl:1998 \\\hline
-\end{supertabular}
-\end{flushleft} 
+\section{ Extracellular  Physiology}
 
-{\bfseries Table : Extracellular  Physiology}
+\begin{landscape}
+%\afterpage
+{\small\LTXtable{210mm}{PhysiologyTable}}  
+\end{landscape}
 
-\begin{flushleft}
-  \tablehead{\hline Stimuli & TS & DS & TV & Golgi & AN\\\hline}
-  \begin{supertabular}{|m{3.9609997cm}|m{2.9099998cm}|m{2.8739998cm}|m{2.846cm}|m{2.836cm}|m{2.839cm}|}
-                                 Tones                                  & \citep{BlackburnSachs:1989,FengKuwadaEtAl:1994} full
-classification\citep{PalmerWallaceEtAl:2003} Orig Classification scheme for
-                      PSTH \citep{Pfeiffer:1966}                        & 
-\citep{ArnottWallaceEtAl:2004,EvansZhao:1998,FengKuwadaEtAl:1994,Joris:1998}
-                                                                        & \citep{SpirouDavisEtAl:1999} \citep{Rhode:1999} non-projecting vertical
-cells,On-graded, type II EIRA,EIRA scheme developed by
-\citep{EvansNelson:1973,ShofnerYoung:1985,YoungBrownell:1976,YoungVoigt:1982}
-             own scheme \citep{Joris:1998,JorisSmith:1998}              &                         \citep{GhoshalKim:1997}                          & 
-various\\\hline
-                             Dynamic Range                              & CS and CT\citep{May:2003,MaySachs:1992}
-\citep{PalmerWallaceEtAl:2003,Rhode:1994;RhodeSmith:1986} 
-CS 26{\textpm}7dB tone 39{\textpm}22 dB noise, CT 24{\textpm}9dB tone 33{\textpm}20dB noise
-                     \citep{RhodeGreenberg:1994b}                       & \citep{Joris:1998,Rhode:1994,RhodeSmith:1986}
-                                                                        & Non-monotonic, threshold \~{}27dB, spon \~{}0,
-              \citep{Rhode:1999,HancockVoight:2002} (ARO)               & 
-               \citep{GhoshalKim:1996,GhoshalKim:1996a}                 & \\\hline
-                            Frequency sweep                             &                                                                          & & 
-                 Prefer high to low \citep{Rhode:1999}                  &                                                                          & \\\hline
-Two Tone Frequency Sweep
-                                                                        & Strong inhibitory areas \citep{BlackburnSachs:1992,JiangPalmerEtAl:1996} & 
-No facilitation if offBF tone delayed 5-10 msec but facilitationoccurred for
-the reverse \citep{JiangPalmerEtAl:1996,PalmerWinter:1996;WinterPalmer:1995}
-Intracellular recordings show facilitationbias toward below CF
-\citep{PaoliniClark:1999} GABA could mask facilitation within RA
-                        \citep{EvansZhao:1998}                          & Strong inhibitory areas highlighted by two tones
-                     \citep{SpirouDavisEtAl:1999}                       &                                                                          & 
-\citep{Geisler:1988,GoldsteinKiang:1968,Javel:1981,KimSiegelEtAl:1979,NomotoSugaEtAl:1964,SachsKiang:1968}\\\hline
-                Forward Masking/ short term adaptation                  & 
-\citep{BoettcherSalviEtAl:1990,Shore:1998,Shore:1995,ShoreBledsoe:1997} & 
-                    \citep{BoettcherSalviEtAl:1990}                     &                                                                          & & \\\hline
-                    Strychnine                                & 
-                    \citep{PalombiCaspary:1992}                       
-&                Little or no effect \citep{EvansZhao:1998}                & 
-
-             \citep{DavisYoung:2000,SpirouDavisEtAl:1999}               &                                                                          & \\\hline
-                                  BIC                                   & $\downarrow
-$FSL, $\downarrow $FSvar ,$\uparrow $RL slope and
-max\citep{PalombiCaspary:1992} change in TAP, contrast adjustment
-                       \citep{EbertOstwald:1995}                        & guinea pig
-              \citep{EvansZhao:1998,PalombiCaspary:1992}                & 
-             \citep{DavisYoung:2000,SpirouDavisEtAl:1999}               &                                                                          & \\\hline
-                                 Noise                                  & 
-                  IRN,\citep{PalmerWallaceEtAl:2003}                    & \citep{ArnottWallaceEtAl:2004}
-Suppression in MRA evident in chlorolase but notpentobarbital cats (3 units)
-    \citep{Rhode:1994,RhodeSmith:1986} in DAS \citep{Joris:1998}.0      & 
-
-\citep{SpirouDavisEtAl:1999}notch noise \citep{ReissYoung:2005} ,respond
-           poorly or not at all to noise \citep{Rhode:1999}             &                                                                          & DR adjustment
-\citep{GibsonYoungEtAl:1985}\\\hline
-                                  IRN                                   & CS better than CT, reduction in
-temporal coding of f0 in noise
-\citep{WiegrebeKrumbholz:1999,WiegrebeWinter:2001,WinterPalmerEtAl:2003;WinterWiegrebeEtAl:2001}
-                                                                        & Response to f0 strong even at high noise level
-                     \citep{WinterPalmerEtAl:2003}                      &                                                                          & & \\\hline
-                              Noise bands                               & Narrowband Energy
-                 detector \citep{PalmerJiangEtAl:1996}                  & Wide band integrator (-2, +1
-                 octaves) \citep{PalmerJiangEtAl:1996}                  &                                                                          & & \\\hline
-                              Notch noise                               &                                                                          & & 
-Favours Falling edge, response decreases with smaller widths
-    (ie-{\textgreater}BBN) \citep{NelkenYoung:1994,ReissYoung:2005}     &                                                                          & \\\hline
-                                  CMR                                   & CT units best \citep{PressnitzerMeddisEtAl:2001} summary
-                  \citep{VerheyPressnitzerEtAl:2003}                    &                                                                          & & & \\\hline
-Harmonics Cosine and
-                                Random                                  &                                                                          & Good synch to both reduced by BIC\citep{EvansZhao:1998}
-        \citep{PalmerWinter:1993} period ST, FFT(pst), AutoCorr         &                                                                          & & 
-
-\\\hline
-                       Schroeder Phase Harmonics                        &                    CT and CS units \citep{Recio:2001}                    & & 
-                                                                        &                                                                          & 
-
-\\\hline
-                    Shuffled Autocorrelation to BBN                     &                       \citep{LouageJorisEtAl:2004}                       & & 
-                                                                        &                                                                          & 
-
-\\\hline
-                                                                        &                                                                          & & & & \\\hline
-                              Modulation                                & Choppers synch up to about 500-
-700Hz
-\citep{BlackburnSachs:1989,Bourk:1976,FrisinaKarcichEtAl:1996,FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a;FrisinaWaltonEtAl:1993,RhodeGreenberg:1994a,WangSachs:1994;WinterPalmer:1990}
-                                                                        &                                                                          & Good at low SPL, degrade with mid to high SPL due to OCh inhibition
-\citep{JorisSmith:1998}
-% \citep{Kim et al. 1990,ZhaoLiang:1995}
-                                                                        &                                                                          & \citep{Evans:1978,Javel:1980,PalmerEvans:1982}\\\hline
-                                                                        &                                                                          & & & & 
-\\\hline
-                        Single formant Stimuli                          & \citep{Rhode:1998} similar to AM
-                    studies,\citep{WangSachs:1994}                      &                                                                          & & & \citep{WangSachs:1993}\\\hline
-                                                                        &                                                                          & & 
-                                                                        &                                                                          & \\\hline
-                             Speech/Vowel                               &                                                                          & & & & 
-\citep{Geisler:1988,KiangMoxon:1974,SachsWinslowEtAl:1988,SachsYoung:1979,YoungSachs:1979}\\\hline
-                                                                        & Robust rate-place in Choppers ,steady state vowel /$\varepsilon
-            $/barbiturate cats \citep{BlackburnSachs:1990}              & \citep{PalmerWinter:1993}
-pitch-period following response,deteriorationof rate-place representation
-                      \citep{BlackburnSachs:1990}                       &                                                                          & & Rate based measures better than ALSR, ALIR
-and FFT \citep{StevensWickesberg:2005}\\\hline
-                                                                        &                          \citep{WangSachs:1994}                          & & 
-                                                                        &                                                                          & \\\hline
-                                                                        &                   Awake cat \citep{MayPrellEtAl:1998}                    & & & & \\\hline
-                                                                        &                                                                          & & & 
-                                                                        & \\\hline
-                            Speech in noise                             &                      \citep{WinterPalmerEtAl:2003}                       & & & & 
-\citep{Geisler:1989a, b,GeislerGamble:1989,SachsWinslowEtAl:1983}\\\hline
-                        Double vowels with SMP                          & Periodicity-tagged spectral
-            representation,\citep{KeilsonRichardsEtAl:1997}             &                                                                          & & & 
-\citep{Palmer:1990}\\\hline
-                   Speech manipulation procedure SMP                    & 
- \citep{May:2003,MayHuangEtAl:1996,MayPrellEtAl:1998,RecioRhode:2000}   &                                                                          & & & 
-First to use SMP\citep{LeSachsEtAl:1996} ;\citep{May:2003}\\\hline
-Tone
-                          duration threshold                            & 
-
-                      \citep{ClockSalviEtAl:1993}                       &                                                                          & & & \\\hline
-                        Clicks, clicks in noise                         & 
-                      \citep{BurkardPalmer:1997}                        &                                                                          & & & \\\hline
-                                Clicks                                  &                                                                          & \~{}1 msec longer
-      than AN of similar CF (\~{}2.5msec) \citep{JorisSmith:1998}       & No click
-response
- \citep{GodfreyKiangEtAl:1975,GodfreyKiangEtAl:1975a,JorisSmith:1998}   &                                                                          & 
-\\\hline
-                       Complex tones with pitch                         & 
-
-                     \citep{WinterPalmerEtAl:2003}                      &                                                                          & & & \\\hline
-                                                                        &                                                                          & & & & \\\hline
-\end{supertabular}
-\end{flushleft}
 
 Table 1 \citep{SmithRhode:1989} Percentage Coverage in one CS and one OC neuron
 in cat Electron Microsc.
 
 \begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{3.6859999cm}|m{3.6859999cm}|m{3.6859999cm}|m{3.6859999cm}|m{3.723cm}|}
-\hline
-                              &  \% area coverage   &           Round            & Pleomorphic (GABA) & Flat (GLy)   \\\hline
-             CS               &                     & \multicolumn{3}{|c|}{Percent number (total percent coverage area)} \\\hline
-            soma              &   21 (range 6-38)   &         36 (10.5)          &     47      & 17   \\\hline
-          Prox dend           &         46          &          43 (29)           &     34      & 23   \\\hline
-          Dist Dend           &         22          &          40 (12)           &     33      & 27   \\\hline
-             OC               &                     &                            &             & \\\hline
-            soma              & 87 (never below 80) &          36 (43)           &     36      & 28   \\\hline
-          Prox dend           &         81          & 62                    (59) &     18      & 20   \\\hline
-          Dist Dend           &         22          &         25.5 (7.5)         &     41      & 33   \\\hline
-Axon                  hillock & Densely innervated  &                            &             & \\\hline
-\end{supertabular}
+  \begin{tabularx}{\textwidth}{XXXXX}
+\toprule
+                              &  \% area coverage   &           Round            & Pleomorphic (GABA) & Flat (GLy)   \\
+               &                     & \multicolumn{3}{|c|}{Percent number (total percent coverage area)} \\ \midrule
+             CS               &                     &  \\
+            soma              &   21 (range 6-38)   &         36 (10.5)          &     47      & 17   \\
+          Prox dend           &         46          &          43 (29)           &     34      & 23   \\
+          Dist Dend           &         22          &          40 (12)           &     33      & 27   \\ \midrule
+             OC               &                     &                            &             & \\
+            soma              & 87 (never below 80) &          36 (43)           &     36      & 28   \\
+          Prox dend           &         81          & 62                    (59) &     18      & 20   \\
+          Dist Dend           &         22          &         25.5 (7.5)         &     41      & 33   \\
+Axon                  hillock & Densely innervated  &                            &             & \\
+\bottomrule
+\end{tabularx}
 \end{flushleft}
 
 \citep{JosephsonMorest:1998}
 
-\textsf{Inhibitory type endings composed most of the ax-
-onal endings contacting stellate cell somata and axons
-in the present sample from the AVCN. The inhibitory
-synapses are represented by pleomorphic-vesicle end-
-ings predominantly and by flattened-vesicle endings
-less commonly. Pleomorphic vesicles are usually asso-
-ciated with GABA, and flat vesicles with glycine, al-
-though co-localization has been reported (MatusDennison:1971; McLaughlin et al., 1974; Altschuler et
-al., 1993; Juiz et al., 1996). Feedback pathways from the
-superior olivary complex probably provide the greatest
-numbers of inhibitory endings, including both
-GABAergic and glycinergic neurons (BensonPotashner:1990; Ostapoff et al:1997), although the possibility
-that some of these may be cholinergic has been raised
-(McDonaldRasmussen:1971). Feed-forward projec-
-tions from the DCN may supply a number of glyciner-
-gic and GABAergic inputs (WickesburgOertel:1990;
-Saint Marie et al., 1991; Kolston et al., 1992). Glycinergic
-commissural connections with the opposite cochlear
-nucleus also exist (Wenthold, 1987; SchofieldCant,
-1996a).}
+\textsf{Inhibitory type endings composed most of the ax- onal endings contacting
+  stellate cell somata and axons in the present sample from the AVCN. The
+  inhibitory synapses are represented by pleomorphic-vesicle end- ings
+  predominantly and by flattened-vesicle endings less commonly. Pleomorphic
+  vesicles are usually asso- ciated with GABA, and flat vesicles with glycine,
+  al- though co-localization has been reported (MatusDennison:1971; McLaughlin
+  et al., 1974; Altschuler et al., 1993; Juiz et al., 1996). Feedback pathways
+  from the superior olivary complex probably provide the greatest numbers of
+  inhibitory endings, including both GABAergic and glycinergic neurons
+  (BensonPotashner:1990; Ostapoff et al:1997), although the possibility that
+  some of these may be cholinergic has been raised
+  (McDonaldRasmussen:1971). Feed-forward projec- tions from the DCN may supply a
+  number of glyciner- gic and GABAergic inputs (WickesburgOertel:1990; Saint
+  Marie et al., 1991; Kolston et al., 1992). Glycinergic commissural connections
+  with the opposite cochlear nucleus also exist (Wenthold, 1987; SchofieldCant,
+  1996a).}
 
 
 
@@ -569,23 +456,25 @@ nucleus also exist (Wenthold, 1987; SchofieldCant,
 
 \citep{ReddCahillEtAl:2002} Tables 1 and 2 (means)
 
-\begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{6.2770004cm}|m{6.2770004cm}|m{6.3120003cm}|}
-\hline
-                                & Type I & Type II\\\hline
-Cell body xsectional area \umsq &  369   & 481\\\hline
-     No. boutons (somatic)      &  13   & 28\\\hline
-          \% coverage           &  27.8  & 75\\\hline
-       Bouton area \umsq        &  2.2   & 2.87\\\hline
-SV{\textquoteright}s per \umsq  &  54.8  & 81.5\\\hline
-   PostSynDensity area \umsq    & 0.107  & 0.138\\\hline
-\end{supertabular}
-\end{flushleft}
+\begin{table}[h]
+\caption{\citep[Table 1 in ][]{ReddCahillEtAl:2002}}
 
-\begin{table}
+  \begin{tabularx}{\textwidth}{XXX}
+\toprule
+                                & Type I & Type II\\\midrule
+Cell body xsectional area \umsq &  369   & 481\\ 
+     No. boutons (somatic)      &  13   & 28\\   
+          \% coverage           &  27.8  & 75\\  
+       Bouton area \umsq        &  2.2   & 2.87\\
+SV{\textquoteright}s per \umsq  &  54.8  & 81.5\\
+   PostSynDensity area \umsq    & 0.107  & 0.138\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[h]
 \caption{Bouton ultrastructure data ($\pm$ SD) \citep[Table 2 in ][]{ReddCahillEtAl:2002}}
-\begin{tabularx}{XXXX} \toprule
+\begin{tabularx}{\textwidth}{XXXX} \toprule
 Multipolar cell type           &  Bouton area (lm2)         &    SVs per lm2                   &     PSD area (lm2) \\ \midrule
 Normal cats, type I MP cells   &  2.23  $\pm$     1.8       &    54.8  $\pm$   26              &     0.107  $\pm$     0.09 \\
 (N = 6 cats, 10 cells)         &  (n    =     13 boutons)   &    (n     =       13  boutons)   &     (n      =        19 PSDs) \\
@@ -601,21 +490,17 @@ DWCs, type II MP cells         &  1.94  $\pm$     1.1       &    45.9  $\pm$   2
 
 
 
-\citep{ArnottWallaceEtAl:2003}
+\subsection{\citep{ArnottWallaceEtAl:2003}}
 Oc( n=5)/OL(n=2) minimum thresholds that varied from 23 to 70 dB SPL and best frequencies varied from 0.98 kHz to 11.1 kHz
 ovoid somata (diameter $\sim$27 $\mu$m) 
 
-Four of the On-C cells
-had 4 primary dendrites, while one had 7. The total
-dendritic length (sum of all dendrites) of the 4 re-
-constructed cells ranged from 6222 to 7351 lm
-(mean-6665 lm). The dendrites extended widely in
-all directions. The restricted width of the cochlear
-nucleus meant that, in the mediolateral plane, the
-dendrites often spanned almost its entire extent. The
-majority of the dendrites remained largely un-
-branched and tapered before giving rise to a few fine,
-distal branches.
+Four of the On-C cells had 4 primary dendrites, while one had 7. The total
+dendritic length (sum of all dendrites) of the 4 re- constructed cells ranged
+from 6222 to 7351 lm (mean-6665 lm). The dendrites extended widely in all
+directions. The restricted width of the cochlear nucleus meant that, in the
+mediolateral plane, the dendrites often spanned almost its entire extent. The
+majority of the dendrites remained largely un- branched and tapered before
+giving rise to a few fine, distal branches.
 
 
 
@@ -624,29 +509,30 @@ distal branches.
 \citep{RhodeSmith:1986} descriptive statistics (note most values are affected by dependencies)
 
 \begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{4.658cm}|m{4.658cm}|m{4.658cm}|m{4.6930003cm}|}
-\hline
-                   &  AN  &  Oc  & C    \\\hline
-Threshold (dB SPL) &  14  &  23  & 19   \\\hline
-SR   (spikes/sec)  &  41  &  6   & 29 \\\hline
-       Rmax        & 254  & 258  & 380  \\\hline
-     DR (dB)       &  22  &  57  & 29\\\hline
-       Q10         & 4.8  & 3.3  & 5.3\\\hline
-       Lat         & 2.4  & 2.8  & 3.6\\\hline
-      SD lat       & 0.73 & 0.09 & 0.38\\\hline
-        CV         & 0.75 & 0.67 & 0.32\\\hline
-PTS (peak/steady)  & 5.2  & 31.3 & 5.0\\\hline
-\end{supertabular}
+
+  \begin{tabularx}{\textwidth}{XXXX}
+\toprule
+                   &  AN  &  Onset Chopper  & Choppers    \\\midrule
+Threshold (dB SPL) &  14  &  23  & 19   \\
+SR   (spikes/sec)  &  41  &  6   & 29   \\
+       Rmax        & 254  & 258  & 380  \\
+     DR (dB)       &  22  &  57  & 29   \\
+       Q10         & 4.8  & 3.3  & 5.3  \\
+       Lat         & 2.4  & 2.8  & 3.6  \\
+      SD lat       & 0.73 & 0.09 & 0.38 \\
+        CV         & 0.75 & 0.67 & 0.32 \\
+PTS (peak/steady)  & 5.2  & 31.3 & 5.0  \\
+\bottomrule
+\end{tabularx}
 \end{flushleft}
 
-Envelope Modulation in Aud Brainstem:
+\subsection{Envelope Modulation in Aud Brainstem}
 \citep{CondonChangEtAl:1995,FrisinaKarcichEtAl:1996,FrisinaSmithEtAl:1990a,FrisinaSmithEtAl:1990,FrisinaWaltonEtAl:1993,KimSirianniEtAl:1990,Moller:1972,Moller:1976,ReesMoller:1983,ReesMoller:1987,ReesPalmer:1989,Rhode:1998,Rhode:1994,WangSachs:1992,ZhaoLiang:1995,ZhaoLiang:1997}
+
 reviews \citep{Langner:1992,RhodeGreenberg:1994a}
 
 Inhibitory Neurotransmitters
-\citep{BackoffPalombiEtAl:1997,Caspary:1990,CasparyBackoffEtAl:1994,CasparyHaveyEtAl:1979,CasparyPazaraEtAl:1987,EbertOstwald:1995,
-  EvansZhao:1993,MartinDicksonEtAl:1982,PalombiCaspary:1992,WickesbergOertel:1990,ZhaoEvans:1990}
+\citep{BackoffPalombiEtAl:1997,Caspary:1990,CasparyBackoffEtAl:1994,CasparyHaveyEtAl:1979,CasparyPazaraEtAl:1987,EbertOstwald:1995,EvansZhao:1993,MartinDicksonEtAl:1982,PalombiCaspary:1992,WickesbergOertel:1990,ZhaoEvans:1990}
 
 In chinchilla (Backoff et al. 1999):
 
@@ -670,7 +556,8 @@ In chinchilla (Backoff et al. 1999):
   \citep{Moller:1972}
 \end{itemize}
 
-\citep{PalombiCaspary:1992}Possible sources of GABAergic inhibition to PVCN
+\subsection{\citep{PalombiCaspary:1992}}
+Possible sources of GABAergic inhibition to PVCN
 neurons include fibres projecting from the SOC, the IC, the LL, the iDCN and
 cDCN and/or other neurons in the PVCN.
 
@@ -678,23 +565,25 @@ cDCN and/or other neurons in the PVCN.
 \begin{itemize}
 \item GABA affects discharge rate within the excitatory response area without  significantly compressing the RA.
 \end{itemize}
+
 GABA reduces tonic activity and increase
+\subsection{(Kulesza et al. 2002) rat cell counts}
 
-(Kulesza et al. 2002) rat cell counts
-
-Substructure \ \ \ \ Abbreviation \ \ \ \ Number \ \ S.E.M.a
-
-Cochlear nuclei (excluding granule cells)
-
-Anteroventral cochlear nucleus AVCN \ \ 12800 \ \ \ \ 460
-
-Posteroventral cochlear nucleus PVCN \ \ 8500 \ \ \ \ 77
-
-Dorsal cochlear nucleus \ \ DCN \ \ \ \ 9000 \ \ \ \ 251
-
-SEM standard error of the mean
+\begin{table}[h]
+\caption{Cochlear nuclei (excluding granule cells) cell counts}
+\begin{tabularx}{\textwidth}{XXXX}
+\toprule
+         Substructure           & Abbreviation & Number & S.E.M.a \\ \midrule
+Anteroventral cochlear nucleus  &     AVCN     & 12800  & 460 \\
+Posteroventral cochlear nucleus &     PVCN     &  8500  & 77 \\
+    Dorsal cochlear nucleus     &     DCN      &  9000  & 251 \\
+\bottomrule
+\end{tabularx}
+\footnotesize{SEM standard error of the mean}
+\end{table}
 
 \section{Auditory Nerve Innervation }
+
 \citep{SmithSpirou:2002} 
 Review in Integrative functions in the mammalian auditory pathway
 
@@ -906,8 +795,8 @@ division of the chopper population seems to make some sense in terms of the
 responses of these units to complex stimuli (Blackburn and Sachs, unpublished
 observations). Finally, one caveat is worth emphasizing. To categorize low-BF
 units with confidence, STBs must be presented asynchronously. Phase-locking can
-obscure chopping peaks in the responses of chopper units with BFs {\textless} 1
-.O kHz (Fig. 9). In addition, it can be very difficult to detect
+obscure chopping peaks in the responses of chopper units with BFs {\textless}
+1.0 kHz (Fig. 9). In addition, it can be very difficult to detect
 {\textquotedblleft}notches{\textquotedblright} in the presence of phase-locking
 in the responses of primary-like units with BFs up to -4.0 kHz because the width
 of a typical notch, 0.25- 1.5 ms, is on the same time scale as the troughs in
@@ -926,7 +815,7 @@ suppression thresholds for upper and lower sidebands may differ (CS fig3.A)
 Some units had wide suppression bandwidths (fig3B CT unit)
 
 In mice \citep{OertelWuEtAl:1990} type I stellate cells have APs that did not
-overshoot 0mV with single exponential undershoot.  T stellates in mice are
+overshoot 0 mV with single exponential undershoot.  T stellates in mice are
 distinguished by tufted endings of dendrites.
 
 
@@ -982,9 +871,9 @@ treatment.
 
 Although responses of chopper and type IV neurons to notches are qualitatively
 similar, the data in Figs.
-\href{www.pnas.org/cgi/content/full/97/22/11780#F5}{\textstyleInternetlink{5}}
+\href{www.pnas.org/cgi/content/full/97/22/11780#F5}
 and
-\href{www.pnas.org/cgi/content/full/97/22/11780#F6}{\textstyleInternetlink{6}}
+\href{www.pnas.org/cgi/content/full/97/22/11780#F6}
 show that the mechanisms that govern these responses are quite different. In
 chopper neurons, the transformation of spectral level into average discharge
 rate is predominantly a linear (first-order) process that involves a narrow band
@@ -993,7 +882,7 @@ from a tonotopic array of chopper neurons transmit, to other auditory areas, a
 set of rate responses that are homomorphic with spectral shape. In fact, chopper
 neurons have been shown to produce stable tonotopic representations of vowel
 spectral shape
-(\href{www.pnas.org/cgi/content/full/97/22/11780#B8}{\textstyleInternetlink{8}}).
+(\href{www.pnas.org/cgi/content/full/97/22/11780#B8}).
 
 
 Unlike choppers, type IV neurons do not encode spectral information through a
@@ -1001,17 +890,17 @@ homomorphic spectral representation. This is apparent from (i) the complexity
 and wide bandwidth of their first-order weighting functions, and (ii) the strong
 nonlinearity in the stimulus-response function. The nature of these
 nonlinearities has been discussed elsewhere
-(\href{www.pnas.org/cgi/content/full/97/22/11780#B24}{\textstyleInternetlink{24}},
-\href{www.pnas.org/cgi/content/full/97/22/11780#B29}{\textstyleInternetlink{29}})
+(\href{www.pnas.org/cgi/content/full/97/22/11780#B24},
+\href{www.pnas.org/cgi/content/full/97/22/11780#B29})
 and will not be further elaborated here. It is sufficient to point out that, as
 Fig.
-\href{www.pnas.org/cgi/content/full/97/22/11780#F3}{\textstyleInternetlink{3}}
+\href{www.pnas.org/cgi/content/full/97/22/11780#F3}
 illustrates, type IV neurons give inhibitory responses to both a narrow peak of
 energy (tone) and a narrow notch of energy located at BF. The rate dependence of
 type IV neurons to spectral notch position (Figs.
-\href{www.pnas.org/cgi/content/full/97/22/11780#F3}{\textstyleInternetlink{3}}
+\href{www.pnas.org/cgi/content/full/97/22/11780#F3}
 and
-\href{www.pnas.org/cgi/content/full/97/22/11780#F6}{\textstyleInternetlink{6}}),
+\href{www.pnas.org/cgi/content/full/97/22/11780#F6}),
 in addition to their wide bandwidth and nonlinear behavior, suggests that these
 neurons are not simply detectors of spectral level. Type IV neurons provide a
 second pathway of spectral information transmission
@@ -1031,6 +920,7 @@ weakness of phase-locking then would be an outcome of the rigid response profile
 of the cell to a stimulus and the filtering properties of the dendrites, which
 together would blur the temporal information contained in the auditory nerve.
 
+\subsection{\citep{JosephsonMorest:1998}}
 In chinchilla \citep{JosephsonMorest:1998} terminal distribution on soma and
 axon:
 
@@ -1071,9 +961,8 @@ axon:
 
 
 
-STOCHASTIC VERSUS STEREOTYPICAL PRINCIPLES OF
-
-SYNAPTIC ORGANIZATION AND CELL TYPES
+\subsubsection{STOCHASTIC VERSUS STEREOTYPICAL PRINCIPLES OF
+SYNAPTIC ORGANIZATION AND CELL TYPES}
 
 Central to our understanding of information processing in the CNS has been the
 principle that units of function are defined by specific morphological patterns
@@ -1112,16 +1001,19 @@ capacity to process information.
   and would shape the cells{\textquoteright} frequency response area and dynamic
   range.
 \end{itemize}
-In cat (Saint Marie et al. 1989) GAD+ terminals are extensive on bushy, octopus
+
+\subsection{In cat (Saint Marie et al. 1989)}
+ GAD+ terminals are extensive on bushy, octopus
 and D stellate cells. They did not study T stellate cells.  (Munirathinam et
 al. 2004) found 7 different synapses based on vesicle size and shape but did not
 disclose what cells and where vesicles were distributed.
 
-In Cat \citep{Cant:1981} large dendrites which taper from the body, soma
+\subsection{In Cat \citep{Cant:1981}}
+ large dendrites which taper from the body, soma
 diameters up to 30 \um.  No. of contacts minimal on soma, increasing on dendrites
 away from the soma
 
-In pentobarbital cat \citep{RhodeSmith:1986}
+\subsection{In pentobarbital cat \citep{RhodeSmith:1986}}
 
 
 \begin{itemize}
@@ -1143,7 +1035,9 @@ In pentobarbital cat \citep{RhodeSmith:1986}
   skew, and kurtosis). Histograms, scatter plots, and regression line
   calculations were performed on combinations of all of the above parameters.
 \end{itemize}
-In chlorolase cat \citep{Rhode:1994} 200\% AM and Noise AM
+
+\subsection{In chlorolase cat \citep{Rhode:1994}}
+ 200\% AM and Noise AM
 
 
 \begin{itemize}
@@ -1159,6 +1053,7 @@ In chlorolase cat \citep{Rhode:1994} 200\% AM and Noise AM
 \item CT: tMTFs ar basically lowpass with a tendency to become bandpass at 70 dB
   SPL similar to 100\% AM \citep{RhodeGreenberg:1994a}
 \end{itemize}
+
 In pentobarbital cats (Rhode et al. 1983a) intracellular labelling and
 physiological characterisation
 
@@ -1171,7 +1066,7 @@ physiological characterisation
 \end{itemize}
 Anesthetics alter the response of CN units especially in the DCN and PVCN
 
-\citep{DoucetRyugo:1997} RAT Planar Neurons
+\subsection{\citep{DoucetRyugo:1997} RAT Planar Neurons}
 
 The planar neurons of the rat correspond in many ways to stellate cells
 classified as sustained chopper units
@@ -1207,14 +1102,11 @@ parallel to the path of auditory nerve fibers having similar CFs. Since planar
 neurons, Chop-S neurons, and multipolar cells with few somatic terminals are all
 found throughout both the AVCN and PVCN, it is arguable that these all represent
 the same neuron class. An isofrequency lamina of the DCN receives two tonotopic
-
 projections: an ``unprocessed''
 primary projection from narrowly-tuned auditory nerve fibers and a
 ``processed'' projection from similarly-tuned planar neurons.
-
 One unresolved issue is whether planar neurons and auditory nerve fibers contact
 the same or different cell
-
 types in the DCN. Since the terminals of Chop-S neurons contain round synaptic
 vesicles \citep{SmithRhode:1989}, they are presumed to exert excitatory
 postsynaptic effects. Consistent with this notion is the observation that focal
@@ -1227,7 +1119,9 @@ al., 1990). These observations are consistent with the idea that planar neurons
 contact pyramidal and giant cells, cell types that have also been shown to
 receive auditory nerve fiber input (Gonzalez et al., 1993).
 
-In chinchilla and gerbils (Feng et al. 1994) show intracellularly, chop S and
+
+\subsection{In chinchilla and gerbils (Feng et al. 1994)}
+ show intracellularly, chop S and
 chop T units have different ISI characteristics using tone and current stimuli.
 Inhibitory events modulate the response of Choppers: IPSPs, hyperpolarizing
 potentials at tones above best freq.
@@ -1238,7 +1132,7 @@ potentials at tones above best freq.
   ChT.
 \end{itemize}
 
-(Ostapoff et al. 1994)
+\subsection{(Ostapoff et al. 1994)}
 
 
 \begin{itemize}
@@ -1264,7 +1158,8 @@ potentials at tones above best freq.
 \item Correlation between neuronal structure and membrane properties: analysis
   of mechanisms in signal processing
 \end{itemize}
-\citep{SmithRhode:1989} report on 5 CS and 5 OC units, physiology + labelling
+
+\subsection{\citep{SmithRhode:1989} report on 5 CS and 5 OC units, physiology + labelling}
 
 
 \begin{itemize}
@@ -1291,7 +1186,8 @@ potentials at tones above best freq.
     potentials, no offset inhibition.
   \end{itemize}
 \end{itemize}
-(Smith et al. 1993) anesthetised cats
+
+\subsection{(Smith et al. 1993) anesthetised cats}
 
 
 \begin{itemize}
@@ -1314,7 +1210,8 @@ potentials at tones above best freq.
     \citep{BanksSachs:1991}
   \end{itemize}
 \end{itemize}
-\citep{OertelFujino:2001}
+
+\subsection{\citep{OertelFujino:2001}}
 
 
 \begin{itemize}
@@ -1341,7 +1238,7 @@ potentials at tones above best freq.
 \item MOC efferents contribute to AN enhancement by inhibition but excite CN
   Tstellate cells
 \end{itemize}
-In rat urethane \citep{EbertOstwald:1995}
+\subsection{In rat urethane \citep{EbertOstwald:1995}}
 
 
 \begin{itemize}
@@ -1351,15 +1248,15 @@ In rat urethane \citep{EbertOstwald:1995}
   CT
 \item CT: CV values increased by average of 46\% in first period, but most had
   similar CV values for the last 20msec.
-\item \textstylebibrecordhighlight{GABA}{\textquotesingle}s physiological
+\item {GABA}s physiological
   function is possibly to improve the contrast between transient acoustic
   signals and ongoing background activity. In order to test this hypothesis, the
   test tone was masked by continuous background noise. Indeed,
-  \textstylebibrecordhighlight{GABA} reduced the noise-evoked discharge more
+  {GABA} reduced the noise-evoked discharge more
   than the tone-evoked discharge, leaving the onset peak in the PSTHs almost
-  unchanged. Thus, \textstylebibrecordhighlight{GABA}ergic input improves the
+  unchanged. Thus, {GABA}ergic input improves the
   signal-to-noise ratio for acoustic transients in VCN neurons. Our data suggest
-  that a functional role of \textstylebibrecordhighlight{GABA} in the VCN is to
+  that a functional role of {GABA} in the VCN is to
   act as a transmitter within a descending inhibitory feedback loop of the
   auditory brainstem which serves to improve the transmission of relevant
   acoustic signals in constant background noise.
@@ -1376,7 +1273,9 @@ In rat urethane \citep{EbertOstwald:1995}
   representation of transient acoustic signals in background noise.  This could
   account for the loss of regular discharge in chopper neurons.
 \end{itemize}
-\citep{CantBenson:2003} Type I multipolar cells of the ventral cochlear nucleus
+
+\subsection{\citep{CantBenson:2003}}
+ Type I multipolar cells of the ventral cochlear nucleus
 encode complex features of the stimulus important for the recognition of natural
 sounds and are a major source of excitatory input to the inferior colliculus
 
@@ -1455,7 +1354,7 @@ cells give rise to extensive collateral branches within the VCN
 responses of cells in the VCN to auditory nerve stimulation
 (e.g. [61]).{\textquotedblright}
 
-\citep{WangSachs:1992}
+\subsection{\citep{WangSachs:1992}}
 
 A detailed description of ANF responses to narrowband stimuli is also relevant
 to the analysis of signal transformations in the cochlear nucleus.  For example,
@@ -1479,6 +1378,7 @@ levels and then study this marker in chopper populations.  We will show that the
 envelope fluctuations of temporal discharge patterns of responses to narrowband
 sounds can be used as such a marker.
 
+
 Single Formant Stimuli: Periodic impulse train\ensuremath{\rightarrow} 2ne order
 RLC circuit \ensuremath{\rightarrow} Butterworth filter \ensuremath{\rightarrow}
 {\textquoteleft}SFS{\textquoteright}
@@ -1486,7 +1386,7 @@ RLC circuit \ensuremath{\rightarrow} Butterworth filter \ensuremath{\rightarrow}
 Modulation in chopper period histograms at high SPL could be due to inhibition
 or from modulation in LSR ANFs.
 
-\citep{BlackburnSachs:1992} barbiturate-anesthetized cats
+\subsection{\citep{BlackburnSachs:1992} barbiturate-anesthetized cats}
 
 The effects of off-BF input (either alone or presented simultaneously with a BF
 tone in a two-tone stimulus) on the response patterns of choppers may include
@@ -1516,7 +1416,8 @@ that they receive.
 
 CV calculated over 30-40 msec of 50 msec tone
 
-Discussion of \citep{BanksSachs:1991} They investigated in detail two potential
+\subsection{Discussion of \citep{BanksSachs:1991}}
+ They investigated in detail two potential
 mechanisms for regularizing the spike trains and found that each are able to
 effect regularization: I) the stellate cell model fires more regularly to distal
 than to proximal inputs because of dendritic filtering of distal postsynaptic
@@ -1531,10 +1432,11 @@ effect of the inhibitory input is greater the smaller the number of inputs that
 generate a given magnitude of inhibitory input (again due to the shotnoise
 properties of the input).
 
-(Clock et al. 1993)single unit thresholds\ensuremath{\rightarrow} temporal
+\subsection{(Clock et al. 1993)}
+single unit thresholds\ensuremath{\rightarrow} temporal
 integration of inputs : chinchilla
 
-(Pressnitzer et al. 2000) guinea pig urethane
+\subsection{(Pressnitzer et al. 2000) guinea pig urethane}
 
 
 \begin{itemize}
@@ -1542,7 +1444,8 @@ integration of inputs : chinchilla
   damped sinusoid
 \item Peak-to-total spike ratio is highest in Oc and Ch and less in PL, AN
 \end{itemize}
-(Winter et al. 2003) guinea pigs
+
+\subsection{(Winter et al. 2003) guinea pigs}
 
 IO vs BMF in choppers (Frisina found poor correlation using AM, Kim found some
 correlation using noise)
@@ -1557,6 +1460,8 @@ identified as CSs.
 Shofner (1999) has presented evidence that multipolar cells, specifically
 chopper units, were not well suited to encode the pitch of IRN. This conclusion
 was based on the responses to IRN stimuli with negative gain. These stimuli
+
+\label{tab:Winter2003}
 elicit ambiguous pitches that were only signalled in the temporal discharge
 patterns of PLunits (and hence bushy cells). The
 
@@ -1594,175 +1499,120 @@ units responding well to the f0 of complex sounds is, at best, uncertain.
 
 Table 2
 
-Mean and standard deviation of the peak in the first-order ISIH
+\begin{table}[h]
+  \centering
 
-to WN and the peak in the interval enhancement plot
+  \caption{Mean and standard deviation of the peak in the first-order ISIH to WN and the peak in the interval enhancement plot}
+  
 
-CT \ \ \ \ CS \ \ \ \ Onset
-
-White noise (ms) \ \ \ \ 2.42\_1.08\ \ \ \ 4.45\_1.83 \ \ 6.55\_2.36
-
-Interval enhancement (ms) \ \ \ \ \ \ 3.53\_2.02\ \ *\ \ 4.88\_2.1 \ \ \ \
-7.05\_2.61
-
-Correlation \ \ \ \ 0.44 \ \ \ \ 0.72 \ \ \ \ 0.81
-
-* Significant difference between peak in interval enhancement
-
-and peak in WN (one-tailed student\_s t{}-test) at p {\textless} 0:05.
+\begin{tabularx}{\textwidth}{XXXX}
+\toprule
+                          &       CT       &     CS     & Onset \\ \midrule
+    White noise (ms)      &   2.42$\pm$1.08   & 4.45$\pm$1.83 & 6.55$\pm$2.36 \\
+Interval enhancement (ms) & 3.53$\pm$2.02\, *& 4.88$\pm$2.1  & 7.05$\pm$2.61\\
+       Correlation        &      0.44      &    0.72    & 0.81 \\
+\bottomrule
+\end{tabularx}
+\footnotesize{* Significant difference between peak in interval enhancement
+and peak in WN (one-tailed student's t{}-test) at p {\textless} 0:05.}
+\end{table}
 
 The correlation between the WN and IRN peak responses for the three unit types
 is shown in Table 2. There is a weak correlation for CT units and there are
 strong correlations for the CS and OC unit types.
 
-\citep{RhodeKettner:1987} barbiturate and unanesthetised cats
+\subsection{\citep{RhodeKettner:1987} barbiturate and unanesthetised cats}
 
-\begin{figure}[htp]
-  \centering
-  \begin{minipage}{19.447cm}
-    \begin{flushleft}
-      \tablehead{}
-      \begin{supertabular}{|m{2.737cm}|m{3.702cm}|m{3.465cm}|m{3.063cm}|m{2.8969998cm}|m{2.402cm}|}
-        \hline & Ch (unanesthetised) & Ch (anesthetized) & OC (unanesthetised) &    OC (anesthetized) & DCN Chopper\\\hline
- Threshold dB SPL & 30 & 19 & 27        & 23 & \~{}18\\\hline
- DR & 31 & 39 & 35 & 57 & \\\hline
-  Q\textsubscript{10} & 7.4 & 5.3 & 5 & 3.3 &  7.3\ensuremath{\rightarrow}5.2\\\hline 
-Latency msec & 3.5 & 3.6 &        4.2{\textpm}3 & 2.8{\textpm}0.5 & 4.6 (unanesth) 4.8 (anesth)\\\hline
- n   & 23 & 120 & 8 & 99 & 25\ensuremath{\rightarrow}148\\\hline
-      \end{supertabular}
-    \end{flushleft}
-  \end{minipage}
-\end{figure}
+\begin{table}[htp]
+      \begin{tabularx}{\textwidth}{XXXXXX}
+\toprule
+                    & Ch (unanesthetised) & Ch (anesthetized) & OC (unanesthetised) & OC (anesthetized) & DCN Chopper\\\midrule
+ Threshold dB SPL   &         30          &        19         &         27          &        23         & \~{}18\\
+        DR          &         31          &        39         &         35          &        57         & \\
+Q$_{10}$ &         7.4         &        5.3        &          5          &        3.3        & 7.3\ensuremath{\rightarrow}5.2\\
+   Latency msec     &         3.5         &        3.6        &    4.2{\textpm}3    &  2.8{\textpm}0.5  & 4.6 (unanesth) 4.8 (anesth)\\
+         n          &         23          &        120        &          8          &        99         & 25\ensuremath{\rightarrow}148\\
+\end{tabularx}
+\end{table}
 
-TIMING PATHWAYS THAT LEAD TO THE MONAURAL
 
-NUCLEI OF THE LATERAL LEMNISCUS
+\subsection{TIMING PATHWAYS THAT LEAD TO THE MONAURAL
+NUCLEI OF THE LATERAL LEMNISCUS \citep{Oertel:2005}}
 
 Stellate Cells
 
 Stellate cells form a major, direct pathway from the cochlear nuclei to the
 contralateral
-
 midbrain. In all higher vertebrates, stellate cells also contribute to an
-
 indirect pathway to the midbrain through the periolivary and lateral lemniscal
-
 nuclei. The fact that stellate cells form a major ascending pathway across
-
 vertebrate classes suggests that the sharply tuned, tonic, consistent responses
-
 to tones of stellate cells carry essential acoustic information. This pathway,
-
 through {\textquotedblleft}choppers,{\textquotedblright} encodes the presence of
 energy in a narrow acoustic band
-
 with tonic firing,the firing of the population of stellate cells provides a
 representation
-
 of the spectral content of sounds. (The term chopping refers to the
-
 modes that arise in histograms of responses to tones from the regularity of
 firing, independent of periodicity in the sound stimulus.)
 
 Midbrain-projecting stellate cells have been revealed in reptiles and birds. In
-
 turtles, the nucleus magnocellularis contains stellate cells that resemble
 stellate
-
 cells in birds and mammals, both in their morphology and in their projection
-
 to the midbrain (35). This class of cells has been studied more extensively in
-
 birds where midbrain projecting stellate cells lie in the nucleus angularis
 (162).
-
 The nucleus angularis holds neurons with consistently timed, tonic chopping
-
 responses to sound (163, 164). In barn owls, this nucleus has been shown to be
-
 essential for encoding the spectral cues for localizing sound sources in
 elevation
-
 (87). Because the nucleus angularis of owls and other birds could hold more than
-
 one group of neurons, the possibility remains that a subpopulation of neurons
-
 performs this task.
 
 In mammals, midbrain-projecting stellate cells also have chopping responses
-
 (54, 165). Three features of these responses are noteworthy. The first is that
-
-508 OERTEL
-
 resolution of chopping in tonically firing neurons requires that the first
 action
-
 potential in a response to a tone has consistent timing (116, 166--171), with a
-
 precision that is also reflected in synaptic responses from the auditory nerve
 in
-
 vitro (172--175). The second is that choppers encode the envelope of sound over
-
 a wide dynamic range (167, 170, 171, 176). How the enhancement of amplitude
-
 modulation over the auditory nerve inputs is produced is not entirely clear.
-
 Stellate cells in mice receive GABAergic input that may modulate their firing
-
 rates as a function of intensity from small neurons (Golgi cells) that surround
-
 the VCN (175, 177), a region in which the responses of neurons to sound have
-
 wide dynamic ranges (178). The third is that choppers effectively encode the
-
 envelope of sound energy (167, 171), a characteristic that is important for
 understanding
-
 speech (179). As a population, choppers provide a rate-representation
-
 of the spectrum of sound (170, 176).
 
 How chopping responses are produced is not completely understood. It has
-
 been suggested that stellate cells integrate input from large numbers of
 auditory
-
 nerve fibers. However, stellate cells in mice have been shown to receive input
-
 from only a few (four to six) sharply timed auditory nerve fiber inputs (175).
-
 Activation of these inputs with trains of shocks produces entrained responses
-
 rather than chopping (172, 175), raising two questions: How are stellate cells
-
 prevented from encoding the timing of auditory nerve inputs after the initial
-
 action potential in response to sound, and how is their steady firing in
 response
-
 to tones produced from inputs that have strong onset transients?  Excitatory
-
 interconnections between stellate cells produce prolonged excitation that
 presumably
-
 contributes to the shaping of responses to sound (175).
 
 The axons of individual, chopping stellate cells have been labeled in cats
-
 (180). They were followed to the contralateral VNTB and VNLL and to the
-
 periolivary nuclei, but they faded before reaching the inferior
 colliculus. Tracktracing
-
 experiments support the conclusion that this group of stellate cells
-
 projects to the VNTB, LNTB, VNLL, and periolivary nuclei (67, 117, 122, 143,
 181--188) and show that they also project to the contralateral inferior
-colliculus
-
-(101, 104--106, 188--193).
+colliculus (101, 104--106, 188--193).
 
 \subsection{Tuberculoventral cells} 
 
@@ -1770,18 +1620,18 @@ colliculus
   units}
 
 \begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{6.2770004cm}|m{6.2770004cm}|m{6.3120003cm}|}
-    \hline
+
+  \begin{tabularx}{\textwidth}{XXX}
+    \toprule
     \citep{EvansNelson:1973,WickesbergOertel:1990,WickesbergOertel:1993,WickesbergOertel:1988,WickesbergWhitlonEtAl:1991,Wickesberg:1996,YoungBrownell:1976,YoungVoigt:1981,ZhangOertel:1993}
     &
- 
+    
     \citep{RhodeGreenberg:1992,ShofnerYoung:1985,SpirouDavisEtAl:1999} &
  
     \citep{DavisYoung:2000}\\\hline
  \citep{ReissYoung:2005} notch noise vs notch
     edge.  &
- 
+    
     &
  
     BIC increases rate most
@@ -1789,9 +1639,10 @@ colliculus
     Stry increases rate
 
     Thresholds for tones and noise stay the same\\\hline
-  \end{supertabular}
+  \end{tabularx}
 \end{flushleft}
-\citep{OertelWu:1989} HRP and intracellular recordings in DCN
+
+\subsection{\citep{OertelWu:1989} HRP and intracellular recordings in DCN}
 
 The two tuberculoventral association cells in the deep DCN have axons that
 terminate in both the deep DCN, within the same isofrequency lamina that contain
@@ -1821,7 +1672,8 @@ If tuberculoventral cells are silenced by barbiturate anaesthetics
 \citep{EvansNelson:1973,RhodeOertelEtAl:1983a,RhodeOertelEtAl:1983,YoungBrownell:1976},
 inhibition in VCN cells could have been missed.
 
-\citep{ReissYoung:2005}
+
+\subsection{\citep{ReissYoung:2005}}
 
 
 Type II responses to notch noise and noise bands only explain some features of
@@ -1859,7 +1711,8 @@ increase in rate in the type IV units, especially noticeable for the widest
 notch
 
 
-\citep{SpirouDavisEtAl:1999} used 201 TV cells from cats, due to difficulties
+\subsection{\citep{SpirouDavisEtAl:1999}}
+used 201 TV cells from cats, due to difficulties
 with holding type II units only 41 have two or more stimuli.  Tone RL, Noise RL,
 tone RA, Two tone RA etc.
 
@@ -1872,7 +1725,8 @@ tone RA, Two tone RA etc.
 \item BIC: greater increase in rate, mainly on CF, deep upper side band
   inhibition
 \end{itemize}
-\citep{Rhode:1999} pentobarbital anesthetised cats
+
+\subsection{\citep{Rhode:1999} pentobarbital anesthetised cats}
 
 
 \begin{itemize}
@@ -1885,7 +1739,8 @@ tone RA, Two tone RA etc.
 \item Threshold 8-51 dB average 27
 \item Max rates {\textless}100 sp/s
 \end{itemize}
-\citep{YoungVoigt:1982} 49 type II units in deep DCN of cat
+
+\subsection{\citep{YoungVoigt:1982} 49 type II units in deep DCN of cat}
 
 
 \begin{itemize}
@@ -1898,7 +1753,7 @@ tone RA, Two tone RA etc.
 \item Threshold 5-20 dB
 \item Max rates {\textless}300 sp/s
 \end{itemize}
-\citep{JorisSmith:1998} chloralose anesthetised cats
+\subsection{\citep{JorisSmith:1998} chloralose anesthetised cats}
 
 
 \begin{itemize}
@@ -1930,7 +1785,7 @@ tone RA, Two tone RA etc.
   \item 3dB cutoff \~{}400Hz
   \end{itemize}
 \end{itemize}
-\citep{RhodeGreenberg:1994b} pentobarbital cats
+\subsection{\citep{RhodeGreenberg:1994b} pentobarbital cats}
 
 
 \begin{itemize}
@@ -1938,53 +1793,89 @@ tone RA, Two tone RA etc.
   poor response to BBN
 \item MRA was highly suppressive due to zero noise rate. Max \~{}15 sp/s on CF
 \end{itemize}
-Hancock and Voigt ARO 2000: pentobarbital gerbils (barbiturate recordings in DCN
-not reliable)
+
+\subsection{Hancock and Voigt ARO 2000: pentobarbital gerbils (barbiturate recordings in DCN
+not reliable)}
 
 Anatomical features
-
 conical dendritic field ending in thick tuft
-
 tuft far removed from cell body, confined to frequency lamina
-
 Physiological features
-
 axon forms a dense band parallel to frequency lamina
-
 monotonic rate-level curves featuring large firing rates
-
 CT+ response patterns
-
 above-BF tones produce hyperpolarizations
 
 Anatomical properties of 2 TV cells in Hancock and Voigt
 
 \begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{1.9589999cm}|m{1.9589999cm}|m{1.9589999cm}|m{1.9589999cm}|m{1.9589999cm}|m{1.9589999cm}|m{1.9589999cm}|m{1.9589999cm}|m{1.994cm}|}
-    \hline &
+
+  \begin{tabularx}{\textwidth}{XXXXXXXXX}
+    \toprule
+ &
  
     Resting Potential & Action Potential & BF & Threshold Tone & Threshold Noise
-    & Spon & Dend Surface Area & Total dend length\\\hline
- Cell 1 & {}-68 & 69
-    (1) & 4.75 & 15 & 30 & 21 & 37734 & 4252\\\hline
- Cell 2 & {}-67 & 34 (-33) &
-    2.34 & 20 & 35 & 0 & 33919 & 3754\\\hline
-  \end{supertabular}
+    & Spon & Dend Surface Area & Total dend length\\\midrule
+ Cell 1 & {}-68 & 69(1) & 4.75 & 15 & 30 & 21 & 37734 & 4252\\
+ Cell 2 & {}-67 & 34 (-33) & 2.34 & 20 & 35 & 0 & 33919 & 3754\\
+\bottomrule
+  \end{tabularx}
 \end{flushleft}
-\subsection{D stellate cells} {\bfseries Table : D
-  stellate Cells / Onset Chopper Units}
 
-\begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{|m{6.2770004cm}|m{6.2770004cm}|m{6.3120003cm}|}
-    \hline \citep{PalmerJiangEtAl:1996,
-      ,PalmerWallaceEtAl:2003,PalmerWinter:1996,PaoliniClareyEtAl:2005,PaoliniClareyEtAl:2004,PaoliniClark:1999,PaoliniClarkEtAl:1997,PaoliniCotterillEtAl:1998,PaoliniCotterillEtAl:1998a}
-    & Physiological characterisation plus reconstruction of cell axons and
-    dendrites \citep{ArnottWallaceEtAl:2004} & \\\hline
-  \end{supertabular}
-\end{flushleft}
-See Fig 3 of \citep{DoucetRyugo:1997} for good D stellate reconstruction
+
+\subsection{\citep{YuYoung:2000}}
+
+Although responses of chopper and type IV neurons to notches are qualitatively
+similar, the data in Figs.
+\href{www.pnas.org/cgi/content/full/97/22/11780#F5}
+and
+\href{www.pnas.org/cgi/content/full/97/22/11780#F6}
+show that the mechanisms that govern these responses are quite different. In
+chopper neurons, the transformation of spectral level into average discharge
+rate is predominantly a linear (first-order) process that involves a narrow band
+of frequencies centered on BF. This property suggests that axonal projections
+from a tonotopic array of chopper neurons transmit, to other auditory areas, a
+set of rate responses that are homomorphic with spectral shape. In fact, chopper
+neurons have been shown to produce stable tonotopic representations of vowel
+spectral shape
+(\href{www.pnas.org/cgi/content/full/97/22/11780#B8}).
+
+
+Unlike choppers, type IV neurons do not encode spectral information through a
+homomorphic spectral representation. This is apparent from (i) the complexity
+and wide bandwidth of their first-order weighting functions, and (ii) the strong
+nonlinearity in the stimulus-response function. The nature of these
+nonlinearities has been discussed elsewhere
+(\href{www.pnas.org/cgi/content/full/97/22/11780#B24},
+\href{www.pnas.org/cgi/content/full/97/22/11780#B29})
+and will not be further elaborated here. It is sufficient to point out that, as
+Fig.
+\href{www.pnas.org/cgi/content/full/97/22/11780#F3}
+illustrates, type IV neurons give inhibitory responses to both a narrow peak of
+energy (tone) and a narrow notch of energy located at BF. The rate dependence of
+type IV neurons to spectral notch position (Figs.
+\href{www.pnas.org/cgi/content/full/97/22/11780#F3}
+and
+\href{www.pnas.org/cgi/content/full/97/22/11780#F6}),
+in addition to their wide bandwidth and nonlinear behavior, suggests that these
+neurons are not simply detectors of spectral level. Type IV neurons provide a
+second pathway of spectral information transmission
+%\includegraphics[width=0.423cm,height=0.159cm]{Evidence20Tables-img1.eps}
+a nonlinear one that signals the presence of a specific complex spectral
+feature.
+
+
+\section{D stellate cells} 
+
+{\bfseries Table : D
+  stellate Cells / Onset Chopper Units}
+ 
+\citep{PalmerJiangEtAl:1996,PalmerWallaceEtAl:2003,PalmerWinter:1996,PaoliniClareyEtAl:2005,PaoliniClareyEtAl:2004,PaoliniClark:1999,PaoliniClarkEtAl:1997,PaoliniCotterillEtAl:1998,PaoliniCotterillEtAl:1998a}
+
+
+ Physiological characterisation plus reconstruction of cell axons and dendrites
+ \citep{ArnottWallaceEtAl:2004} See Fig 3 of \citep{DoucetRyugo:1997} for good D
+ stellate reconstruction
 
 \citep{JorisSmith:1998} OC cells recorded from the DAS along with type II, II
 and IV units in DCN, DAS of cats
@@ -1999,6 +1890,7 @@ and IV units in DCN, DAS of cats
 \item Median maxSI = 0.93 (n=12), 3dB cutoff CFs{\textgreater}10kHz comparable
   to ANFs \~{}1000Hz
 \end{itemize}
+
 \citep{YoungBrownell:1976} decerebrate cat
 
 
@@ -2009,7 +1901,8 @@ and IV units in DCN, DAS of cats
   intermediate between the ipsilateral (excitatory response and the
   contralateral (inhibitory) response, which suggested a functional relevance
   for these binaural interactions in natural listening conditions
-\end{itemize}
+\end{itemize} 
+
 In mice \citep{OertelWuEtAl:1990} type II stellate cells have APs that did
 overshoot 0mV with double exponential undershoot. IPSPs and late EPSPs
 observed. Generally found near the lateral surface. Whether the difference with
@@ -2019,7 +1912,7 @@ In cats type II multipolar cells \citep{Cant:1981} have dense somatic covering
 including Pleo (ie GABA ) terminals see Fig 13.  Generally found near nerve
 root.
 
-\citep{DoucetRyugo:1997} Radiate Neurons
+\subsection{\citep{DoucetRyugo:1997} Radiate Neurons}
 
 Radiate neurons in the rat share many morphological features with stellate
 neurons classified as Onset-chopper
@@ -2037,9 +1930,7 @@ neurons labeled by the DCN injections. The DCN terminal field of one D-stellate
 neuron was found to extend over a broad region of the DCN (Oertel et al., 1990).
 
 Our observation that labeled radiate neurons could be observed in any region of
-the VCN after a restricted DCN
-
-injection is consistent with the idea that single radiate neurons innervate a
+the VCN after a restricted DCN injection is consistent with the idea that single radiate neurons innervate a
 broad region of the DCN.
 
 Radiate, D-stellate, and On-C units all exhibit relatively large cell bodies and
@@ -2085,12 +1976,13 @@ radiate neurons share many of the same cytological features characteristic of
 On-C neurons, they are strong candidates for being the source of wideband
 inhibition to the DCN.
 
-\citep{SmithMassieEtAl:2005} \ \ \ \ The combined evidence from several
+\subsection{\citep{SmithMassieEtAl:2005}}
+The combined evidence from several
 different studies (Cant and Gaston 1982; Wenthold 1987; Kolston et al. 1992;
 Shore et al. 1992; Schofield and Cant 1996b; Alibardi 1998; Needham and Paolini
 2003; Palmer et al. 2003; Arnott et al. 2004) suggests that the large VCN
 multipolar cells whose response to short tones have been labeled onset-chopper
-(OC,\citep{RhodeOertelEtAl:1983a,SmithRhode:1989}) closely resemble a population
+\citep[OC][]{RhodeOertelEtAl:1983a,SmithRhode:1989} closely resemble a population
 of large glycinergic multipolar cells that project to the opposite
 CN. Single-cell labeling studies in the cat (Smith and Rhode 1989) and guinea
 pig (Palmer et al. 2003; Arnott et al. 2004) have reported that the axons of
@@ -2102,27 +1994,28 @@ is one juxtacellularly labeled cell in the guinea pig (Arnott et al. 2004) and
 one intra-axonally labeled cell in the cat that we described in a preliminary
 report (Joris et al. 1992).
 
-\ \ \ \ \ \ We examined three of these cells at the EM level to compare them
+We examined three of these cells at the EM level to compare them
 with a previous report (Smith and Rhode 989).  Both the cell body and proximal
 dendritic tree showed a dense synaptic coverage (Figs.
-\href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG3}{\textstyleInternetlink{3}}A,B,
-\href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG4}{\textstyleInternetlink{4}}A,D),
+\href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG3}A,B,
+\href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG4}A,D),
 a common feature of this cell type \citep{SmithRhode:1989}.  The axons of all
 the cells located in the VCN had collaterals in both the VCN and DCN. Most of
 the collateral field in the DCN innervated both fusiform and deep layers in and
 around the frequency region of the DCN that, based on reported frequency maps
 (Spirou et al. 1993), corresponds to the CF of the OC cell (Fig
-\href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG3}{\textstyleInternetlink{3}}D).
+\href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG3}D).
 In the DCN the synaptic terminals could be seen on large dendrites as well as
 cell bodies
-(Fig. \href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG3}{\textstyleInternetlink{3}}E)
+(Fig. \href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG3}E)
 and contained nonround vesicles. The OC cell located in the deep DCN also had
 collateral branches that innervated the deep DCN and fusiform cell layer in and
 around the location of the parent cell body
-(Fig. \href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG4}{\textstyleInternetlink{4}}C,E).
+(Fig. \href{www3.interscience.wiley.com.mate.lib.unimelb.edu.au/cgi-bin/fulltext/109873297/main.html,ftx_abs#FIG4}C,E).
 We could not find any axon collaterals of this cell that headed for the VCN.
 
-\citep{EvansZhao:1993} \ \
+
+\subsection{\citep{EvansZhao:1993}}
 
 
 \begin{itemize}
@@ -2147,9 +2040,11 @@ We could not find any axon collaterals of this cell that headed for the VCN.
 \item OnC have no lateral inhibition (S Greenberg): question of anesthesia or
   something else
 \end{itemize}
-\citep{CantBenson:2003} Type II multipolar cells of the ventral cochlear nucleus
+
+\subsection{\citep{CantBenson:2003}}
+Type II multipolar cells of the ventral cochlear nucleus
 are the source of widespread inhibitory inputs to the ipsilateral dorsal
-cochlear nucleus and the contralateral dorsal and ventral cochlear nuclei
+cochlear nucleus and the contralateral dorsal and ventral cochlear nuclei.
 
 {\textquotedblleft}A second, less plentiful, group of large multipolar cells
 described by Smith and Rhode in the cat ([220],referred to here as type II
@@ -2195,9 +2090,10 @@ II multipolar cells do not appear to project to the inferior colliculus
 [12,102]. It is not known if they give rise to any of the branches making up
 other projections attributed to multipolar cells.{\textquotedblright}
 
+
 \citep{BrewForsythe:1995}
 
-In rat urethane \citep{PaoliniClark:1999}
+\subsection{In rat urethane \citep{PaoliniClark:1999}}
 
 
 \begin{itemize}
@@ -2248,7 +2144,8 @@ In rat urethane \citep{PaoliniClark:1999}
   (higher CF) when HRP was injected to a localized portion of the VCN. Hence
   high CF \ensuremath{\rightarrow} low CF inhibitory source.
 \end{itemize}
-In mice slice \citep{FerragamoGoldingEtAl:1998a}
+
+\subsection{In mice slice \citep{FerragamoGoldingEtAl:1998a}}
 
 
 \begin{itemize}
@@ -2261,7 +2158,7 @@ In mice slice \citep{FerragamoGoldingEtAl:1998a}
 {\bfseries Fig7F \citep{RhodeSmith:1986} shows isorate curves for five Oc
   neurons in cat}
 
-On-C neurons \citep{ArnottWallaceEtAl:2004} in guinea pigs
+\subsection{On-C neurons \citep{ArnottWallaceEtAl:2004} in guinea pigs}
 
 
 \begin{itemize}
@@ -2277,7 +2174,14 @@ On-C neurons \citep{ArnottWallaceEtAl:2004} in guinea pigs
   cell{\textquoteright}s BF. They appeared to be centered on the same
   isofrequency slab as the dendrites (Fig. 9A,B).
 \end{itemize}
-\subsection{Golgi cells}
+
+
+
+
+
+
+\section{Golgi cells}
+
 \citep{Cant:1993,MugnainiOsenEtAl:1980}
 
 The Golgi cells are the only cell type in the small cell cap that receives
@@ -2290,46 +2194,34 @@ Granule cells
 
 For response characteristics using cFos expression see Yang, Neurosci 136 (2005)
 
+
+
 \section{Modelling Stellate Cells}
 \subsection{Auditory model used in Modelling Stellate cells}
 
 
-\begin{figure}[htp]
+\begin{table}[htp]
   \centering
-  \begin{minipage}{19.447cm}
-    \begin{flushleft}
-      \tablehead{}
-      \begin{supertabular}{|m{3.148cm}|m{2.691cm}|m{2.931cm}|m{3.174cm}|m{3.18cm}|m{3.143cm}|}
-        \hline
- CN Study & Range & Spon Rate & Per channel & Saturation & AN
-        Model\\\hline
- \citep{ErikssonRobert:1999} & 120 channels (200-20000Hz) &
-        65, 40 and 5 (5, 20 and 30 Thr;30, 60 and {\textgreater}90 dB satur) & &
-        & \citep{RobertEriksson:1999}\\\hline
- \citep{ReissYoung:2005} & 1/100
-        octave over 4 octaves centred on 2.5kHz & Only high spon (sound
-        restricted to pass-band levels of 0dB) & 10 unique spike times randomly
-        selected each BF & & \citep{BruceSachsEtAl:2003} based on
-        \citep{ZhangHeinzEtAl:2001} \\\hline
- \citep{HancockVoigt:1999} & 0.2 oct
-        separation over audible range in cat, 5kHz centre \citep{Liberman:1978}
-        & Uses SR and TH experi-mental data from cat \citep{Liberman:1978} & 800
-        total, 40 per channel & & \citep{Carney:1993}\\\hline
-        \citep{ErikssonRobert:1999} &
- 
-        Phase-locking AN below 1kHz or AN at 6kHz & High & Up to 50 independent
-        inputs & Steady-state responses for Phase locking &
-        \citep{RobertEriksson:1999}\\\hline
- (Pressnitzer et al. 2001) & 10
-        channels (two octaves below to one octave above) & & 20 fibres per
-        channel & & (Meddis et al. 1990)\\\hline
-      \end{supertabular}
-    \end{flushleft}
-  \end{minipage}
-\end{figure}
-\begin{flushleft}
+      \begin{tabularx}{\textwidth}{XXXXXX}
+        \toprule
+ CN Study & Range & Spon Rate & Per channel & Saturation & AN        Model\\\midrule
+ \citep{ErikssonRobert:1999} & 120 channels (200-20000Hz) &        65, 40 and 5 (5, 20 and 30 Thr;30, 60 and {\textgreater}90 dB satur) & &        & \citep{RobertEriksson:1999}\\\hline
+ \citep{ReissYoung:2005} & 1/100        octave over 4 octaves centred on 2.5kHz & Only high spon (sound        restricted to pass-band levels of 0dB) & 10 unique spike times randomly        selected each BF & & \citep{BruceSachsEtAl:2003} based on        \citep{ZhangHeinzEtAl:2001} \\\hline
+ \citep{HancockVoigt:1999} & 0.2 oct        separation over audible range in cat, 5kHz centre \citep{Liberman:1978}        & Uses SR and TH experi-mental data from cat \citep{Liberman:1978} & 800        total, 40 per channel & & \citep{Carney:1993}\\\hline  
+      \citep{ErikssonRobert:1999} &        Phase-locking AN below 1kHz or AN at 6kHz & High & Up to 50 independent        inputs & Steady-state responses for Phase locking &        \citep{RobertEriksson:1999}\\\hline
+ \citep{PressnitzerMeddisEtAl:2001}& 10        channels (two octaves below to one octave above) & & 20 fibres per        channel & & \citep{MeddisHewittEtAl:1990}\\\hline
+
+\citep{BahmerLangner:2006,BahmerLangner:2006a} &&&&&\\ \hline
+
+\citep{WiegrebeMeddis:2004} &&&&&\\ 
+\bottomrule
+      \end{tabularx}
+\end{table}
+
+
+\begin{table}[h]
   \tablehead{}
-  \begin{supertabular}{|m{3.6859999cm}|m{3.6859999cm}|m{3.6859999cm}|m{3.6859999cm}|m{3.723cm}|}
+  \begin{tabularx}{\textwidth}{XXXXX}
     \hline Study & Description & Specialisation & Cells & \\\hline
     \citep{ErikssonRobert:1999} & Point neuron model based on
     \citep{ArleKim:1991a} plus dendritic filter & an after-spike
@@ -2361,263 +2253,82 @@ For response characteristics using cFos expression see Yang, Neurosci 136 (2005)
     & & & Type 1 --transient with IA &
     4.0 msec tm  453 Mohm input R\\
     & & & Type 1-2 with ILT & 3.7 msec 312 Mohm\\\hline
-  \end{supertabular}
-\end{flushleft} 
+  \end{tabularx}
+\end{table} 
 
-{\bfseries Table : Rothman and
+
+\begin{table}[h]
+\caption{ Rothman and
   Manis VCN model cell types}
 
-\begin{flushleft}
-  \tablehead{}
-  \begin{supertabular}{m{6.044cm}m{2.442cm}m{2.442cm}m{2.442cm}m{2.442cm}m{2.442cm}}
-    \hline & \multicolumn{5}{m{13.01cm}}{Model Type}\\\hhline{~-----} & I-c &
-    I-t & I-II & II-I & II\\\hline
- gNa, nS & 1000 & 1000 & 1000 & 1000 &
-    1000\\
-    gHT, nS & 150 & 80 & 150 & 150 &
-    150\\
-    gLT, nS & 0 & 0 & 20 & 35 &
-    200\\
-    gA, nS & 0 & 65 & 0 & 0 &
-    0\\
-    gh, nS & 0.5 & 0.5 & 2 & 3.5 &
-    20\\
-    glk, nS & 2 & 2 & 2 & 2 &
-    2\\
-    Vrest, mV & {}-63.9 & {}-64.2 & {}-64.1 & {}-63.8 &
-    {}-63.6\\
-    Rrest, M$\Omega $ & 473 & 453 & 312 & 244 &
-    71\\
-    $\tau $m, ms & 7.0 & 4.0 & 3.7 & 2.9 &
-    0.9\\
-    Vth, mV & {}-38.3 & {}-34.9 & {}-51.2 & {}-58.0 &
-    {}-62.2\\
-    S-50/-70, nS & 0.3 & 0.3 & 5.0 & 12.6 &
-    49.5\\
-    gE$\Phi $ at 22{\textordmasculine}C, nS & 2.0 & 2.2 & 2.8 & 3.2 &
-    8.6\\
-    gE$\Phi $ at 38{\textordmasculine}C, nS & 11 & 12 & 15 & 17 & 34\\\hline
-  \end{supertabular}
-\end{flushleft} 
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    \toprule & \multicolumn{5}{m{13.01cm}}{Model Type}\\
+ & I-c &    I-t & I-II & II-I & II\\\midrule
+ gNa, nS & 1000 & 1000 & 1000 & 1000 &    1000\\
+    gHT, nS & 150 & 80 & 150 & 150 &    150\\
+    gLT, nS & 0 & 0 & 20 & 35 &    200\\
+    gA, nS & 0 & 65 & 0 & 0 &    0\\
+    gh, nS & 0.5 & 0.5 & 2 & 3.5 &    20\\
+    glk, nS & 2 & 2 & 2 & 2 &    2\\
+    Vrest, mV & {}-63.9 & {}-64.2 & {}-64.1 & {}-63.8 &    {}-63.6\\
+    Rrest, M$\Omega $ & 473 & 453 & 312 & 244 &    71\\
+    $\tau $m, ms & 7.0 & 4.0 & 3.7 & 2.9 &    0.9\\
+    Vth, mV & {}-38.3 & {}-34.9 & {}-51.2 & {}-58.0 &    {}-62.2\\
+    S-50/-70, nS & 0.3 & 0.3 & 5.0 & 12.6 &    49.5\\
+    gE$\Phi $ at 22{\textordmasculine}C, nS & 2.0 & 2.2 & 2.8 & 3.2 &    8.6\\
+    gE$\Phi $ at 38{\textordmasculine}C, nS & 11 & 12 & 15 & 17 & 34\\
+\bottomrule
+  \end{tabularx}
+\end{table} 
+
+\begin{landscape}
+%\afterpage
+{\small\LTXtable{210mm}{ModellingCNTable}}  
+\end{landscape}
 
 
-{\bfseries Table : Connections
-  used in modeling studies}
+% \begin{table}[h]
+% \caption{ Connections  used in modeling studies}
 
-\begin{flushleft}
-  \tablehead{\hline Connection &    Study &
-    Synaptic Time Constant (msec) &
-    Bandwidth (octaves) &
-    No. of Synapses /Strength &
-    Distribution &
-    Delay\\\hline}
-  \begin{supertabular}{|m{2.993cm}|m{2.248cm}|m{2.248cm}|m{2.707cm}|m{2.501cm}|m{2.952cm}|m{2.442cm}|}
-    ANI\ensuremath{\rightarrow}TS &
-    \citep{ErikssonRobert:1999} &
-    1 msec &
-    &
-    N=6 or 15 (L,M,H even) G=8.5/n single or G=2.0/n per compartment &
-    1) Dendrites only 2) Dendrites and Soma &
-    1.7ms \\\hline
- & \citep{RothmanManis:2003c} &
- {0.4 msec time to peak alpha at 22C (7.1msec half
-      width in type 1, 1.6msec type 2) 0.07 msec alpha at 38C} &
- &
-     {gE$\Phi $ at 22{\textordmasculine}C=2 or 2.2 for
-      type 1, subthreshold gE=0.5*gE$\Phi $, n=1,3,10 or 50 } &
-     {On soma of single compartment } &
-     none\\\hline \multicolumn{1}{|m{2.993cm}}{} &
-     {(Pressnitzer et al. 2001)} &
-     {5msec} &
-     {One channel (20 inputs)} &
-     {3nA current pulse (then filtered)} &
-     {PSPs filtered using IIR low pass filter} &
-     \\\hline 
-{ANI\ensuremath{\rightarrow}DS} &
-    {\citep{ErikssonRobert:1999}} &
-    {1 msec } &
-    {One octave above and below } &
-    {1/20 threshold for activation } &
-     &
-    1.7ms\\
-    {\citep{ReissYoung:2005}} &
-    {10msec} &
-    {3 oct (Gaussian effectively makes 2 oct)} &
-    {N*g=10.8} &
-    {} &
-    \\\hline \multicolumn{1}{|m{2.993cm}}{} &
-    {(Pressnitzer et al. 2001)} &
-    {1msec} &
-    {10 channels (-2/+1 oct) even weighting (10*20
-      inputs)} &
-    {0.3nA current pulse (then filtered)} &
-    {PSPs filtered using IIR low pass filter} &
-    \\\hline ANI\ensuremath{\rightarrow}TV &
- 
-    \citep{ErikssonRobert:1999} &
-    1 msec &
-    {\textpm}0.1 &
-    G+=2.3/n, n=21 &
-   &
-    1.7ms\\\hline &
-    \citep{ReissYoung:2005} &
-    10 msec &
-    0.2 integration window &
-    N*g=23 &
-    &
-    \\\hline TS\ensuremath{\rightarrow}TS &
-    &
-    &
-    &
-    &
-    &
-    \\\hline TS\ensuremath{\rightarrow}DS &
-    &
-    &
-    &
-    &
-    &
-    \\\hline TS\ensuremath{\rightarrow}TV &
-    &
-   &
-    &
-    &
-    &
-    \\\hline DS\ensuremath{\rightarrow}TS &
- 
-    \citep{ErikssonRobert:1999} &
- 
-    6 msec &
- 
-    &
- 
-    N=3 or 8, Gweak=0.5/n Gmod=1/n Gstr=1.5/n &
- 
-    &
- 
-    1.2{\textpm}0.5 msec \citep{ErikssonRobert:1999}\\\hline &
- 
-    (Pressnitzer et al. 2001) &
- 
-    5 msec (?)  &
- 
-    All neurons share same BF 1.1kHz &
- 
-    {}-1nA current pulse, N=50 &
- 
-    &
- 
-    2 msec delay introduced\\\hline DS\ensuremath{\rightarrow}DS &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    \\\hline DS\ensuremath{\rightarrow}TV &
- 
-    \citep{ErikssonRobert:1999} &
- 
-    6msec &
- 
-    {\textpm}0.4 &
- 
-    G-=1.5/n, n=8 &
- 
-    &
- 
-    \\\hline &
- 
-    \citep{ReissYoung:2005} &
- 
-    10msec &
- 
-    0.05 oct with +0.3 oct offset (input BF rel to target BF) &
- 
-    N*g=7 &
- 
-    &
- 
-    \\\hline TV\ensuremath{\rightarrow}TS &
- 
-    \citep{ErikssonRobert:1999} &
- 
-    6 msec &
- 
-    &
- 
-    N=3 or 8, Gweak=0.5/n Gmod=1/n Gstr=1.5/n &
- 
-    &
- 
-    1.2{\textpm}0.5 msec \\\hline TV\ensuremath{\rightarrow}DS &
- 
-    \citep{ErikssonRobert:1999} &
- 
-    6 msec &
- 
-    {\textpm}0.4 &
- 
-    G-=2.3/n, n=12 &
- 
-    &
- 
-    \\\hline ANII\ensuremath{\rightarrow}G &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    \\\hline Granule\ensuremath{\rightarrow}G &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    \\\hline Golgi\ensuremath{\rightarrow}TS &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    \\\hline Golgi\ensuremath{\rightarrow}DS &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    &
- 
-    \\\hline
-  \end{supertabular}
-\end{flushleft}
+%   \begin{tabularx}{\textwidth}{XXXXXXX}
+%   \toprule
+%  Connection &    Study &    Synaptic Time Constant (msec) &    Bandwidth (octaves) &    No. of Synapses /Strength &    Distribution &    Delay\\\midrule
+%     ANI\ensuremath{\rightarrow}TS &    \citep{ErikssonRobert:1999} &    1 msec &    &    N=6 or 15 (L,M,H even) G=8.5/n single or G=2.0/n per compartment &    1) Dendrites only 2) Dendrites and Soma &    1.7ms \\\hline
+%  & \citep{RothmanManis:2003c} & {0.4 msec time to peak alpha at 22C (7.1msec half      width in type 1, 1.6msec type 2) 0.07 msec alpha at 38C} & &     {gE$\Phi $ at 22{\textordmasculine}C=2 or 2.2 for      type 1, subthreshold gE=0.5*gE$\Phi $, n=1,3,10 or 50 } &     {On soma of single compartment } &     none\\\hline 
+%  &    \citep{PressnitzerMeddisEtAl:2001} &     {5msec} &     {One channel (20 inputs)} &     {3nA current pulse (then filtered)} &     {PSPs filtered using IIR low pass filter} &     \\\hline 
+% {ANI\ensuremath{\rightarrow}DS} &    {\citep{ErikssonRobert:1999}} &    {1 msec } &    {One octave above and below } &    {1/20 threshold for activation } &     &    1.7ms\\
+%     {\citep{ReissYoung:2005}} &    {10msec} &    {3 oct (Gaussian effectively makes 2 oct)} &    {N*g=10.8} &    {} &    \\\hline 
+% &    {(Pressnitzer et al. 2001)} &    {1msec} &    {10 channels (-2/+1 oct) even weighting (10*20      inputs)} &    {0.3nA current pulse (then filtered)} &    {PSPs filtered using IIR low pass filter} &    \\\hline 
+% ANI\ensuremath{\rightarrow}TV &     \citep{ErikssonRobert:1999} &    1 msec &    {\textpm}0.1 &    G+=2.3/n, n=21 &   &    1.7ms\\\hline 
+% &    \citep{ReissYoung:2005} &    10 msec &    0.2 integration window &    N*g=23 &    &    \\\hline 
+% TS\ensuremath{\rightarrow}TS &  \citep{WiegrebeMeddis:2004}  &    &    &    &    &    \\\hline 
+% &\citep{BahmerLangner:2006,BahmerLangner:2006a}&&&&&0.4 msec\\\hline
+% TS\ensuremath{\rightarrow}DS &
+%     &
+%     &
+%     &
+%     &
+%     &
+%     \\\hline 
+% TS\ensuremath{\rightarrow}TV &    &   &    &    &    &    \\\hline 
+% DS\ensuremath{\rightarrow}TS &     \citep{ErikssonRobert:1999} &     6 msec &     &     N=3 or 8, Gweak=0.5/n Gmod=1/n Gstr=1.5/n &    &    1.2{\textpm}0.5 msec \\\hline 
+% &    (Pressnitzer et al. 2001) &     5 msec (?)  &     All neurons share same BF 1.1kHz &    {}-1nA current pulse, N=50 &    &    2 msec delay introduced\\\hline 
+% DS\ensuremath{\rightarrow}DS &    &     &     &     &    &    \\\hline 
+% DS\ensuremath{\rightarrow}TV &    \citep{ErikssonRobert:1999} &    6msec &    {\textpm}0.4 &    G-=1.5/n, n=8 &    &    \\\hline 
+% &    \citep{ReissYoung:2005} &    10msec &    0.05 oct with +0.3 oct offset (input BF rel to target BF) &    N*g=7 &    &    \\\hline 
+% & \citep{YoungDavis:2002,HancockDavisEtAl:2001,SpirouDavisEtAl:1999,HancockDavisEtAl:1997,DavisVoigt:1996,DavisVoigt:1994,DavisVoigt:1991}    &   &    &    &    &    \\\hline 
+% &\citep{ReissYoung:2005}    &   &    &    &    &    \\\hline 
+% TV\ensuremath{\rightarrow}TS &    \citep{ErikssonRobert:1999} &    6 msec &    &    N=3 or 8, Gweak=0.5/n Gmod=1/n Gstr=1.5/n &    &    1.2{\textpm}0.5 msec \\\hline 
+
+% TV\ensuremath{\rightarrow}DS &     \citep{ErikssonRobert:1999} &    6 msec &    {\textpm}0.4 &    G-=2.3/n, n=12 &    &    \\\hline 
+% ANII\ensuremath{\rightarrow}G &    &  &     &     &    &    \\\hline 
+% Granule\ensuremath{\rightarrow}G &    &    &    &    &    &    \\\hline 
+% Golgi\ensuremath{\rightarrow}TS &    &     &   &    &    &    \\\hline 
+% Golgi\ensuremath{\rightarrow}DS &    &    &    &    &    &    \\\hline
+%   \end{tabularx}
+% \end{flushleft}
+
+
 \citep{RothmanManis:2003a, b, c} Present a robust model of VCN neurons based on
 previous experimental studies.
 
@@ -2647,8 +2358,11 @@ previous experimental studies.
   refractory period that leads to faster firing rates.  Increasing ILT drops
   Vrest, hence Ih must be used to counterbalance ILT.
 \end{itemize}
+
 \section{Speech processing}
-\citep{PalmerShamma:2003} Good review of speech processing focusing on
+
+\subsection{\citep{PalmerShamma:2003} }
+Good review of speech processing focusing on
 physiological mechanisms underlying the processing of pitch and timbre
 
 
@@ -2680,8 +2394,9 @@ physiological mechanisms underlying the processing of pitch and timbre
 \item Preservation of all-order ISI representation of f0 and F1 in all
   populations
 \end{itemize}
-(Clarey et al. 2004)
 
+
+\subsection{\citep{ClareyPaoliniEtAl:2004}}
 
 \begin{itemize}
 \item Presented stop CVC syllables to guinea pigs (urethane) and found
@@ -2737,7 +2452,8 @@ physiological mechanisms underlying the processing of pitch and timbre
     lie adjacent to the units BF
   \end{itemize}
 \end{itemize}
-Coding of F0 in voiced sounds in onset units \citep{PalmerWinter:1993}
+
+\subsection{Coding of F0 in voiced sounds in onset units \citep{PalmerWinter:1993}}
 
 
 \begin{itemize}
@@ -2756,8 +2472,8 @@ Coding of F0 in voiced sounds in onset units \citep{PalmerWinter:1993}
   \citep{KimLeonard:1988}(,Kim et al. 1986) onset units described as having
   {\textquotedblleft}pitch period following response{\textquotedblright}
 \end{itemize}
-\citep{RecioRhode:2000}
 
+\subsection{\citep{RecioRhode:2000}}
 
 \begin{itemize}
 \item CT found to respond better to steady state of vowel pitch pulses than at
@@ -2809,7 +2525,9 @@ Coding of F0 in voiced sounds in onset units \citep{PalmerWinter:1993}
 \item CT not better than CS as was the case in \citep{BlackburnSachs:1990} for
   both temporal and rate based measures (different species used, PVCN vs AVCN?)
 \end{itemize}
-\citep{BlackburnSachs:1990} barbiturate cat
+
+
+\subsection{\citep{BlackburnSachs:1990} barbiturate cat}
 
 
 \begin{itemize}
@@ -2839,7 +2557,8 @@ Coding of F0 in voiced sounds in onset units \citep{PalmerWinter:1993}
   region of the 3rd formant, above 3rd formant energy spreading is typical of
   noise spreading
 \end{itemize}
-\citep{MayPrellEtAl:1998}
+
+\subsection{\citep{MayPrellEtAl:1998}}
 
 SMP in awake cats exhibited same general response properties of anesthetized
 cats but larger between subject differences in vowel driven rates.
@@ -2851,7 +2570,7 @@ cats but larger between subject differences in vowel driven rates.
 \item Signal detection methods based on driven rate to a vowel
 \end{itemize}
 
-\citep{SachsWinslowEtAl:1988} representation of speech in the auditory periphery
+\subsection{\citep{SachsWinslowEtAl:1988} representation of speech in the auditory periphery}
 
 {\textquotedblleft}Viability of an average rate code in some circumstances
 requires assumptions that can neither be refuted of supported by
@@ -2879,9 +2598,10 @@ distributed across CF (ALSR), temporal responses in AVCN.
   resolves the spectral peaks at low sound pressure levels (SPLs) and is
   preserved to a degree among the low and medium spontaneous rate (SR) fibers at
   higher intensities, is severely compromised in the presence of broadband noise
-  \citep{GeislerGamble:1989}{,Sachs et al. 1984} even among fibers of low SR
-  activitySachs et al. 1984, \citep{SilkesGeisler:1991}.
+  \citep{GeislerGamble:1989,SachsVoigtEtAl:1983} even among fibers of low SR
+  activity \citep{SachsVoigtEtAl:1983,SilkesGeisler:1991}.
 \end{itemize}
+
 \section{Inhibitory Influence on RA}
 \citep{CasparyBackoffEtAl:1994}
 
@@ -2905,22 +2625,28 @@ distributed across CF (ALSR), temporal responses in AVCN.
 Octave bandwidth analysis (table 3)
 \begin{flushleft}
   \tablehead{}
-  \begin{supertabular}{|m{3.4689999cm}|m{2.659cm}|m{2.659cm}|m{3.1829998cm}|m{2.993cm}|m{3.303cm}|}
-    \hline AVCN choppers & n & N effected (effect {\textgreater}10\%) & control
-    & drug & \% increase\\\hline BIC & 27 & 8 & 1.55 & 1.74 & 8.8\\\hline
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    \hline 
+AVCN choppers & n & N effected (effect {\textgreater}10\%) & control    & drug & \% increase\\\hline 
+BIC & 27 & 8 & 1.55 & 1.74 & 8.8\\\hline
     Strychnine & 21 & 9 & 1.73 & 2.0 & 15.7\\\hline
-  \end{supertabular}
+  \end{tabularx}
 \end{flushleft}
 
 Inhibitory RA (table 2)
 
 \begin{flushleft}
   \tablehead{}
-  \begin{supertabular}{|m{6.2770004cm}|m{6.2770004cm}|m{6.3120003cm}|}
-    \hline & BIC & Stychnine \\\hline n & 27 & 21\\\hline Near CF & 20 &
-    12\\\hline Broad & 4 & 3\\\hline Low/high & 2 & 4\\\hline Off-CF & 1 &
-    2\\\hline
-  \end{supertabular}
+  \begin{tabularx}{\textwidth}{XXX}
+    \toprule
+& BIC & Stychnine \\\midrule 
+n & 27 & 21\\        
+Near CF & 20 & 12\\ 
+Broad & 4 & 3\\     
+Low/high & 2 & 4\\  
+Off-CF & 1 &    2\\ 
+\bottomrule
+  \end{tabularx}
 \end{flushleft}
 
 \begin{itemize}
@@ -2936,7 +2662,8 @@ Inhibitory RA (table 2)
 \item AVCN choppers have greater dynamic range than ANFs for tones in noise
   \citep{MaySachs:1998,MaySachs:1992,PalmerEvans:1982,GeislerSilkes:1991,RhodeGeislerEtAl:1978,RhodeSmith:1986,YoungCostalupesEtAl:1983,YoungShofnerEtAl:1988,YoungRobertEtAl:1988}
 \end{itemize}
-\citep{RhodeGreenberg:1994b} pentobarbital anesthetized cats
+
+\subsection{\citep{RhodeGreenberg:1994b} pentobarbital anesthetized cats}
 
 Presented Noise and tones simultaneously to AN and CN units
 
@@ -2959,7 +2686,8 @@ Presented Noise and tones simultaneously to AN and CN units
   \citep{GeislerGamble:1989} ,Sachs et al. 1984 even among fibers of low SR
   activity \citep{SachsVoigtEtAl:1983,MillerSachs:1984,SilkesGeisler:1991}.
 \end{itemize}
-Lateral suppression
+
+\subsection{Lateral suppression}
 
 
 \begin{itemize}
@@ -2972,7 +2700,9 @@ Lateral suppression
   by spectral peaks, thereby increasing the effective neural contrast between
   spectral peaks and valleys.
 \item \end{itemize}
+
 \section{Forward masking / short-term adaptation}
+
 (Boettcher et al. 1990)
 
 Difference between psychophysical and single unit data
@@ -2986,6 +2716,7 @@ Difference between psychophysical and single unit data
 \item Recovery is linear in log time psychophysically but exponential in
   physiology \citep{Carlyon:1988}
 \end{itemize}
+
 IHC depletion effect ?  \citep{WestermanSmith:1987}
 
 Electrical stimulation studies suggest central component. Fredrickson and Gerken
@@ -2994,6 +2725,7 @@ complete recovery of sensitivity exceeded the values reported for acoustic
 stimulation
 
 \section{Gain Modulation in Birds}
+
 \citep{Lu:2007}
 
 GABAergic transmission in NM is unusual in that it is depolarizing but potently
