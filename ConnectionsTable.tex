@@ -5,19 +5,18 @@
 %\begin{table}[tp]
 %  \centering
 %\begin{center}
-%\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}} 
-%vertically centered column cells
+%\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}}  %vertically centered column cells
 \newcolumntype{Z}{>{\centering\arraybackslash}X}  % centered cell
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X} %left aligned
 \begin{longtable}{cYYYYYYY}%
 %
 \caption{Evidence of Connections in the VCN}\label{tab:Connections} \\
-\toprule  {\textbf{Connection}} & {\textbf{Sypnapse Type}} & {\textbf{Synaptic Time Constant (ms)}} & \multicolumn{2}{c}{\textbf{Receptive Field}} & {\textbf{Number of Synapses}} & {\textbf{Placement}} & {\textbf{Delay (ms)}}\\
-&&& \small{Pre-cell axon coverage} & \small{Post-cell dendrite coverage} &&\small{Somatic and dendritic}& \small{Pre-cell activation via shock illiciting PSP} \\ \midrule 
+\toprule  {\textbf{Connection}} & {\textbf{Sypnapse Type}} & {\textbf{Synaptic Time Constant (ms)}} &             \multicolumn{2}{c}{\textbf{Receptive Field}}             & {\textbf{Number of Synapses}} &     {\textbf{Placement}}     & {\textbf{Delay (ms)}}\\
+                                &                          &                                        & \small{Pre-cell axon coverage} & \small{Post-cell dendrite coverage} &                               & \small{Somatic and dendritic}& \small{Pre-cell activation via shock illiciting PSP} \\ \midrule 
 \endfirsthead
 
 \multicolumn{8}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
-\midrule {\textbf{Connection}} & {\textbf{Syn. Type}} & {\textbf{Time Constant}} & {\textbf{Axon Field}}& {\textbf{Dend. Field}} & {\textbf{No. Synapses}} & {\textbf{Placement}} & {\textbf{Delay}} \\ \midrule 
+\midrule {\textbf{Connection}}  &   {\textbf{Syn. Type}}   &        {\textbf{Time Constant}}        &      {\textbf{Axon Field}}     &       {\textbf{Dend. Field}}        &    {\textbf{No. Synapses}}    &     {\textbf{Placement}}     & {\textbf{Delay}} \\ \midrule 
 \endhead
 
 \midrule \multicolumn{8}{c}{{Continued on next page}} \\ %\midrule
@@ -26,34 +25,34 @@
 \endlastfoot
 
 ANF\ensuremath{\rightarrow}TS                       
-& % Synapse Type 
+                                & % Synapse Type 
 1. Glutamatergic AMPA receptors (possible NMDA) \citep{FerragamoGoldingEtAl:1998a}. 
 %2. Glutamatergic NMDA receptors \citep{FerragamoGoldingEtAl:1998a}.
 % Glutamate and glutamine antibodies \citep{HackneyOsenEtAl:1990}. 
 % Whole cell patch recordings NMDA \ensuremath{\rightarrow} AMPA during development \citep{BellinghamLimEtAl:1998}. 
 % GluR3, GluR4 main AMPA subunits electron microscopic study \citep{WangWentholdEtAl:1998}.              
-& % Time Constant 
+                                & % Time Constant 
 Rise 0.15 ms,  Decay 0.36 ms \citep{GardnerTrussellEtAl:1999}
 %\citep{Oertel:1983}
-& % RF Pre
-70$\mu$m (HSR), 100$\mu$m (LSR)  \citep{CantBenson:2003}
+                                & % RF Pre
+70 \um (HSR), 100$\mu$m (LSR)  \citep{CantBenson:2003}
 87.2$\pm$41 \um (HSR), 230.5$\pm$73 \um (LSR) \citep[cat][]{RyugoParks:2003}
 %\citep[Single fibres][]{OertelWuEtAl:1990,Ryugo:2008,MeltzerRyugo:2006,RyugoParks:2003,Ryugo:1992,BrownBerglundEtAl:1988,RoullierCronin-SchreiberEtAl:1986,FeketeRouillerEtAl:1984} 
-& % RF Post
+                                & % RF Post
 75-100$\mu$m \citep[Mouse]{OertelWuEtAl:1990} 
 % 0.23-0.39 oct \citep[anesthetized guinea pig][]{PalmerJiangEtAl:1996} 
 % Q\textsubscript{10} 5.52$pm$1.4  \citep[guinea pig]{JiangPalmerEtAl:1996} compared to Q10 of 6.3 in AN;
 % CS Q\textsubscript{10} 4,CT Q\textsubscript{10} 2 (low cf), 3.67 (high CF)  \citep[guinea pig]{PalmerWallaceEtAl:2003}
 % Q\textsubscript{10} 5.3  \citep{RhodeSmith:1986}.
 % Q\textsubscript{10} 7.4 (unanesthetised) 5.3 (barbiturate) \citep[cat][]{RhodeKettner:1987}.                      
-& % Number 
+                                & % Number 
 Small number on soma, highly variable, 0-6 per soma depending on subtypes. Dendrites more coverage of ANF contacts \citep{Cant:1981,FayPopper:1994,ReddCahillEtAl:2002,RyugoWrigthEtAl:1993,Ryugo:1992,RyugoParks:2003,FerragamoGoldingEtAl:1998a,SmithRhode:1989,JosephsonMorest:1998}.
-& % Position
+                                & % Position
 Mainly dendritic, $\sim$30\% soma coverage \citep[Cat][]{Cant:1981,Cant:1982,RyugoWrightEtAl:1993,TolbertMorest:1982a}. 
 Soma: 36$\pm$10.5 \%  of 21 (range 6-38) \% area coverage, Prox: 43$\pm$29 \%  of 46 \% area cov., Distal: 40$\pm$12 \%  of 22 \% area cov. \citep[cat][]{SmithRhode:1989}
 Some cells had synapses surrounding the axon initial segment \citep[chinchilla][]{JosephsonMorest:1998}. 
 Type II ANFs diffuse synapses on distal dendrites \citep[mouse][]{BensonBrown:2004}.
-& % Delay 
+                                & % Delay 
 0.7 (range 0.48-0.92) \citep[Mouse][]{FerragamoGoldingEtAl:1998a,Oertel:1983}. 
 0.5  \citep[theoretical][]{Brown:1993,BrownLedwith:1990}.
 0.5  \citep[Chinchilla][]{WickesbergOertel:1993}. 
@@ -66,130 +65,130 @@ Type II ANFs diffuse synapses on distal dendrites \citep[mouse][]{BensonBrown:20
 %  AP min SPL 41.8$\pm$3.8  \citep{PaoliniClareyEtAl:2004}
 \\ \midrule
 ANF\ensuremath{\rightarrow}DS                   
-& % Synapse Type 
+                                & % Synapse Type 
 Glutamate AMPA receptors \citep{FerragamoGoldingEtAl:1998a,WentholdHunterEtAl:1993}.
-& % Time Constant 
+                                & % Time Constant 
 Rise 0.15, Decay 0.36 \citep{GardnerTrussellEtAl:1999,Oertel:1983}.  
-& % RF Pre
+                                & % RF Pre
 As above
-& % RF Post
+                                & % RF Post
 % Q\textsubscript{10} 3.56$\pm$1.38 \citep{JiangPalmerEtAl:1996}. 
 % Q\textsubscript{10} 3.1  \citep[Rat, at 10kHz dual component, stronger below CF][]{PaoliniClark:1999}. 
 % Q\textsubscript{10} 1.33-2.87 \citep{PalmerWallaceEtAl:2003}. 
 2 oct below, 1 oct above \citep{PalmerJiangEtAl:1996}. 
-& % Number
+                                & % Number
 Many weak inputs \citep{FerragamoGoldingEtAl:1998a} 
 30 somatic inputs (30\% round); see table 1 \citep{SmithRhode:1989}.
-& % Position
+                                & % Position
 Dense somatic and dendritic \citep{Cant:1981,Cant:1982,RyugoWrightEtAl:1993}.
 Round vesicles \% of total area coverage \citep[cat][]{SmithRhode:1989}:
 Soma: 36$\pm$43\%  of 87\% TAC (range $\geq$80), 
 Proximal dendrite: 62$\pm$59\%  of 81\% TAC, 
 Distal dendrite: 25.5$\pm$7.5\%  of 22\% TAC. 
-& % Delay
+                                & % Delay
 As above, maybe less considering time to peak,
 see latencies in \citep{PaoliniClark:1999} 
 2.8 $\pm$0.09 msec \citep[Oc FSL latency][]{RhodeSmith:1986} 
 % depolarisation min SPL 45.6$\pm$2.7, AP min SPL 56.6$\pm$2.2 \citep{PaoliniClareyEtAl:2004}
 \\ \midrule
 ANF \ensuremath{\rightarrow}TV          
-& % Type
+                                & % Type
 Glutamate AMPA receptors \citep{ZhangOertel:1993}                          
-& % Time Constant   
+                                & % Time Constant   
 Rise 0.15, Decay 0.4 \citep{GardnerTrussellEtAl:1999}.
-& % RF Pre
+                                & % RF Pre
 \~{}70$\mu$m \citep[mouse][]{SpirouDavisEtAl:1999}
-& % RF Post
+                                & % RF Post
 $\sim$70$\mu$m \citep[mouse][]{ZhangOertel:1993,SpirouDavisEtAl:1999}
-& % Number
+                                & % Number
 $\sim$4 somatic contacts per cell, 10\% AN \citep[guinea pig][]{Alibardi:1999}, 
 17.7\% (ANF terminals, 32.5\% GLUT) of total synaptic terminals in deep layer \citep[rat][]{RubioJuiz:2004}
 % \citep{SpirouDavisEtAl:1999,ZhangOertel:1993} ;       
-& % Position
+                                & % Position
 Proximal dendrite, none on soma \citep[rat][]{RubioJuiz:2004}  
 Mainly dendritic {\textless} 100$\mu$m \citep{Alibardi:1999,Liberman:1993,SpirouDavisEtAl:1999}
-& %
+                                & %
 1.0--1.5 ms \citep{ZhangOertel:1993,Rhode:1999,SpirouDavisEtAl:1999}
 \\ \midrule
 ANF\ensuremath{\rightarrow}G                      
-& % Type 
+                                & % Type 
 AMPA (LSR), NMDA (type II ANF, granule cells)
 \citep{Cant:1992,FerragamoGoldingEtAl:1998a,RyugoWrightEtAl:1993,Ryugo:1992,RyugoParks:2003}.
 Diffuse release sites \citep{HurdHutsonEtAl:1999}             
-& %Time Constant 
+                                & %Time Constant 
 0.4 ms (AMPA)   \citep{GardnerTrussellEtAl:1999}. 
 slower (NMDA, diffuse) \citep{HurdHutsonEtAl:1999}.    
-& % Pre
+                                & % Pre
 LSR 175~$\mu$m (1 mm low CF)\citep{Ryugo:2008}, type II ANF less organised in GCD \citep{WeedmanPongstapornEtAl:1996,RyugoWrigthEtAl:1993}
-& % Post 
+                                & % Post 
 %Wide Dynamic range \citep{GhoshalKim:1997} 
 250--100 $\mu$m \citep{FerragamoGoldingEtAl:1998a}                     
-&                                            
-& % Position
+                                & 
+                                & % Position
 Mainly contacts on thin dendrites (0.5-1 $\mu$m width) in GCD, SCC 
 \citep{BensonBrown:2004,FerragamoGoldingEtAl:1998}                
-& % Delay
+                                & % Delay
 1.3 msec minimum \citep{FerragamoGoldingEtAl:1998a}, 
 type II up to 10msec \citep[theoretical][]{Brown:1993}
 \\ \midrule
 TS\ensuremath{\rightarrow}TS                        
-& % Type 
+                                & % Type 
 AMPA and/or NMDA glutamate receptors \citep{FerragamoGoldingEtAl:1998a}        
-& % 
+                                & % 
 Similar to primary endings but not measured.  
 NMDA not measured.           
-&
+                                & 
 $\sim$70$\mu$m \citep[cat][]{SmithRhode:1989} 
-& % RF
+                                & % RF
 $\sim$70$\mu$m \citep[cat][]{SmithRhode:1989} 
-& % Number
+                                & % Number
 Based on rarity of small round vesicles on CS cells, influence is weak \citep{SmithRhode:1989} 
 likely to come from 1 input \citep{FerragamoGoldingEtAl:1998a}                     
 \~{}5 per soma  \citep[chinchilla][]{JosephsonMorest:1998}
-& %Position
+                                & %Position
 Somatic (high and low CF), more prevalent at the axon hillock   \citep[chinchilla][]{JosephsonMorest:1998}
-& %delay
+                                & %delay
 Min.\ synaptic delay 
 \\ \midrule
 TS\ensuremath{\rightarrow}DS                        
-& %Type 
+                                & %Type 
 AMPA and/or NMDA glutamate receptors \citep{FerragamoGoldingEtAl:1998a}  
-& As per TS\ensuremath{\rightarrow}TS.
-& % RF Pre
-& % RF Post
+                                & As per TS\ensuremath{\rightarrow}TS.
+                                & % RF Pre
+                                & % RF Post
 Few local axonal collaterals lie in dendritic plane \citep{SmithRhode:1989}, but DS dendrites cover 1/3 of VCN
-& 
+                                & 
 Based on rarity of small round vesicles on CS cells, influence is weak \citep{SmithRhode:1989} late EPSPs observed,
 likely one-2 inputs \citep{FerragamoGoldingEtAl:1998a, OertelWuEtAl:1990} 
-& ---                                     
-& Min. synaptic delay \\ \midrule
+                                & ---                                     
+                                & Min. synaptic delay \\ \midrule
 TS\ensuremath{\rightarrow}TV                        
-& %Type
+                                & %Type
 Glutamatergic AMPA receptor  \citep{DoucetRossEtAl:1999,FerragamoGoldingEtAl:1998a,ZhangOertel:1993}.
 No TS terminals on TV cells in rats \citep[rat][]{RubioJuiz:2004}.
 Small round vesicles present in deep layer of DCN \citep[guinea pig][]{Alibardi:1999}
-& 
+                                & 
 Similar to AN AMPA receptors.        
-& % RF Pre
-& % RF Post
+                                & % RF Pre
+                                & % RF Post
 Strong On-CF with weak off-CF  \citep[See fig 13][]{OstapoffBensonEtAl:1999}. 
 Mainly in iso-band but poor classification in rats \citep{DoucetRossEtAl:1999,FriedlandPongstapornEtAl:2003}         
-& %Number
+                                & %Number
 3 of 4 neurons had late EPSPs to AN shock \citep[very young mice][]{ZhangOertel:1993}.
 \citep{OstapoffMorestEtAl:1999} 
-& %Position
+                                & %Position
 Mainly to fusiform cell layer, possibly on ends of TV cell dendrites \citep[mouse][]{OertelWuEtAl:1990}. 
 CS and CT collaterals in deep DCN possibly somatic \citep[guinea pig][]{PalmerWallaceEtAl:2003}.
 Somatic small round vesicles presumably from T stellates  \citep[guinea pig][]{Alibardi:1999}   
-& %Delay 
+                                & %Delay 
 0.15 ms \citep[min EPSP latency to VCN Glutamate puffs, main excitation at 0.3 ms, AN shock produces late EPSPs about 3 msec][]{ZhangOertel:1993}.
 \\ \midrule
 DS\ensuremath{\rightarrow}TS                        
-& % Type 
+                                & % Type 
 Glycine GlyR receptors \citep[mouse][]{FerragamoGoldingEtAl:1998a}.
 Flat vesicles (DS) apposed to TS units \citep[cat][]{SmithRhode:1989}     
 Could be mixed Gly/GABA \citep{AltschulerJuizEtAl:1993} 
-& % Time Constant
+                                & % Time Constant
 Rise 0.4 ms, Decay 2.5 ms \citep[spontaneous IPSCs in rat MNTB neurons,][]{AwatramaniTurecekEtAl:2005}
 Rise 0.46$\pm$0.05 ms \citep[spontaneous IPSCs in AVCN bushy cells, mouse][]{LimOleskevichEtAl:2003}
 
@@ -200,182 +199,182 @@ Rise 0.46$\pm$0.05 ms \citep[spontaneous IPSCs in AVCN bushy cells, mouse][]{Lim
 Decay 1.6 ms \citep[mouse VCN,]{Oertel:1983}
 Decay 5.4 ms \citep{OertelWickesberg:1993,WickesbergOertel:1993}    
 Activation 2.0$\pm$1.2 ms Decay 5.3 ms \citep[Gly puffs at 22$^\circ$C (Q$_{10}$ 2.1) in  guinea pig VCN,][]{HartyManis:1998}
-& % RF Pre
+                                & % RF Pre
 DS axon terminals cover 300 $\mu$m of VCN \citep[mouse][]{OertelWuEtAl:1990}.
 AVCN collaterals centred on soma isofreq. as dend, 1 octave above and 2 oct below \citep[gerbil][]{ArnottWallaceEtAl:2004} 
 SBW=5.1kHz$\pm$4.5 kHz all Ch, CS 4.66$\pm$4.45kHz 88$\pm$19\% suppression, CT 6.28$\pm$ 4.65kHz    96$\pm$5\% suppression \citep{RhodeGreenberg:1994b}
-& % RF Post
- 
-& %Position
+                                & % RF Post
+
+                                & %Position
 \citep[mice][]{FerragamoGoldingEtAl:1998a} 
 See Table 1 \citep[cat][]{SmithRhode:1989} 
- \~{}70 (high) \~{}60 (low CF) per soma, 
+\~{}70 (high) \~{}60 (low CF) per soma, 
 \~{}1.7 per axon, FL \~{}20 (highCF)
 \~{}10 (lowCF) \citep[chinchilla][]{JosephsonMorest:1998}                
-& %Number
+                                & %Number
 1 or 2 on soma; many gly and mixed gly/GABA on trunks; see Table 1\citep{SmithRhode:1989} 
 more FL vesicles on soma in high CF regions \citep{JosephsonMorest:1998}      
-& 
+                                & 
 1.2-3.5 msec shock to AN \citep{FerragamoGoldingEtAl:1998a,NeedhamPaolini:2003,Oertel:1983}
 Commissural DS units: 1.52 ms shock to cCN \citep{NeedhamPaolini:2006}.
 \\ \midrule
 DS\ensuremath{\rightarrow}DS                        
-& %type 
+                                & %type 
 Glycinergic                   \citep{FerragamoGoldingEtAl:1998a}?                    
-& % time constant 
+                                & % time constant 
 6-13 msec decay time \citep{AwatramaniTurecekEtAl:2005,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
-& % RF Pre
+                                & % RF Pre
 Axon collaterals: 1/2 of CN
-& % RF Post
+                                & % RF Post
 Dendrites: 1/3 rd cover of CN
-& % number
+                                & % number
 None observed but large Gly terminals apposed to DS \citep[cat][]{SmithRhode:1989} 
 IPSPs seen in slice without DCN \citep{FerragamoGoldingEtAl:1998a}                     
-&    
+                                & 
 Flat Vesicles on D stellate cells \citep[cat][]{SmithRhode:1989}:
 Soma: 28 \%  of 87 (range never below 80) \% area coverage. 
 Proximal dendrite: 20 \%  of 81 \% area coverage.  
 Distal dendrite: 33 \%  of 22 \% area coverage.   
 See table 1 \citep{SmithRhode:1989}     
-& 
+                                & 
 Min. synaptic delay 
 Commissural DS units: 1.52 ms shock to cCN \citep{NeedhamPaolini:2006}.
 \\ \midrule
 DS\ensuremath{\rightarrow}TV                        
-& %Type
+                                & %Type
 Glycinergic \citep{DoucetRyugoEtAl:1999,OertelWuEtAl:1990,OstapoffMorestEtAl1999,SpirouDavisEtAl:1999,ZhangOertel:1993}. 
-& 
+                                & 
 Rise 0.4 ms Decay 2.3 ms \citep{AwatramaniTurecekEtAl:2005}
 6-13 msec decay time \citep{FerragamoGoldingEtAl:1998a,HartyManis:1996,HartyManis:1998,LeaoOleskevichEtAl:2004}
-& 
+                                & 
 Lateral sidebands equivalent to DS bandwidth
 \citep{OstapoffMorestEtAl:1999,SpirouDavisEtAl:1999} 
 in rats strong ventral to iso-frequency band (ie stronger high \ensuremath{\rightarrow}low cf)
 \citep{DoucetRyugoEtAl:1999,FriedlandPongstapornEtAl:2003} 
 Generally tonotopic arrangement of OnC axons in DCN \citep{ArnottWallaceEtAl:2004}
 Notch Noise possibly shows asymmetry in projection \citep{ReissYoung:2005}.      
-& 
+                                & 
 Few somatic glycine inputs 
 \citep{OsenOttersenEtAl:1990,OstapoffMorestEtAl1999:1999,ZhangOertel:1993}
 \~{}4 somatic contacts most of which were Glycine (FP) \citep{Alibardi:1999}
 33.85 \% total synaptic contact in deep layer \citep[rat][]{RubioJuiz:2004}
-& 
+                                & 
 Few somatic glycine inputs \citep{OsenOttersenEtAl:1990,OstapoffMorestEtAl:1999,ZhangOertel:1993} 
 few  somatic contacts \citep{Alibardi:1999}                   
 Half somatic, half dendritic \citep[rat][]{RubioJuiz:2004}
-& 
+                                & 
 0.15 msec min EPSP latency to VCN shock , assume IPSP latency similar
 \citep{ZhangOertel:1993}\\ \midrule
 TV\ensuremath{\rightarrow}TS                        
-& %type 
+                                & %type 
 Glycine \citep{OertelWickesberg:1993,OstapoffMorestEtAl:1999,SaintBensonEtAl:1991,WickesbergOertel:1993}
 Gly\slash GABA mixed \citep[Cat,][]{OsenOttersenEtAl:1990}                  
-& % time constant 
+                                & % time constant 
 Rise 0.4 ms, Decay 2.5 ms \citep[spontaneous IPSCs in rat MNTB neurons,][]{AwatramaniTurecekEtAl:2005}
 Decay 1.6 ms \citep[mouse VCN,]{Oertel:1983}
 Decay 5.4 ms \citep{OertelWickesberg:1993,WickesbergOertel:1993}    
 Rise 2.0$\pm$1.2 ms (0.8--4.6 ms), Decay 5.3 ms \citep[Gly puffs at 22$^\circ$C (Q$_{10}$ 2.1) in  guinea pig VCN,][]{HartyManis:1998}
-& %Pre RF
+                                & %Pre RF
 Slightly lateral, lighter on-CF \citep{OstapoffMorestEtAl:1999} 
 concentrated on CF \citep{ZhangOertel:1993} 
 FL vesicles more dense in high CF \citep{JosephsonMorest:1998}                        
-& % Post RF
-& % number
+                                & % Post RF
+                                & % number
 Many \citep{OstapoffMorestEtAl:1999} see
 Table 1 \citep{SmithRhode:1989} 
 PL \~{}70 (high) \~{}60 (low CF) per soma,
 \~{}1.7 per axon, 
 FL \~{}20 (highCF) \~{}10 (lowCF)  \citep{JosephsonMorest:1998}                        
-& %position 
+                                & %position 
 Soma and mainly trunk \citep{AltschulerJuizEtAl:1993} 
 see Table 1 \citep{SmithRhode:1989} 
 more FL vesicles on soma in high CF regions, some hillock contacts (75\% inhib) \citep{JosephsonMorest:1998}
-& %
+                                & %
 0.1--0.3 msec glut or shock VCN \citep{ZhangOertel:1993}
 0.6 ms after AN excitation in choppers \citep{Wickesberg:1996}. 
 2.5 msec from AN shock to inhibition \citep{WickesbergOertel:1993}. 
 \\ \midrule
 TV\ensuremath{\rightarrow}DS                        
-&  % Type 
+                                & % Type 
 Glycine \citep{OstapoffMorestEtAl:1999,SaintBensonEtAl:1991}. 
 Mixed  Glycine/GABA \citep{OsenOttersenEtAl:1990}                 
-& %Time Constant
+                                & %Time Constant
 \citep{OstapoffMorestEtAl:1999}  as above                                  
-& %pre RF
+                                & %pre RF
 Slightly lateral, lighter on-CF \citep{OstapoffMorestEtAl:1999}
 concentrated on CF \citep{ZhangOertel:1993} 
 No inhibitory sidebands evident in RA                                   
-& %post RF
+                                & %post RF
 Dendrites cover 1/3 CN \citep[guinea pig][]{PalmerJiangEtAl:1996}.
-& See table 1 \citep{SmithRhode:1989}     
-& See Table 1 \citep{SmithRhode:1989}                          
-& 
+                                & See table 1 \citep{SmithRhode:1989}     
+                                & See Table 1 \citep{SmithRhode:1989}                          
+                                & 
 As above in TV\ensuremath{\rightarrow}TS
 \\ \midrule
 %Granule\ensuremath{\rightarrow}GLG                     
-%& NMDA  Glutamatergic receptor                 \citep{FerragamoGoldingEtAl:1998a}                     
-%& % Time constant
+               %                & NMDA  Glutamatergic receptor                 \citep{FerragamoGoldingEtAl:1998a}                     
+               %                & % Time constant
 %     \citep{GardnerTrussellEtAl:1999}      
-%& % Pre
-%& % post   
-%& % number
+               %                & % Pre
+               %                & % post   
+               %                & % number
 %                   \citep{FerragamoGoldingEtAl:1998a}                     
-%& % Position                                           
-%& % Delay 
+               %                & % Position                                           
+               %                & % Delay 
 %\\ \midrule
 DS\ensuremath{\rightarrow}GLG                                 
-&                  
+                                & 
 Glycinergic GlyR receptor                  
-&  % Time constant
-& 
-& 
+                                & % Time constant
+                                & 
+                                & 
 D stellates have collaterals in GCD \citep[mouse][]{OertelWuEtAl:1990}
 Gly IPSP observed in 1 of 5 cells \citep{FerragamoGoldingEtAl:1998}    
-&                                            
-& % Delay 
+                                & 
+                                & % Delay 
 Short, see Fig 3B in \citep{FerragamoGoldingEtAl:1998}
 \\ \midrule
 GLG\ensuremath{\rightarrow}TS                         
-&% Type 
+                                & % Type 
 GABA$_{\textrm{A}}$ receptor  \citep[bicuculine-sensitive VCN T stellate cell, mouse slice preparation][]{FerragamoGoldingEtAl:1998} \citep[Chinchilla][]{JosephsonMorest:1998}
 %Ferragamo et al. 1998 found no GABAergic IPSPs but the cells were still sensitive to bicuculine
-& % Time constant
+                                & % Time constant
 Rise 0.7 ms, Decay 9 ms  \citep[probably a combination of two decay time constants, fast 5-10 slow 20-60][]{AwatramaniTurecekEtAl:2005}                     
-& % RF Pre
+                                & % RF Pre
 100 $\mu$m in GCD \citep{FerragamoGoldingEtAl:1998}
-& % RF Post
+                                & % RF Post
 Distal dendrites.
 High CF\ensuremath{\rightarrow}low CF \citep[chinchilla][]{JosephsonMorest:1998}                        
-& %Number    
+                                & %Number    
 5-15 \citep[Estimate, cat][]{SmithRhode:1989}     
-& % Position
+                                & % Position
 Pleomorphic vesicle coverage in cat \citep{SmithRhode:1989}:
 Soma: 17\% of 21\% total (range 6-38 total). 
 Prox: 23\% of 46\% total. 
 Dist: 27\% of 22\% total. 
-& %Delay
+                                & %Delay
 Min.\ synaptic delay plus cable delay from distal dendrites.
 Somatic GABA terminals most likely from superior olive, delay $\sim$1 ms
 \\ \midrule
 GLG\ensuremath{\rightarrow}DS                         
-& % Type
+                                & % Type
 {GABAergic} {GABA$_{\textrm{A}}$} receptor \citep{EvansZhao:1998,FerragamoGoldingEtAl:1998a,Mugnaini:1985,MugnainiOsenEtAl:1980,SaintMorestEtAl:1989}                           
-& % Time Constant                                            
-& % RF Pre
+                                & % Time Constant                                            
+                                & % RF Pre
 200 $\mu$m axon collateral spread in GCD \citep{FerragamoGoldingEtAl:1998}
-& % RF Post
+                                & % RF Post
 Dendrites cover 1/3 CN (effect AN input 2 oct below, 1 oct above) \citep[guinea pig][]{PalmerJiangEtAl:1996}.
 Wideband to wideband on CF \citep{EvansZhao:1998} 
 Hyperpolarising effects above high freq edge in mid CF neurons \citep[rat][]{PaoliniClark:1999}.                    
-& % Number 
+                                & % Number 
 \~{}20 weak inputs\citep{SaintMorestEtAl:1989}                     
-& % Position
+                                & % Position
 Pleomorphic vesicles coverage in cat \citep{SmithRhode:1989}:
 Soma: 36 \%  of 87 (range never below 80) \% area coverage. 
 Proximal dendrite: 18 \%  of 81 \% area coverage.  
 Distal dendrite: 41 \%  of 22 \% area coverage.   
 Dendrites reach into granule cell domain, within reach of Golgi axons \citep{OertelWuEtAl:1990,ArnottWallaceEtAl:2004}     
-& %Delay
+                                & %Delay
 Hyperpolarisation occurs 10-15 msec after click \citep{PaoliniClark:1999}
 \\ \midrule
 \end{longtable}
