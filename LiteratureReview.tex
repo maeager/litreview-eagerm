@@ -33,6 +33,18 @@
 \newcommand{\um}{$\mu$m}
 \newcommand{\umsq}{$\mu$m$^2$}
 
+% xelatex font
+% \usepackage[T1]{fontenc}
+% \usepackage{fontspec}
+% \usepackage{graphicx} 
+% \defaultfontfeatures{Mapping=tex-text}
+% \setromanfont{Gentium}
+% \setromanfont [BoldFont={Gentium Basic Bold},
+%                 ItalicFont={Gentium Basic Italic}]{Gentium Basic}
+% \setsansfont{Charis SIL}
+% \setmonofont[Scale=0.8]{DejaVu Sans Mono}
+
+
 \begin{document}
 		% TOC, LOF, LOT
 		{%
@@ -66,8 +78,10 @@
 %*****************************************
 \section{Literature Review}\label{Ch1:litreview}
 %*****************************************
+
 \section{Auditory System}\label{Ch1:AuditorySystem}
 \input{Peripheral.tex}
+
 %*****************************************
 \section{Cochlear Nucleus}\label{Ch1:CochelarNucleus}
 
@@ -75,12 +89,37 @@
 Recent Reviews of characterised cells and projections
 \citep{CantBenson:2003,RyugoParks:2003,SmithMassieEtAl:2005,YoungOertel:2004,OertelWrightEtAl:2010}
 
+%\citep{CantBenson:2003}
+% Except for a few differences to be mentioned later, cell types in
+% rat and cat appear to be quite similar and are also identifiable
+% in a number of other species, including human [6,87,136]
+% and other primates [87,141]; chinchilla [138,165]; gerbil
+% [145,165]; guinea pig [75,76,133]; kangaroo rat [45,251];
+% mole [114]; mouse [239,252,262,264]; porpoise [162];
+% rabbit [53,172] and several species of bats [59,208,269].
+
+% Smith and Rhode [220] were able to divide the large mul-
+% tipolar neurons in the posterior part of the AVCN and the
+% anterior part of the PVCN of the cat into two groups based
+% on differences in physiological response properties, synaptic
+% organization, the pathway taken by the axons, and the types
+% of vesicles contained in their synaptic terminals. Their com-
+% prehensive study has provided a framework for a synthesis
+% of results from a number of laboratories, all of which are
+% compatible with the conclusion that the ventral cochlear nu-
+% cleus contains at least two functionally distinct populations
+% of multipolar cells.
+
+
+
+reviews \citep{BruggeGeisler:1978}
+
 \citet{DoucetRyugo:2006} showed the limited number of VCN multipolar neuron studies that have performed phyiological unit assesments as well as classification of morphology via labelling.
 
 % auditory brain stem. Most of the different neuron popula-
 % tions in the magnocellular core are contacted by individual
-% auditory nerve ﬁbers. These cells, along with the incoming
-% auditory nerve ﬁbers, are arranged in isofrequency contours
+% auditory nerve fibers. These cells, along with the incoming
+% auditory nerve fibers, are arranged in isofrequency contours
 % and have identical CFs. They can, however, exhibit different
 % thresholds and temporal patterns in their spike discharges.
 % That is, when presented with short tone bursts at CF, the
@@ -88,7 +127,7 @@ Recent Reviews of characterised cells and projections
 % [16,18,147,156]. These PSTHs are named by their shapes,
 % such as primary-like, chopper, onset, pauser, or build-up.
 % Intracellular recording and staining methods have demon-
-% strated that neurons with different ﬁring patterns generally
+% strated that neurons with different firing patterns generally
 % manifest different morphological features, including but not
 % limited to, dendritic appearance, cell body size and shape,
 % and axonal projections (e.g. [53,157,158,164]). Some of
@@ -100,13 +139,13 @@ Recent Reviews of characterised cells and projections
 
 % 6.3. Receptors and transmitters
 % The auditory system has demanding functions with re-
-% spect to processing sound for localization, identiﬁcation,
+% spect to processing sound for localization, identification,
 % and communication. Key to these functions is the ability to
 % receive and transmit faithfully rapid changes in the acoustic
 % signal. The large endbulbs of Held reﬂect one specialization
 % for secure transmission [130,146,168] and the amino acid
 % glutamate is the most likely candidate that facilitates rapid
-% transmission [57,119,150]. One difﬁculty in the identiﬁca-
+% transmission [57,119,150]. One difficulty in the identifica-
 % tion of glutamate as the auditory nerve neurotransmitter is its
 % ubiquitous distribution in tissue and the inability to measure
 % its release during synaptic activity. Consequently, research
@@ -116,15 +155,15 @@ Recent Reviews of characterised cells and projections
 % transporters. As in birds, the bulk of available evidence im-
 % plicates glutamate as the neurotransmitter for the auditory
 % nerve. Quantitative immunogold staining methods revealed
-% signiﬁcantly greater labeling over primary endings com-
+% significantly greater labeling over primary endings com-
 % pared to nonprimary endings (containing ﬂat or pleomorphic
 % vesicles) and glia [64]. Furthermore, immunogold staining
-% was signiﬁcantly lower in primary terminals that had been
+% was significantly lower in primary terminals that had been
 % depleted of glutamate by potassium-induced depolarization.
 % The production and/or utilization of glutamate is mediated
 % by aspartate aminotransferase. The soluble cytoplasmic
 % fraction of this amino acid has been immunolocalized to
-% endings of auditory nerve ﬁbers [2,166]. The presence of
+% endings of auditory nerve fibers [2,166]. The presence of
 % glutamate and one of its metabolic precursors in the presy-
 % naptic endings is complemented by glutamate receptors
 % in cochlear nucleus neurons (e.g. [143,144,167,213,217]).
@@ -140,7 +179,7 @@ Recent Reviews of characterised cells and projections
 % mainly of GluR3 and GluR4 [143,167,213]. The GluR4 sub-
 % units gate rapidly and are specialized for auditory nerve in-
 % put [119]. The GluR2 subunits, which exhibit slower AMPA
-% kinetics, are associated with parallel ﬁber inputs in the DCN
+% kinetics, are associated with parallel fiber inputs in the DCN
 % [56]. Primary endings are also associated with delta recep-
 % tors but it is not known if delta receptors form functional
 % receptors.
@@ -155,7 +194,7 @@ Recent Reviews of characterised cells and projections
 % variants of NR2 which determine their physiological prop-
 % erties. NR1 has a widespread distribution in the cochlear
 % nucleus [15,143]. NR2A and NR2C are found in the su-
-% perﬁcial granule cell layer of the ventral cochlear nucleus
+% perficial granule cell layer of the ventral cochlear nucleus
 % and in medium sized neurons of the deeper layers of the
 % DCN. NR2A is in the large neurons of the rostral AVCN
 % and NR2B is in pyramidal cells of the DCN. There is
@@ -180,7 +219,7 @@ Recent Reviews of characterised cells and projections
 % rapidly removed from the synaptic cleft so that the postsy-
 % naptic cell is prepared for the next transmission. The removal
 % and inactivation of neurotransmitter is accomplished by a
-% highly efﬁcient system of uptake and transporter molecules
+% highly efficient system of uptake and transporter molecules
 % that surround glutamatergic synapses [9,10,46]. It has been
 % speculated that glial processes and neuronal membranes lin-
 % ing the intercellular cisternae between primary endings and
@@ -201,10 +240,31 @@ Recent Reviews of characterised cells and projections
 %*****************************************
 \section{Summary of T~Stellate Microciruit Connections}
 
-Proposals for connectivity in the T stellate cell microcircuit are hotly contested in the literature, whether they be selecivity processing of different ANF inputs \citep{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}, recurrent excitation within TS cells \citep{FerragamoGoldingEtAl:1998a,BahmerLangner:2006,WiegrebeMeddis:2004}
+
+Proposals for connectivity around T stellate cells microcircuit are hotly
+contested in the literature.
+
+The first network models in the cochlear nucleus revolved around the DCN
+\citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992} Selective
+processing of different ANF inputs using some form of inhibition was the first
+step toward including interneurons in a T stellate cell model
+\citep{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}.
+
+Recurrent excitation between TS cells is thought to be present in mice
+\citep{FerragamoGoldingEtAl:1998a} and has been investigated in two modelling
+studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}, but neither study
+represents a realistic implementation of the stellate microcircuit.
+\citet{BahmerLangner:2006} used excitatory onset units to regulate the recurrent
+T stellate cells, unfortunately the only excitatory onset units in the cochelar
+nucleus are octopus cells, which do not have axonal collaterals in the \VCN\@.
+Recurrent networks in the cortex prefer inhibition for synchronisation
+\citep{LyttonSejnowski:1991,BushSejnowski:1996}.
+
 
 \begin{landscape}
-{\small\LTXtable{215mm}{ConnectionsTable}}  
+%\setcitestyle{numbers}
+{\small\LTXtable{220mm}{ConnectionsTable}}  
+%\setcitestyle{authoryear}
 \end{landscape}
 
 % Proposed neuronal connections
@@ -255,7 +315,8 @@ Proposals for connectivity in the T stellate cell microcircuit are hotly contest
 %*****************************************
 %*****************************************
 %*****************************************
-\bibliographystyle{abbrvnat}%plainnat}%bmc_article} % Style BST file
+\setcitestyle{numbers}
+\bibliographystyle{plainnat}%abbrvnat}%bmc_article} % Style BST file
 \bibliography{../hg/manuscript/bib/MyBib}
 \newpage
 \listoftodos
