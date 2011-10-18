@@ -1,0 +1,462 @@
+#+LaTeX_CLASS: djcb-org-article
+#+LaTeX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_CMD: xelatex
+#+TITLE: Literature Review
+#+DATE:
+#+AUTHOR: Michael A Eager
+#+LATEX_HEADER:\usepackage[sort,round]{natbib}
+#+LATEX_HEADER:\usepackage{amssymb,amsmath}
+#+BIBLIOGRAPHY: MyBib plainnat
+
+
+* Prelude       :noexport:
+
+#+begin_src: emacs-lisp
+ (setq org-latex-to-pdf-process                           
+       '("xelatex -interaction nonstopmode %f"            
+         "bibtex %b"                                      
+         "xelatex -interaction nonstopmode %f"            
+         "xelatex -interaction nonstopmode %f" ))
+
+# (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex onlysources=LitReview.tex"))
+#+end_src
+
+
+* Literature Review and Introduction 
+#   DEADLINE: <2011-10-22 Sat>
+#   EFFORT: 5 days
+  
+
+**  Auditory Processing
+
+
+
+**  Cochlear nucleus 
+
+The cochlear nucleus receives the primary ascending input from auditory nerve
+fibres (ANFs) and contains a heterogeneous population of cell types.  Cell types
+have been classified using a number of criteria including morphology,
+immunohistochemistry, synaptic organisation, response to acoustic stimuli and
+frequency tuning
+\citep[see~reviews][]{RyugoParks:2003,CantBenson:2003,YoungOertel:2004}.  The
+two major divisions are the dorsal (DCN) and ventral cochlear nucleus (VCN).
+The different projections out of the nucleus reflect the highly specialled
+parallel processing that is performed to extract particular acoustic information
+contained in the auditory nerve.  The DCN in mammals generally has a laminar
+structure with many interneurons, whereas the VCN consists of a magnocellular
+core and a marginal shell.  The marginal shell is thought to be involved in
+regulating the gain in the VCN \citep{EvansZhao:1993,GhoshalKim:1997}
+
+The network in Figure 1 shows the proposed connections among cochlear nucleus
+that are involved in modulating T stellate cells.  The cells and their synaptic
+interaction will be discussed in the following sections.
+
+
+#+LABEL:      fig:CNschematic
+#+CAPTION:    Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS - Blue), D stellate (DS- dark green), tuberculoventral (TV – light green) and Golgi (Red) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  Golgi cells (G) are GABAergic inhibitory cells that are thought to inhibit DS cells and weakly inhibit TS cells.  Auditory nerve inputs are not shown.
+[[../figures/CNConnections3.pdf]]
+
+*** CN Cell Types
+**** T stellate (TS) cells
+
+TS cells receive a narrow frequency band of ANF inputs and have either a
+sustained or transient chopping (ChS and ChT) response to characteristic
+frequency tone bursts (CF) \citep{SmithRhode:1989,BlackburnSachs:1989}.  Few
+synaptic terminals contact on their soma, the majority of inputs contacting the
+proximal dendrites \citep{Cant:1981}. TS cells are excitatory
+\citep{SmithRhode:1989} and their axons leave via the trapezoidal body, hence
+the T \citep{OertelWuEtAl:1990}.  In response to intracellular current injection
+they fire with regularly spaced action potentials and have a linear
+current-voltage response
+\citep{Oertel:1983,OertelWuEtAl:1988,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
+The response to acoustic stimulation is measured from a post-stimulus time
+histogram \citep[PSTH][]{Pfeiffer:1966,BlackburnSachs:1989}.  The chopping
+pattern shown in Figure 2 is characteristic of TS cells. Sustained and transient
+choppers (ChS and ChT) are differentiated by the regularity of discharge
+throughout the stimulus \citep{YoungRobertEtAl:1988}.  Recurrent excitation among T
+stellate cells of similar CFs was first suggested by
+\citet{FerragamoGoldingEtAl:1998a}.  The small numbers of axonal collaterals are
+confined to the same frequency band as their dendrites indicating recurrent
+connections are between cells encoding a similar frequency
+\citep{FerragamoGoldingEtAl:1998a,PalmerWallaceEtAl:2003}.  This could
+compensate for rapid transient adaptation in auditory nerve excitation, allowing
+a robust representation of the spectral energy falling within the cell’s
+response area to be transmitted to higher centres.
+
+**** D stellate (DS) cells
+
+DS cells are wide-band inhibitory cells that have an onset-chopping (On-C) PSTH
+to tones and noise \citep{SmithRhode:1989}. Electromicroscopic studies of DS
+neurons show profuse synapses on their soma and proximal dendrites
+\citep{Cant:1981}. DS neurons usually have 3-4 main dendrites extending
+perpendicular to the direction of auditory nerve fibres suggesting they receive
+input from fibres encoding a wide range of frequencies
+\citep{SmithRhode:1989,PaoliniClark:1999}. Intracellular responses to sounds
+indicate the bandwidth of inputs to D stellate neurons is typically two octaves
+below CF and one octave above
+\citep{PaoliniClark:1999,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.  DS
+cell axon terminals contain the inhibitory neurotransmitter, glycine, and they
+synapse locally occur in the VCN and DCN and send a commissural projection to
+the contralateral cochlear nucleus that mediates fast inhibition between the
+nuclei \citep{NeedhamPaolini:2003}.  T stellate cells outnumber D stellate cells
+15:1 in the cat \citep{RyugoParks:2003}.
+
+**** Tuberculoventral (TV) cells
+
+Tuberculoventral neurons of the DCN provide a delayed, frequency-specific
+glycinergic inhibition to TS and DS cells in the VCN
+\citep{ZhangOertel:1993,WickesbergOertel:1988}.  The dendrites of TV cells are
+aligned with ANFs and indicating narrow frequency tuning. TV cells have low
+spontaneous rates and variable PSTHs; “pauser,” “chopper,” or “onset/sustained”
+have been recorded \citep{ShofnerYoung:1985,SpirouDavisEtAl:1999}. They have
+little or no response to wide band noise and firing rates to CF tones that are
+non-monotonic functions of intensity.
+
+Anterograde labelling in the DCN suggests glycinergic tuberculoventral cells
+project tonotopically to the VCN not just on-CF, but also to the low and high
+frequency side bands in the AVCN
+\citep{OstapoffFengEtAl:1994,MunirathinamOstapoffEtAl:2004}.  Ultra-structural
+labeling of synapses in the rat DCN suggest TV cells are inhibited by DS cells
+and from sources in the DCN but excitatory inputs were not found from TS cells
+\citep{RubioJuiz:2004}.  Intracellular responses from labeled TV cells in the mouse
+show clear excitatory input from TS cells and diffuse inhibitory input from DS
+cells \citep{ZhangOertel:1993}.
+
+**** Golgi Cells as sources of GABAergic inputs
+
+Golgi cells lie in the granule cell layer of the ventral cochlear nucleus and
+are possible source of GABAergic input to D and T stellate cells
+\citep{Mugnaini:1985,FerragamoGoldingEtAl:1998,FerragamoGoldingEtAl:1998a}.
+GABAergic inputs from periolivary neurons are also known to project to the VCN
+\citep{OstapoffBensonEtAl:1997}. Intracellular recordings from T and D stellate
+cells indicate a significant GABAergic influence that is present in slices where
+the cochlear nucleus is isolated from olivary connections
+\citep{FerragamoGoldingEtAl:1998a}. Latency of excitation to AN shocks suggests
+golgi cells are activated by type II auditory nerve fibers
+\citep{BensonBerglundEtAl:1996,FerragamoGoldingEtAl:1998}.  Therefore, type II
+auditory nerve fibres could be involved in gain control through GABAergic
+modulation of activity in the VCN.
+
+
+*** CN Physiology
+
+*** Functional role of inhibition
+
+The actions of glycinergic and GABAergic inhibition are thought to play
+different spectro-temporal processing roles in the cochlear nucleus.
+Glycinergic inputs from D stellate and Tuberculoventral cells are predominantly
+active at the onset of stimuli; hence provide enhanced temporal acuity and
+dynamic range at onset.  Post onset and tonic inhibition is provided by GABA
+inputs.  GABAergic inhibition acting on slow and fast receptors (GABAA and GABAB
+respectively) is likely to mediate the strong post-onset inhibition in D
+stellate cells \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  TS cells are
+weakly inhibited by GABA \citep{FerragamoGoldingEtAl:1998}reflecting the smaller
+number of GABAergic synapses \citep{FriedlandPongstapornEtAl:2003}.  GABAergic
+inhibition in the VCN is derived from a number of possible sources,
+intrinsically from golgi cells in the granule cell layer of the VCN or
+extrinsically from olivocochlear efferents \citep{OstapoffBensonEtAl:1997}.
+
+Axo-somatic inhibition from flat and pleomorphic terminals has been observed
+adjoining prominently on D stellate cells and could possibly explain the OnC
+response to tones and noise.  Evidence of axo-dendritic inhibition on T stellate
+cells \citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that
+T stellate cells overcome saturation of high spontaneous rate AN fibres by
+proximal inhibitory inputs that shunt excitation from more distal inputs
+\citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored by
+\citep{LaiWinslowEtAl:1994} using steady-state inputs and was also the subject
+of my conference paper \citep{EagerGraydenEtAl:2004}.
+
+GABAergic inhibition regulates the level of activity in the VCN \citep{PalombiCaspary:1992},
+ The application of bicucilline abolishes the onset response of OnC
+and OnL units \citep{EvansZhao:1998,PalombiCaspary:1992}.  Bicuculline, a GABAA
+antagonist, raises the threshold and significantly increases OnC receptive field
+to high and low frequencies, up to 10 times the receptive field width of AN
+fibres \citep{EvansZhao:1998}.  Facilitation of response by spectral inputs
+outside the conventional receptive field
+\citep{WinterPalmer:1995,JiangPalmerEtAl:1996}, indicate the presence of tonic
+inhibition in OnC units.  Inhibition acting post onset is likely to be a
+dominant factor in OnC onset response properties rather than membrane based
+mechanisms \citep{EvansZhao:1998}.  OnC showed little difference in response to
+cosine or random phase harmonics, which improves temporal encoding of
+fundamental in echoic situations \citep{EvansZhao:1998}. The post-onset
+inhibition can last for up to 200-400msec, as observed by hyperpolarisation of
+the soma potential \citep{PaoliniClareyEtAl:2004} and a reduction in spontaneous
+firing rate \citep{RhodeGreenberg:1994}. \citet{MahendrasingamWallamEtAl:2004}
+demonstrated the co-localization of glycine and GABA transporters by
+immunofluorescence labelling of endings contacting spherical bushy cells. The
+functional significance of co-localization of these two inhibitory
+neurotransmitters is uncertain, but it is possible that glycinergic transmission
+may be modulated by the activation of pre- and postsynaptic GABA receptors
+\citep{LimAlvarezEtAl:2000}.
+
+
+**  Synaptic organisation modulating T stellate cells
+
+Advances in histological and pharmacological labelling techniques have produced
+a flood of information about the anatomy, physiology, immunohistochemistry,
+pharmacology and intrinsic membrane properties of the different cell types in
+the CN. The synaptic organisation of cells in the cochlear nucleus of has been
+examined in detail in various species (cat:
+\citep*{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}, mice:
+\citep*{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991},
+Guinea pig: \citep*{JuizHelfertEtAl:1996,OstapoffBensonEtAl:1997}, Rat:
+\citep*{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}.  Physiological studies
+combined with labelling have given greater certainty to correlations between
+physiological response types and morphological cell types
+\citep[e.g. ][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
+Intracellular recordings have ascertained the electrical properties and the
+different synaptic inputs of TS, DS and TV cells
+\citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993}.  Descriptions of current
+dynamics for synaptic receptors \citep{GardnerTrussellEtAl:1999,HartyManis:1998}
+and membrane channels
+\citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b} specific to the
+VCN enable accurate mathematical models at the cell and synaptic level.  With
+this information a realistic biological model of the stellate network is
+attainable and can provide further insights into processing of acoustic
+information.
+
+*** Afferent input 
+**** ANF to Golgi cells
+**** ANF to Tuberculoventral cells
+**** ANF to VCN stellate cells
+
+*** GABAergic input to VCN stellate cells
+
+*** Glycinergic input to Tuberculoventral cells
+*** D stellate cells to T stellate cells
+
+*** Other modulatory connections
+*** Summary of connections within the stellate microcircuit of the cochlear nucleus
+
+
+**  Computational models in the cochlear nucleus
+
+A number of stellate models have been developed previously.  The basic
+approaches include point neuron models
+\citep{HewittMeddisEtAl:1992,ErikssonRobert:1999,PressnitzerMeddisEtAl:2001} and
+conductance based compartmental models
+\citep{BanksSachs:1991,WhiteYoungEtAl:1994,LaiWinslowEtAl:1994,WangSachs:1995}. Most
+recently, a single compartment model with accurate membrane conductances was
+developed based on whole cell recordings in VCN neurons
+\citep{RothmanManis:2003b}.  The mechanisms that contribute to the electrical
+activity of stellate cells are the voltage-gated ionic currents that give the
+cell its chopping behaviour.
+\citet{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b} presented three
+new potassium current models from whole cell recordings in the VCN.  The
+significance of each membrane current in the spiking behaviour of bushy and
+stellate cells is explored in their single-compartment modelling study
+\citep{RothmanManis:2003b}.  The cell models I have designed incorporate Rothman
+and Manis’ membrane currents into a multi-compartmental model similar to
+\citet{BanksSachs:1991} stellate model.
+   
+These models have been used to explore some basic responses of stellate cells
+seen physiologically: 
+  - Regularity and chopping behaviour \citep{WhiteYoungEtAl:1994,ArleKim:1991,HewittMeddisEtAl:1992,BanksSachs:1991}
+  - Synchronisation to envelope \citep{HewittMeddisEtAl:1992,GhoshalKimEtAl:1992,WangSachs:1995}
+  - Enhancement of dynamic range relative to ANFs \citep{LaiWinslowEtAl:1994,ErikssonRobert:1999}
+  - Effects of lateral inhibition \citep{Shamma:1985,ErikssonRobert:1999,PressnitzerMeddisEtAl:2001}
+
+Lateral inhibition was studied in an abstract model of auditory processing by
+\citet{Shamma:1985}.  The only model to consider a network with TV and DS cells
+was \citet{ErikssonRobert:1999}.  Both these studies did not utilise the
+important dendritic and membrane cell properties of T stellate cells and did not
+include recurrent T stellate connections or GABAergic inhibition.
+
+*** History of point-neuron chopper models
+
+*** DCN Models and optimisation
+
+*** VCN Models
+
+
+**  Speech processing
+
+*** Synchronisation to Amplitude Modulated Tones
+
+The temporal modulation transfer function measures the precision of
+phase-locking to envelope modulations of a CF tone by different modulating
+frequencies (fm).  Frisina and colleagues first showed that phase-locking to
+amplitude modulation (AM) in the CN is enhanced relative to the auditory nerve.
+A number of studies have shown that the fundamental frequency is represented as
+an interval code in most cochlear nucleus units
+\citep{CarianiDelgutte:1996,Rhode:1995,Rhode:1998}.  Modulated signals have been
+used extensively to analyse temporal coding in the cochlear nucleus
+\citep{Moller:1976,FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,KimSirianniEtAl:1990,RhodeGreenberg:1994,Rhode:1994}.
+Some response types in the cochlear nucleus preserve envelope information over a
+wide range of stimulus levels, even above 100 dB SPL, where ANFs have reduced
+synchronisation (FrisinaSmithEtAl:1990,FrisinaWaltonEtAl:1994,Rhode:1994}.
+Studies of modulation in the anteroventral cochlear nucleus show a hierarchy of
+enhancement: OnC > Chopper > PL, PLN
+\citep{WangSachs:1994,Rhode:1998,RecioRhode:2000}. This enhancement is relative,
+since choppers only phase-lock to modulations below 500Hz, PL and PLN units
+perform better at higher modulation frequencies \citep{RhodeGreenberg:1994}.
+The degree of phase locking is measured by the synchronisation coefficient
+\citep{GoldbergBrownell:1973}.
+
+
+#+CAPTION: Amplitude modulated waveform, spectrum and temporal modulation transfer function (tMTF) with low and band-pass functions typical TS cells. BMF: best modulation frequency.  Image reprinted from \citet{JorisSchreinerEtAl:2004}.
+
+In the gerbil, chopper units generally have band-pass tMTF at high SPL, with the
+fm inducing the highest synchronisation called the best modulation frequency
+\citep[BMF, ][]{FrisinaSmithEtAl:1990}. Rhode and colleagues confirmed band-pass
+tMTFs as well as some band-pass rate-based MTFs in chopper units in the cat
+\citep{Rhode:1994,RhodeGreenberg:1994}.  The BMF of chopper units lie between 50
+and 500Hz (gerbil and cat).  OnC units are well suited to encode a wide range of
+fm with strong synchronisation due their precise onset Kim
+\citep{KimRhodeEtAl:1986,JorisSmith:1998,RhodeGreenberg:1994,Rhode:1998}.
+
+*** Vowel Representation in the Auditory Periphery
+
+The representation of vowels in the auditory periphery has been studied using
+recordings from a large population of auditory nerve fibres
+\citep{SachsYoung:1979,YoungSachs:1979,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c}
+and cochlear nucleus cells
+\citep{BlackburnSachs:1990,KeilsonRichardsEtAl:1997,RecioRhode:2000}.  Recent
+reviews of vowel encoding in the VCN \citep{May:2003,PalmerShamma:2003}
+highlighted the spectral enhancement of formant peaks and suppression of formant
+troughs by chopper units. Figure 4 shows the estimated rate-place representation
+of auditory nerve and VCN units.  HSR ANFs and primary-like VCN units show
+saturation of trough frequencies at moderate sound levels.  LSR units in the AN
+and LSR primary-like VCN units presumably are able to encode spectrum at high
+SPL.  The rate-place representation in chopper units (ChS and ChT) show
+considerable robustness to intensity (right panels).  Suppression of spectral
+troughs in the rate-place representation of ChT and ChS units is greater than
+the suppression in LSR ANFs at high SPL.  Spectral enhancement in T stellate
+cells cannot be attributed to lateral suppression in the auditory nerve, it
+requires some form of lateral inhibitory mechanism that can perform spectral
+enhancement by suppression of noise between peaks.
+
+#+CAPTION: Estimated Rate-place representation in auditory nerve and cochlear nucleus neurons.  May and colleagues used a spectral manipulation procedure to change the location of the first and second formant and the first trough frequencies to coincide with the CF of a recorded cell. HSR high spontaneous rate, LSR low spontaneous rate, ANF auditory nerve fibre, Pri primary-like VCN unit \citep[Figure reprinted from ][]{May:2003}
+[[../figures/May2003-Fig.png]]
+
+Lateral inhibition in varying strengths is found in the responses of most cell
+types in all divisions of the cochlear nucleus
+\citep{EvansNelson:1973,Young:1984,RhodeGreenberg:1994a}.  ChT TS cells exhibit
+strong sideband inhibition and respond to vowels with a clear and stable
+representation of acoustic spectrum in their average firing rate at all stimulus
+levels \citep{BlackburnSachs:1990,MayPrellEtAl:1998,RecioRhode:2000}.  Selective
+listening to low and high spontaneous rate AN fibres could be one possible
+mechanism \citep{WinslowSachsEtAl:1987}.  TS cells do receive inhibitory inputs
+\citep{Cant:1981,SmithRhode:1989,FerragamoGoldingEtAl:1998} hence they are
+candidates for operation of lateral inhibition.  Also, recurrent excitation by
+TS cells within the same frequency band could increase the rate.
+
+
+**  Define the hypotheses
+
+# from confirmation report
+**** Hypothesis 1) 
+Enhancement of the rate-place representation of spectral shape in ChT units,
+relative to ANFs, is due to lateral inhibitory mechanisms ChT units maintain a
+robust representation of stimulus spectrum despite a reduction in spectral shape
+from auditory nerve inputs \citep{PalmerShamma:2003}. Lateral inhibition from
+interneurons in the cochlear nucleus mediates the spectral enhancement seen in
+the rate-place representation of transiently chopping T stellate cells. This
+mechanism implies that the rate-place representation of complex stimuli will be
+significantly reduced if any sources of inhibition are removed.
+
+**** Hypothesis 2) 
+Enhancement of the rate-place representation of spectral shape in ChT units,
+relative to ANFs, is due in part to recurrent excitation by ChT units (T
+stellate cells) within the same frequency band Intracellular and morphological
+evidence suggests recurrent excitation among T stellate cells is likely to occur
+\citep{FerragamoGoldingEtAl:1998a,PalmerWallaceEtAl:2003}.  Recurrent excitation
+introduces considerable non-linearity to the network as regions of high energy
+will elicit self-excitation.  This mechanism could explain the steady response
+of ChT cells despite a reduction in sustained firing rate of ANFs due to
+transient adaptation.
+
+**** Hypothesis 3) 
+Enhancement of the temporal representation of the fundamental frequency of
+vowels in ChT units, relative to ANFs, is due to lateral inhibitory mechanisms
+Synchronisation to regular envelope fluctuations in T stellate cells,
+particularly ChT units, is enhanced relative to ANFs
+\citep{FrisinaSmithEtAl:1990,RhodeGreenberg:1994}.  Enhanced synchronisation to
+the fundamental frequency of vowels in T stellate cells could be used to
+segregate concurrent signals \citep{KeilsonRichardsEtAl:1997}.  Tonic inhibition
+from GABAergic sources and precise onset inhibition from glycinergic sources are
+critical mechanisms that allow T stellate cells to accurately respond to
+pulsatile stimuli, such as the f0 of vowels.
+  
+**** Hypothesis 4)
+Lateral inhibition in the T stellate network is responsible for setting the
+upper limits of psychophysical simultaneous and forward masking T stellate cells
+convey important spectral information to higher auditory centres and are the
+first to process across-spectral information in the auditory pathway. Forward
+masking in T stellate cells has been shown to be comparable to the limits of
+psychophysical perception \citep{BoettcherSalviEtAl:1990,Shore:1995} and is
+heavily influenced by inhibition \citep{BackoffPalombiEtAl:1997,Shore:1998}.
+Lateral suppression reduces the firing rate of T stellate cells
+\citep{BlackburnSachs:1992,RhodeGreenberg:1994} indicating a spread of masking
+to high and low frequency areas similar to the spreading function and offset of
+\citet{Johnston:1988}.  I concede that there are significant masking effects
+performed by other nuclei in the auditory pathway but these only add to the
+masking performed in the cochlear nucleus. This hypothesis suggests the upper
+limits of auditory detection for across-spectral and temporal masking is due
+primarily to lateral inhibition in the stellate network.
+
+
+** Aims of this thesis
+
+ - biophysically realistic neural network model of the cochlear nucleus stellate
+   microcircuit.
+ - explore streamlined optimisation of all parameters in simplified CNSM using
+   genetic algorithms
+ - explore detailed, sequential optimisation of CNSM's parameters through simple
+   responses
+ - verification of optimised CNSM with AM coding and vowel processing, with
+   explicit analysis of TS cells/choppers
+
+
+
+** Significance
+
+This PhD project is aimed at elucidating the important physiological mechanisms
+involved in the early processing of sounds that are germane to spectral
+enhancement and masking.  Computer modelling enhances our knowledge of complex
+neural interactions in T stellate cells and provides further understanding of
+inputs to higher centres.  The cochlear nucleus stellate network contains many
+independent simple components that are combined in non-linear feedback and
+feed-forward processes.  Intuition and simple calculation cannot serve to
+predict the response of such a complex system, therefore a more complex model
+must be used.  A biological neural network that contains a high degree of
+realism at the individual cell level can contribute to our knowledge of synaptic
+organisation in producing physiological behaviour.  The complexity of synaptic
+organisation is compounded by inter-species and within-species
+variation. Variation is managed by constraining the parameters to a range of
+values to elicit physiological behaviour observed in vivo.
+
+The implications for signal processing by lateral inhibition and recurrent
+excitation are two fold: enhanced spectral representation and enhanced
+synchronisation to the fundamental frequency.  The physiological and signal
+processing significance of particular components in the network are addressed in
+the first three hypotheses.  Rate-place representation of vowel spectrum are
+analysed for the effects of lateral inhibition and recurrent excitation.
+Spectral shape enhancement is important for a stable representation of stimulus
+spectrum to be conveyed to higher auditory centres. Clarifying the roles of
+glycinergic and GABAergic inhibition can contribute to the understanding of
+spectral and temporal influences of inhibitory circuits in the cochlear nucleus.
+
+The final hypothesis addresses the psychophysical relevance of the components in
+the network.  Across-spectral processing within the cochlear nucleus stellate
+network produces lateral and temporal suppression.  Higher processing stages in
+the auditory system also perform some form of enhancement and masking, however
+they are limited by the information contained at the output of the cochlear
+nucleus.  Therefore signal processing performed by lateral inhibition and
+recurrent excitation in the cochlear nucleus has a significant impact on
+perception at higher levels of auditory processing.
+
+Understanding the complex processing performed by the cochlear nucleus can also
+contribute to understanding the limitations of cochlear implant processing
+strategies.  Recordings form cochlear implant stimulated auditory nerve fibres
+can possibly be used as inputs to the model to determine the responses within
+the cochlear nucleus.  Understanding how the processing of sound in noisy
+environments works within the network could aid in developing new sound
+processing strategies for the cochlear implant.
+
+
+
+#  #+begin_latex:
+\bibliographystyle{plainnat}
+\bibliography{MyBib}
+#  #+end_latex
