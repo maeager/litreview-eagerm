@@ -4,9 +4,16 @@
 #+TITLE: Synaptic Organisation in the Cochlear Nucleus
 #+DATE:
 #+AUTHOR: Michael A Eager
-#+LATEX_HEADER:\usepackage[sort,round,numbers]{natbib}
+#  #+LATEX_HEADER:\usepackage[sort,round,numbers]{natbib}
 #  #+LATEX_HEADER:\usepackage{wasysym,latexsym,amssymb,amsmath}
-#+LATEX_HEADER:\usepackage[colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+#  #+LATEX_HEADER:\usepackage[colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+#+LATEX_HEADER:\graphicspath{{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+#+LATEX_HEADER:\usepackage{rotating,calc}
+#+LATEX_HEADER:\usepackage{booktabs,ltxtable,lscape}
+#+LATEX_HEADER:\newcommand{\um}{$\mu$m}
+#+LATEX_HEADER:\newcommand{\umsq}{$\mu$m$^2$}
+
+
 #+BIBLIOGRAPHY: MyBib unsrtnat
 #+TEXT:        \setcounter{chapter}{1}
 #+TEXT:        \chapter{Synaptic Organisation in the Cochlear Nucleus}
@@ -17,6 +24,9 @@
 (setq org-latex-to-pdf-process '("lapdf SynapticOrganisation"))
 (UoM-org-options)
 #+end_elisp
+
+
+#+elisp: (setq org-latex-to-pdf-process '("pdflatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "pdflatex -interaction nonstopmode %f"  "pdflatex -interaction nonstopmode %f" ))
 
 
 * Introduction
@@ -33,7 +43,7 @@ Guinea pig: \citep*{JuizHelfertEtAl:1996,OstapoffBensonEtAl:1997}, Rat:
 \citep*{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}.  Physiological studies
 combined with labelling have given greater certainty to correlations between
 physiological response types and morphological cell types
-\citep[e.g. ][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
+\citep{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
 Intracellular recordings have ascertained the electrical properties and the
 different synaptic inputs of TS, DS and TV cells
 \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993}.  Descriptions of current
@@ -49,17 +59,12 @@ information.
 * Receptors and Neurotransmitters
 ** Glutamatergic AMPA synapses
 
+Evidence for glutamate synapses in the cochlear nucleus has been established in many studies, specifically AMPA subtype glutamate receptors
+\citep{FexWenthold:1976, AdamsMugnaini:1987,GrandesStreit:1989,SchweitzerJensenEtAl:1991,HunterPetraliaEtAl:1993,WrightBlackstoneEtAl:1996,PetraliaWangEtAl:1996,
+NekiOhishiEtAl:1996,HackneyOsenEtAl:1996,RubioWenthold:1997,PetraliaWangEtAl:1997,LevinKubkeEtAl:1997,WangWentholdEtAl:1998,OhishiNekiEtAl:1998,BilakMorest:1998,
+PetraliaRubioEtAl:2000,KoradaSchwartz:2000,KemmerVater:2001,SrinivasanFriaufEtAl:2004,RubioJuiz:2004,Rubio:2005,Rubio:2006,ItoBishopEtAl:2011}
+
 Type I auditory nerve fibre synapses form glutamatergic AMPA receptors
-
-\citep{FexWenthold:1976,
-AdamsMugnaini:1987,GrandesStreit:1989,SchweitzerJensenEtAl:1991,HunterPetraliaEtAl:1993,
-WrightBlackstoneEtAl:1996,PetraliaWangEtAl:1996,
-NekiOhishiEtAl:1996,HackneyOsenEtAl:1996,RubioWenthold:1997,PetraliaWangEtAl:1997,LevinKubkeEtAl:1997,
-WangWentholdEtAl:1998,OhishiNekiEtAl:1998,BilakMorest:1998,
-PetraliaRubioEtAl:2000,KoradaSchwartz:2000,
-KemmerVater:2001,SrinivasanFriaufEtAl:2004,RubioJuiz:2004,Rubio:2005,Rubio:2006,
-ItoBishopEtAl:2011}
-
 
  \citep{FerragamoGoldingEtAl:1998a,WentholdHunterEtAl:1993}.  Histological measures
  of labelled T stellate cells show the presence of glutamate and glutamine antibodies
@@ -243,12 +248,11 @@ Golgi cells are the only GABAergic neuron in the VCN and lie within the
 # To ascertain if GABAergic transmission persisted
 # in still older animals (P17–P22 rats), we positioned the stim-
 # ulating electrode after the slices were bathed in 500 nM
-# strychnine. Under these conditions,
-small, slow IPSCs (weighted time constant = 24 $\pm$ 4 ms) could be
+# strychnine. Under these conditions, small, slow IPSCs (weighted time constant = 24 $\pm$ 4 ms) could be
 # evoked, indicating that weak GABAergic inputs persist in
 # more mature MNTB
 
-GABAergic syanpses were evoked in mature MNTB neurons (slice preparation bathed in strychnine) with slow dynamics with a weighted time constant of 24 $\pm$ 4 ms  \citep{AwatramaniTurecekEtAl:2005}.
+GABAergic syanpses were evoked in mature MNTB neurons (slice preparation bathed in strychnine) with slow dynamics with a weighted time constant of $24 \pm 4$ ms  \citep{AwatramaniTurecekEtAl:2005}.
 
 GABA_A receptors may also be present outside of synaptic terminals, due to the observation of enhanced recruitment when using GABA puffs  \citep{AwatramaniTurecekEtAl:2005}.
 
@@ -257,11 +261,10 @@ GABA_A receptors may also be present outside of synaptic terminals, due to the o
 
 a. Golgi cells (GABA)
 
-\begin{itemize}
-\item
-\item dend filter obscures PSPs
-\item
-\end{itemize}
+
+ filter obscures PSPs
+
+
 
 
 
@@ -465,13 +468,13 @@ Proposals for connectivity around the stellate microcircuit are summarised in Ta
 
 
 
-#+begin_latex:
+
 \begin{landscape}
-%\setcitestyle{numbers}
+%  \setcitestyle{numbers}
 {\small\LTXtable{220mm}{ConnectionsTable}}
 %\setcitestyle{authoryear}
 \end{landscape}
-#+end_latex
+
 
 
 # Proposed neuronal connections
@@ -496,4 +499,9 @@ Proposals for connectivity around the stellate microcircuit are summarised in Ta
 # slowly than that to T or D stellate cells in the vicinity sug-
 # gests that they are activated by type II auditory nerve fibers
 # (Benson et al. 1996; Ferragamo et al. 1997).
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{MyBib}
 
