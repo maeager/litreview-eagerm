@@ -425,9 +425,10 @@ Commissural DS units: 1.52 ms shock to cCN [\citep{NeedhamPaolini:2006}].
 
  [[latex:textsc][Synapse type]]: GABA_A receptor
 
-
  [[latex:textsc][Synaptic Contacts]]:
+
  [[latex:textsc][Receptive Fields]]:
+
  [[latex:textsc][Delay]]:
 
 *** Other modulatory connections
@@ -442,6 +443,26 @@ Commissural DS units: 1.52 ms shock to cCN [\citep{NeedhamPaolini:2006}].
 
 
 Proposals for connectivity around the stellate microcircuit are summarised in Table \ref{tab:Connection}.
+
+#Proposals for connectivity around T stellate cells microcircuit are hotly contested in the literature.
+
+# The first network models in the cochlear nucleus revolved around the DCN
+# \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992} Selective
+# processing of different ANF inputs using some form of inhibition was the first
+# step toward including interneurons in a T stellate cell model
+# \citep{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}.
+
+# Recurrent excitation between TS cells is thought to be present in mice
+# \citep{FerragamoGoldingEtAl:1998a} and has been investigated in two modelling
+# studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}, but neither study
+# represents a realistic implementation of the stellate microcircuit.
+# \citet{BahmerLangner:2006} used excitatory onset units to regulate the recurrent
+# T stellate cells, unfortunately the only excitatory onset units in the cochlear
+# nucleus are octopus cells, which do not have axonal collaterals in the \VCN\@.
+# Recurrent networks in the cortex prefer inhibition for synchronisation
+# \citep{LyttonSejnowski:1991,BushSejnowski:1996}.
+
+
 
 
 #+begin_latex:

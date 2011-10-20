@@ -3,8 +3,7 @@
 \usepackage{nag}
 \usepackage{../hg/manuscript/style/uomthesis}
 \input{../hg/manuscript/user-defined}
-
-\usepackage[acronym]{glossaries}
+\usepackage[acronym,nonumberlist]{glossaries}
 \input{../hg/manuscript/misc/glossary}
 \makeglossaries
 
@@ -34,11 +33,12 @@
 \newcommand{\umsq}{$\mu$m$^2$}
 
 \hypersetup{
-pdftitle = Literature Review,
+pdftitle = Literature Review Chapter,
 pdfauthor = Michael Eager
 %pdfsubject= , 
 %pdfkeywords = keyword1 keyword2 keyword3
 }
+%\setcitestyle{numbers}
 
 
 % xelatex font
@@ -88,7 +88,10 @@ pdfauthor = Michael Eager
 %*****************************************
 
 \section{Auditory System}\label{Ch1:AuditorySystem}
+
 \input{Peripheral.tex}
+
+
 
 %*****************************************
 \section{Cochlear Nucleus}\label{Ch1:CochelarNucleus}
@@ -122,7 +125,9 @@ Recent Reviews of characterised cells and projections
 
 reviews \citep{BruggeGeisler:1978}
 
-\citet{DoucetRyugo:2006} showed the limited number of VCN multipolar neuron studies that have performed physiological unit assessments as well as classification of morphology via labelling.
+\citet{DoucetRyugo:2006} showed the limited number of VCN multipolar neuron
+studies that have performed physiological unit assessments as well as
+classification of morphology via labelling.
 
 % auditory brain stem. Most of the different neuron popula-
 % tions in the magnocellular core are contacted by individual
@@ -191,6 +196,7 @@ reviews \citep{BruggeGeisler:1978}
 % [56]. Primary endings are also associated with delta recep-
 % tors but it is not known if delta receptors form functional
 % receptors.
+
 % NMDA receptors are characterized by a voltage-dependent
 % calcium channel. It is thought that depolarization via the
 % AMPA receptors is required for the NMDA receptor to
@@ -211,6 +217,7 @@ reviews \citep{BruggeGeisler:1978}
 % minishes shortly after weaning [54,73]. Such data indicate
 % that NMDA receptors may play a role in the development
 % of the non-NMDA receptors.
+
 % Metabotropic glutamate receptors are thought of as sin-
 % gle molecules coupled to G-proteins. The G-proteins are
 % linked to intracellular transduction pathways that may un-
@@ -223,6 +230,7 @@ reviews \citep{BruggeGeisler:1978}
 % metabotropic receptors are distributed in the perisynaptic
 % membrane that ﬂanks the postsynaptic membrane density
 % [128,145].
+
 % Transmitter released from auditory nerve endings must be
 % rapidly removed from the synaptic cleft so that the postsy-
 % naptic cell is prepared for the next transmission. The removal
@@ -249,60 +257,11 @@ reviews \citep{BruggeGeisler:1978}
 
 
 %*****************************************
-\section{Summary of T~Stellate Microcircuit Connections}
-
-
-Proposals for connectivity around T stellate cells microcircuit are hotly
-contested in the literature.
-
-The first network models in the cochlear nucleus revolved around the DCN
-\citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992} Selective
-processing of different ANF inputs using some form of inhibition was the first
-step toward including interneurons in a T stellate cell model
-\citep{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}.
-
-Recurrent excitation between TS cells is thought to be present in mice
-\citep{FerragamoGoldingEtAl:1998a} and has been investigated in two modelling
-studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}, but neither study
-represents a realistic implementation of the stellate microcircuit.
-\citet{BahmerLangner:2006} used excitatory onset units to regulate the recurrent
-T stellate cells, unfortunately the only excitatory onset units in the cochlear
-nucleus are octopus cells, which do not have axonal collaterals in the \VCN\@.
-Recurrent networks in the cortex prefer inhibition for synchronisation
-\citep{LyttonSejnowski:1991,BushSejnowski:1996}.
-
-
-\begin{landscape}
-%\setcitestyle{numbers}
-{\small\LTXtable{220mm}{ConnectionsTable}}
-%\setcitestyle{authoryear}
-\end{landscape}
-
-% Proposed neuronal connections
-% The present considerations have provided evidence for the
-% connections that are summarized in Fig. 15. We propose that
-% T stellate cells receive excitatory, glutamatergic input from
-% a small number of type I auditory nerve fibers (monosynaptic
-% EPSPs) as well as through collaterals of other T stellate
-% cells (late EPSPs) (Oertel et al. 1990). The topographic
-% arrangement of tuberculoventral cells indicates that roughly
-% the same group of auditory nerve fibers innervates tuberculo-
-% ventral cells which, in turn, provide delayed, glycinergic
-% inhibition (Wickesberg and Oertel 1988, 1990). D stellate
-% cells contribute to the disynaptic IPSP and at high shock
-% strengths can provide trains of late IPSPs to T stellate cells.
-% D Stellate cells are driven by type I auditory nerve fibers
-% (Oertel et al. 1990; this study), and they receive GABAergic
-% inhibition, of which Golgi cells are a likely source (Mugnaini
-% 1985). Golgi cells lie in the granule cell domain, away from
-% the terminals of type I auditory nerve fibers. The finding
-% that they are activated by shocks to the auditory nerve more
-% slowly than that to T or D stellate cells in the vicinity sug-
-% gests that they are activated by type II auditory nerve fibers
-% (Benson et al. 1996; Ferragamo et al. 1997).
+%\section{Summary of T~Stellate Microcircuit Connections}
 
 
 \section{Summary of Cell Morphology}
+
 
 \begin{landscape}
 %\afterpage
@@ -311,16 +270,7 @@ Recurrent networks in the cortex prefer inhibition for synchronisation
 
 
 
-%*****************************************
-\section{Neural Modelling in the Cochlear Nucleus}
-
-\subsection{Neuron Models with Chopping Characteristics}
-
-\subsection{Microcircuits and Networks in the Cochlear Nucleus}
-
-\begin{landscape}
-{\small\LTXtable{210mm}{ModellingCNTable}}
-\end{landscape}
+%\citep[e.g.][]{FerragamoGoldingEtAl:1998a}
 
 %*****************************************
 %\setcitestyle{numbers}
