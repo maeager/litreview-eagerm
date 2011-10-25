@@ -30,7 +30,7 @@
 
 
 * Introduction
-#Synaptic organisation modulating T stellate cells
+#Synaptic organisation in the stellate microcircuit
 
 Advances in histological and pharmacological labelling techniques have produced
 a flood of information about the anatomy, physiology, immunohistochemistry,
@@ -82,7 +82,7 @@ Whole cell patch recordings show NMDA
  observable NMDA EPSCs at the soma in mature rats \citep{BellinghamLimEtAl:1998}.
 # %\citep{Oertel:1983}
  Five percent of ANFs are unmyelinated type II fibres (cat: \citep{KiangRhoEtAl:1982},mice: \citep{Ehret:1979}). 
- possibly mediated by NMDA receptors or mossy fiber-like endings with reduced glutamate re-uptake JosephsonMorest:2003
+ possibly mediated by NMDA receptors or mossy fibre-like endings with reduced glutamate re-uptake JosephsonMorest:2003
  the lack of
  \citep{BensonBrown:2004,Ryugo:2008,RyugoHaenggeliEtAl:2003,RyugoParks:2003}.
  (cats: Kiang et al. 1982; mice: Ehret 1979)
@@ -313,8 +313,8 @@ a. Golgi cells (GABA)
 
 # How chopping responses are produced is not completely understood. It has been
 # suggested that stellate cells integrate input from large numbers of auditory nerve
-# fibers. However, stellate cells in mice have been shown to receive input from only
-# a few (four to six) sharply timed auditory nerve fiber inputs (175).  Activation of
+# fibres. However, stellate cells in mice have been shown to receive input from only
+# a few (four to six) sharply timed auditory nerve fibre inputs (175).  Activation of
 # these inputs with trains of shocks produces entrained responses rather than
 # chopping (172, 175), raising two questions: How are stellate cells prevented from
 # encoding the timing of auditory nerve inputs after the initial action potential in
@@ -481,23 +481,23 @@ Proposals for connectivity around the stellate microcircuit are summarised in Ta
 # The present considerations have provided evidence for the
 # connections that are summarized in Fig. 15. We propose that
 # T stellate cells receive excitatory, glutamatergic input from
-# a small number of type I auditory nerve fibers (monosynaptic
+# a small number of type I auditory nerve fibres (monosynaptic
 # EPSPs) as well as through collaterals of other T stellate
 # cells (late EPSPs) (Oertel et al. 1990). The topographic
 # arrangement of tuberculoventral cells indicates that roughly
-# the same group of auditory nerve fibers innervates tuberculo-
+# the same group of auditory nerve fibres innervates tuberculo-
 # ventral cells which, in turn, provide delayed, glycinergic
 # inhibition (Wickesberg and Oertel 1988, 1990). D stellate
 # cells contribute to the disynaptic IPSP and at high shock
 # strengths can provide trains of late IPSPs to T stellate cells.
-# D Stellate cells are driven by type I auditory nerve fibers
+# D Stellate cells are driven by type I auditory nerve fibres
 # (Oertel et al. 1990; this study), and they receive GABAergic
 # inhibition, of which Golgi cells are a likely source (Mugnaini
 # 1985). Golgi cells lie in the granule cell domain, away from
-# the terminals of type I auditory nerve fibers. The finding
+# the terminals of type I auditory nerve fibres. The finding
 # that they are activated by shocks to the auditory nerve more
 # slowly than that to T or D stellate cells in the vicinity sug-
-# gests that they are activated by type II auditory nerve fibers
+# gests that they are activated by type II auditory nerve fibres
 # (Benson et al. 1996; Ferragamo et al. 1997).
 
 
