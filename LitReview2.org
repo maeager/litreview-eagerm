@@ -21,10 +21,11 @@
 
 #+elisp: (setq org-latex-to-pdf-process '("pdflatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "pdflatex -interaction nonstopmode %f"  "pdflatex -interaction nonstopmode %f" ))
 #+elisp:(setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf"))
-#+elisp:(setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf"))
+#+elisp:(setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf"))x
+
 
 #+elisp:(setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n\\printglossaries\n}\n\\setcounter{chapter}{0}")
-
+(setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
 
 
 * Introduction
@@ -43,12 +44,13 @@ important for speech and other auditory communication \citep{YoungOertel:2004}.
 The main tasks of the auditory system are to 1) separate out individual
 frequency components; 2) enhance spectral and temporal contrasts to improve
 signal-to-noise ratio (SNR); and 3) extract and abstract behaviourally
-meaningful cues \citep{Evans:1992}.  Rough frequency decomposition is performed by
-the basilar membrane and transformed to neural signals in \ANFs.  The second task occurs throughout the auditory system but primarily in
-the cochlear nucleus, the first processing stage of the central auditory pathway
-in which all ANFs terminate. Enhancing spectral and temporal contrasts requires
-sophisticated parallel processing strategies involving networks of neurons with
-feed-forward and feed-back connections.
+meaningful cues \citep{Evans:1992}.  Rough frequency decomposition is performed
+by the basilar membrane and transformed to neural signals in \ANFs.  The second
+task occurs throughout the auditory system but primarily in the cochlear
+nucleus, the first processing stage of the central auditory pathway in which all
+ANFs terminate. Enhancing spectral and temporal contrasts requires sophisticated
+parallel processing strategies involving networks of neurons with feed-forward
+and feed-back connections.
 
 \Gls{TS} cells of the \VCN encode a robust representation of stimulus spectrum
 in their average rate and a temporal representation of the fundamental
@@ -56,7 +58,7 @@ frequency, f0 \citep{KeilsonRichardsEtAl:1997}. They project directly to the
 inferior colliculus, thus are important in conveying information to higher
 auditory centres. TS cells are known to form a recurrent network with \DS cells,
 a wide-band inhibitory cell in the \VCN, and \TV cells, a narrowband inhibitory
-cell in the \DCN \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993}. Inhibition
+cell in the \DCN\space \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993}. Inhibition
 is known to play a key role in shaping the average rate response,
 synchronisation to modulation and onset delay of cells in the cochlear nucleus
 \citep{CasparyBackoffEtAl:1994,EvansZhao:1998,BackoffShadduckEtAl:1999,PaoliniClareyEtAl:2004}.
@@ -69,20 +71,20 @@ the CN. The synaptic organisation of cells in the cochlear nucleus of has been
 examined in detail in various species (cat:
 \citealt{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}, mice:
 \citealt{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991},
-guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats: VCN \citealt{FriedlandPongstapornEtAl:2003},
- DCN \citealt{RubioJuiz:2004}).  Physiological studies combined with
-labelling have given greater certainty to correlations between physiological
-response types and morphological cell types
-\citep[e.g.][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
+guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats: VCN\space
+\citealt{FriedlandPongstapornEtAl:2003}, DCN\space \citealt{RubioJuiz:2004}).
+Physiological studies combined with labelling have given greater certainty to
+correlations between physiological response types and morphological cell types
+\citep[e.g.~][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
 Intracellular recordings have ascertained the electrical properties and the
-different synaptic inputs of TS, DS and TV cells
+different synaptic inputs of \TS, \DS and \TV cells
 \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993}.  Descriptions of current
 dynamics for synaptic receptors \citep{GardnerTrussellEtAl:1999,HartyManis:1998}
 and membrane channels \citep{RothmanManis:2003,RothmanManis:2003a} specific to
-the \VCN enable accurate mathematical models to be developed at the cell and synaptic level.
-With this information a realistic biological model of the stellate network is
-attainable and can provide further insights into processing of acoustic
-information.
+the \VCN enable accurate mathematical models to be developed at the cell and
+synaptic level.  With this information a realistic biological model of the
+stellate network is attainable and can provide further insights into processing
+of acoustic information.
 
 
 The intention of developing the cochlear nucleus network is to generalise and
@@ -92,8 +94,8 @@ stimulus spectrum and periodicities.  What makes T-stellate cells adapt to a
 noisy input?  What is the purpose of the polysynaptic recurrent inhibition
 between DS and TV cells, and why do \DSTV connections project to slightly higher
 CFs?  What is the functional difference between ChT and ChS, across frequencies
-and within frequencies in terms of temporal and rate based measures?
-The average discharge rate of the two chopper populations provide either a ‘high
+and within frequencies in terms of temporal and rate based measures?  The
+average discharge rate of the two chopper populations provide either a ‘high
 contrast’ representation independent of level or a ‘low contrast’ level
 dependent representation of stimulus spectrum \citep{BlackburnSachs:1990}.  The
 temporal coding of cells in the cochlear nucleus has also been studied
@@ -123,7 +125,7 @@ relate. Most paragraphs are edited from Confirmation Report.}
 
 
 
-This PhD project is aimed at investigating the important physiological
+This doctoral thesis is aimed at investigating the important physiological
 mechanisms involved in the processing of sounds, specifically spectral and
 temporal enhancement, in the cochlear nucleus of mammals.  Computer modelling
 enhances our knowledge of complex neural interactions in T stellate cells and
@@ -200,7 +202,8 @@ or onset chopper
 \citep{Pfeiffer:1963,SmithJorisEtAl:1993,ShofnerYoung:1985,YoungRobertEtAl:1988,BlackburnSachs:1989}.
 
 The afferent and intrinsic synaptic connectivity in the cochlear nucleus have
-also shown wide interest in the literature \citep[see~reviews][]{YoungOertel:2004,OertelWrightEtAl:2010}.  The network in
+also shown wide interest in the literature
+\citep[see~reviews][]{YoungOertel:2004,OertelWrightEtAl:2010}.  The network in
 Figure \ref{fig:CNschematic} shows the connections, regarded in the literature
 with sufficient evidence, among cochlear nucleus that are involved in modulating
 \TS cells.  The cells and their synaptic interaction will be discussed in the
@@ -254,7 +257,7 @@ Auditory nerve inputs are not shown. \label{fig:CNschematic}}
 recognition of natural sounds and are a major source of excitatory input to the
 inferior colliculus \citep{OertelWrightEtAl:2010}.  This section gives a brief
 description of the cell morphology, immuno-histochemistry, intrinsic properties,
-and synaptic contacts of \TS cells.  
+and synaptic contacts of \TS cells.
 # The determination of how theses elements contribute to the acoustic behaviour
 
 
@@ -319,12 +322,11 @@ radial (DS cells) has also been suggested in rats
    given AN adaptation?
 
 
-In response to
-intracellular current injection they fire with regularly spaced action
-potentials and have a linear current-voltage response
+In response to intracellular current injection they fire with regularly spaced
+action potentials and have a linear current-voltage response
 \citep{Oertel:1983,OertelWuEtAl:1988,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
+The presence of the transiently deactivating \IKA current channels ,,,
 
-THe presence of the transiently deactivating KA current 
 
 *** Acoustic Response of T Stellate Cells
 
@@ -388,10 +390,80 @@ response area to be transmitted to higher centres.
     \cite{DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c,DelgutteKiang:1984d,DavoreIhlefeldEtAl:2009}
 
 
+# CantBenson
+# The type I multipolar cells are narrowly tuned and respond to tone bursts with
+# regular trains of action potentials, a response referred to as a
+# {\textquotedblleft}chopper{\textquotedblright} pattern (e.g.
+# [168,220]). Neurons that exhibit chopper responses can differ substantially in
+# their dendritic morphology ([58,179,194],cf. [30]) which suggests that a further
+# subdivision of this class of neurons may be possible. In mouse, the equivalent
+# cells (T-stellate cells) appear to integrate input from the auditory nerve with
+# that from other multipolar cells of both types
+
+# [61]. In general, the response properties of chopper units suggest that they
+# play an important role in encoding complex acoustic stimuli, perhaps including
+# speech sounds (e.g. [26,131,180]).
+
+# The projection pattern of type I multipolar cells is illustrated in Fig.
+# 2F. The axons leave the cochlear nucleus via the trapezoid body
+# [55,151,220,245], where they make up the ventral thin fibre component
+# [31,215,245,248]. Possibly because they are thinner than the axons of the other
+# cell types, there have been few reports of successful intra-axonal injections of
+# these fibres so it is not entirely clear whether the different projections arise
+# from the same or different populations. Multipolar cells are a major source of
+# input from the cochlear nucleus to the contralateral inferior colliculus
+# [2,12,24,33,37,102,154,156,191,205]. It seems likely
+
+# that most, if not all, type I multipolar cells participate in this projection
+# [102]. The projection arises from neurons throughout the VCN, including all but
+# the most anterior part of the AVCN and the octopus cell area in the PVCN. The
+# same neurons that project to the inferior colliculus also send collateral
+# branches to the DCN ([4],also, [55,61,167,217]). In both targets, the synaptic
+# terminals contain round synaptic vesicles, compatible with an excitatory effect
+# (IC: [154],DCN: [220]). The projections from the cochlear nucleus have been
+# shown to directly contact neurons in the inferior colliculus that project to the
+# medial geniculate nucleus [156]. A smaller projection to the ipsilateral
+# inferior colliculus also arises from multipolar cells in the VCN
+# (e.g. [2,154]). The axons that make up this projection travel in the lateral
+# trapezoid body tract [245,248]. Multipolar cells in the VCN give rise to
+# projections to
+
+# the dorsomedial periolivary nucleus in cat [215] or superior paraolivary nucleus
+# in rat and guinea pig [64,201], to the ventral nucleus of the trapezoid body
+# [64,215] and to the ventral nucleus of the lateral lemniscus
+# [64,91,206,215]. The cells that give rise to these projections are probably the
+# type I multipolar cells [218]. Although it has not been established definitely,
+# it seems likely that these projections arise from the same cells that project to
+# the inferior colliculus. Multipolar cells of unknown type project to the
+# ipsilateral
+
+# lateral superior olivary nucleus and the lateral periolivary region in cats
+# [41,233,248]. In addition to their projection to the DCN, the type I multipolar
+# cells give rise to extensive collateral branches within the VCN
+# [4,61,151,220,238]. These appear to play an important role in shaping late
+# responses of cells in the VCN to auditory nerve stimulation
+# (e.g. [61]).{\textquotedblright}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **** Recurrent local excitation between T stellate cells
 
 # %% Needs correcting
+
 Sources of polysynaptic excitation \citep{FerragamoGoldingEtAl:1998a}, observed
 with late \EPSPs observed in T stellate cells, indicate that T stellate cells
 receive excitatory input from excitatory interneurons in the slices. When
@@ -407,12 +479,11 @@ interneurons. Furthermore, the activation of \EPSPs with the application of
 glutamate indicates that the dendrites of excitatory interneurons are accessible
 from the bath.  TS cells are excitatory neurons known to terminate in the
 vicinity of TS cells. TS cells terminate locally in the multipolar cell area of
-the \PVCN \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS cells and occasionally \DS and bushy cells, some or all of which are
-therefore presumably their targets. The ultrastructure of \TS cell
-terminals and functional studies of the inputs to the inferior colliculi is
-consistent with their being excitatory (Oliver 1984, 1987; Smith and Rhode
-1989).
-
+the \PVCN \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS cells
+and occasionally \DS and bushy cells, some or all of which are therefore
+presumably their targets. The ultrastructure of \TS cell terminals and
+functional studies of the inputs to the inferior colliculi is consistent with
+their being excitatory (Oliver 1984, 1987; Smith and Rhode 1989).
 
 *** Neuromodulatory Effects in T Stellate Cells
 
@@ -431,6 +502,10 @@ consistent with their being excitatory (Oliver 1984, 1987; Smith and Rhode
 **** Intrinsic inhibitory neuromodulation
      - Glycine from DS cells \citep{FerragamoGoldingEtAl:1998a}
      - Glycine from TV cells \citep{WickesbergOertel:1990,ZhangOertel:1993b}
+       - complicated recurrent loop: TS excite TV cells is several intracellular
+         studies \citep{WickesbergOertel:1990,ZhangOertel:1993b} but TS
+         terminals absent on TV cells in rat microscopy study
+       - if present this could directly regulate the sustained activity in TS cells
 
 #  2. Neuromodulatory 
 #     No signs of \PSP or \PSCs hence distal or G-protein coupled, effects on time-course minimal
@@ -438,69 +513,74 @@ consistent with their being excitatory (Oliver 1984, 1987; Smith and Rhode
    a. Golgi cells (\GABA)
      - no \IPSPs or \IPSCs but presence of \GABAa receptors and response changes to bicuculine \citep{WuOertel:1986,OertelWickesberg:1993,FerragamoGoldingEtAl:1998a} 
      - dend filter obscures \PSPs
-     - Golgi cells are GABAergic and lie within the granule cell domains around the \VCN and terminate near the fine distal dendrites of T stellate cells
+     - Golgi cells are GABAergic and lie within the granule cell domains around
+       the \VCN and terminate near the fine distal dendrites of T stellate cells
    b. Periolivary cells (\GABA + \GAD - glutamic acid decarboxylase) 
-     - observed in \PVCN close to TS \citep{AdamsMugnaini:1987}
+     - observed in \PVCN close to TS\space \citep{AdamsMugnaini:1987}
      - \GAD effectively Glycine \citep{GoldingOertel:1997}
      - can also arise from GABAergic neurons in ipsi \LNTB and DM Periolivary
 
-Mixed Glycine/\GABA terminals on the soma of T and D stellate cells, observed
-with pleomorphic vesicles, have been observed in the \VCN
-\citep{AltschulerJuizEtAl:1993}. \GABA and glycine positive periolivary neurons
-project to the \VCN in many animals (cats:
-\citealt{Adams:1983,SpanglerCantEtAl:1987}, guinea pig:
-\citealt{HelfertBonneauEtAl:1989,OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995}.
-rat: \citealt{CamposCaboEtAl:2001}.  Monotonic small cells in the cap
-surrounding the \VCN send axonal collaterals to the Periolivary nucleus
-\citep{Schofield:1995,Schofield:2002} and excite Glycine and GABA labelled
-neurons \citep{DehmelKopp-ScheinpflugEtAl:2002}. The periolivary nuclei,
-including the mixed Gly/GABAergic neurons, are thought to play a role in sound
-duration
-\citep{DehmelKopp-ScheinpflugEtAl:2002,KadnerKuleszaEtAl:2006KuleszaKadnerEtAl:2007}.
+\GABA and glycine positive periolivary neurons project to the \VCN in many
+animals (cats: \citealt{Adams:1983,SpanglerCantEtAl:1987}, guinea pig:
+\citealt{HelfertBonneauEtAl:1989,OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995},
+rat: \citealt{CamposCaboEtAl:2001}).  Mixed Glycine/\GABA terminals on the soma
+of T and D stellate cells, observed with pleomorphic vesicles, have been
+observed in the \VCN\space \citep{AltschulerJuizEtAl:1993}.  \TS cells and monotonic
+small cells in the cap surrounding the \VCN, send avxonal collaterals to the
+Periolivary nucleus \citep{Schofield:1995,Schofield:2002} and excite Glycine and
+GABA labelled neurons \citep{DehmelKopp-ScheinpflugEtAl:2002}. The periolivary
+nuclei, including the mixed Gly/GABA-ergic neurons, are thought to play a role in
+sound duration
+\citep{DehmelKopp-ScheinpflugEtAl:2002,KadnerKuleszaEtAl:2006,KuleszaKadnerEtAl:2007}.
 
 
    c. \VNTB cells (ACh)
      - collateral branches of OnC go to \GCD \citep{MellottMottsEtAl:2011,SherriffHenderson:1994,OsenRoth:1969}
      - TS have nicotinic and muscarinic ACh receptors \citep{FujinoOertel:2001}
-     - ACh input to TS, together with OnC-cochlea, enhances spectral peaks in noise  \citep{FujinoOertel:2001}
+     - 
 
 
 The olivocochlear bundle, the terminals of which contain high concentrations of
-AChE, sends collaterals to the CN with most terminals in the \GCD
+\AChE, sends collaterals to the CN with most terminals in the \GCD
 \citep{MellottMottsEtAl:2011,SherriffHenderson:1994,OsenRoth:1969,SchuknechtChurchillEtAl:1959,ShuteLewis:1965,Rasmussen:1967,OsenRoth:1969}.
-The AChE-positive terminals of this fibre bundle appear to be limited in their
+The \AChE-positive terminals of this fibre bundle appear to be limited in their
 distribution to the molecular granule and cell layers, where they aggregate into
 glomeruli \citep{OsenRoth:1969}.  In rats, onset choppers are monosynaptically
 excited by shocks to the \OCB
 \citep{MuldersPaoliniEtAl:2003,MuldersWinterEtAl:2002,MuldersPaoliniEtAl:2009}.
 
+The role of ACh neuromodulation in the stellate microcircuit is not fully
+understood.  Excitatory ACh input to TS cells, together with \OCB effects on the
+organ of corti, could enhance spectral peaks in noise across the population of
+chopper units \citep{FujinoOertel:2001,OertelWrightEtAl:2010}.
+
+
 
   d. Noradrenaline  (NE) and Serotonin (5HT)
     - Raphe nuclei (5HT) and Locus coeruleus Peribrachial cells (NE)
-    -  both terminate in \PVCN \citep{KlepperHerbert:1991,Thompson:2003,ThompsonLauder:2005,Thompson:2003a,ThompsonWiechmann:2002,BehrensSchofieldEtAl:2002,ThompsonThompson:2001,ThompsonThompson:2001a,ThompsonMooreEtAl:1995,ThompsonThompsonEtAl:1994}
+    -  both terminate in \PVCN\space \citep{KlepperHerbert:1991,Thompson:2003,ThompsonLauder:2005,Thompson:2003a,ThompsonWiechmann:2002,BehrensSchofieldEtAl:2002,ThompsonThompson:2001,ThompsonThompson:2001a,ThompsonMooreEtAl:1995,ThompsonThompsonEtAl:1994}
     - both increase firing in T stellates \citep{OertelWrightEtAl:2010} in presence of glut and gly blockers \to hence act on post synapse (TS cells)
     - both G-protein coupled, both act on either pre or post synaptic cells
     - NE affects probability of release at calyx of Held 
     - NE increases firing rate of choppers \citep{KosslVater:1989,Ebert:1996}
     - 5HT excites or inhibits choppers /in vivo/ \citep{EbertOstwald:1992}
 
-
 *** Major Ascending Output 
 
-   - TS cell axons exit the CN through the trapezoidal body, cross the midline and ultimately terminate in the contralateral IC \citep{Adams:1979}. Other collaterals: local, \DCN, \LSO, c\VNTB c\VNLL \citep{Warr:1969,SmithJorisEtAl:1993,Thompson:1998,DoucetRyugo:2003} review \citep{DoucetRyugo:2006}
+   - TS cell axons exit the CN through the trapezoidal body, cross the midline and ultimately terminate in the contralateral IC\space \citep{Adams:1979}. Other collaterals: local, \DCN, \LSO, c\VNTB c\VNLL \citep{Warr:1969,SmithJorisEtAl:1993,Thompson:1998,DoucetRyugo:2003} review \citep{DoucetRyugo:2006}
 
   1. Deep \DCN (bulk of acoustic input?)
     - in rats *No* terminals assoc with TS cells on TV cells, most TS inputs on fusiform \citep{RubioJuiz:2004}
-    - in mice TS terminals > \ANF \citep{CaoMcGinleyEtAl:2008}
-    - on \CF \citep{SmithRhode:1989,FriedlandPongstapornEtAl:2003,DoucetRyugo:1997}
+    - in mice TS terminals > \ANF\space \citep{CaoMcGinleyEtAl:2008}
+    - on \CF\space \citep{SmithRhode:1989,FriedlandPongstapornEtAl:2003,DoucetRyugo:1997}
     - \DCN review \citep{OertelYoung:2004}
   2. \LSO excitation
-    - TS project to \LSO \citep{Thompson:1998,DoucetRyugo:2003,ThompsonThompson:1991a}
+    - TS project to \LSO\space \citep{Thompson:1998,DoucetRyugo:2003,ThompsonThompson:1991a}
     - \LSO detect interaural intensity differences primarily from ipsi Bushy cells and contra \MNTB (inhib)
   3. Olivocochlear feedback
    a. \MOC: c\VNTB excitation 
-    - involved in efferent feedback loop, ACh-ergic \MOC neurons TS synapses in c\VNTB \citep{WarrBeck:1996,Warr:1992,Warr:1982,VeneciaLibermanEtAl:2005,ThompsonThompson:1991,SmithJorisEtAl:1993}
-    - feedback direct to TS is positive, but efferent \MOC-OHC-\ANF reduces activation of \ANF \citep{WarrenLiberman:1989,WiederholdKiang:1970}
+    - involved in efferent feedback loop, ACh-ergic \MOC neurons TS synapses in c\VNTB\space \citep{WarrBeck:1996,Warr:1992,Warr:1982,VeneciaLibermanEtAl:2005,ThompsonThompson:1991,SmithJorisEtAl:1993}
+    - feedback direct to TS is positive, but efferent \MOC-OHC-\ANF reduces activation of \ANF\space \citep{WarrenLiberman:1989,WiederholdKiang:1970}
     - other \citep{RobertsonMulders:2000,WinterRobertsonEtAl:1989}
    b. \LOC
     - TS terminate in vicinity of \LOC neurons \citep{Warr:1982,ThompsonThompson:1988,ThompsonThompson:1991,DoucetRyugo:2003} 
@@ -559,26 +639,30 @@ and understand sounds.
 
 ** D stellate cells
 
-\DS cells are wide-band inhibitory cells that have an \OnC \PSTH
-to tones \citep{SmithRhode:1989}. Electromicroscopic studies of DS
-neurons show profuse synapses on their soma and proximal dendrites
-\citep{Cant:1981}. DS neurons usually have 3-4 main dendrites extending
-perpendicular to the direction of auditory nerve fibres suggesting they receive
-input from fibres encoding a wide range of frequencies
-\citep{SmithRhode:1989,PaoliniClark:1999}. Intracellular responses to sounds
-indicate that the bandwidth of inputs to D stellate neurons is typically two octaves
-below \CF and one octave above \CF
-\citep{PaoliniClark:1999,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.  DS
-cell axon terminals contain the inhibitory neurotransmitter, glycine, and they
-synapse locally in the \VCN and \DCN and send a commissural projection to
+D stellate cells are wide-band inhibitory cells that have an \OnC \PSTH to tones
+and have wide ranging effects in the \VCN, \DCN and collateral \CN
+\citep{SmithRhode:1989,SmithMassieEtAl:2005,FerragamoGoldingEtAl:1998a}.
+\DS cells sparse throughout the magnocellular core of the \AVCN and \PVCN and
+they are outnumbered 15 to 1 in the cat against \TS cells
+\citep{RyugoParks:2003}.
+Electromicroscopic studies of DS neurons show profuse synapses on their soma and
+proximal dendrites \citep{Cant:1981,SmithRhode:1989}.
+\DS neurons usually have 3-4 main dendrites extending perpendicular to the
+direction of auditory nerve fibres suggesting they receive input from fibres
+encoding a wide range of frequencies
+\citep{SmithMassieEtAl:2005,ArnottWallaceEtAl:2004,SmithRhode:1989,PaoliniClark:1999}.
+Intracellular responses to sounds indicate that the bandwidth of inputs to \DS
+neurons is typically two octaves below \CF and one octave above \CF
+\citep{PaoliniClark:1999,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
+DS cell axon terminals contain the inhibitory neurotransmitter, glycine, and
+they synapse locally in the \VCN and \DCN and send a commissural projection to
 the contralateral cochlear nucleus that mediates fast inhibition between the
-nuclei \citep{NeedhamPaolini:2003}.  \DS  cells are outnumbered 
-15 to 1 in the cat against \TS cells \citep{RyugoParks:2003}.
+nuclei \citep{NeedhamPaolini:2003}.
 
 #  #+latex: \input{DStellate.tex}
 
-*** TODO Cellular Mechanisms of D stellate Cells
-*** TODO Acoustic Properties of D stellate Cells
+*** TODO Cellular Mechanisms of D Stellate Cells
+*** TODO Acoustic Properties of D Stellate Cells
 
 
 ** Tuberculoventral cells
@@ -593,7 +677,6 @@ nuclei \citep{NeedhamPaolini:2003}.  \DS  cells are outnumbered
 # also contact the basal dendrites of pyramidal cells
 # (Saint-Marie et al. 1991, 1993; Wickesberg & Oertel,
 # 1993; Ferragamo et al. 1998).
-
 
 
 Tuberculoventral neurons in the deep layer of the \DCN provide a delayed, frequency-specific
@@ -623,8 +706,8 @@ from DS cells \citep{ZhangOertel:1993}.
 
 \glsreset{GLG} \glsreset{GCD}
 
-\GLG cells lie in the \GCD of the ventral cochlear nucleus and
-are possible source of GABAergic input to D and T stellate cells
+\GLG cells lie in the \GCD of the ventral cochlear nucleus and are possible
+source of GABAergic input to D and T stellate cells
 \citep{Mugnaini:1985,FerragamoGoldingEtAl:1998,FerragamoGoldingEtAl:1998a}.
 GABAergic inputs from periolivary neurons are also known to project to the \VCN
 \citep{OstapoffBensonEtAl:1997}. Intracellular recordings from T and D stellate
@@ -632,22 +715,25 @@ cells indicate a significant GABAergic influence that is present in slices where
 the cochlear nucleus is isolated from olivary connections
 \citep{FerragamoGoldingEtAl:1998a}. Latency of excitation to AN shocks suggests
 Golgi cells are activated by type II auditory nerve fibres
-\citep{BensonBerglundEtAl:1996,FerragamoGoldingEtAl:1998}.  Therefore, type II
-auditory nerve fibres could be involved in gain control through GABAergic
-modulation of activity in the \VCN.
+\citep{BensonBerglundEtAl:1996,FerragamoGoldingEtAl:1998}.
+Therefore, type II auditory nerve fibres could be involved in gain control
+through GABAergic modulation of activity in the \VCN.
 
 
 Golgi cells are distinguished from the numerous smaller granule cells by larger
 cell body and surrounding plexus of dendritic and axonal neurites. The soma
-diameter of Golgi cells is approximately 15 μm
-\citep{FerragamoGoldingEtAl:1998}, where the diameter of granule cells is 8 μm
-in cats \citep{MugnainiOsenEtAl:1980} and 6 μm in rats and mice \citep{MugnainiOsenEtAl:1980,Alibardi:2003}.
-Smooth, tapering dendrites, between 50 and 100 μm long, emanated in all directions (mice: \citealt{FerragamoGoldingEtAl:1998},
-see also \citealt{Cant:1993,MugnainiOsenEtAl:1980}) 
-A dense, axonal plexus, limited to the plane of the granule cell domain, extended about 250 μm
-from the soma in all directions \citep{FerragamoGoldingEtAl:1998,BensonBrown:2004}.
+diameter of Golgi cells is approximately 15 \um
+\citep{FerragamoGoldingEtAl:1998}, where the diameter of granule cells is 8 \um
+in cats \citep{MugnainiOsenEtAl:1980} and 6 \um in rats and mice
+\citep{MugnainiOsenEtAl:1980,Alibardi:2003}.
+Smooth, tapering dendrites, between 50 and 100 \um long, emanated in all
+directions (mice: \citealt{FerragamoGoldingEtAl:1998}, see also
+\citealt{Cant:1993,MugnainiOsenEtAl:1980}).
+A dense, axonal plexus, limited to the plane of the granule cell domain,
+extend about 250 \um from the soma in all directions
+\citep{FerragamoGoldingEtAl:1998,BensonBrown:2004}.
  
-# In layer 2 of the DCN Alibardi rat (9–15 μm) GABA-ergic cells round cell body surrounded by small granule cells immuno-negative to Glycine and GABA. 
+# In layer 2 of the DCN Alibardi rat (9–15 \um) GABA-ergic cells round cell body surrounded by small granule cells immuno-negative to Glycine and GABA. 
 
 
 The dendrites of \VCN Golgi cells are mitochondria-rich and make glomeruli
@@ -655,7 +741,7 @@ complexes with long synaptic junctions with the mossy fibre boutons
 \citep{MugnainiOsenEtAl:1980}. The somata generally have few boutons of flat or
 pleomorphic vesicle type, characteristic of glycinergic and GABAergic
 terminals. Along with inhibitory boutons, the dendrites also receive excitatory
-input with large (type I \ANF) and small (type II \ANF and granule cell)
+input with large (type I\space \ANF) and small (type II\space \ANF and granule cell)
 vesicles \citep{MugnainiOsenEtAl:1980,FerragamoGoldingEtAl:1998,Ryugo:2008}.
 
 
@@ -738,7 +824,7 @@ shell of the \VCN  in cats) has been done by one group
 \citep{Ghoshal:1997,GhoshalKim:1997,GhoshalKim:1996,GhoshalKim:1996a} without
 direct labelling of recorded units.  Any extracellular spikes recorded in the
 \GCD~are most likely from Golgi cells since granule cell somata are less than 10
-μm and their narrow axons are unlikely to elicit electrical activity in the
+\um and their narrow axons are unlikely to elicit electrical activity in the
 electrodes \citet{GhoshalKim:1997,FerragamoGoldingEtAl:1998}.  
 
 ## Change this sentence
@@ -746,13 +832,13 @@ electrodes \citet{GhoshalKim:1997,FerragamoGoldingEtAl:1998}.
  exhibiting non-saturating rate-level functions to pure tone, noise or both
  with dynamic ranges as wide as 89 dB.  ##
 The majority of
-recorded \GCD units were classified as type I/III or III \EIRA units, showing a monotonic increase in firing rate with increasing
+recorded \GCD units were classified as type I/III or III\space \EIRA units, showing a monotonic increase in firing rate with increasing
 sound intensity to tones and noise 
 \citep[Figure~\ref{fig:GolgiKimFig2}][]{GhoshalKim:1997}.
-Some units examined did show type II or type IV \EIRA properties. Unit XX in was
+Some units examined did show type II or type IV\space \EIRA properties. Unit XX in was
  classified as type II due to its poor response to noise but it did not show a
- reduction of response to tones at high \SPL (typical of DCN type II units) \citep{GhoshalKim:1997}. Two
- units with low \CF (< 1.5 kHz) were classified as type II
+ reduction of response to tones at high \SPL (typical of \DCN type II units) \citep{GhoshalKim:1997}. Two
+ units with low \CF (< 1.5 kHz) were classified as type II\space
  \citep{GhoshalKim:1997}.  The \PSTH of the units included wide chopper, \OnC,
  and pause-build, however nearly one third of units did not fit into the known
  classifications and were called unusual \citep{GhoshalKim:1997}.
@@ -761,7 +847,7 @@ Some units examined did show type II or type IV \EIRA properties. Unit XX in was
 The latency of acoustically driven \GCD recorded units range from 2.4 ms to over 10 ms, centred on 3.75 ms.
 The acoustic latency closely matches the minimum latency of \EPSPs to AN shocks
 recorded in mice /in vitro/ preparations \citep[1.3~ms][]{FerragamoGoldingEtAl:1998}.  Longer latencies (>10 ms) may be due to type
-II \ANFs (estimated theoretical latency \sim 10 ms \citep{Brown:1993}) or from
+II\space \ANFs (estimated theoretical latency \sim 10 ms \citep{Brown:1993}) or from
 polysynaptic excitation by granule cells.
 
 
@@ -849,7 +935,7 @@ dynamic range at onset.  Post onset and tonic inhibition is provided by \GABA
 inputs.  GABAergic inhibition acting on slow and fast receptors (\GABAa and GABAB
 respectively) is likely to mediate the strong post-onset inhibition in D
 stellate cells \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  TS cells are
-weakly inhibited by \GABA \citep{FerragamoGoldingEtAl:1998} reflecting the smaller
+weakly inhibited by \GABA\space \citep{FerragamoGoldingEtAl:1998} reflecting the smaller
 number of GABAergic synapses \citep{FriedlandPongstapornEtAl:2003}.  GABAergic
 inhibition in the \VCN is derived from a number of possible sources,
 intrinsically from Golgi cells in the granule cell layer of the \VCN or
@@ -892,13 +978,13 @@ may be modulated by the activation of pre- and postsynaptic \GABAa receptors
 
 
 Mixed Glycine/\GABA terminals, observed with pleomorphic vesicles, have been observed
-in the \VCN \citep{AltschulerJuizEtAl:1993}, but these are most likely from
+in the \VCN\space \citep{AltschulerJuizEtAl:1993}, but these are most likely from
 \GABA and \GAD immunoreactive periolivary neurons whose axons terminate in the \VCN 
 (cats: \citep{Adams:1983,SpanglerCantEtAl:1987},guinea pig: HelfertBonneauEtAl:1989,OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995}. 
 rat: \citealt{CamposCaboEtAl:2001}.
 Periolivary neurons receive afferent input from monotonic units in the \VCN
 \citep{Schofield:1995,Schofield:2002} and are thought to play a role in sound
-duration \citep{DehmelKopp-ScheinpflugEtAl:2002,KadnerKuleszaEtAl:2006KuleszaKadnerEtAl:2007}.
+duration \citep{DehmelKopp-ScheinpflugEtAl:2002,KadnerKuleszaEtAl:2006,KuleszaKadnerEtAl:2007}.
 
 
 \todo[inline]{Other topic not discussed}
@@ -1027,16 +1113,16 @@ recordings from a large population of auditory nerve fibres
 \citep{SachsYoung:1979,YoungSachs:1979,DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c}
 and cochlear nucleus cells
 \citep{BlackburnSachs:1990,KeilsonRichardsEtAl:1997,RecioRhode:2000}.  Recent
-reviews of vowel encoding in the \VCN \citep{May:2003,PalmerShamma:2003}
+reviews of vowel encoding in the \VCN\space \citep{May:2003,PalmerShamma:2003}
 highlighted the spectral enhancement of formant peaks and suppression of formant
 troughs by chopper units. Figure \ref{fig:May2003} shows the estimated
-rate-place representation of auditory nerve and \VCN units.  \HSR \ANFs and
+rate-place representation of auditory nerve and \VCN units.  \HSR\space \ANFs and
 primary-like \VCN units show saturation of trough frequencies at moderate sound
 levels.  \LSR units in the AN and \LSR primary-like \VCN units are presumably 
 able to encode spectrum at high \SPL.  The rate-place representation in chopper
 units (\ChS and \ChT) show considerable robustness to intensity (right panels in Fig.~\ref{fig:May2003}).
 Suppression of spectral troughs in the rate-place representation of \ChT and
-\ChS units is greater than the suppression in \LSR \ANFs at high \SPL.  Spectral
+\ChS units is greater than the suppression in \LSR\space \ANFs at high \SPL.  Spectral
 enhancement in T stellate cells cannot be attributed to lateral suppression in
 the auditory nerve; it requires some form of lateral inhibitory mechanism that
 can perform spectral enhancement by suppression of noise between peaks.
@@ -1048,7 +1134,7 @@ can perform spectral enhancement by suppression of noise between peaks.
 and cochlear nucleus neurons.  May and colleagues used a spectral manipulation
 procedure to change the location of the first and second formant and the first
 trough frequencies to coincide with the CF of a recorded cell. HSR high
-spontaneous rate, LSR low spontaneous rate, ANF auditory nerve fibre, PL VCN
+spontaneous rate, LSR low spontaneous rate, ANF auditory nerve fibre, PL\space \VCN
 unit \citep[Figure reprinted from][]{May:2003}. \label{fig:May2003}}
 \includegraphics[width=0.9\textwidth]{../figures/May2003-Fig}
 \end{figure}
@@ -1149,7 +1235,7 @@ activated to produce large synaptic currents \citep{CaoOertel:2010}.
 
 
 Whole cell patch recordings in rats show \NMDA dominance at birth, then reverses
-during development leaving little to no observable \NMDA \EPSCs at the soma in
+during development leaving little to no observable \NMDA\space \EPSCs at the soma in
 mature rats \citep{BellinghamLimEtAl:1998}.
 # %\citep{Oertel:1983}
 Five percent of \ANFs are unmyelinated type II fibres (cat: \citealt{KiangRhoEtAl:1982}, mice: \citealt{Ehret:1979}). 
@@ -1168,7 +1254,7 @@ The AMPA receptor is composed of four different protein subunits, termed \GluRs 
 # specic to the auditory pathway
 # \citep{RamanZhangEtAl:1994,GardnerTrussellEtAl:1999} 
 mRNA expression in \ANFs
- show no \GluR 1 but moderate to high levels of \GluRs 2--4, and type II ANFs
+ show no \GluR 1 but moderate to high levels of \GluRs 2--4, and type II\space ANFs
  expressing significantly more \GluR 2
  \citep{NiedzielskiSafieddineEtAl:1997,NiedzielskiWenthold:1995}.
 \EPSPs that are rapidly decaying, rapidly desensitizing, calcium-permeable, and high sensitivity to block by philanthotoxin 
@@ -1194,7 +1280,7 @@ The fast onset of \mEPSPs in CN neurons is followed by a single-exponential deca
 measuring 0.36 ms in octopus, T and D stellate cells and 0.4 ms in Tuberculoventral cells
 \citep{GardnerTrussellEtAl:1999}.  The time constant of deactivation after glutamate puffs (0.37 ms) matched the time of the \mEPSPs  
 \citep{GardnerTrussellEtAl:2001}.  The slow decay time constant in parallel fibre synapses for fusiform and cartwheel cells, 1.17 and 1.99 ms,  and 
-desensitisation 3.9 and 4.4 ms respectively. These synapses are most likely mediated by granule cells or type II ANFs.  
+desensitisation 3.9 and 4.4 ms respectively. These synapses are most likely mediated by granule cells or type II\space ANFs.  
 
 *** Glycinergic synapses
 
@@ -1391,7 +1477,7 @@ In the adult \MNTB, neurons express a “slow” \GABAa receptor containing the
  present at \ANF synapses \citep[mice][]{FerragamoGoldingEtAl:1998a} and can be
  activated to produce large synaptic currents \citep{CaoOertel:2010}.  Whole
  cell patch recordings show \NMDA dominance over \AMPA at birth reverses during
- development, leaving little to no observable \NMDA \EPSCs at the soma in mature
+ development, leaving little to no observable \NMDA\space \EPSCs at the soma in mature
  rats \citep{BellinghamLimEtAl:1998}.
 # %\citep{Oertel:1983}
  Five percent of \ANFs are unmyelinated type II fibres (cat:
@@ -1454,19 +1540,19 @@ axons remain within the isofrequency lamina of the cell body (75-100µm
 \citep[mice:]{OertelWuEtAl:1990}).
 # 0.23-0.39 oct \citep[anaesthetised guinea pig][]{PalmerJiangEtAl:1996}
  The physiological receptive field is also similar between \ANFs and TS cells
- (\ChS \Q10=5.3 \citep[cat][]{RhodeSmith:1986}, Choppers \Q10=$5.52\pm1.4$ compared to
- \Q10=6.3 in \ANFs \citep[guinea pig]{JiangPalmerEtAl:1996}) but varies with
- different TS cell classification subtypes (\ChS \Q10=4, \ChT \Q10=2 (low \CF),
- and \Q10=3.67 (high \CF) \citep[guinea pig]{PalmerWallaceEtAl:2003}) and the type
- of anaesthetic used in the study (\Q10=7.4 unanaesthetised \Q10=5.3
+ (\ChS \Qten=5.3 \citep[cat][]{RhodeSmith:1986}, Choppers \Qten=$5.52\pm1.4$ compared to
+ \Qten=6.3 in \ANFs \citep[guinea pig]{JiangPalmerEtAl:1996}) but varies with
+ different TS cell classification subtypes (\ChS \Qten=4, \ChT \Qten=2 (low \CF),
+ and \Qten=3.67 (high \CF) \citep[guinea pig]{PalmerWallaceEtAl:2003}) and the type
+ of anaesthetic used in the study (\Qten=7.4 unanaesthetised \Qten=5.3
  barbiturate \citep[cat][]{RhodeKettner:1987}).
 
   The radial dendritic extent of \DS cells varies from 250 to 350 \um in rats
 \citep{DoucetRyugo:1997}, or approximately one third of the tonotopic range in
 gerbils \citep{ArnottWallaceEtAl:2004}.  The frequency response area to tones is
 broad and centred on-\CF with a skew toward lower frequency lamina (guinea pig:
-\Q10=$3.56 \pm 1.38$ \citep{JiangPalmerEtAl:1996}, \Q10 = 1.33--2.87
-\citep{PalmerWallaceEtAl:2003}, rat: \Q10=3.1
+\Qten=$3.56 \pm 1.38$ \citep{JiangPalmerEtAl:1996}, \Qten = 1.33--2.87
+\citep{PalmerWallaceEtAl:2003}, rat: \Qten=3.1
 \citep{PaoliniClark:1999}).  Excitation is evident up to 1 octave above the \CF
 of \DS cells and 2 octaves below the \CF in many studies (guinea pig
 [\citenum{PalmerJiangEtAl:1996}, gerbil:
@@ -1487,7 +1573,8 @@ studies with delay $0.7 \pm 0.12$ ms (range 0.48--0.92 ms)
 
 *** ANF to Tuberculoventral cells
 
- #+latex: \textsc{Synapse type}: As in \VCN stellate cells, \ANF terminals form glutamate \AMPA receptors in the \DCN \TV cells.  
+ #+latex: \textsc{Synapse type}: As in \VCN stellate cells, \ANF terminals form 
+glutamate \AMPA receptors in the \DCN\space \TV cells.  
 Intracellular physiological studies have shown the blocking of \AMPA receptors
 with an \AMPA antagonist \citep{ZhangOertel:1993}.  The dynamics of the \AMPA
 receptor synapse at TV cells is a single-exponential potential change, with
@@ -1497,17 +1584,17 @@ decay time constant 0.4 ms \citep{GardnerTrussellEtAl:1999}.
 are either mainly dendritic (mice: \citealt{ZhangOertel:1993}, guinea pig: \sim 4
 somatic contacts per cell \citealt{Alibardi:1999}, cats: few somatic contacts
 \citealt{Liberman:1993,SpirouDavisEtAl:1999}) or completely dendritic (rat:
-\citealt{RubioJuiz:2004}). The number of \ANF synaptic terminals is not known.  \HSR \ANFs are less likely
+\citealt{RubioJuiz:2004}). The number of \ANF synaptic terminals is not known.  \HSR\space \ANFs are less likely
 to enter the \DCN and have axonal collaterals than \LSR fibres
 \citep{Rhode:1999}.
 
  #+latex: \textsc{Receptive Fields}: TV cells' dendrites are aligned with the incoming \ANF axons.  
-The dendritic width perpendicular to the \ANF axons (approximately 70 μm
+The dendritic width perpendicular to the \ANF axons (approximately 70 \um
 \citealt{SpirouDavisEtAl:1999,ZhangOertel:1993}) is identical to the average axon
 termination width of \ANFs \citep{Rhode:1999,SpirouDavisEtAl:1999}.
 
  #+latex: \textsc{Delay}: The latency of \EPSPs to AN shock (1.0--1.5 ms) is
-longer than the stellate neurons of the \VCN \citep{ZhangOertel:1993}.
+longer than the stellate neurons of the \VCN\space \citep{ZhangOertel:1993}.
 The difference is also matched in the first spike latency to acoustic input
 (\FSL 4.0--4.4 ms, \citealt{Rhode:1999,SpirouDavisEtAl:1999}).
 
@@ -1515,7 +1602,7 @@ The difference is also matched in the first spike latency to acoustic input
 
  #+latex: \textsc{Synapse type}: The synaptic type of afferent inputs to Golgi
 cells in dependent on the type of \ANF. Type I \ANF bouton terminals form an
-\AMPA synapse, while type II \ANF terminations form diffuse synapses that are
+\AMPA synapse, while type II\space \ANF terminations form diffuse synapses that are
 mixed \AMPA/\NMDA receptors
 \citep{Cant:1992,FerragamoGoldingEtAl:1998a,RyugoWrightEtAl:1993,Ryugo:1992,RyugoParks:2003,HurdHutsonEtAl:1999}.
 The dynamics of the \AMPA receptor synapse in Golgi cells has not been recorded
@@ -1524,17 +1611,17 @@ heavily filtered by their thin dendrites.
 
  #+latex: \textsc{Synaptic Contacts}: Golgi cells have little to no excitatory
 synaptic contacts on their cell body \citep{FerragamoGoldingEtAl:1998}.  The
-primary afferent input terminates on the thin dendrites (0.5--1 μm width) of the
+primary afferent input terminates on the thin dendrites (0.5--1 \um width) of the
 Golgi cells \citep{BensonBrown:2004,FerragamoGoldingEtAl:1998}.
 
  #+latex: \textsc{Receptive Fields}: Type I \ANFs projecting to the \GCD and
 outer shell of the \VCN were generally \LSR units.  The average width of the
 axonal terminals perpendicular to the isofrequency laminae
-is 175 μm but in the low frequency areas the termination field is significantly
+is 175 \um but in the low frequency areas the termination field is significantly
 broadened (1 mm) \citep{Ryugo:2008}.  Type II \ANF axonal terminations are less
-organised in \GCD \citep{WeedmanPongstapornEtAl:1996,RyugoWrigthEtAl:1993}.  The
+organised in \GCD\space \citep{WeedmanPongstapornEtAl:1996,RyugoWrigthEtAl:1993}.  The
 dendritic field of the Golgi cells emanates uniformly from the cell body by
-100--250 μm \citep{FerragamoGoldingEtAl:1998a}.  The wide dynamic range observed
+100--250 \um \citep{FerragamoGoldingEtAl:1998a}.  The wide dynamic range observed
 in extracellular recordings in the marginal shell area (equivalent to the \GCD
 in rodents) suggests Golgi cells receive \ANF inputs from a range of
 isofrequencies \citep{GhoshalKim:1997}.
@@ -1544,7 +1631,7 @@ Golgi cells in response to AN shocks are $1.27 \pm 0.05$ ms
 \citep[n=4,][]{FerragamoGoldingEtAl:1998a}.  The mean minimal latency between
 Golgi cells and T stellate cells in the \VCN magnocellular core was \sim 0.57
 ms, but on average \EPSPs were 0.7 ms longer in Golgi cells.  The theoretical
-conductance delay of unmyelinated type II \ANFs from the cochlea to the position
+conductance delay of unmyelinated type II\space \ANFs from the cochlea to the position
 of Golgi cells in the \GCD, was estimated to be 10 ms \citep{Brown:1993}.
 
 
@@ -1577,8 +1664,8 @@ generally a tonotopic arrangement (guinea pig: \citealt{ArnottWallaceEtAl:2004})
 nalysis  show more terminals and collaterals ventral to the iso-frequency band of the DS cell
 (i.e. stronger high \CF to low \CF)
 \citep{DoucetRyugoEtAl:1999,FriedlandPongstapornEtAl:2003}.  Notch noise
-response in type II DCN units possibly shows a offset in wide-band inhibitory
-projections around 0.2 octaves from high \CF to low \CF \citep{ReissYoung:2005}.
+response in type II\space DCN units possibly shows a offset in wide-band inhibitory
+projections around 0.2 octaves from high \CF to low \CF\space \citep{ReissYoung:2005}.
 
 #+latex: \textsc{Delay}: The minimum \EPSP latency to VCN shock, presumeably
 from \TS cells in /in vitro/ preparations in mice was 2 ms
@@ -1642,7 +1729,7 @@ routes taken by the DS cell axons.  Some axons have been seen to travel to the
 \DCN before returning the \VCN
 \citep{ArnottWallaceEtAl:2004,DoucetRyugo:2006,DoucetRyugo:1997} and commissural
 inputs (DS units in the contralateral CN) take 1.52 ms to reach TS cells after a
-shock to the contralateral \CN \citep{NeedhamPaolini:2006}.
+shock to the contralateral \CN\space \citep{NeedhamPaolini:2006}.
 
 *** TODO Tuberculoventral cell input to T stellate cells
 
@@ -1678,10 +1765,10 @@ terminals are also more dense in high CF regions in the \VCN of chinchilla
 
 
  #+latex: \textsc{Delay}: 
-The effective delay from AN shock to DCN TV cell excitation to \IPSPs in \TS
+The effective delay from AN shock to \DCN\space \TV cell excitation to \IPSPs in \TS
 cells is approximately 2 ms in mice \citep{WickesbergOertel:1990}.  This study
-isolated AVCN TS cells by slicing the AN fibres passing through the PVCN, then
-exciting the TV cells by shocks to the severed fibres entering the DCN.
+isolated \AVCN\space \TS cells by slicing the AN fibres passing through the \PVCN, then
+exciting the TV cells by shocks to the severed fibres entering the \DCN.
 # 2.5 msec from AN shock to inhibition [\citenum{WickesbergOertel:1993}]. 
 # 0.1--0.3 sec glut VCN [\citenum{ZhangOertel:1993}]
 # # from Wickesberg 1996
@@ -1733,7 +1820,7 @@ GABAergic synapses
 \citep{EvansZhao:1998,FerragamoGoldingEtAl:1998a,Mugnaini:1985,MugnainiOsenEtAl:1980,SaintMorestEtAl:1989}
 In isolated \VCN mice slices, application of
 \GABAa blocker bicuculine showed significant increase in \DS cell excitation
-following shocks to the \AN \citep{FerragamoGoldingEtAl:1998a}.
+following shocks to the \AN\space \citep{FerragamoGoldingEtAl:1998a}.
 
 #+latex: \textsc{Synaptic Contacts}: \GABAa-ergic synapses from \GLG cells on DS
 cells is unknown or is mixed with other GABA synapses from periolivary nucleus.
@@ -1745,14 +1832,14 @@ synapses on the densely packed surface of the cell ($\sim$20 weak inputs
 terminals, 81\% TAC.  Dist: 41\% of terminals, 22\% TAC
 \citealt{SmithRhode:1989}))
 
-#+latex: \textsc{Receptive Fields}: Dendrites of DS cells emanate 250--350 μm
+#+latex: \textsc{Receptive Fields}: Dendrites of DS cells emanate 250--350 \um
 in all directions including penetration of the \VCN to of the overlying \GCD
 \citep{DoucetRyugo:1997,ArnottWallaceEtAl:2004}.  \citet{DoucetRyugo:1997} noted
 that DS cell dendrites penetrated the nearest of the
 surrounding \GCD independent of the cells position in the magnocellular core of
 the \VCN.  The Golgi axonal plexus surrounds the cell body and does not travel
-further than 250 μm \citep{FerragamoGoldingEtAl:1998}.  Pharmacological
-ionotopopheretic application of bicuculine increases the activity of \PVCN \DS
+further than 250 \um \citep{FerragamoGoldingEtAl:1998}.  Pharmacological
+ionotopopheretic application of bicuculine increases the activity of \PVCN\space \DS
 cells only within its receptive field \citep{PalombiCaspary:1992}.
 
 #+latex: \textsc{Delay}: Hyperpolarisation occurs 10--15 ms after
@@ -1784,8 +1871,8 @@ cells /in vitro/ slices suggesting dendritic filtering from distal synapses
 frequency lamina and penetrate the overlying \GCD
 \citep{DoucetRyugo:1997,PalmerWallaceEtAl:2003,FerragamoGoldingEtAl:1998a}.  The
 Golgi axonal plexus surrounds the cell body and does not travel further than 250
-μm \citep{FerragamoGoldingEtAl:1998}.  Pharmacological ionotopopheretic
-application of bicuculine increases the activity of \PVCN \TS cells only within
+\um \citep{FerragamoGoldingEtAl:1998}.  Pharmacological ionotopopheretic
+application of bicuculine increases the activity of \PVCN\space \TS cells only within
 its receptive field \citep{PalombiCaspary:1992}.  An electron microscopic study
 in the chinchilla suggests a significant difference in \GABA synapses on the
 soma of \TS cells: higher \CF had \sim 20 synapses, while lower frequency \CF
@@ -1984,7 +2071,7 @@ networks of the cochlear nucleus.
 
 
 
-* TODO  Aims of this thesis
+* TODO Aims of this thesis
 
 
 The current state of neural network models fail to deliver at producing a
