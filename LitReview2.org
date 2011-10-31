@@ -453,7 +453,7 @@ response area to be transmitted to higher centres.
 
 
 
-*** Neuromodulatory Effects in T Stellate Cells
+*** TODO Neuromodulatory Effects in T Stellate Cells
 
    - sensitive to neuromodulatory currents \citep{FujinoOertel:2001}
      - high input resistance \rightarrow amplify small current inputs \citep{FujinoOertel:2001}
@@ -510,31 +510,61 @@ functional studies of the inputs to the inferior colliculi is consistent with
 their being excitatory (Oliver 1984, 1987; Smith and Rhode 1989).
 
 
-**** Extrinsic neuromodulation
+**** TODO Extrinsic neuromodulation
 ***** Periolivary cells (GABA + GAD - glutamic acid decarboxylase)
      - observed in \PVCN close to TS\space \citep{AdamsMugnaini:1987}
-     - \GAD effectively Glycine \citep{GoldingOertel:1997}
+     - (GABA + GAD - glutamic acid decarboxylase) markers, \GAD effectively Glycine \citep{GoldingOertel:1997}
      - can also arise from GABAergic neurons in ipsi \LNTB and DM Periolivary
+  - These findings indicate that GABA inhibits these IC neurons for a brief period following the
+stimulus offset. The SPON was suggested as the probable source of this inhibition in the rat IC
+(Faingold 2002). However, whether this offset inhibition in the IC is affected by changes in
+stimulus duration and intensity remains unknown.
 
-\GABA and glycine positive periolivary neurons project to the \VCN in many
-animals (cats: \citealt{Adams:1983,SpanglerCantEtAl:1987}, guinea pig:
-# \citealt{HelfertBonneauEtAl:1989,
-\citealt{OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995},
-rat: \citealt{CamposCaboEtAl:2001}).  Mixed Glycine/\GABA terminals on the soma
-of T and D stellate cells, observed with pleomorphic vesicles, have been
-observed in the \VCN\space \citep{AltschulerJuizEtAl:1993}.  \TS cells and monotonic
-small cells in the cap surrounding the \VCN, send avxonal collaterals to the
-Periolivary nucleus \citep{Schofield:1995,Schofield:2002} and excite Glycine and
-GABA labelled neurons \citep{DehmelKopp-ScheinpflugEtAl:2002}. The periolivary
-nuclei, including the mixed Gly/GABA-ergic neurons, are thought to play a role in
-sound duration
+
+
+Superior periolivary nulcei (SPON) neurons projecting to the \VCN are immunoreactive to \GABA and \GAD
+markers, which has been primarily observed by Juiz and Helfert and colleagues in
+guinea pigs
+\citep{JuizHelfertEtAl:1996,JuizHelfertEtAl:1996a,JuizAlbinEtAl:1994,JuizRubioEtAl:1993,ShoreHelfertEtAl:1991,HelfertBonneauEtAl:1989,JuizHelfertEtAl:1989}
+and the connection has been confirmed in other animals (cats:
+\citealt{Adams:1983,SpanglerCantEtAl:1987}, rat:
+\citealt{CamposCaboEtAl:2001},guinea pigs:
+\citealt{OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995}). 
+These are typically from ipsilateral SPON 
+can also arise from GABAergic neurons in ipsilateral \LNTB and DM Periolivary
+
+
+GAD markers were shown in terminals apposed to TS cells in PVCN \citep{AdamsMugnaini:1987}.
+\GAD is effectively Glycine and generally co-localised with GABA in the VCN \citep{GoldingOertel:1997}.
+Mixed Glycine/\GABA terminals on the soma and dendrites of T and D stellate cells, observed with
+pleomorphic vesicles \citep{AltschulerJuizEtAl:1993,SmithRhode:1989}.  
+
+
+
+
+\TS cells and monotonic small cells in the cap
+surrounding the \VCN, send axonal collaterals to the periolivary nucleus
+\citep{Schofield:1995,Schofield:2002} and excite Glycine and GABA labelled
+neurons \citep{DehmelKopp-ScheinpflugEtAl:2002}. The periolivary nuclei,
+including the mixed Gly/GABA-ergic neurons, are thought to play a role in sound
+duration
 \citep{DehmelKopp-ScheinpflugEtAl:2002,KadnerKuleszaEtAl:2006,KuleszaKadnerEtAl:2007}.
 
 
-***** VNTB cells (ACh)
-     - collateral branches of OnC go to \GCD \citep{MellottMottsEtAl:2011,SherriffHenderson:1994,OsenRoth:1969}
-     - TS have nicotinic and muscarinic ACh receptors \citep{FujinoOertel:2001}
 
+***** VNTB cells (ACh)
+     - collateral branches of OCB go to \GCD \citep{MellottMottsEtAl:2011,SherriffHenderson:1994,OsenRoth:1969}
+     - TS have nicotinic and muscarinic ACh receptors \citep{FujinoOertel:2001}
+     - Synaptic input to the medial olivocochlear neurons Previous work has shown
+that OC neurons receive inputs from two subdivisions of the cochlear nucleus (Warr, 1969; Robertson and Winter, 1988; Thompson and Thompson, 1991a; Ye et al., 2000)
+- Two separate regions of the cochlear nu-
+cleus provide inputs: the PVCN (Warr, 1969; Thompson
+and Thompson, 1991a) and the AVCN shell (Ye et al.,
+2000).Ultrastructural work on labeled PVCN endings in the
+superior olivary complex has shown them to have round
+vesicles (Thompson and Thompson, 1991b), ruling out the
+PVCN as a source for our uncommon synapse type con-
+taining pleomorphic vesicles.
 
 
 The olivocochlear bundle, the terminals of which contain high concentrations of
@@ -547,11 +577,11 @@ glomeruli \citep{OsenRoth:1969}.  In rats, onset choppers are monosynaptically
 excited by shocks to the \OCB
 \citep{MuldersPaoliniEtAl:2003,MuldersWinterEtAl:2002,MuldersPaoliniEtAl:2009}.
 
+
 The role of ACh neuromodulation in the stellate microcircuit is not fully
 understood.  Excitatory ACh input to TS cells, together with \OCB effects on the
 organ of corti, could enhance spectral peaks in noise across the population of
 chopper units \citep{FujinoOertel:2001,OertelWrightEtAl:2010}.
-
 
 
 ***** Noradrenaline  (NE) and Serotonin (5HT)
@@ -677,26 +707,96 @@ nuclei \citep{NeedhamPaolini:2003}.
 # 1993; Ferragamo et al. 1998).
 
 
-Tuberculoventral neurons in the deep layer of the \DCN provide a delayed, frequency-specific
-glycinergic inhibition to TS and DS cells in the \VCN
-\citep{ZhangOertel:1993,WickesbergOertel:1988}.  The dendrites of TV cells are
-aligned with \ANFs and indicating narrow frequency tuning. TV cells have low
-spontaneous rates and variable \PSTHs; “pauser,” “chopper,” or “onset/sustained”
-have been recorded \citep{ShofnerYoung:1985,SpirouDavisEtAl:1999}. They have
-little or no response to wide band noise and firing rates to \CF tones that are
-non-monotonic functions of intensity.
+# Tuberculoventral neurons in the deep layer of the \DCN provide a delayed,
+# frequency-specific glycinergic inhibition to TS and DS cells in the \VCN
+# \citep{ZhangOertel:1993,WickesbergOertel:1988}.  The dendrites of TV cells are
+# aligned with \ANFs and indicating narrow frequency tuning. TV cells have low
+# spontaneous rates and variable \PSTHs; “pauser,” “chopper,” or
+# “onset/sustained” have been recorded
+# \citep{ShofnerYoung:1985,SpirouDavisEtAl:1999}. They have little or no
+# response to wide band noise and firing rates to \CF tones that are
+# non-monotonic functions of intensity.
 
-Anterograde labelling in the \DCN suggests glycinergic Tuberculoventral cells
-project tonotopically to the \VCN not just on-\CF, but also to the adjacent low
-and high frequency side bands in the \AVCN
-\citep{OstapoffFengEtAl:1994,MunirathinamOstapoffEtAl:2004}.  Ultra-structural
-labelling of synapses in the rat \DCN suggest \TV cells are inhibited by DS
-cells and from sources in the \DCN but excitatory inputs were not found from TS
-cells \citep{RubioJuiz:2004}.  Intracellular responses from labeled TV cells in
-the mouse show clear excitatory input from TS cells and diffuse inhibitory input
-from DS cells \citep{ZhangOertel:1993}.
+# Anterograde labelling in the \DCN suggests glycinergic Tuberculoventral cells
+# project tonotopically to the \VCN not just on-\CF, but also to the adjacent
+# low and high frequency side bands in the \AVCN
+# \citep{OstapoffFengEtAl:1994,MunirathinamOstapoffEtAl:2004}.  Ultra-structural
+# labelling of synapses in the rat \DCN suggest \TV cells are inhibited by DS
+# cells and from sources in the \DCN but excitatory inputs were not found from
+# TS cells \citep{RubioJuiz:2004}.  Intracellular responses from labeled TV
+# cells in the mouse show clear excitatory input from TS cells and diffuse
+# inhibitory input from DS cells \citep{ZhangOertel:1993}.
+
+*** Morphology and Cellular Mechanisms of Tuberculoventral cells
+
+Tuberculoventral neurons in the deep layer of the DCN provide a delayed,
+frequency-specific glycinergic inhibition to TS and DS cells in the \VCN
+\citep{ZhangOertel:1993,WickesbergOertel:1988}.  Planar multipolar or vertical
+cells are the most populated in the deep layers of the \DCN and correspond to
+neurons with a Type II \EIRA \citep{SpirouDavisEtAl:1999,Rhode:1999} and are
+immunolabelled with glycine.  Not all vertical cells send axona collaterals to
+the \VCN \citep{Rhode:1999} and not all Type II units can be antidromically
+activated by shocks to the \VCN The dendrites of \TV cells are aligned with
+\ANFs and indicating narrow frequency tuning.
+
+
+\TV axons exit the \DCN via the lateral tuberculoventral tract, transversing the
+\GCD and terminating in the \PVCN and the \AVCN. Anterograde labelling in the
+DCN suggests glycinergic \TV cells project tonotopically to the VCN not just
+on-CF, but also to the low and high frequency side bands in the AVCN
+\citep{WickesbergOertel:1993,WickesbergOertel:1988,WickesbergWhitlonEtAl:1991,Wickesberg:1996,OstapoffFengEtAl:1994,MunirathinamOstapoffEtAl:2004}.
+
+
+Ultra-structural labelling of synapses in the rat DCN suggest TV cells
+are inhibited by \DS cells and from \GABA, glycine and mixed sources
+in the \DCN \citep{RubioJuiz:2004}.    Intracellular responses from
+labeled \TV cells in the mouse show clear excitatory input from TS
+cells and diffuse inhibitory input from DS cells
+\citep{ZhangOertel:1993}; however, excitatory inputs were not found
+from TS cells in rats \citep{RubioJuiz:2004}.
+
+
+The intracellular properties of \TV cells recorded \textit{in vitro}
+they have a classic type I regular-spiking response to current clamp
+and action potentials with double exponential plus undershoots
+\citep{EvansNelson:1973,WickesbergOertel:1990,YoungBrownell:1976,YoungVoigt:1981,ZhangOertel:1993}.
+Hyperpolarisation undershoots after a spike suggest the presence of
+low threshold potatium channels
+(\IKLT) \citep{ManisMarx:1991,RothmanManis:2003}.
+
 
  #+latex: \input{Tuberculo.tex}
+
+
+*** TODO Acoustic Response of Tuberculoventral cells
+
+\TV cells have low spontaneous rates and variable \PSTHs
+(pause-build, unusual chopper, or onset with sustained activity) have been
+recorded \citep{ShofnerYoung:1985,SpirouDavisEtAl:1999}. They have little or no
+response to wide band noise and firing rates to \CF tones that are non-monotonic
+functions of intensity.
+
+# Responses of tuberculoventral neurons to sound
+ Recordings \textit{in vivo} indicate that tuberculoventral cells probably have
+ type II characteristics and respond with “chopper” temporal response patterns
+ \citep{ZhangOertel:1993b}. Units with type II responses are sharply tuned, they
+ have thresholds - 10 dB higher than other units with which they are
+ intermingled, and they do not respond to broad- band noise
+ \citep{SpirouDavisEtAl:1999,YoungBrownell:1976,Young:1980,SachsYoung:1980,YoungVoigt:1982,ShofnerYoung:1985,VoigtYoung:1990,YoungSpirouEtAl:1992,Rhode:1999}. Young
+ and his colleagues have shown that most neurons in the deep DCN respond to
+ sound with either of two major types of response maps, type II or type IV
+ \citep{EvansNelson:1973,ShofnerYoung:1985,VoigtYoung:1980,VoigtYoung:1990,Young:1980,YoungBrownell:1976}.
+
+
+
+ - In the DCN lateral offset of TV input to fusiform cells identified
+  - in \EIRA type IV and IV-t units indicate TV cells play a role in
+  - notch detection in DCN 
+ - In the VCN delayed narrowband inhibition
+  - suggests role as echo suppression agent in VCN spectral
+  - representation in TS cells in high frequencies \rightarrow Middle
+  - ear filter deconvolution \rightarrow accurate representation of
+  - acoustic stimulus
 
 
 ** Golgi Cells
@@ -1132,15 +1232,16 @@ membrane channels
 
 
 This section provides highly detailed information regarding the synapses and
-connectivity in the T stellate microcircuit.
-Given sufficient information a realistic biological model of the stellate network is
-attainable and can provide further insights into processing of acoustic
-information.
-The necessity of such detailed information is essential to produce a
-biophysically-realistic model to observe more complex phenomena in the neural
-output.  Table \ref{tab:Connections}, included at the end of this section, gives
-a final summary of the synaptic connections
+connectivity in the T stellate microcircuit.  Given sufficient information a
+realistic biological model of the stellate network is attainable and can provide
+further insights into processing of acoustic information.  The necessity of such
+detailed information is essential to produce a biophysically-realistic model to
+observe more complex phenomena in the neural output.  The first part details 
 
+
+Table
+\ref{tab:Connections}, included at the end of this section, gives a final
+summary of the synaptic connections
 
 
 ** Receptors and Neurotransmitters
@@ -1528,29 +1629,36 @@ studies with delay $0.7 \pm 0.12$ ms (range 0.48--0.92 ms)
 *** ANF to Tuberculoventral cells
 
  #+latex: \textsc{Synapse type}: As in \VCN stellate cells, \ANF terminals form
-glutamate \AMPA receptors in the \DCN\space \TV cells.
-Intracellular physiological studies have shown the blocking of \AMPA receptors
-with an \AMPA antagonist \citep{ZhangOertel:1993}.  The dynamics of the \AMPA
-receptor synapse at TV cells is a single-exponential potential change, with
-decay time constant 0.4 ms \citep{GardnerTrussellEtAl:1999}.
+glutamate \AMPA receptors in the deep \DCN neurons, \TV cells.  \EPSPs from AN
+shocks can be blocked with an \AMPA antagonist \citep{ZhangOertel:1993},
+confirming the \ANFTV synapse is glutamatergic and of type \AMPA.  The dynamics
+of the \AMPA synapse is single-exponential with decay time constant 0.4 ms
+\citep{GardnerTrussellEtAl:1999}, significantly slower for \TV cells compared to
+stellate and octopus cells (mean decay time constant 0.36 ms).
 
- #+latex: \textsc{Synaptic Contacts}: In all mammals, \ANF terminals on TS cells
-are either mainly dendritic (mice: \citealt{ZhangOertel:1993}, guinea pig: \sim 4
-somatic contacts per cell \citealt{Alibardi:1999}, cats: few somatic contacts
-\citealt{Liberman:1993,SpirouDavisEtAl:1999}) or completely dendritic (rat:
-\citealt{RubioJuiz:2004}). The number of \ANF synaptic terminals is not known.  \HSR\space \ANFs are less likely
-to enter the \DCN and have axonal collaterals than \LSR fibres
-\citep{Rhode:1999}.
+\LSR fibres have more collaterals and more terminals endings in the DCN than
+ \HSR\space \ANFs \citep{Rhode:1999}.
 
- #+latex: \textsc{Receptive Fields}: TV cells' dendrites are aligned with the incoming \ANF axons.
-The dendritic width perpendicular to the \ANF axons (approximately 70 \um
-\citealt{SpirouDavisEtAl:1999,ZhangOertel:1993}) is identical to the average axon
-termination width of \ANFs \citep{Rhode:1999,SpirouDavisEtAl:1999}.
+ #+latex: \textsc{Synaptic Contacts}: In all mammals, \ANF synaptic terminals on TS cells
+are primarily dendritic (mice: \citealt{ZhangOertel:1993}, guinea pig: \<
+4 somatic contacts per cell \citealt{Alibardi:1999}, cats: few somatic contacts
+\citealt{Liberman:1993,SpirouDavisEtAl:1999}, rat: 
+\citealt{RubioJuiz:2004}). 
+
+
+The average number and strength of \ANF synaptic terminals is not known.
+
+ #+latex: \textsc{Receptive Fields}: \TV cell dendrites are aligned with the 
+incoming \ANF axons, hence their other name /vertical/ cells
+\citep{Rhode:1999}. The dendritic width perpendicular to the \ANF axons
+(approximately 70 \um \citealt{SpirouDavisEtAl:1999,ZhangOertel:1993}) is
+identical to the average axon termination width of \ANFs
+\citep{Rhode:1999,SpirouDavisEtAl:1999}.
 
  #+latex: \textsc{Delay}: The latency of \EPSPs to AN shock (1.0--1.5 ms) is
 longer than the stellate neurons of the \VCN\space \citep{ZhangOertel:1993}.
 The difference is also matched in the first spike latency to acoustic input
-(\FSL 4.0--4.4 ms, \citealt{Rhode:1999,SpirouDavisEtAl:1999}).
+(\FSL 4.0-4.4 ms, \citealt{Rhode:1999,SpirouDavisEtAl:1999}).
 
 *** ANF to Golgi cells
 
