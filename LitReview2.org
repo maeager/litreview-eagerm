@@ -240,13 +240,13 @@ feed-forward and feed-back connections.
 \todo[inline]{More work on references here}
 The mammalian auditory nerve forms a
 bimodal distribution where 30--40\% of the fibres have SR $<$ 10 spikes/s and
-60--70\% have SR $>$ 30 spikes/s (Refs) . Threshold is correlated to the amount
+60--70\% have SR $>$ 30 spikes/s (Refs). Threshold is correlated to the amount
 of spontaneous spike activity (SR) that occurs in the absence of
 experimenter-controlled stimulation. \LSR fibres have relatively high
 thresholds, whereas \HSR fibres have low thresholds. Across the audible
 frequency range, fibres of similar \CFs can vary in SR from near 0 to $>$ 100
 spikes/s.  The bimodal SR distribution is present across the entire audible
-frequency range for the animal (Refs here), and implies a general organisational
+frequency range for the animal (Refs), and implies a general organisational
 principle for the mammalian auditory nerve. Fibres of the different SR groupings
 exhibit distinct physiologic features, especially in terms of their contribution
 to the dynamic range of hearing (Refs here) and representation of speech sounds
@@ -1493,8 +1493,8 @@ The information required to model the connectivity between cell types includes:
      membrane change in the post-synaptic neuron).
 
 
-The receptive field is calculated from the frequency range of excitation at 10
-dB above threshold, called \Qten.
+The receptive field is calculated from the frequency range of excitation 10
+dB above threshold at the neuron's \CF, called \Qten.
 
 
 
@@ -1507,6 +1507,8 @@ containing pleomorphic vesicles and storing GABA; and (3) asymmetric R-boutons,
 containing large or small spherical synaptic vesicles and storing glutamate or
 acetylcholine
 \citep{Ottersen:1990,Wenthold:1991,Cant:1992,AltschulerJuizEtAl:1993,SaintOstapoffEtAl:1993,Alibardi:2003}.
+
+\yellownote{needs a better intro}
 
 *** Glutamatergic AMPA synapses
 
@@ -1531,13 +1533,13 @@ glutamine antibodies \citep{HackneyOsenEtAl:1990,WentholdHunterEtAl:1993}.  More
 advanced measures using electron microscopy reveal \AMPA subunits, unique to the
 cochlear nucleus, apposing bushy and TS cells \citep{WangWentholdEtAl:1998}.
 Pharmacologic experiments have also confirmed monosynaptic \EPSPs from AN shocks
-are blocked by the \AMPA antagonist DNQX in DS and TS cells
+are blocked by the \AMPA antagonist \DNQX in \DS and \TS cells
 \citep{FerragamoGoldingEtAl:1998a}. Glutamatergic \NMDA receptors may also be
 present at \ANF synapses \citep[mice:][]{FerragamoGoldingEtAl:1998a} and can be
 activated to produce large synaptic currents \citep{CaoOertel:2010}.
 
 
-Whole cell patch recordings in rats show \NMDA dominance at birth, then reverses
+Whole cell patch recordings in rats show \NMDA dominance over \AMPA currents at birth, then diminishes
 during development leaving little to no observable \NMDA\space \EPSCs at the
 soma in mature rats \citep{BellinghamLimEtAl:1998}.
 # %\citep{Oertel:1983}
@@ -1547,7 +1549,7 @@ Five percent of \ANFs are unmyelinated type II fibres (cat:
 \citep{JosephsonMorest:2003,BensonBrown:2004,Ryugo:2008,RyugoHaenggeliEtAl:2003,RyugoParks:2003}.
 
 
-The AMPA receptor is composed of four different protein subunits, termed \GluRs
+The \AMPA receptor is composed of four different protein subunits, termed \GluRs
  1--4. The functional properties of each AMPA receptor are determined by the
  relative levels of GluRs 1--4  \citep[see~review][]{Parks:2000}.
 
@@ -1865,7 +1867,7 @@ within the isofrequency lamina of the cell body (75--100 \um
 
 The physiological acoustic receptive field is also similar between \ANFs and \TS
 cells suggesting limited overlap of the incoming and receiver receptive fields.
-
+\yellownote{Fix this paragraph}
 
 (\ChS $\Qten=5.3$ \citep[cat:][]{RhodeSmith:1986}, all choppers
 $\Qten=5.52\pm1.4$ \citealt[guinea pig:][]{JiangPalmerEtAl:1996}) compared to
@@ -1906,7 +1908,7 @@ studies with delay $0.7 \pm 0.12$ ms (range 0.48--0.92 ms)
  #+latex: \textsc{Synapse type}: As in \VCN stellate cells, \ANF terminals form
 glutamate \AMPA receptors in the deep \DCN neurons, \TV cells.  \EPSPs from AN
 shocks can be blocked with an \AMPA antagonist \citep{ZhangOertel:1993b},
-confirming the \ANFTV synapse is glutamatergic and of type \AMPA.  The dynamics
+confirming the \ANFTV synapse is glutamatergic and of type \AMPA\@.  The dynamics
 of the \AMPA synapse is single-exponential with decay time constant 0.4 ms
 \citep{GardnerTrussellEtAl:1999}, significantly slower for \TV cells compared to
 stellate and octopus cells (mean decay time constant 0.36 ms).
