@@ -3990,7 +3990,7 @@ endef
 #
 #     eps [
 #         shape=Mrecord
-#         label="{{<gpi> GNUplot|<epsgz> GZip|<dot> Dot|<fig> XFig}|<eps> eps}"
+#         label="{{<fig> XFig|<epsgz> GZip|<gpi> GNUplot|<dot> Dot}|<eps> eps}"
 #         ]
 #     pstex [label="%.pstex"]
 #     pstex_t [label="%.pstex_t"]
