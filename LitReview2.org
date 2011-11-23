@@ -22,6 +22,7 @@
 
 * Prelude 							   :noexport:
 
+
 #+begin_src emacs-lisp
  (setq org-latex-to-pdf-process '("pdflatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "pdflatex -interaction nonstopmode %f"  "pdflatex -interaction nonstopmode %f" ))
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf"))
@@ -29,12 +30,30 @@
 ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "xelatex -interaction nonstopmode %f"  "xelatex -interaction nonstopmode %f" ))
  (setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n\\printglossaries\n}\n\\setcounter{chapter}{0}")
  (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+(add-to-list 'org-export-latex-classes
+  '("UoM-draft-org-article"
+"\\documentclass[10pt,a4paper,twoside,openright]{book}
+\\usepackage{style/uomthesis}
+\\input{user-defined}
+\\usepackage[nonumberlist,acronym]{glossaries}
+\\input{../hg/manuscript/misc/glossary}
+\\makeglossaries
+\\graphicspath{{./gfx/}}
+\\pretolerance=150
+\\tolerance=100
+\\setlength{\\emergencystretch}{3em}
+\\overfullrule=1mm
+% \\usepackage[notcite]{showkeys}
+\\lfoot{\\footnotesize\\today\\ at \\thistime}
+\\usepackage{rotating,calc}
+\\usepackage{booktabs,ltxtable,lscape}
+      [NO-DEFAULT-PACKAGES]
+      [NO-PACKAGES]"
+     ("\\section{%s}" . "\n\\section{%s}")
+     ("\\subsection{%s}" . "\n\\subsection{%s}")
+     ("\\subsubsection{%s}" . "\n\\subsubsection{%s}")
+     ("\\paragraph{%s}" . "\n\\paragraph{%s}")))
 #+end_src
-
-#+results:
-| space | \ | nil |   |   |   |   |
-
-
 
 
 * Introduction
@@ -1066,7 +1085,7 @@ Golgi cells are activated by type II auditory nerve fibres
 auditory nerve fibres could be involved in gain control through GABAergic
 modulation of activity in the \VCN\@.
 
-*** Morphology of Golgi Cells 
+*** Morphology of Golgi Cells
 
 Golgi cells are distinguished from the numerous smaller granule cells by larger
 cell body and surrounding plexus of dendritic and axonal neurites. The soma
@@ -1232,7 +1251,7 @@ extrinsically from olivocochlear efferents \citep{OstapoffBensonEtAl:1997}.
 
 
 Axo-somatic inhibition from flat and pleomorphic terminals has been observed
-adjoining prominently on D stellate cells and could possibly explain the OnC
+adjoining prominently on D stellate cells and could possibly explain the \OnC
 response to tones and noise.  Evidence of axo-dendritic inhibition on T stellate
 cells \citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that
 T stellate cells overcome saturation of high spontaneous rate AN fibres by
@@ -1246,13 +1265,13 @@ GABAergic inhibition regulates the level of activity in the \VCN
 \citep{PalombiCaspary:1992}, The application of bicuculine abolishes the onset
 response of \OnC and \OnL units \citep{EvansZhao:1998,PalombiCaspary:1992}.
 Bicuculine, a \GABAa antagonist, raises the threshold and significantly
-increases OnC receptive field to high and low frequencies, up to 10 times the
+increases \OnC receptive field to high and low frequencies, up to 10 times the
 receptive field width of AN fibres \citep{EvansZhao:1998}.  Facilitation of
 response by spectral inputs outside the conventional receptive field
 \citep{WinterPalmer:1995,JiangPalmerEtAl:1996}, indicate the presence of tonic
 inhibition in \OnC units.  Inhibition acting post onset is likely to be a
 dominant factor in their onset response properties rather than membrane based
-mechanisms \citep{EvansZhao:1998}.  OnC showed little difference in response to
+mechanisms \citep{EvansZhao:1998}.  \OnC showed little difference in response to
 cosine or random phase harmonics, which improves temporal encoding of
 fundamental in echoic situations \citep{EvansZhao:1998}. The post-onset
 inhibition can last for up to 200--400msec, as observed by hyperpolarisation of
@@ -1392,7 +1411,7 @@ the \fm inducing the highest synchronisation called the \BMF
 \citep{FrisinaSmithEtAl:1990}. Rhode and colleagues confirmed band-pass \tMTFs
 as well as some band-pass rate-based \MTFs in chopper units in the cat
 \citep{Rhode:1994,RhodeGreenberg:1994}.  The \BMF of chopper units lie between
-50 and 500Hz (gerbil and cat).  OnC units are well suited to encode a wide range
+50 and 500Hz (gerbil and cat).  \OnC units are well suited to encode a wide range
 of fm with strong synchronisation due their precise onset Kim
 \citep{KimRhodeEtAl:1986,JorisSmith:1998,RhodeGreenberg:1994,Rhode:1998}.
 
