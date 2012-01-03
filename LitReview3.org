@@ -22,7 +22,7 @@
 
 * Prelude                                                          :noexport:
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp results: silent
  (setq org-latex-to-pdf-process '("pdflatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "pdflatex -interaction nonstopmode %f"  "pdflatex -interaction nonstopmode %f" ))
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf"))
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf"))
@@ -31,13 +31,12 @@
  (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
 #+end_src
 
-#+results:
-| space | \ | nil |   |   |   |   |
 
 
 
 
-* New Layout
+
+* New Layout 							  
 
  | Section      |              |             | Pages | Actual | TODO/DONE |
  |--------------+--------------+-------------+-------+--------+-----------|
@@ -61,7 +60,7 @@
 
 
 
-\newpage
+  \newpage
 
 * Introduction
 
@@ -224,11 +223,12 @@ important for speech and other auditory communication \citep{YoungOertel:2004}.
 The main tasks of the auditory system are to (1) separate out individual
 frequency components of sound; (2) enhance spectral and temporal contrasts to
 improve meaningful \SNR; and (3) extract behavioural frequency cues
-\citep{Evans:1992}.  \todo[inline]{ FIX Sentence (check Evans)}
+\citep{Evans:1992}.  
+\todo[inline]{FIX last sentence (check Evans citation)}
 
 Rough frequency decomposition is performed by the basilar membrane and organ of
 Corti in the mammalian cochlea, which transforms mechanical signals to neural
-signals in the \ANFs.  The next element of the auditory process occurs in the
+signals in \ANFs.  The next element of the auditory process occurs in the
 cochlear nucleus, the first processing stage of the central auditory pathway in
 which all \ANFs end. Enhancing spectral and temporal contrasts requires
 sophisticated parallel processing strategies involving networks of neurons with
@@ -244,14 +244,15 @@ feed-forward and feed-back connections.
 
 \todo[inline]{Small and concise lit review of ANFs}
 
+
 \todo[inline]{1 para on Spontaneous discharge rate (SR). More work on references
-here} The mammalian auditory nerve forms a bimodal distribution where 30--40\%
-of the fibres have SR $<$ 10 spikes/s and 60--70\% have SR $>$ 30 spikes/s
-(Refs). Threshold is correlated to the amount of spontaneous spike activity (SR)
+here} The physiology of auditory nerve fibres form a bimodal distribution where 30--40\%
+of the fibres have \SR less than 2 spikes per second and 60--70\% have \SR above 30 spikes/s
+\citep{RyugoParks:2003}. Threshold is correlated to the amount of spontaneous spike activity
 that occurs in the absence of experimenter-controlled stimulation. \LSR fibres
 have relatively high thresholds, whereas \HSR fibres have low thresholds. Across
 the audible frequency range, fibres of similar \CFs can vary in SR from near 0
-to $>$ 100 spikes/s.  The bimodal SR distribution is present across the entire
+to  100 spikes/s.  The bimodal SR distribution is present across the entire
 audible frequency range for the animal (Refs), and implies a general
 organisational principle for the mammalian auditory nerve. Fibres of the
 different SR groupings exhibit distinct physiologic features, especially in
@@ -1219,8 +1220,15 @@ networks of the cochlear nucleus.
 
 The current state of neural network models fail to deliver at producing a
 biophysically-realistic model of the cochlear nucleus, specifically the
-microcircuit regulating the main output neurons \TS cells.
+microcircuit regulating the main output neurons, \TS cells.
 
+Realistic models of the cochlear nucleus are dependent on the
+performance and realism of the input.  Phenomenological models of the
+auditory nerve have advanced \citep{ZilanyBruceEtAl:2009}
+
+frequency decomposition, adaptation, offset recovery and replication of temporal 
+
+Advancement of 
  - poor use of phenomenologically accurate AN models in existing CN models
  - lack of recent current models Rothman and Manis current models
  - lack of GABAergic neurons
