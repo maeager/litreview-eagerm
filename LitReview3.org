@@ -1,6 +1,7 @@
 #+LaTeX_CLASS: UoM-draft-org-article
 #+LaTeX_CLASS_OPTIONS: [a4paper,10pt,twopage]
 #+OPTIONS: toc:nil H:5 author:nil <:t >:t
+#+STARTUP: showall
 #+TODO: REFTEX
 
 #+TITLE: Literature Review
@@ -27,16 +28,46 @@
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf"))
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf"))
 ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "xelatex -interaction nonstopmode %f"  "xelatex -interaction nonstopmode %f" ))
+
+(add-to-list 'org-export-latex-classes
+  '("UoM-draft-org-article"
+"\\documentclass[10pt,a4paper,twoside,openright]{book}
+\\usepackage{style/uomthesis}
+\\input{user-defined}
+\\usepackage[acronym]{glossaries}
+\\input{../hg/manuscript/misc/glossary}
+\\makeglossaries
+\\graphicspath{{./gfx/}}
+\\pretolerance=150
+\\tolerance=100
+\\setlength{\\emergencystretch}{3em}
+\\overfullrule=1mm
+% \\usepackage[notcite]{showkeys}
+\\lfoot{\\footnotesize\\today\\ at \\thistime}
+\\usepackage{rotating,calc}
+\\usepackage{booktabs,ltxtable,lscape}
+      [NO-DEFAULT-PACKAGES]
+      [NO-PACKAGES]"
+     ("\\section{%s}" . "\n\\section{%s}")
+     ("\\subsection{%s}" . "\n\\subsection{%s}")
+     ("\\subsubsection{%s}" . "\n\\subsubsection{%s}")
+     ("\\paragraph{%s}" . "\n\\paragraph{%s}")
+     ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
+
  (setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n\\printglossaries\n}\n\\setcounter{chapter}{0}")
  (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+
 #+end_src
 
+#+results:
+| space | \ | nil |   |   |   |   |
 
 
 
 
 
-* New Layout 							  
+
+* New Layout
 
  | Section      |              |             | Pages | Actual | TODO/DONE |
  |--------------+--------------+-------------+-------+--------+-----------|
@@ -79,7 +110,7 @@ cells in the cochlear nucleus has been examined in detail in various species
 (cat: \citealt{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}, mice:
 \citealt{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991},
 guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats:
-VCN\space \citealt{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}).
+VCN\space \citealt{FriedlandPongstapornEt Al:2003,RubioJuiz:2004}).
 Physiological studies combined with labelling have given greater certainty to
 correlations between physiological response types and morphological cell types
 \citep[e.g.,~][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
@@ -223,7 +254,7 @@ important for speech and other auditory communication \citep{YoungOertel:2004}.
 The main tasks of the auditory system are to (1) separate out individual
 frequency components of sound; (2) enhance spectral and temporal contrasts to
 improve meaningful \SNR; and (3) extract behavioural frequency cues
-\citep{Evans:1992}.  
+\citep{Evans:1992}.
 \todo[inline]{FIX last sentence (check Evans citation)}
 
 Rough frequency decomposition is performed by the basilar membrane and organ of
@@ -425,7 +456,7 @@ following sections and will form the basis of investigation for this thesis.
 
 #+Attr_LATEX: width=0.9\linewidth
 #+LABEL: fig:CNschematic
-#+CAPTION: Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve inputs are not shown.
+#+CAPTION: Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve fibre inputs are not shown.
 [[file:/media/data/Work/thesis/LiteratureReview/gfx/CNcircuit-nodetail.png]]
 
 
@@ -503,24 +534,36 @@ in the contralateral \CN
 # dendritic projections, and their immunohistochemistry.
 
 
-\todo[inline]{For consistency, the TS cell modelled in this thesis represents
+\todo[inline]{}
+
+For consistency, the TS cell modelled in this thesis represents
  each of the various names given to neurons with similar characteristics (T
  stellate, type 1 multipolar, planar, and chopper PSTH units) in different
  animals, with closest association with rodents and cats. The DS cell type
- includes all those previously named as D stellate, type 2 multipolar, radial,
- and OnC PSTH unit.}
+ includes all those previously named as D stellate, type-2 multipolar, radial, and units classified as OnC PSTH units.
 
 *** TODO Intrinsic Mechanisms of T Stellate Cells
 
+The intrinsic cell-based properties of \VCN neurons have typically been
+investigated using /in vitro/ current clamp experiments
+\citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,WuOertel:1984}.
+
+T stellate cells are classified as type-1 due to the regularly spaced firing of
+action potentials to steady depolarising current.
+
+
  - Type 1 current clamp, single exponential undershoot
    \citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984}
+
  - \citep{FujinoOertel:2001,FerragamoGoldingEtAl:1998a}
+
  - \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b,Rothman:1999}
  - No Low threshold potassium current present in bushy cells
    \citep{ManisMarx:1991}
  - \Ih and \IKA have a role in modulating the rate of repetitive firing.
  - Effect of Inhibition on T stellate cells could be to reset \IKA
    \citep{RothmanManis:2003b}
+
  - Effective somatic membrane time constant $6.5 \pm 5.7$ msec
    \citep{ManisMarx:1991} type I $9.1 \pm 4.5$ \citep{ManisMarx:1991} 6.2 to
    18.0 msec \citep{FengKuwadaEtAl:1994} $6.9\pm 3$ msec, 10--90\% rise time was
@@ -540,9 +583,8 @@ in the contralateral \CN
    given AN adaptation?
 
 
-In response to intracellular current injection they fire with regularly spaced
-action potentials and have a linear current-voltage response
-\citep{Oertel:1983,OertelWuEtAl:1988,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
+They  have a linear current-voltage response
+\citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
 The presence of the transiently deactivating \IKA current channels ,,,
 
 *** TODO Acoustic Response of T Stellate Cells
@@ -560,8 +602,8 @@ suppression of neurons receptive field is examined using the \EIRA method
 
 The regular-firing chopping pattern shown in Figure \ref{fig:chopping} is
 characteristic of TS cells. \ChS and \ChT are differentiated by the regularity
-of discharge throughout the stimulus using the \CV statistic
-\citep{YoungRobertEtAl:1988}.  Recurrent excitation among \TS cells of similar
+of discharge throughout the stimulus using the \CV
+statistic \citep{YoungRobertEtAl:1988}.  Recurrent excitation among \TS cells of similar
 \CFs was first suggested by \citet{FerragamoGoldingEtAl:1998a}.  The small
 numbers of axonal collaterals are confined to the same frequency band as their
 dendrites, indicating recurrent connections are between cells encoding a similar
@@ -576,8 +618,7 @@ response area to be transmitted to higher centres.
     \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
   - "Chopping" precise regular timing that degrades throughout
     stimulus\citep{YoungRobertEtAl:1988,BlackburnSachs:1989}
-  - sustained (70%)
-    \rightarrow constant rate, \ISIH sharp, CV $<$ 0.3, CV constant
+  - sustained (70%) \rightarrow constant rate, \ISIH sharp, CV $<$ 0.3, CV constant
   - transient (30%) \rightarrow rate decreases, CV starts below 0.3 then
     varies - Inhibition - Gly, \GABA tuned on frequency to reduce peak
     excitation \citep{CasparyBackoffEtAl:1994}
@@ -662,13 +703,13 @@ response area to be transmitted to higher centres.
 *** Synaptic Inputs to T Stellate Cells
 
    - sensitive to neuromodulatory currents \citep{FujinoOertel:2001}
-     - high input resistance \rightarrow amplify small current inputs
+   - high input resistance \rightarrow amplify small current inputs
        \citep{FujinoOertel:2001}
-     - no LKT in TS, LKT makes bushy and octopus insensitive to steady currents
+   - no LKT in TS, LKT makes bushy and octopus insensitive to steady currents
        \citep{OertelFujino:2001,McGinleyOertel:2006}
-     - Ih higher in TS & activated more at lower potentials than in bushy and
+   - Ih higher in TS & activated more at lower potentials than in bushy and
        octopus, so that it is less active at rest
-     - high resistance \rightarrow greater voltage changes in small modulating
+   - high resistance \rightarrow greater voltage changes in small modulating
        current \rightarrow Ih can be modulated by G-protein coupled receptors,
        hence making TS more excitable when Ih activated
        \citep{RodriguesOertel:2006}
@@ -684,8 +725,8 @@ response area to be transmitted to higher centres.
 
 **** Glycinergic DS and TV Cells
 
-     - Glycine from DS cells \citep{FerragamoGoldingEtAl:1998a}
-     - Glycine from TV cells \citep{WickesbergOertel:1990,ZhangOertel:1993b}
+   - Glycine from DS cells \citep{FerragamoGoldingEtAl:1998a}
+   - Glycine from TV cells \citep{WickesbergOertel:1990,ZhangOertel:1993b}
        - complicated recurrent loop: TS excite TV cells is several intracellular
          studies \citep{WickesbergOertel:1990,ZhangOertel:1993b} but TS
          terminals absent on TV cells in rat microscopy study
@@ -694,11 +735,11 @@ response area to be transmitted to higher centres.
 
 **** GABAergic Golgi cells
 
-     - no \IPSPs or \IPSCs but presence of \GABAa receptors and response changes
+    - no \IPSPs or \IPSCs but presence of \GABAa receptors and response changes
        to bicuculine
        \citep{WuOertel:1986,OertelWickesberg:1993,FerragamoGoldingEtAl:1998a}
-     - dend filter obscures \PSPs
-     - Golgi cells are GABAergic and lie within the granule cell domains around
+    - dend filter obscures \PSPs
+    - Golgi cells are GABAergic and lie within the granule cell domains around
        the \VCN and terminate near the fine distal dendrites of T stellate cells
 
 **** Recurrent local excitation between T stellate cells
@@ -1144,7 +1185,6 @@ Present a robust model of VCN neurons based on previous experimental studies.
 
 
 ** Microcircuit Models in the Cochlear Nucleus
-
 The first network models in the cochlear nucleus revolved around the \DCN
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
 cerebellar-like circuitry of the \DCN and their complex \EIRA cell type
@@ -1154,7 +1194,7 @@ and then in greater detail by Davis and colleagues
 \citep{DavisVoigt:1996,HancockDavisEtAl:1997,SpirouDavisEtAl:1999,HancockDavisEtAl:2001}.
 The role of DS cell inhibition in the \DCN circuitry has been explored even
 further, with suggestions of asymmetrical wide-band inhibition onto \EIRA type
-II units (TV cells) \citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}
+II units, typical of TV cells \citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}
 
 
 Selective processing of different \ANF inputs using some form of inhibition was
@@ -1226,9 +1266,9 @@ Realistic models of the cochlear nucleus are dependent on the
 performance and realism of the input.  Phenomenological models of the
 auditory nerve have advanced \citep{ZilanyBruceEtAl:2009}
 
-frequency decomposition, adaptation, offset recovery and replication of temporal 
+frequency decomposition, adaptation, offset recovery and replication of temporal
 
-Advancement of 
+Advancement of
  - poor use of phenomenologically accurate AN models in existing CN models
  - lack of recent current models Rothman and Manis current models
  - lack of GABAergic neurons
