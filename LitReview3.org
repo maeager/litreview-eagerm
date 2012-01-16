@@ -7,14 +7,14 @@
 #+TITLE: Literature Review
 #+DATE:
 #+AUTHOR: Michael A Eager
-#+LATEX_HEADER:\graphicspath{{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+#+LATEX_HEADER:\graphicspath{{./}{./gfx/}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
 #+LATEX_HEADER:\setcounter{secnumdepth}{5}
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
 #+LATEX_HEADER:\pretolerance=150
 #+LATEX_HEADER:\tolerance=100
 #+LATEX_HEADER:\setlength{\emergencystretch}{3em}
 #+LATEX_HEADER:\overfullrule=1mm
-
+#+LATEX_HEADER:\usepackage{transparent}
 
 #+BIBLIOGRAPHY: MyBib alphanat
 # unsrtnat
@@ -59,11 +59,8 @@
 
 #+end_src
 
-#+results:
+#+RESULTS:
 | space | \ | nil |   |   |   |   |
-
-
-
 
 
 
@@ -110,7 +107,7 @@ cells in the cochlear nucleus has been examined in detail in various species
 (cat: \citealt{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}, mice:
 \citealt{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991},
 guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats:
-VCN\space \citealt{FriedlandPongstapornEt Al:2003,RubioJuiz:2004}).
+VCN\space \citealt{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}).
 Physiological studies combined with labelling have given greater certainty to
 correlations between physiological response types and morphological cell types
 \citep[e.g.,~][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
@@ -166,7 +163,7 @@ separate simultaneously presented vowels.
 The fundamental rhetorical question in the literature comes down to whether
 intrinsic membrane mechanisms or network and synaptic mechanisms are more
 important for the behaviour of T stellate cells \citep{OertelWrightEtAl:2011}.
-Other important questions may need to be addressed first :
+Other important questions may need to be addressed first:
 What mechanisms in T stellate cells are essential for sustained firing to
 constant sound level despite significant adaptation in \ANF input?  How are the
 different categories of \ANFs (\LSR and \HSR) processed by T stellate cell
@@ -182,12 +179,12 @@ the population of T stellate cells?  The purpose of developing the network
 surrounding T stellate cells is to answer these questions.
 
 # generalise and abstract the features of the network that make it unique.
-# Why do DS cell connections to TV cells project to slightly higher \CFs?
-# , across frequencies and within frequencies in temporal
-# and rate based measures?
+\todo[inline]{Why do DS cell connections to TV cells project to
+slightly higher CFs? How do across frequency and within frequency
+synaptic connections affect temporal and rate based measures?}
 
-\todo[inline]{ I am still not sure whether the next four paragraphs belong here
-or at the end of the Lit review / Introduction Chapter.}
+# \todo[inline]{ I am still not sure whether the next four paragraphs belong here
+# or at the end of the Lit review / Introduction Chapter.}
 
 
 # The final hypothesis addresses the psycho-physical relevance of the components
@@ -454,10 +451,18 @@ following sections and will form the basis of investigation for this thesis.
 
 
 
-#+Attr_LATEX: width=0.9\linewidth
-#+LABEL: fig:CNschematic
-#+CAPTION: Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve fibre inputs are not shown.
-[[file:/media/data/Work/thesis/LiteratureReview/gfx/CNcircuit-nodetail.png]]
+# #+Attr_LATEX: width=0.9\linewidth
+# #+LABEL: fig:CNschematic
+# #+CAPTION: Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve fibre inputs are not shown.
+#   [[file:/media/data/Work/thesis/LiteratureReview/gfx/CNcircuit-nodetail.png]]
+
+\begin{figure}[htb]
+  \centering
+  \def\svgwidth{5in}
+  \input{./gfx/CNcircuit-nodetail.pdf_tex}
+\caption{Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve fibre inputs are not shown.}
+\label{fig:CNschematic}
+\end{figure}
 
 
 # \citep{CantBenson:2003}
@@ -587,7 +592,7 @@ They  have a linear current-voltage response
 \citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
 The presence of the transiently deactivating \IKA current channels ,,,
 
-*** TODO Acoustic Response of T Stellate Cells
+*** Acoustic Response of T Stellate Cells
 
 TS cells receive a narrow frequency band of \ANF inputs and have a chopping
 response to \CF tone bursts \citep{SmithRhode:1989,BlackburnSachs:1989}.  Few
@@ -618,7 +623,7 @@ response area to be transmitted to higher centres.
     \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
   - "Chopping" precise regular timing that degrades throughout
     stimulus\citep{YoungRobertEtAl:1988,BlackburnSachs:1989}
-  - sustained (70%) \rightarrow constant rate, \ISIH sharp, CV $<$ 0.3, CV constant
+  - sustained (70%) \rightarrow constant rate, \ISIH sharp, CV less than 0.3, CV constant
   - transient (30%) \rightarrow rate decreases, CV starts below 0.3 then
     varies - Inhibition - Gly, \GABA tuned on frequency to reduce peak
     excitation \citep{CasparyBackoffEtAl:1994}
@@ -649,7 +654,7 @@ response area to be transmitted to higher centres.
 # CantBenson
 # The type I multipolar cells are narrowly tuned and respond to tone bursts with
 # regular trains of action potentials, a response referred to as a
-# {\textquotedblleft}chopper{\textquotedblright} pattern (e.g.,
+# "chopper" pattern (e.g.,
 # [168,220]). Neurons that exhibit chopper responses can differ substantially in
 # their dendritic morphology ([58,179,194],cf. [30]) which suggests that a further
 # subdivision of this class of neurons may be possible. In mouse, the equivalent
@@ -821,7 +826,7 @@ pig the \SPN, \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
 
 *** Summary
 
-#  FIX
+#  FIX - this is not yours
 
 As a population, T stellate cells encode the spectrum of sounds. They receive
 acoustic input from the auditory nerve fibres. Several mechanisms contribute to
@@ -842,7 +847,8 @@ and understand sounds.
 # that T stellate-like cells have for hearing in vertebrates.
 
 
-*Other notes*
+** TODO *Other notes*
+
    - selective processing of \HSR and \LSR input
    - feed-forward excitation in TS cells
    - axon collaterals in local isofrequency (most cells in \PVCN are TS cells)
