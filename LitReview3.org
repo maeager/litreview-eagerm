@@ -1,8 +1,9 @@
+
 #+LaTeX_CLASS: UoM-draft-org-article
 #+LaTeX_CLASS_OPTIONS: [a4paper,10pt,twopage]
 #+OPTIONS: toc:nil H:5 author:nil <:t >:t
 #+STARTUP: showall
-#+TODO: REFTEX
+#+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 
 #+TITLE: Literature Review
 #+DATE:
@@ -55,7 +56,7 @@
      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
 
  (setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n\\printglossaries\n}\n\\setcounter{chapter}{0}")
- (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
 
 #+end_src
 
@@ -492,7 +493,7 @@ following sections and will form the basis of investigation for this thesis.
 
 ** T Stellate Cells
 
-\glsreset{TS} \TS cells lie in the core region of the \VCN, primarily in the
+T stellate cells lie in the core region of the \VCN, primarily in the
 posteroventral section (\PVCN) with some in the posterior part of the
 anteroventral section (\AVCN)
 \citep{Osen:1969,Lorente:1981,BrawerMorestEtAl:1974,OertelWuEtAl:1990,DoucetRyugo:2006,DoucetRyugo:1997}.
@@ -559,9 +560,7 @@ action potentials to steady depolarising current.
 
  - Type 1 current clamp, single exponential undershoot
    \citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984}
-
  - \citep{FujinoOertel:2001,FerragamoGoldingEtAl:1998a}
-
  - \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b,Rothman:1999}
  - No Low threshold potassium current present in bushy cells
    \citep{ManisMarx:1991}
@@ -1090,7 +1089,7 @@ sound levels.  \LSR units in the AN and \LSR primary-like \VCN units are
 presumably able to encode spectrum at high \SPL\@.  The rate-place
 representation in chopper units (\ChS and \ChT) show considerable robustness
 maintaining spectral peak information across a wide range of intensity levels
-(right panels in Fig.\space \ref{fig:May2003}).  Suppression of spectral troughs
+(right panels in Fig. \ref{fig:May2003}).  Suppression of spectral troughs
 in the rate-place representation of \ChT and \ChS units is greater than the
 suppression in \LSR\space \ANFs at high \SPL\@.  Spectral enhancement in T
 stellate cells cannot be attributed to lateral suppression in the auditory
@@ -1334,6 +1333,9 @@ pulsatile stimuli, such as the f0 of vowels.
 limitations and forward masking has been removed}
 
 
+
+
+
 # *** Hypothesis 4
 # Lateral inhibition in the T stellate network is responsible for setting the
 # upper limits of psychophysical simultaneous and forward masking T stellate cells
@@ -1356,10 +1358,10 @@ limitations and forward masking has been removed}
 
 
 
-#  #+begin_latex:
+#+begin_latex:
 \newpage
 \listoftodos
 
 \bibliographystyle{plainnat}
 \bibliography{MyBib}
-#  #+end_latex
+#+end_latex
