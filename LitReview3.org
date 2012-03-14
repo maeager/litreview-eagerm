@@ -1,13 +1,8 @@
-
-#+LaTeX_CLASS: UoM-draft-org-article
-#+LaTeX_CLASS_OPTIONS: [a4paper,10pt,twopage]
-#+OPTIONS: toc:nil H:5 author:nil <:t >:t
-#+STARTUP: showall
-#+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
-
 #+TITLE: Literature Review
 #+DATE:
 #+AUTHOR: Michael A Eager
+#+OPTIONS: toc:nil H:5 author:nil <:t >:t
+#+STARTUP: showall
 #+LATEX_HEADER:\graphicspath{{./}{./gfx/}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
 #+LATEX_HEADER:\setcounter{secnumdepth}{5}
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
@@ -16,10 +11,12 @@
 #+LATEX_HEADER:\setlength{\emergencystretch}{3em}
 #+LATEX_HEADER:\overfullrule=1mm
 #+LATEX_HEADER:\usepackage{transparent}
-
+#+LaTeX_CLASS: UoM-draft-org-article
 #+BIBLIOGRAPHY: MyBib alphanat
 # unsrtnat
 #+TEXT:        \chapter{Literature Review}
+#+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
+
 
 
 * Prelude                                                          :noexport:
@@ -60,8 +57,7 @@
 
 #+end_src
 
-#+RESULTS:
-| space | \ | nil |   |   |   |   |
+
 
 
 
@@ -107,10 +103,10 @@ membrane properties of the different cell types.  The synaptic organisation of
 cells in the cochlear nucleus has been examined in detail in various species
 (cat: \citealt{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}, mice:
 \citealt{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991},
-guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats:
-VCN\space \citealt{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}).
-Physiological studies combined with labelling have given greater certainty to
-correlations between physiological response types and morphological cell types
+guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats: VCN\space
+\citealt{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}).  Physiological studies
+combined with labelling have given greater certainty to correlations between
+physiological response types and morphological cell types
 \citep[e.g.,~][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
 Intracellular recordings have ascertained the electrical properties and the
 different synaptic inputs of \TS, \DS and \TV cells
@@ -164,25 +160,25 @@ separate simultaneously presented vowels.
 The fundamental rhetorical question in the literature comes down to whether
 intrinsic membrane mechanisms or network and synaptic mechanisms are more
 important for the behaviour of T stellate cells \citep{OertelWrightEtAl:2011}.
-Other important questions may need to be addressed first:
-What mechanisms in T stellate cells are essential for sustained firing to
-constant sound level despite significant adaptation in \ANF input?  How are the
-different categories of \ANFs (\LSR and \HSR) processed by T stellate cell
-microcircuit?  Is the loss of temporal information at high frequencies due to
-intrinsic properties or tonic inhibition and to what extent does this influence
-higher auditory systems?  What is the functional difference between the
-heterogeneous T stellate cell population (i.e., \ChT and \ChS units)?  What is
-the purpose of the polysynaptic recurrent inhibition between Golgi, DS and TV
-cells, and what is their direct influence on T stellate cells?  What are the
-effects of asymmetric or non-Gaussian topographic connections across
-isofrequency laminae and how does this effect the spectral representation across
-the population of T stellate cells?  The purpose of developing the network
-surrounding T stellate cells is to answer these questions.
+Other important questions may need to be addressed first: What mechanisms in T
+stellate cells are essential for sustained firing to constant sound level
+despite significant adaptation in \ANF input?  How are the different categories
+of \ANFs (\LSR and \HSR) processed by T stellate cell microcircuit?  Is the loss
+of temporal information at high frequencies due to intrinsic properties or tonic
+inhibition and to what extent does this influence higher auditory systems?  What
+is the functional difference between the heterogeneous T stellate cell
+population (i.e., \ChT and \ChS units)?  What is the purpose of the polysynaptic
+recurrent inhibition between Golgi, DS and TV cells, and what is their direct
+influence on T stellate cells?  What are the effects of asymmetric or
+non-Gaussian topographic connections across isofrequency laminae and how does
+this effect the spectral representation across the population of T stellate
+cells?  The purpose of developing the network surrounding T stellate cells is to
+answer these questions.
 
 # generalise and abstract the features of the network that make it unique.
-\todo[inline]{Why do DS cell connections to TV cells project to
-slightly higher CFs? How do across frequency and within frequency
-synaptic connections affect temporal and rate based measures?}
+\yellownote{Why do DS cell connections to TV cells project to slightly higher
+CFs? How do across frequency and within frequency synaptic connections affect
+temporal and rate based measures?}
 
 # \todo[inline]{ I am still not sure whether the next four paragraphs belong here
 # or at the end of the Lit review / Introduction Chapter.}
@@ -201,18 +197,18 @@ synaptic connections affect temporal and rate based measures?}
 This doctoral thesis is aimed at investigating the important physiological
 mechanisms involved in the processing of sounds, specifically spectral and
 temporal enhancement, in the cochlear nucleus of mammals.  Computer modelling
-enhances our knowledge of complex neural interactions in \TS cells and
-provides further understanding of inputs to higher centres.  The cochlear
-nucleus stellate network contains many independent simple components that are
-combined in non-linear feedback and feed-forward processes.  Intuition and
-simple calculation cannot serve to predict the response of such a complex
-system, therefore a more complex model must be used.  A biological neural
-network that contains a high degree of realism at the individual cell level may
-contribute to our knowledge of synaptic organisation in producing physiological
-behaviour.  The complexity of synaptic organisation is compounded by
-inter-species and within-species variation in computer models. Variation is
-managed by constraining the parameters to a range of values to elicit
-physiological behaviour observed in vivo.
+enhances our knowledge of complex neural interactions in \TS cells and provides
+further understanding of inputs to higher centres.  The cochlear nucleus
+stellate network contains many independent simple components that are combined
+in non-linear feedback and feed-forward processes.  Intuition and simple
+calculation cannot serve to predict the response of such a complex system,
+therefore a more complex model must be used.  A biological neural network that
+contains a high degree of realism at the individual cell level may contribute to
+our knowledge of synaptic organisation in producing physiological behaviour.
+The complexity of synaptic organisation is compounded by inter-species and
+within-species variation in computer models. Variation is managed by
+constraining the parameters to a range of values to elicit physiological
+behaviour observed in vivo.
 
 The implications of lateral inhibition and recurrent excitation on signal
 processing by T stellate cells are two fold: enhanced spectral representation
@@ -231,9 +227,9 @@ processing, to whatever extent it is limited by the information contained at the
 bottleneck of the auditory nerve.  Therefore, signal processing done by lateral
 inhibition and recurrent excitation in the cochlear nucleus has a significant
 influence on perception at higher levels of auditory processing.  Understanding
-the complex processing done by the cochlear nucleus may also contribute to
 understanding the limitations of hearing-impairment devices.  Further
 understanding how the processing of sound in noisy environments works within the
+the complex processing done by the cochlear nucleus may also contribute to
 network could aid in developing new sound processing strategies for the cochlear
 implant and hearing aids.
 
@@ -252,8 +248,7 @@ important for speech and other auditory communication \citep{YoungOertel:2004}.
 The main tasks of the auditory system are to (1) separate out individual
 frequency components of sound; (2) enhance spectral and temporal contrasts to
 improve meaningful \SNR; and (3) extract behavioural frequency cues
-\citep{Evans:1992}.
-\todo[inline]{FIX last sentence (check Evans citation)}
+\citep{Evans:1992}.  \todo[inline]{FIX last sentence (check Evans citation)}
 
 Rough frequency decomposition is performed by the basilar membrane and organ of
 Corti in the mammalian cochlea, which transforms mechanical signals to neural
@@ -275,22 +270,23 @@ feed-forward and feed-back connections.
 
 
 \todo[inline]{1 para on Spontaneous discharge rate (SR). More work on references
-here} The physiology of auditory nerve fibres form a bimodal distribution where 30--40\%
-of the fibres have \SR less than 2 spikes per second and 60--70\% have \SR above 30 spikes/s
-\citep{RyugoParks:2003}. Threshold is correlated to the amount of spontaneous spike activity
-that occurs in the absence of experimenter-controlled stimulation. \LSR fibres
-have relatively high thresholds, whereas \HSR fibres have low thresholds. Across
-the audible frequency range, fibres of similar \CFs can vary in SR from near 0
-to  100 spikes/s.  The bimodal SR distribution is present across the entire
-audible frequency range for the animal (Refs), and implies a general
-organisational principle for the mammalian auditory nerve. Fibres of the
-different SR groupings exhibit distinct physiologic features, especially in
-terms of their contribution to the dynamic range of hearing (Refs here) and
-representation of speech sounds (Refs here). The collective evidence suggests
-that different SR groupings of auditory nerve fibres serve separate roles in
-acoustic information processing. It might be that the \HSR fibres with their low
-thresholds prefer to function in quiet, whereas \LSR fibres with their high
-thresholds operate better in loud and noisy environments.
+here} The physiology of auditory nerve fibres form a bimodal distribution where
+30--40\% of the fibres have \SR less than 2 spikes per second and 60--70\% have
+\SR above 30 spikes/s \citep{RyugoParks:2003}. Threshold is correlated to the
+amount of spontaneous spike activity that occurs in the absence of
+experimenter-controlled stimulation. \LSR fibres have relatively high
+thresholds, whereas \HSR fibres have low thresholds. Across the audible
+frequency range, fibres of similar \CFs can vary in SR from near 0 to 100
+spikes/s.  The bimodal SR distribution is present across the entire audible
+frequency range for the animal (Refs), and implies a general organisational
+principle for the mammalian auditory nerve. Fibres of the different SR groupings
+exhibit distinct physiologic features, especially in terms of their contribution
+to the dynamic range of hearing (Refs here) and representation of speech sounds
+(Refs here). The collective evidence suggests that different SR groupings of
+auditory nerve fibres serve separate roles in acoustic information
+processing. It might be that the \HSR fibres with their low thresholds prefer to
+function in quiet, whereas \LSR fibres with their high thresholds operate better
+in loud and noisy environments.
 
 
 
@@ -606,8 +602,8 @@ suppression of neurons receptive field is examined using the \EIRA method
 
 The regular-firing chopping pattern shown in Figure \ref{fig:chopping} is
 characteristic of TS cells. \ChS and \ChT are differentiated by the regularity
-of discharge throughout the stimulus using the \CV
-statistic \citep{YoungRobertEtAl:1988}.  Recurrent excitation among \TS cells of similar
+of discharge throughout the stimulus using the \CV statistic
+\citep{YoungRobertEtAl:1988}.  Recurrent excitation among \TS cells of similar
 \CFs was first suggested by \citet{FerragamoGoldingEtAl:1998a}.  The small
 numbers of axonal collaterals are confined to the same frequency band as their
 dendrites, indicating recurrent connections are between cells encoding a similar
@@ -755,9 +751,9 @@ with late \EPSPs observed in T stellate cells, indicate that T stellate cells
 receive excitatory input from excitatory interneurons in the slices. When
 separated from their natural synaptic inputs, isolated axons cannot contribute
 to polysynaptic responses.  Monosynaptic responses have latencies between 0.5
-(synaptic delay) and \sim 3 ms (2.5 ms conduction delay for an unmyelinated
-fibre of 0.5 mm plus 0.5 ms synaptic delay). Therefore \EPSPs with latencies of
-\sim 3 ms are polysynaptic and must be generated by excitatory interneurons
+(synaptic delay) and \sim 3 ms (2.5 ms conduction delay for an unmyelinated fibre
+of 0.5 mm plus 0.5 ms synaptic delay). Therefore \EPSPs with latencies of \sim 3 ms
+are polysynaptic and must be generated by excitatory interneurons
 \citep{FerragamoGoldingEtAl:1998a}. Two other experimental observations confirm
 this conclusion. As cut axons have not been observed to fire spontaneously, the
 presence of spontaneous \EPSPs is an indication of the existence of excitatory
@@ -1032,19 +1028,18 @@ locking is measured by the synchronisation coefficient or vector strength
 \begin{equation}
    \label{eq:SI}
    SI = \frac{\sqrt{\left(\sum_{i}^{n} x_i \right)^{2} + \left(\sum_{i}^{n} y_i \right)^{2} }}{n}
-\end{equation} \noindent where $x_{i} = \cos\theta_{i}$, $x_{i} =
-\sin\theta_{i}$, and /n/ is the number of spike times.  Each spike is treated as
-a vector of unit length and with phase $\theta_{i}$ between 0 and $2\pi$
-measured as the spike time modulo of the stimulus period, $1/f_{m}$.  Perfect
-synchronisation will give SI = 1, whereas values below 0.1 are considered
-insignificant.  The SI values are combined for each modulation frequency to
-create the \tMTF\@.  Vector strength and Rayleigh coefficient, calculated to
-verify the statistical significance of synchronisation, can also be obtained
-from the Fourier spectrum of the PST or period histogram, in which case it
-equals the magnitude of the ﬁrst harmonic, normalised by the DC component
-(average ﬁring rate).  Phase is also retrieved with either technique.  The rate
-measure (rMTF) is calculated from the mean firing rate in the PSTH, between 20
-ms and the end of the stimulus.
+\end{equation} \noindent where $x_{i} = \cos\theta_{i}$, $x_{i} = \sin\theta_{i}$, and /n/
+is the number of spike times.  Each spike is treated as a vector of unit length
+and with phase $\theta_{i}$ between 0 and $2\pi$ measured as the spike time modulo of the
+stimulus period, $1/f_{m}$.  Perfect synchronisation will give SI = 1, whereas
+values below 0.1 are considered insignificant.  The SI values are combined for
+each modulation frequency to create the \tMTF\@.  Vector strength and Rayleigh
+coefficient, calculated to verify the statistical significance of
+synchronisation, can also be obtained from the Fourier spectrum of the PST or
+period histogram, in which case it equals the magnitude of the ﬁrst harmonic,
+normalised by the DC component (average ﬁring rate).  Phase is also retrieved
+with either technique.  The rate measure (rMTF) is calculated from the mean
+firing rate in the PSTH, between 20 ms and the end of the stimulus.
 
 
 
@@ -1059,8 +1054,8 @@ the \fm inducing the highest synchronisation called the \BMF
 \citep{FrisinaSmithEtAl:1990}. Rhode and colleagues confirmed band-pass \tMTFs
 as well as some band-pass rate-based \MTFs in chopper units in the cat
 \citep{Rhode:1994,RhodeGreenberg:1994}.  The \BMF of chopper units lie between
-50 and 500Hz (gerbil and cat).  \OnC units are well suited to encode a wide range
-of fm with strong synchronisation due their precise onset Kim
+50 and 500Hz (gerbil and cat).  \OnC units are well suited to encode a wide
+range of fm with strong synchronisation due their precise onset Kim
 \citep{KimRhodeEtAl:1986,JorisSmith:1998,RhodeGreenberg:1994,Rhode:1998}.
 
 - AM coding in choppers encoded over wide range of intensities
@@ -1089,11 +1084,11 @@ sound levels.  \LSR units in the AN and \LSR primary-like \VCN units are
 presumably able to encode spectrum at high \SPL\@.  The rate-place
 representation in chopper units (\ChS and \ChT) show considerable robustness
 maintaining spectral peak information across a wide range of intensity levels
-(right panels in Fig. \ref{fig:May2003}).  Suppression of spectral troughs
-in the rate-place representation of \ChT and \ChS units is greater than the
+(right panels in Fig. \ref{fig:May2003}).  Suppression of spectral troughs in
+the rate-place representation of \ChT and \ChS units is greater than the
 suppression in \LSR\space \ANFs at high \SPL\@.  Spectral enhancement in T
-stellate cells cannot be attributed to lateral suppression in the auditory
-nerve alone; it requires some form of lateral inhibitory mechanism that can perform
+stellate cells cannot be attributed to lateral suppression in the auditory nerve
+alone; it requires some form of lateral inhibitory mechanism that can perform
 spectral enhancement by suppression of noise between peaks.
 
 
@@ -1190,6 +1185,7 @@ Present a robust model of VCN neurons based on previous experimental studies.
 
 
 ** Microcircuit Models in the Cochlear Nucleus
+
 The first network models in the cochlear nucleus revolved around the \DCN
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
 cerebellar-like circuitry of the \DCN and their complex \EIRA cell type
@@ -1199,7 +1195,8 @@ and then in greater detail by Davis and colleagues
 \citep{DavisVoigt:1996,HancockDavisEtAl:1997,SpirouDavisEtAl:1999,HancockDavisEtAl:2001}.
 The role of DS cell inhibition in the \DCN circuitry has been explored even
 further, with suggestions of asymmetrical wide-band inhibition onto \EIRA type
-II units, typical of TV cells \citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}
+II units, typical of TV cells
+\citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}
 
 
 Selective processing of different \ANF inputs using some form of inhibition was
@@ -1356,12 +1353,7 @@ limitations and forward masking has been removed}
 
 
 
-
-
-#+begin_latex:
-\newpage
-\listoftodos
-
-\bibliographystyle{plainnat}
-\bibliography{MyBib}
-#+end_latex
+#+BEGIN_LaTeX
+{\newpage\singlespacing\listoftodos%
+\bibliographystyle{plainnat}\bibliography{MyBib}}
+#+END_LaTeX
