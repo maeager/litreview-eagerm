@@ -2,6 +2,7 @@
 #+DATE:
 #+AUTHOR: Michael A Eager
 #+OPTIONS: toc:nil H:5 author:nil <:t >:t
+#+LANGUAGE: en_GB
 #+STARTUP: showall
 #+LATEX_HEADER:\graphicspath{{./}{./gfx/}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
 #+LATEX_HEADER:\setcounter{secnumdepth}{5}
@@ -13,7 +14,7 @@
 #+LATEX_HEADER:\usepackage{transparent}
 # + LATEX_HEADER:\newcommand{\pm}{\ensuremath{\pm}}
 #+LaTeX_CLASS: UoM-draft-org-article
-#+BIBLIOGRAPHY: MyBib alphanat
+#+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
 #+TEXT:        \chapter{Literature Review}
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
@@ -58,8 +59,13 @@
 
 #+end_src
 
-
-
+#+RESULTS:
+: {
+: \singlespacing
+: \tableofcontents
+: \printglossaries
+: }
+: \setcounter{chapter}{0}
 
 
 * New Layout
@@ -177,22 +183,18 @@ cells?  The purpose of developing the network surrounding \TS cells is to
 answer these questions.
 
 # generalise and abstract the features of the network that make it unique.
-\yellownote{Why do DS cell connections to TV cells project to slightly higher
-CFs? How do across frequency and within frequency synaptic connections affect
-temporal and rate based measures?}
+# \yellownote{Why do DS cell connections to TV cells project to slightly higher
+# CFs? How do across frequency and within frequency synaptic connections affect
+# temporal and rate based measures?}
 
 # \todo[inline]{ I am still not sure whether the next four paragraphs belong here
 # or at the end of the Lit review / Introduction Chapter.}
-
-
 # The final hypothesis addresses the psycho-physical relevance of the components
 # in the network.  Across-spectral processing within the cochlear nucleus
 # stellate network produces lateral and temporal suppression.
-
 # Recordings form cochlear implant stimulated auditory nerve fibres can possibly
 # be used as inputs to the model to determine the responses within the cochlear
 # nucleus.
-
 
 
 This doctoral thesis is aimed at investigating the important physiological
@@ -278,8 +280,8 @@ amount of spontaneous spike activity that occurs in the absence of
 experimenter-controlled stimulation. \LSR fibres have relatively high
 thresholds, whereas \HSR fibres have low thresholds. Across the audible
 frequency range, fibres of similar \CFs can vary in SR from near 0 to 100
-spikes/s.  The bimodal SR distribution is present across the entire audible
-frequency range for the animal (Refs), and implies a general organisational
+spikes/s.  The bimodal \SR distribution is present across the entire audible
+frequency range for the animal (*Refs*), and implies a general organisational
 principle for the mammalian auditory nerve. Fibres of the different SR groupings
 exhibit distinct physiologic features, especially in terms of their contribution
 to the dynamic range of hearing (Refs here) and representation of speech sounds
@@ -538,11 +540,12 @@ in the contralateral \CN
 
 \yellownote{More work to do here}
 
-For consistency, the \TS cell modelled in this thesis represents
- each of the various names given to neurons with similar characteristics (T
- stellate, type 1 multipolar, planar, and chopper PSTH units) in different
- animals, with closest association with rodents and cats. The \DS cell type
- includes all those previously named as \DS, type-2 multipolar, radial, and units classified as OnC PSTH units.
+For consistency, the \TS cell modelled in this thesis represents each of the
+various names given to neurons with similar characteristics (T stellate, type 1
+multipolar, planar, and chopper PSTH units) in different animals, with closest
+association with rodents and cats. The \DS cell type includes all those
+previously named as \DS, type-2 multipolar, radial, and units classified as OnC
+PSTH units.
 
 *** TODO Intrinsic Mechanisms of T Stellate Cells
 
@@ -716,7 +719,7 @@ response area to be transmitted to higher centres.
 **** Driving inputs
 
    - Proximal dendrites and at the soma:
-     - \ANF provide glutamatergic excitation for \TSs
+     - \ANF provide glutamatergic excitation for \TS 
        \citep{Cant:1981,FerragamoGoldingEtAl:1998a,Alibardi:1998a}
         - only 5 or 6 in mice \citep{FerragamoGoldingEtAl:1998a,CaoOertel:2010}
      - Recurrent excitation from other \TS cells
@@ -750,8 +753,8 @@ with late \EPSPs observed in \TS cells, indicate that \TS cells
 receive excitatory input from excitatory interneurons in the slices. When
 separated from their natural synaptic inputs, isolated axons cannot contribute
 to polysynaptic responses.  Monosynaptic responses have latencies between 0.5
-(synaptic delay) and \sim 3 ms (2.5 ms conduction delay for an unmyelinated fibre
-of 0.5 mm plus 0.5 ms synaptic delay). Therefore \EPSPs with latencies of \sim 3 ms
+(synaptic delay) and  3 ms (2.5 ms conduction delay for an unmyelinated fibre
+of 0.5 mm plus 0.5 ms synaptic delay). Therefore \EPSPs with latencies of  3 ms
 are polysynaptic and must be generated by excitatory interneurons
 \citep{FerragamoGoldingEtAl:1998a}. Two other experimental observations confirm
 this conclusion. As cut axons have not been observed to fire spontaneously, the
@@ -765,6 +768,7 @@ and occasionally \DS and bushy cells, some or all of which are therefore
 presumably their targets. The ultrastructure of \TS cell terminals and
 functional studies of the inputs to the inferior colliculi is consistent with
 their being excitatory (Oliver 1984, 1987; Smith and Rhode 1989).
+
 
 *** Major Ascending Output
 
@@ -1023,10 +1027,11 @@ locking is measured by the synchronisation coefficient or vector strength
 \citep{GoldbergBrownell:1973,GoldbergBrown:1969}.  The synchronisation index
 (SI) is calculated by Equation \ref{eq:SI} \cite{JorisSchreinerEtAl:2004}:
 # Statistical signiﬁcance of synchronization is usually quantiﬁed with the Rayleigh test \cite{BuunenRhode:1978,MardiaJupp:1999}
-\begin{equation}
-   \label{eq:SI}
-   SI = \frac{1}{N}\, \sqrt{\left(\sum_{i}^{N} x_i \right)^{2} + \left(\sum_{i}^{N} y_i \right)^{2} }
+#+BEGIN_LaTeX
+\begin{equation} \label{eq:SI}
+   SI = \frac{1}{N} \sqrt{\left(\sum_{i}^{N} x_i \right)^{2}+\left(\sum_{i}^{N} y_i \right)^{2}}
 \end{equation} 
+#+END_LaTeX
 \noindent where $x_{i} = \cos\theta_{i}$, $x_{i} = \sin\theta_{i}$, and /n/
 is the number of spike times.  Each spike is treated as a vector of unit length
 and with phase $\theta_{i}$ between 0 and $2\pi$ measured as the spike time modulo of the
@@ -1034,15 +1039,15 @@ stimulus period, $1/f_{m}$.  Perfect synchronisation will give SI = 1, whereas
 values below 0.1 are considered insignificant.  The SI values are combined for
 each modulation frequency to create the \tMTF.  Vector strength and Rayleigh
 coefficient, calculated to verify the statistical significance of
-synchronisation, can also be obtained from the Fourier spectrum of the PST or
+synchronisation, can also be obtained from the Fourier spectrum of the \PSTH or
 period histogram, in which case it equals the magnitude of the ﬁrst harmonic,
 normalised by the DC component (average ﬁring rate).  Phase is also retrieved
 with either technique.  The rate measure (rMTF) is calculated from the mean
-firing rate in the PSTH, between 20 ms and the end of the stimulus.
+firing rate in the \PSTH, between 20 ms and the end of the stimulus.
 
 
 
-#+CAPTION: Amplitude modulated waveform, spectrum and temporal modulation transfer function (tMTF) with low and band-pass functions typical \TS cells. BMF: best modulation frequency.  Image reprinted from \citet{JorisSchreinerEtAl:2004}.
+#+CAPTION: Amplitude modulated waveform, spectrum and temporal modulation transfer function (tMTF) with low and band-pass functions typical TS cells. BMF: best modulation frequency.  Image reprinted from \citet{JorisSchreinerEtAl:2004}.
 #+LABEL: fig:AM
 #+Attr_LATEX: width=0.5\textwidth
 [[file:/media/data/Work/thesis/figures/NoFigure.pdf]]
@@ -1166,9 +1171,9 @@ Present a robust model of VCN neurons based on previous experimental studies.
   - Derived from a complete characterisation of K+ currents rather than ad hoc
     assumptions: hence more accurate.  The greatest difference between the
     previous models is voltage dependent \IKHT and \IKLT currents.
-  - I_A has a role in modulating the rate of repetitive firing.  Increasing gA
+  - \IKA has a role in modulating the rate of repetitive firing.  Increasing \gKA
     counteracted depolarising effects of EPSPs, thereby increasing threshold for
-    \AP.  Effects of inhibition on \TS cells could be to reset I_{KA}
+    \AP.  Effects of inhibition on \TS cells could be to reset \IKA
   - \IKLT plays a role in type II by reducing input R hence reducing the membrane
     time constant.  In intermediate type I-i cells small amount of \IKLT had a
     greater affect on rate of firing than \IKA. Small \IKLT could also benefit
@@ -1178,7 +1183,7 @@ Present a robust model of VCN neurons based on previous experimental studies.
     up-regulation to reduce membrane time constant, reduce EPSP height and
     width.  Enhanced temporal acuity at onset, reduced firing during sustained
     period, reduced spontaneous activity, reduction in refractory period that
-    leads to faster firing rates.  Increasing \IKLT drops Vrest, hence Ih must be
+    leads to faster firing rates.  Increasing \IKLT drops Vrevst, hence Ih must be
     used to counterbalance \IKLT.
 
 
@@ -1350,7 +1355,10 @@ limitations and forward masking has been removed}
 
 
 
-#+BEGIN_LaTeX
-{\newpage\singlespacing\listoftodos%
-\bibliographystyle{plainnat}\bibliography{MyBib}}
-#+END_LaTeX
+# #+BEGIN_LaTeX
+
+\newpage\singlespacing\listoftodos
+\bibliographystyle{plainnat}
+\bibliography{MyBib}
+
+# #+END_LaTeX
