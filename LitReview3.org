@@ -14,13 +14,13 @@
 #+LATEX_HEADER:\usepackage{transparent}
 # + LATEX_HEADER:\newcommand{\pm}{\ensuremath{\pm}}
 #+LaTeX_CLASS: UoM-draft-org-article
+#+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
-#+TEXT:        \chapter{Literature Review}
-#+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
+#+TEXT:\setcounter{chapter}{0}\chapter{Literature Review}
+#+TEXT:\centerline{\today\quad Hg:\input{.hg/cache/tags}}
 
-
-
+ 
 * Prelude                                                          :noexport:
 
 #+begin_src emacs-lisp results: silent
@@ -31,7 +31,8 @@
 
 (add-to-list 'org-export-latex-classes
   '("UoM-draft-org-article"
-"\\documentclass[10pt,a4paper,twoside,openright]{book}
+"
+\\documentclass[11pt,a4paper,twoside,openright]{book}
 \\usepackage{style/uomthesis}
 \\input{user-defined}
 \\usepackage[acronym]{glossaries}
@@ -54,7 +55,7 @@
      ("\\paragraph{%s}" . "\n\\paragraph{%s}")
      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
 
- (setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n\\printglossaries\n}\n\\setcounter{chapter}{0}")
+ (setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n}\n\\setcounter{chapter}{0}")
 ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
 
 #+end_src
@@ -63,7 +64,6 @@
 : {
 : \singlespacing
 : \tableofcontents
-: \printglossaries
 : }
 : \setcounter{chapter}{0}
 
@@ -93,6 +93,7 @@
 
 
   \newpage
+
 
 * Introduction
 
@@ -186,7 +187,6 @@ answer these questions.
 # \yellownote{Why do DS cell connections to TV cells project to slightly higher
 # CFs? How do across frequency and within frequency synaptic connections affect
 # temporal and rate based measures?}
-
 # \todo[inline]{ I am still not sure whether the next four paragraphs belong here
 # or at the end of the Lit review / Introduction Chapter.}
 # The final hypothesis addresses the psycho-physical relevance of the components
@@ -489,6 +489,7 @@ following sections and will form the basis of investigation for this thesis.
 #** Cell Types
 
 
+
 ** T Stellate Cells
 
 \TS cells lie in the core region of the \VCN, primarily in the
@@ -702,7 +703,7 @@ response area to be transmitted to higher centres.
 # responses of cells in the VCN to auditory nerve stimulation
 # (e.g., [61]).{\textquotedblright}
 
-*** Synaptic Inputs to T Stellate Cells
+ *** Synaptic Inputs to T Stellate Cells
 
    - sensitive to neuromodulatory currents \citep{FujinoOertel:2001}
    - high input resistance \rightarrow amplify small current inputs
@@ -820,7 +821,6 @@ pig the \SPN, \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
 # projections are probably the
 
 
-
 *** Summary
 
 #  FIX - this is not yours
@@ -844,7 +844,7 @@ and understand sounds.
 # that T stellate-like cells have for hearing in vertebrates.
 
 
-** TODO *Other notes*
+ ** TODO *Other notes*
 
    - selective processing of \HSR and \LSR input
    - feed-forward excitation in \TS cells
@@ -876,6 +876,7 @@ and understand sounds.
      - excitation of \TS adapts less than other \VCN neurons
 
 \newpage
+
 
 ** Function of the Stellate Microcircuit
 
@@ -1014,6 +1015,7 @@ used extensively to analyse temporal coding in the cochlear nucleus
 Some response types in the cochlear nucleus preserve envelope information over a
 wide range of stimulus levels, even above 100 dB \SPL, where \ANFs have reduced
 synchronisation \citep{FrisinaSmithEtAl:1990,FrisinaWaltonEtAl:1994,Rhode:1994}.
+
 Studies of modulation in the anteroventral cochlear nucleus show a hierarchy of
 enhancement: \OnC \to \ChS,\ChT \to \PL, \PLn
 \citep{WangSachs:1994,Rhode:1998,RecioRhode:2000}. This enhancement is relative,
@@ -1026,23 +1028,25 @@ its firing rate (\rMTF) or temporal information (\tMTF). The degree of phase
 locking is measured by the synchronisation coefficient or vector strength
 \citep{GoldbergBrownell:1973,GoldbergBrown:1969}.  The synchronisation index
 (SI) is calculated by Equation \ref{eq:SI} \cite{JorisSchreinerEtAl:2004}:
-# Statistical signiﬁcance of synchronization is usually quantiﬁed with the Rayleigh test \cite{BuunenRhode:1978,MardiaJupp:1999}
+
 #+BEGIN_LaTeX
 \begin{equation} \label{eq:SI}
    SI = \frac{1}{N} \sqrt{\left(\sum_{i}^{N} x_i \right)^{2}+\left(\sum_{i}^{N} y_i \right)^{2}}
 \end{equation} 
 #+END_LaTeX
-\noindent where $x_{i} = \cos\theta_{i}$, $x_{i} = \sin\theta_{i}$, and /n/
-is the number of spike times.  Each spike is treated as a vector of unit length
-and with phase $\theta_{i}$ between 0 and $2\pi$ measured as the spike time modulo of the
-stimulus period, $1/f_{m}$.  Perfect synchronisation will give SI = 1, whereas
-values below 0.1 are considered insignificant.  The SI values are combined for
-each modulation frequency to create the \tMTF.  Vector strength and Rayleigh
+\noindent where $x_{i} = \cos\theta_{i}$, $x_{i} = \sin\theta_{i}$, and /n/ is the number of
+spike times.  Each spike is treated as a vector of unit length and with phase
+$\theta_{i}$ between 0 and $2\pi$ measured as the spike time modulo of the stimulus
+period, $1/f_{m}$.  Perfect synchronisation will give SI = 1, whereas values below
+0.1 are considered insignificant.  The SI values are combined for each
+modulation frequency to create the \tMTF.  Statistical significance of
+synchronization is usually quantified with the Rayleigh test
+\cite{BuunenRhode:1978,MardiaJupp:1999}. Vector strength and Rayleigh
 coefficient, calculated to verify the statistical significance of
 synchronisation, can also be obtained from the Fourier spectrum of the \PSTH or
-period histogram, in which case it equals the magnitude of the ﬁrst harmonic,
-normalised by the DC component (average ﬁring rate).  Phase is also retrieved
-with either technique.  The rate measure (rMTF) is calculated from the mean
+period histogram. 
+#, in which case it equals the magnitude of the first harmonic, normalised by the DC component (average firing rate).  
+Phase can also be retrieved with either technique.  The rate measure (\rMTF) is calculated from the mean
 firing rate in the \PSTH, between 20 ms and the end of the stimulus.
 
 
@@ -1121,7 +1125,7 @@ TS cells within the same frequency band could increase the rate.
 
 \newpage
 
-
+ 
 * Computational Models of the Cochlear Nucleus
 
 \todo[inline]{Needs more work on introduction of this section, vast amount of
@@ -1130,8 +1134,8 @@ previous work, their faults, i.e.\ HOW my work fits in}
 
 ** Single neuron models of the chopper unit
 
-A number of stellate models have been developed previously.  The basic
-approaches include point neuron models
+A number of neural models of cochlear nucleus neurons have been developed
+previously.  The basic approaches include point neuron models
 \citep{HewittMeddisEtAl:1992,ErikssonRobert:1999,PressnitzerMeddisEtAl:2001} and
 conductance based compartmental models
 \citep{BanksSachs:1991,WhiteYoungEtAl:1994,LaiWinslowEtAl:1994,WangSachs:1995}. Recently,
@@ -1148,18 +1152,19 @@ and Manis’ membrane currents into a multi-compartmental model similar to
 \citet{BanksSachs:1991} stellate model.
 
 These models have been used to explore some basic responses of stellate cells
-seen physiologically:
-  - Regularity and chopping behaviour
+seen physiologically, for example:
+  - Simple regular chopping behaviour
     \citep{WhiteYoungEtAl:1994,ArleKim:1991,HewittMeddisEtAl:1992,BanksSachs:1991}
-  - Synchronisation to envelope
-    \citep{HewittMeddisEtAl:1992,GhoshalKimEtAl:1992,WangSachs:1995}
+  - Adaptive chopping behaviour due to inhibition \citep{WangSachs:1995}
   - Enhancement of dynamic range relative to \ANFs
     \citep{LaiWinslowEtAl:1994,ErikssonRobert:1999}
   - Effects of lateral inhibition
     \citep{Shamma:1985,ErikssonRobert:1999,PressnitzerMeddisEtAl:2001}
+  - Synchronisation to envelope
+    \citep{HewittMeddisEtAl:1992,GhoshalKimEtAl:1992,WangSachs:1995}
 
 
-*** Rothman and Manis Current Models in VCN Bushy and Stellate Cells
+\yellownote{Paragraph on Rothman and Manis Current Models in VCN Bushy and Stellate Cells}
 
 Present a robust model of VCN neurons based on previous experimental studies.
   - Replicates current clamp responses: type I of stellate cells and type II of
@@ -1174,7 +1179,7 @@ Present a robust model of VCN neurons based on previous experimental studies.
   - \IKA has a role in modulating the rate of repetitive firing.  Increasing \gKA
     counteracted depolarising effects of EPSPs, thereby increasing threshold for
     \AP.  Effects of inhibition on \TS cells could be to reset \IKA
-  - \IKLT plays a role in type II by reducing input R hence reducing the membrane
+  - \IKLT plays a role in type II by reducing input resistance hence reducing the membrane
     time constant.  In intermediate type I-i cells small amount of \IKLT had a
     greater affect on rate of firing than \IKA. Small \IKLT could also benefit
     neurons by reducing EPSPs near the axon hillock and reducing \AP back
@@ -1190,12 +1195,12 @@ Present a robust model of VCN neurons based on previous experimental studies.
 
 ** Microcircuit Models in the Cochlear Nucleus
 
-The first network models in the cochlear nucleus revolved around the \DCN
+The first network models in the cochlear nucleus were in the \DCN
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
 cerebellar-like circuitry of the \DCN and their complex \EIRA cell type
 behaviours were modelled by Blum and colleagues
 \citep{BlumReed:2000,BlumReed:1998,ReedBlum:1997,BlumReedEtAl:1995,ReedBlum:1995}
-and then in greater detail by Davis and colleagues
+and in greater detail by Davis and colleagues
 \citep{DavisVoigt:1996,HancockDavisEtAl:1997,SpirouDavisEtAl:1999,HancockDavisEtAl:2001}.
 The role of \DS cell inhibition in the \DCN circuitry has been explored even
 further, with suggestions of asymmetrical wide-band inhibition onto \EIRA type
@@ -1238,7 +1243,6 @@ networks of the cochlear nucleus.
 
  - current detailed network model to date
  - their own AN input model not up to date
-
 
 *** TODO \citep*{WiegrebeMeddis:2004}
 
@@ -1328,7 +1332,7 @@ from GABAergic sources and precise onset inhibition from glycinergic sources are
 critical mechanisms that allow \TS cells to accurately respond to
 pulsatile stimuli, such as the f0 of vowels.
 
-\todo[inline]{Note: Hypothesis 4 in the confirmation regarding psychophysical
+\yellownote{Note: Hypothesis 4 in the confirmation regarding psychophysical
 limitations and forward masking has been removed}
 
 
@@ -1355,10 +1359,15 @@ limitations and forward masking has been removed}
 
 
 
-# #+BEGIN_LaTeX
 
-\newpage\singlespacing\listoftodos
+
+\newpage
+\singlespacing
+\listoftodos
+\printglossaries
 \bibliographystyle{plainnat}
 \bibliography{MyBib}
 
+# #+BEGIN_LaTeX
 # #+END_LaTeX
+
