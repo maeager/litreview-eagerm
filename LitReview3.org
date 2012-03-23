@@ -1,4 +1,4 @@
-#+TITLE: Literature Review
+#+TITLE: Introduction
 #+DATE:
 #+AUTHOR: Michael A Eager
 #+OPTIONS: toc:nil H:5 author:nil <:t >:t
@@ -17,7 +17,7 @@
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
-#+TEXT:\setcounter{chapter}{0}\chapter{Literature Review}
+#+TEXT:\setcounter{chapter}{0}\chapter{Introduction}
 
 
 * Prelude                                                          :noexport:
@@ -61,7 +61,7 @@
      ("\\paragraph{%s}" . "\n\\paragraph{%s}")
      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
 
- (setq org-export-latex-title-command "{\n\\singlespacing\n\\tableofcontents\n}\n\\setcounter{chapter}{0}")
+ (setq org-export-latex-title-command "{\\singlespacing\\tableofcontents}\n\\setcounter{chapter}{0}")
 ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
 
 #+end_src
@@ -102,7 +102,7 @@
   \newpage
 
 
-* Introduction
+* Literature Review
 
 
 The development of biophysically-realistic neural network models is a major
@@ -287,13 +287,13 @@ The physiology of auditory nerve fibres form a bimodal distribution where
 amount of spontaneous spike activity that occurs in the absence of
 experimenter-controlled stimulation. \LSR fibres have relatively high
 thresholds, whereas \HSR fibres have low thresholds. Across the audible
-frequency range, fibres of similar \CFs can vary in SR from near 0 to 100
+frequency range, fibres of similar \CFs can vary in \SR from near 0 to 100
 spikes/s.  The bimodal \SR distribution is present across the entire audible
 frequency range for the animal, and implies a general organisational
-principle for the mammalian auditory nerve. Fibres of the different SR groupings
+principle for the mammalian auditory nerve. Fibres of the different \SR groupings
 exhibit distinct physiologic features, especially in terms of their contribution
 to the dynamic range of hearing (Refs here) and representation of speech sounds
-(Refs here). The collective evidence suggests that different SR groupings of
+(Refs here). The collective evidence suggests that different \SR groupings of
 auditory nerve fibres serve separate roles in acoustic information
 processing. It might be that the \HSR fibres with their low thresholds prefer to
 function in quiet, whereas \LSR fibres with their high thresholds operate better
@@ -304,12 +304,12 @@ in loud and noisy environments.
 \todo[inline]{Expand further on the AN Projection to the Cochlear Nucleus.  More reference needed in this paragraph}
 
  Upon  entrance into the central nervous system individual auditory nerve
- fibres penetrate a variable distance into the nucleus, depending upon fibre CF, and bifurcate into an ascending
+ fibres penetrate a variable distance into the nucleus, depending upon fibre \CF, and bifurcate into an ascending
  branch and a descending branch. The ascending branch has a
  relatively straight trajectory into the \AVCN and terminates
  as a large, axosomatic ending called the endbulb of Held.
- The descending branch passes through the \PVCN and octopus cell region before entering the DCN. 
-Along the
+ The descending branch passes through the \PVCN and octopus cell region before entering the \DCN. 
+# Along the
 # way, these main branches give rise to short collaterals. The
 # collaterals ramify further and exhibit en passant swellings
 # and terminal boutons. 
@@ -543,7 +543,7 @@ was adopted \citep{BrawerMorestEtAl:1974,Lorente:1981}. Multipolar cells were
 also divided into two groups, disperse or clumped Nissl, according to their
 cytoplasmic appearance in thionin-stained sections
 \citep{Liberman:1991,Liberman:1993}.  Further nomenclature based on dendritic
-differences into planar (TS cells) and radial (DS cells) has also been suggested
+differences into planar (\TS cells) and radial (\DS cells) has also been suggested
 in rats \citep{DoucetRyugo:1997,DoucetRyugo:2006}.
 
 Distinction based on somatic innervation in multipolar neurons separated them
@@ -552,7 +552,7 @@ into two types: type I (few somatic) and type II (many somatic and dendritic)
 toward the \DCN via the dorsal acoustic stria (hence D in D stellate), while \TS
 cells leave the \CN ventrally through the ventral acoustic stria or trapezoid
 body (hence T) \citep{OertelWuEtAl:1990}. Some \DS cells are also commissural,
-exiting the CN via the dorsal acoustic stria and cross the midline to terminate
+exiting the \CN via the dorsal acoustic stria and cross the midline to terminate
 in the contralateral \CN
 \citep{OertelWuEtAl:1990,NeedhamPaolini:2007,SmithMassieEtAl:2005}.
 # distinction between \TS and \DS cells is made by their axonal projections,
@@ -563,10 +563,10 @@ in the contralateral \CN
 
 For consistency, the \TS cell modelled in this thesis represents each of the
 various names given to neurons with similar characteristics (T stellate, type 1
-multipolar, planar, and chopper PSTH units) in different animals, with closest
+multipolar, planar, and chopper \PSTH units) in different animals, with closest
 association with rodents and cats. The \DS cell type includes all those
 previously named as \DS, type-2 multipolar, radial, and units classified as \OnC
-PSTH units.
+\PSTH units.
 
 *** Intrinsic Mechanisms of T Stellate Cells
 
@@ -618,7 +618,7 @@ activation \cite{PaoliniClareyEtAl:2004}.
 
 *** Acoustic Responses of T Stellate Cells
 
-TS cells receive a narrow frequency band of \ANF inputs and have a chopping
+\TS cells receive a narrow frequency band of \ANF inputs and have a chopping
 response to \CF tone bursts \citep{SmithRhode:1989,BlackburnSachs:1989}.  Few
 synaptic terminals contact on their soma; the majority of inputs contact the
 proximal dendrites \citep{Cant:1981}. \TS cells are the primary excitatory
@@ -734,7 +734,7 @@ response area to be transmitted to higher centres.
    - sensitive to neuromodulatory currents \citep{FujinoOertel:2001}
    - high input resistance \rightarrow amplify small current inputs
        \citep{FujinoOertel:2001}
-   - no KLT in \TS, KLT makes bushy and octopus insensitive to steady currents
+   - no \IKLT in \TS, \IKLT makes bushy and octopus insensitive to steady currents
        \citep{OertelFujino:2001,McGinleyOertel:2006}
    - Ih higher in \TS & activated more at lower potentials than in bushy and
        octopus, so that it is less active at rest
@@ -799,7 +799,7 @@ their being excitatory (Oliver 1984, 1987; Smith and Rhode 1989).
 
 *** Major Ascending Output
 
-TS cell axons exit the CN through the trapezoidal body, cross the midline and
+\TS cell axons exit the \CN through the trapezoidal body, cross the midline and
  ultimately terminate in the contralateral IC \citep{Adams:1979}. Other
  collaterals: local, \DCN, \LSO, c\VNTB c\VNLL
  \citep{Warr:1969,SmithJorisEtAl:1993,Thompson:1998,DoucetRyugo:2003} review
@@ -935,7 +935,7 @@ Axo-somatic inhibition from flat and pleomorphic terminals has been observed
 adjoining prominently on \DS cells and could possibly explain the \OnC response
 to tones and noise.  Evidence of axo-dendritic inhibition on \TS cells
 \citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that \TS
-cells overcome saturation of high spontaneous rate AN fibres by proximal
+cells overcome saturation of high spontaneous rate \AN fibres by proximal
 inhibitory inputs that shunt excitation from more distal inputs
 \citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored by
 using steady-state continuous inputs \citep{LaiWinslowEtAl:1994} and using more
@@ -947,7 +947,7 @@ GABAergic inhibition regulates the level of activity in the \VCN
 response of \OnC and \OnL units \citep{EvansZhao:1998,PalombiCaspary:1992}.
 Bicuculine, a \GABAa antagonist, raises the threshold and significantly
 increases \OnC receptive field to high and low frequencies, up to 10 times the
-receptive field width of AN fibres \citep{EvansZhao:1998}.  Facilitation of
+receptive field width of \AN fibres \citep{EvansZhao:1998}.  Facilitation of
 response by spectral inputs outside the conventional receptive field
 \citep{WinterPalmer:1995,JiangPalmerEtAl:1996}, indicate the presence of tonic
 inhibition in \OnC units.  Inhibition acting post onset is likely to be a
@@ -1056,11 +1056,11 @@ since choppers only phase-lock to modulations below 500Hz, \PL and \PLn units
 perform better at higher modulation frequencies \citep{RhodeGreenberg:1994}.
 
 
-The coding of AM in neurons is measured using a \MTF, which is calculated using
+The coding of \AM in neurons is measured using a \MTF, which is calculated using
 its firing rate (\rMTF) or temporal information (\tMTF). The degree of phase
 locking is measured by the synchronisation coefficient or vector strength
-\citep{GoldbergBrownell:1973,GoldbergBrown:1969}.  The synchronisation index
-(SI) is calculated by Equation \ref{eq:SI} \cite{JorisSchreinerEtAl:2004}:
+\citep{GoldbergBrownell:1973,GoldbergBrown:1969}.  The \SI is calculated by
+Equation \ref{eq:SI} \cite{JorisSchreinerEtAl:2004}:
 
 #+BEGIN_LaTeX
 \begin{equation} \label{eq:SI}
@@ -1121,7 +1121,7 @@ highlighted the spectral enhancement of formant peaks and suppression of formant
 troughs by chopper units. Figure \ref{fig:May2003} shows the estimated
 rate-place representation of auditory nerve and \VCN units.  \HSR \ANFs and
 primary-like \VCN units show saturation of trough frequencies at moderate sound
-levels.  \LSR units in the AN and \LSR primary-like \VCN units are presumably
+levels.  \LSR units in the \AN and \LSR primary-like \VCN units are presumably
 able to encode spectrum at high \SPL.  The rate-place representation in chopper
 units (\ChS and \ChT) show considerable robustness maintaining spectral peak
 information across a wide range of intensity levels (right panels in
@@ -1151,7 +1151,7 @@ mechanism \citep{WinslowBartaEtAl:1987}.
 \TS cells do receive inhibitory inputs
 \citep{Cant:1981,SmithRhode:1989,FerragamoGoldingEtAl:1998} hence they are
 candidates for operation of lateral inhibition.  Also, recurrent excitation by
-TS cells within the same frequency band could increase the rate.
+\TS cells within the same frequency band could increase the rate.
 
 \todo[inline]{This section needs to be finished}
 
@@ -1199,10 +1199,10 @@ seen physiologically, for example:
 
 \yellownote{Paragraph on Rothman and Manis Current Models in VCN Bushy and Stellate Cells}
 
-Present a robust model of VCN neurons based on previous experimental studies.
+Present a robust model of \VCN neurons based on previous experimental studies.
   - Replicates current clamp responses: type I of stellate cells and type II of
     bushy cells
-  - Replicates simple PSTH responses solely based on sub- or supra-threshold
+  - Replicates simple \PSTH responses solely based on sub- or supra-threshold
     excitation at the soma
   - Replicates Phase locking capabilities of neurons (simulated steady state
     input)
