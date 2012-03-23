@@ -18,37 +18,43 @@
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
 #+TEXT:\setcounter{chapter}{0}\chapter{Literature Review}
-#+TEXT:\centerline{\today\quad Hg:\input{.hg/cache/tags}}
 
- 
+
 * Prelude                                                          :noexport:
 
+#+name: changeset
+#+BEGIN_SRC awk :results none :export none :in-file .hg/cache/tags
+{print $1}
+#+END_SRC 
+
+
+
 #+begin_src emacs-lisp results: silent
- (setq org-latex-to-pdf-process '("pdflatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "pdflatex -interaction nonstopmode %f"  "pdflatex -interaction nonstopmode %f" ))
+ (setq org-latex-to-pdf-process '("fuser -k %b.pdf" "pdflatex -halt-on-error %f || exit 0" "makeglossaries %b" "bibtex %b"  "pdflatex -interaction nonstopmode %f"  "pdflatex -interaction nonstopmode %f" ))
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf"))
 ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf"))
 ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b"  "xelatex -interaction nonstopmode %f"  "xelatex -interaction nonstopmode %f" ))
-
+				   
 (add-to-list 'org-export-latex-classes
-  '("UoM-draft-org-article"
-"
+  '("UoM-draft-org-article"	   
+"				   
 \\documentclass[11pt,a4paper,twoside,openright]{book}
-\\usepackage{style/uomthesis}
-\\input{user-defined}
-\\usepackage[acronym]{glossaries}
+\\usepackage{style/uomthesis}	   
+\\input{user-defined}		   
+\\usepackage[acronym]{glossaries}  
 \\input{../hg/manuscript/misc/glossary}
-\\makeglossaries
-\\graphicspath{{./gfx/}}
-\\pretolerance=150
-\\tolerance=100
+\\makeglossaries		   
+\\graphicspath{{./gfx/}}	   
+\\pretolerance=150		   
+\\tolerance=100			   
 \\setlength{\\emergencystretch}{3em}
-\\overfullrule=1mm
-% \\usepackage[notcite]{showkeys}
-\\lfoot{\\footnotesize\\today\\ at \\thistime}
-\\usepackage{rotating,calc}
+\\overfullrule=1mm		   
+% \\usepackage[notcite]{showkeys}  
+\\lfoot{\\footnotesize\\today\\ at \\thistime Hg:70}
+\\usepackage{rotating,calc}	   
 \\usepackage{booktabs,ltxtable,lscape}
-      [NO-DEFAULT-PACKAGES]
-      [NO-PACKAGES]"
+      [NO-DEFAULT-PACKAGES]	   
+      [NO-PACKAGES]"		   
      ("\\section{%s}" . "\n\\section{%s}")
      ("\\subsection{%s}" . "\n\\subsection{%s}")
      ("\\subsubsection{%s}" . "\n\\subsubsection{%s}")
@@ -60,6 +66,7 @@
 
 #+end_src
 
+
 #+RESULTS:
 : {
 : \singlespacing
@@ -68,7 +75,7 @@
 : \setcounter{chapter}{0}
 
 
-* New Layout
+* New Layout 							   :noexport:
 
  | Section      |              |             | Pages | Actual | TODO/DONE |
  |--------------+--------------+-------------+-------+--------+-----------|
@@ -251,7 +258,8 @@ important for speech and other auditory communication \citep{YoungOertel:2004}.
 The main tasks of the auditory system are to (1) separate out individual
 frequency components of sound; (2) enhance spectral and temporal contrasts to
 improve meaningful \SNR; and (3) extract behavioural frequency cues
-\citep{Evans:1992}.  \todo[inline]{FIX last sentence (check Evans citation)}
+\citep{Evans:1992}.  
+# \todo[inline]{FIX last sentence (check Evans citation)}
 
 Rough frequency decomposition is performed by the basilar membrane and organ of
 Corti in the mammalian cochlea, which transforms mechanical signals to neural
@@ -262,7 +270,7 @@ sophisticated parallel processing strategies involving networks of neurons with
 feed-forward and feed-back connections.
 
 
-\todo[inline]{Intro to section on peripheral AN}
+# \todo[inline]{Intro to section on peripheral AN}
 
 # \citep{EvansNelson:1973,SpirouYoung:1991,YoungSpirouEtAl:1992,SpirouDavisEtAl:1999,YoungNelkenEtAl:1993,ArleKim:1991a}
 
@@ -271,9 +279,9 @@ feed-forward and feed-back connections.
 
 \todo[inline]{Small and concise lit review of ANFs}
 
+# \todo[inline]{1 para on Spontaneous discharge rate (SR). More work on references here} 
 
-\todo[inline]{1 para on Spontaneous discharge rate (SR). More work on references
-here} The physiology of auditory nerve fibres form a bimodal distribution where
+The physiology of auditory nerve fibres form a bimodal distribution where
 30--40\% of the fibres have \SR less than 2 spikes per second and 60--70\% have
 \SR above 30 spikes/s \citep{RyugoParks:2003}. Threshold is correlated to the
 amount of spontaneous spike activity that occurs in the absence of
@@ -281,7 +289,7 @@ experimenter-controlled stimulation. \LSR fibres have relatively high
 thresholds, whereas \HSR fibres have low thresholds. Across the audible
 frequency range, fibres of similar \CFs can vary in SR from near 0 to 100
 spikes/s.  The bimodal \SR distribution is present across the entire audible
-frequency range for the animal (*Refs*), and implies a general organisational
+frequency range for the animal, and implies a general organisational
 principle for the mammalian auditory nerve. Fibres of the different SR groupings
 exhibit distinct physiologic features, especially in terms of their contribution
 to the dynamic range of hearing (Refs here) and representation of speech sounds
@@ -292,29 +300,28 @@ function in quiet, whereas \LSR fibres with their high thresholds operate better
 in loud and noisy environments.
 
 
+## TODO next paragraph needs re-edit
+\todo[inline]{Expand further on the AN Projection to the Cochlear Nucleus.  More reference needed in this paragraph}
 
-\todo[inline]{1 Paragraph on the AN Projection to the Cochlear Nucleus.  See
-\citep{RyugoParks:2003} for review}
-
-# Upon passing the Schwann-glia border (marking entrance
-# into the central nervous system), individual auditory nerve
-# fibres penetrate a variable distance into the nucleus, de-
-# pending upon fibre CF, and bifurcate into an ascending
-# branch and a descending branch. The ascending branch has a
-# relatively straight trajectory into the AVCN and terminates
-# as a large, axosomatic ending called the endbulb of Held.
-# The descending branch likewise has a straight trajectory
-# through the PVCN before entering the DCN. Along the
+ Upon  entrance into the central nervous system individual auditory nerve
+ fibres penetrate a variable distance into the nucleus, depending upon fibre CF, and bifurcate into an ascending
+ branch and a descending branch. The ascending branch has a
+ relatively straight trajectory into the \AVCN and terminates
+ as a large, axosomatic ending called the endbulb of Held.
+ The descending branch passes through the \PVCN and octopus cell region before entering the DCN. 
+Along the
 # way, these main branches give rise to short collaterals. The
 # collaterals ramify further and exhibit en passant swellings
-# and terminal boutons. Fibres of similar CFs disperse to
-# form a 3-dimensional sheet running through the nucleus,
-# and stacks of these sheets represent the isofrequency con-
-# tours of the nucleus (Fig. 9, bottom). The sheets have a
+# and terminal boutons. 
+Fibres of similar \CFs disperse to
+ form a 3-dimensional sheet running through the nucleus,
+ and stacks of these sheets represent the isofrequency con-
+ tours of the nucleus (Fig. \ref{fig:CNschematic}). 
+#The sheets have a
 # horizontal orientation within the ventral cochlear nucleus
 # but twist caudally to form parasagittal sheets in the DCN.
-# These projections underlie the tonotopic organization of
-# the resident neurons of the cochlear nucleus [19,160,191].
+ These projections underlie the tonotopic organization of
+ the resident neurons of the cochlear nucleus \citep[for~reviews~see~]{RyugoParks:2003}.
 
 
 # 5. Structure-function correlates
@@ -408,6 +415,8 @@ in loud and noisy environments.
 # tures within an isofrequency lamina, as has been proposed in
 # the inferior colliculus [161] and auditory cortex [184,186].
 
+\yellownote{Paragraph on ANF modalities: HSR and LSR }
+
 
 * Cochlear Nucleus
 
@@ -453,13 +462,24 @@ following sections and will form the basis of investigation for this thesis.
 #    [[file:./gfx/CNcircuit-nodetail.pdf]]
 
 #+BEGIN_LaTeX
-\begin{figure}[htb]
-  \centering
-  \def\svgwidth{5.5in}
-  \input{./gfx/CNcircuit-nodetail.pdf_tex}
-  \caption{Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. TS cells excite DS and TV cells and recurrently excite other TS cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve fibre inputs are not shown.}
-  \label{fig:CNschematic}
-\end{figure}
+  \begin{figure}[htb]
+    \centering
+    \def\svgwidth{5.5in}
+    \input{./gfx/CNcircuit-nodetail.pdf_tex}
+    \caption{Schematic of the cochlear nucleus stellate network showing
+      connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV)
+      and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red
+      diamonds indicate GABAergic inhibition. Dotted lines are likely connections;
+      solid lines are experimentally confirmed connections; strength of
+      connections are indicated by thickness.  Arrows are excitatory
+      connections. TS cells excite DS and TV cells and recurrently excite other TS
+      cells.  DS cells are wide-band inhibitory cells that inhibit TS and TV
+      cells.  TV cells are narrow-band inhibitory cells from the DCN that inhibit
+      TS and DS cells.  GLG cells are GABAergic inhibitory cells that are thought
+      to strongly inhibit DS cells and moderately inhibit TS cells. Auditory nerve
+      fibre inputs are not shown.}
+    \label{fig:CNschematic}
+  \end{figure}
 #+END_LaTeX
 
 
@@ -539,64 +559,70 @@ in the contralateral \CN
 # dendritic projections, and their immunohistochemistry.
 
 
-\yellownote{More work to do here}
+# \yellownote{More work to do here}
 
 For consistency, the \TS cell modelled in this thesis represents each of the
 various names given to neurons with similar characteristics (T stellate, type 1
 multipolar, planar, and chopper PSTH units) in different animals, with closest
 association with rodents and cats. The \DS cell type includes all those
-previously named as \DS, type-2 multipolar, radial, and units classified as OnC
+previously named as \DS, type-2 multipolar, radial, and units classified as \OnC
 PSTH units.
 
-*** TODO Intrinsic Mechanisms of T Stellate Cells
+*** Intrinsic Mechanisms of T Stellate Cells
 
 The intrinsic cell-based properties of \VCN neurons have typically been
 investigated using /in vitro/ current clamp experiments
-\citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,WuOertel:1984}.
-
-\TS cells are classified as type-1 due to the regularly spaced firing of
-action potentials to steady depolarising current.
-
-
- + Type 1 current clamp, single exponential undershoot
-   \citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984}
- + \citep{FujinoOertel:2001,FerragamoGoldingEtAl:1998a}
- + \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b,Rothman:1999}
- + No Low threshold potassium current present in bushy cells
-   \citep{ManisMarx:1991}
- + \Ih and \IKA have a role in modulating the rate of repetitive firing.
- + Effect of Inhibition on \TS cells could be to reset \IKA
-   \citep{RothmanManis:2003b}
-
- + Effective somatic membrane time constant $6.5\pm5.7$ msec
-   \citep{ManisMarx:1991} type I $9.1\pm4.5$ \citep{ManisMarx:1991} 6.2 to
-   18.0 msec \citep{FengKuwadaEtAl:1994} $6.9\pm3$ msec, 10--90\% rise time was
-   $1.05\pm0.4$ msec \citep{IsaacsonWalmsley:1995}
- + Linear I-V \citep{ManisMarx:1991}
- + cross sectional area of somata $447\pm265$ Mohm
- + isolated guinea pig stellate cell type 1 current clamp \citep{ManisMarx:1991}
-   membrane resistance 44 to 151 M\Omega (mean $89.4\pm24.4$) mouse slice prep
-   \citep{FerragamoGoldingEtAl:1998a}
- + stellate $231\pm113\,\mathrm{M}\Omega$, $14.9\pm9$ pF primary membrane
-   capacitance, room temp rat \citep{IsaacsonWalmsley:1995} dog
-   \citep{BalBaydasEtAl:2009} $176\pm35.9$ M\Omega membrane time constant $8.8\pm1.4$ (n=21)
-
- + steady depolarising current shows intracellular ability to be tonic
-   \cite{Oertel:1983,OertelWuEtAl:1988} BUT - how does the input remain stable
-   given AN adaptation?
-
-
-They  have a linear current-voltage response
+\citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,WuOertel:1984}.  \TS cells
+are classified as type I due to the regularly spaced firing of action potentials
+to steady depolarising current, and can be classified as simple integrators.
+They have a linear current-voltage response
 \citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
-The presence of the transiently deactivating \IKA current channels ,,,
+The response to strong negative current in \TS and \DS is double-exponential,
+which shows the presence of hyperpolarisation-activated mixed cation current \Ih
+\citep{FujinoOertel:2001,FerragamoGoldingEtAl:1998a,RothmanManis:2003,RothmanManis:2003a}.
 
-*** Acoustic Response of T Stellate Cells
+The \TS action potential has a single exponential undershoot that shows the
+absence of \IKLT, which is present strongly in bushy cells and to a moderate
+degree in \DS cells
+\citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984,RothmanManis:2003}.  Low
+threshold potassium current in bushy cells is responsible for the phasic
+response (i.e. \PSTH classified primary-like units) and in \DS cells enhances
+coincidence detection at onset \citep{ManisMarx:1991,RothmanManis:2003b}.
+
+
+In recent experimentation of mice, a fast transient-deactivating
+potassium current (\IKA) has been found only in \TS cells
+\citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b}.  \Ih
+and \IKA are active at rest and play a role in modulating the rate of
+repetitive firing of \TS cells \citep{RothmanManis:2003b}.  The effect
+of inhibition on \TS cells could be to reset \IKA
+\citep{RothmanManis:2003b}, thus priming cells for oncoming activation
+\cite{KanoldManis:2001,KanoldManis:2005}.  This has been shown to
+enhance place-coding across \TS cells by enhancing the first-responder
+activation \cite{PaoliniClareyEtAl:2004}.
+
+# + Effective somatic membrane time constant $6.5\pm5.7$ msec
+#   \citep{ManisMarx:1991} type I $9.1\pm4.5$ \citep{ManisMarx:1991} 6.2 to
+#   18.0 msec \citep{FengKuwadaEtAl:1994} $6.9\pm3$ msec, 10--90\% rise time was
+#   $1.05\pm0.4$ msec \citep{IsaacsonWalmsley:1995}
+# + Linear I-V \citep{ManisMarx:1991}
+# + cross sectional area of somata $447\pm265$ Mohm
+# + isolated guinea pig stellate cell type 1 current clamp \citep{ManisMarx:1991}
+#   membrane resistance 44 to 151 M\Omega (mean $89.4\pm24.4$) mouse slice prep
+#   \citep{FerragamoGoldingEtAl:1998a}
+# + stellate $231\pm113\,\mathrm{M}\Omega$, $14.9\pm9$ pF primary membrane
+#   capacitance, room temp rat \citep{IsaacsonWalmsley:1995} dog
+#   \citep{BalBaydasEtAl:2009} $176\pm35.9$ M\Omega membrane time constant $8.8\pm1.4$ (n=21)
+
+ 
+
+*** Acoustic Responses of T Stellate Cells
 
 TS cells receive a narrow frequency band of \ANF inputs and have a chopping
 response to \CF tone bursts \citep{SmithRhode:1989,BlackburnSachs:1989}.  Few
 synaptic terminals contact on their soma; the majority of inputs contact the
-proximal dendrites \citep{Cant:1981}. \TS cells are the primary excitatory output
-to the inferior colliculus \citep{SmithRhode:1989,OertelWuEtAl:1990}.
+proximal dendrites \citep{Cant:1981}. \TS cells are the primary excitatory
+output to the inferior colliculus \citep{SmithRhode:1989,OertelWuEtAl:1990}.
 
 The response to acoustic stimulation is measured from a \PSTH to short tone
 bursts \citep{Pfeiffer:1966,BlackburnSachs:1989}.  The level of tuning and
@@ -617,36 +643,36 @@ response area to be transmitted to higher centres.
 
 
 
-  - regular, tonic response to tones
-    \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
-  - "Chopping" precise regular timing that degrades throughout
-    stimulus\citep{YoungRobertEtAl:1988,BlackburnSachs:1989}
-  - sustained (70%) \rightarrow constant rate, \ISIH sharp, CV less than 0.3, CV constant
-  - transient (30%) \rightarrow rate decreases, CV starts below 0.3 then
-    varies - Inhibition - Gly, \GABA tuned on frequency to reduce peak
-    excitation \citep{CasparyBackoffEtAl:1994}
-  - inhibitory side bands mainly \DS \citep{FerragamoGoldingEtAl:1998a}
-    but periolivary also contribute
-    \citep{AdamsWarr:1976,Adams:1983,ShoreHelfertEtAl:1991,OstapoffBensonEtAl:1997}
-    \citep{PalombiCaspary:1992,RhodeSmith:1986,NelkenYoung:1994,PaoliniClareyEtAl:2005,PaoliniClareyEtAl:2004}
-  - sustained firing despite AN adaptation - signals the sound intensity
-    consistently, hence precise level information
-  - Phasic also do level, but tonic suits encoding of spectrum across population
-    since encoding the peaks and valleys is relatively independent of time after
-    onset of sound
-    \citep{BlackburnSachs:1990,May:2003,MayPrellEtAl:1998,MaySachs:1998}
-  - suits encoding of envelope of sounds, important for speech (envelops under
-    50 Hz \citep{ShannonZengEtAl:1995}
-  - AM coding in choppers encoded over
-    wide range of intensities
-    \citep{RhodeGreenberg:1994,FrisinaSmithEtAl:1990}
-  - other work in AM coding by CN neurons
-    \citep{Moller:1972,Moller:1974a,Moller:1974,MooreCashin:1974,Frisina:1984,PalmerWinterEtAl:1986,KimRhodeEtAl:1986,WinterPalmer:1990a,Palmer:1990,PalmerWinter:1992,FrisinaSmithEtAl:1990a,Frisina:1983,GorodetskaiaBibikov:1985,RhodeGreenberg:1994,ShofnerSheftEtAl:1996,FrisinaKarcichEtAl:1996,DAngeloSterbingEtAl:2003,Aggarwal:2003}
-  - phasic firing in AN maintained by bushy
-  - phasic info important: enhances formant transitions, and provides accurate
-    information about the location of sound sources even in reverberant
-    environments, critical in hearing
-    \cite{DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c,DelgutteKiang:1984d,DavoreIhlefeldEtAl:2009}
+# - regular, tonic response to tones
+#   \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
+# - "Chopping" precise regular timing that degrades throughout
+#   stimulus\citep{YoungRobertEtAl:1988,BlackburnSachs:1989}
+# - sustained (70%) \rightarrow constant rate, \ISIH sharp, CV less than 0.3, CV constant
+# - transient (30%) \rightarrow rate decreases, CV starts below 0.3 then
+#   varies - Inhibition - Gly, \GABA tuned on frequency to reduce peak
+#   excitation \citep{CasparyBackoffEtAl:1994}
+# - inhibitory side bands mainly \DS \citep{FerragamoGoldingEtAl:1998a}
+#   but periolivary also contribute
+#   \citep{AdamsWarr:1976,Adams:1983,ShoreHelfertEtAl:1991,OstapoffBensonEtAl:1997}
+#   \citep{PalombiCaspary:1992,RhodeSmith:1986,NelkenYoung:1994,PaoliniClareyEtAl:2005,PaoliniClareyEtAl:2004}
+# - sustained firing despite AN adaptation - signals the sound intensity
+#   consistently, hence precise level information
+# - Phasic also do level, but tonic suits encoding of spectrum across population
+#   since encoding the peaks and valleys is relatively independent of time after
+#   onset of sound
+#   \citep{BlackburnSachs:1990,May:2003,MayPrellEtAl:1998,MaySachs:1998}
+# - suits encoding of envelope of sounds, important for speech (envelops under
+#   50 Hz \citep{ShannonZengEtAl:1995}
+# - AM coding in choppers encoded over
+#   wide range of intensities
+#   \citep{RhodeGreenberg:1994,FrisinaSmithEtAl:1990}
+# - other work in AM coding by CN neurons
+#   \citep{Moller:1972,Moller:1974a,Moller:1974,MooreCashin:1974,Frisina:1984,PalmerWinterEtAl:1986,KimRhodeEtAl:1986,WinterPalmer:1990a,Palmer:1990,PalmerWinter:1992,FrisinaSmithEtAl:1990a,Frisina:1983,GorodetskaiaBibikov:1985,RhodeGreenberg:1994,ShofnerSheftEtAl:1996,FrisinaKarcichEtAl:1996,DAngeloSterbingEtAl:2003,Aggarwal:2003}
+# - phasic firing in AN maintained by bushy
+# - phasic info important: enhances formant transitions, and provides accurate
+#   information about the location of sound sources even in reverberant
+#   environments, critical in hearing
+#   \cite{DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c,DelgutteKiang:1984d,DavoreIhlefeldEtAl:2009}
 
 
 # CantBenson
@@ -703,12 +729,12 @@ response area to be transmitted to higher centres.
 # responses of cells in the VCN to auditory nerve stimulation
 # (e.g., [61]).{\textquotedblright}
 
- *** Synaptic Inputs to T Stellate Cells
+*** Synaptic Inputs to T Stellate Cells
 
    - sensitive to neuromodulatory currents \citep{FujinoOertel:2001}
    - high input resistance \rightarrow amplify small current inputs
        \citep{FujinoOertel:2001}
-   - no LKT in \TS, LKT makes bushy and octopus insensitive to steady currents
+   - no KLT in \TS, KLT makes bushy and octopus insensitive to steady currents
        \citep{OertelFujino:2001,McGinleyOertel:2006}
    - Ih higher in \TS & activated more at lower potentials than in bushy and
        octopus, so that it is less active at rest
@@ -750,22 +776,22 @@ response area to be transmitted to higher centres.
 \todo[inline]{Needs correcting}
 
 Sources of polysynaptic excitation \citep{FerragamoGoldingEtAl:1998a}, observed
-with late \EPSPs observed in \TS cells, indicate that \TS cells
-receive excitatory input from excitatory interneurons in the slices. When
-separated from their natural synaptic inputs, isolated axons cannot contribute
-to polysynaptic responses.  Monosynaptic responses have latencies between 0.5
-(synaptic delay) and  3 ms (2.5 ms conduction delay for an unmyelinated fibre
-of 0.5 mm plus 0.5 ms synaptic delay). Therefore \EPSPs with latencies of  3 ms
-are polysynaptic and must be generated by excitatory interneurons
+with late \EPSPs observed in \TS cells, indicate that \TS cells receive
+excitatory input from excitatory interneurons in the slices. When separated from
+their natural synaptic inputs, isolated axons cannot contribute to polysynaptic
+responses.  Monosynaptic responses have latencies between 0.5 (synaptic delay)
+and 3 ms (2.5 ms conduction delay for an unmyelinated fibre of 0.5 mm plus 0.5
+ms synaptic delay). Therefore \EPSPs with latencies of 3 ms are polysynaptic and
+must be generated by excitatory interneurons
 \citep{FerragamoGoldingEtAl:1998a}. Two other experimental observations confirm
 this conclusion. As cut axons have not been observed to fire spontaneously, the
 presence of spontaneous \EPSPs is an indication of the existence of excitatory
 interneurons. Furthermore, the activation of \EPSPs with the application of
 glutamate indicates that the dendrites of excitatory interneurons are accessible
 from the bath.  \TS cells are excitatory neurons known to terminate in the
-vicinity of \TS cells. \TS cells terminate locally in the multipolar cell area of
-the \PVCN \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS cells
-and occasionally \DS and bushy cells, some or all of which are therefore
+vicinity of \TS cells. \TS cells terminate locally in the multipolar cell area
+of the \PVCN \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS
+cells and occasionally \DS and bushy cells, some or all of which are therefore
 presumably their targets. The ultrastructure of \TS cell terminals and
 functional studies of the inputs to the inferior colliculi is consistent with
 their being excitatory (Oliver 1984, 1987; Smith and Rhode 1989).
@@ -823,13 +849,21 @@ pig the \SPN, \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
 
 *** Summary
 
+In summary, steady depolarising current shows intracellular ability of \TS cells
+to be tonic and integrate inputs
+\cite{Oertel:1983,OertelWuEtAl:1988,FerragamoGoldingEtAl:1998a}. Additional
+properties of currents activated at rest (\Ih and \IKA) enhance the ability of
+\TS cells to remain stable given AN adaptation, intra-nuclei inhibition and
+regulation by extra-nuclei inputs.
+
+
 #  FIX - this is not yours
 
-As a population, \TS cells encode the spectrum of sounds. They receive
-acoustic input from the auditory nerve fibres. Several mechanisms contribute to
-that transformation: Feed-forward excitation through other \TS cells,
-co-activation of excitation and inhibition, reduction in synaptic depression,
-and the amplification of excitatory synaptic current over time through \NMDA
+As a population, \TS cells encode the spectrum of sounds. They receive acoustic
+input from the auditory nerve fibres. Several mechanisms contribute to that
+transformation: Feed-forward excitation through other \TS cells, co-activation
+of excitation and inhibition, reduction in synaptic depression, and the
+amplification of excitatory synaptic current over time through \NMDA
 receptors. They deliver that information to nuclei that make use of spectral
 information.  \TS cells terminate in the \DCN, to olivocochlear efferent
 neurons, to the lateral superior olive, and most importantly to the
@@ -884,25 +918,25 @@ and understand sounds.
 
 The actions of glycinergic and GABAergic inhibition are thought to play
 different spectro-temporal processing roles in the cochlear nucleus.
-Glycinergic inputs from \DS and \TV cells are predominantly
-active at the onset of stimuli; accordingly they provide enhanced temporal
-acuity and dynamic range at onset.  Post onset and tonic inhibition is provided
-by \GABA inputs.  GABAergic inhibition acting on slow and fast receptors (\GABAa
-and GABAB respectively) is likely to mediate the strong post-onset inhibition in
-\DS cells \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are
-weakly inhibited by \GABA \citep{FerragamoGoldingEtAl:1998} reflecting the
-smaller number of GABAergic synapses \citep{FriedlandPongstapornEtAl:2003}.
-GABAergic inhibition in the \VCN is derived from a number of possible sources,
+Glycinergic inputs from \DS and \TV cells are predominantly active at the onset
+of stimuli; accordingly they provide enhanced temporal acuity and dynamic range
+at onset.  Post onset and tonic inhibition is provided by \GABA inputs.
+GABAergic inhibition acting on slow and fast receptors (\GABAa and GABAB
+respectively) is likely to mediate the strong post-onset inhibition in \DS cells
+\citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are weakly
+inhibited by \GABA \citep{FerragamoGoldingEtAl:1998} reflecting the smaller
+number of GABAergic synapses \citep{FriedlandPongstapornEtAl:2003}.  GABAergic
+inhibition in the \VCN is derived from a number of possible sources,
 intrinsically from Golgi cells in the granule cell layer of the \VCN or
 extrinsically from olivocochlear efferents \citep{OstapoffBensonEtAl:1997}.
 
 
 Axo-somatic inhibition from flat and pleomorphic terminals has been observed
-adjoining prominently on \DS cells and could possibly explain the \OnC
-response to tones and noise.  Evidence of axo-dendritic inhibition on \TS
-cells \citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that
-\TS cells overcome saturation of high spontaneous rate AN fibres by
-proximal inhibitory inputs that shunt excitation from more distal inputs
+adjoining prominently on \DS cells and could possibly explain the \OnC response
+to tones and noise.  Evidence of axo-dendritic inhibition on \TS cells
+\citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that \TS
+cells overcome saturation of high spontaneous rate AN fibres by proximal
+inhibitory inputs that shunt excitation from more distal inputs
 \citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored by
 using steady-state continuous inputs \citep{LaiWinslowEtAl:1994} and using more
 realistic inhibitory circuits \citep{EagerGraydenEtAl:2004}.
@@ -933,10 +967,9 @@ may be modulated by the activation of pre- and postsynaptic \GABAa receptors
 
 
 Mixed Glycine/\GABA terminals, observed with pleomorphic vesicles, have been
-observed in the \VCN \citep{AltschulerJuizEtAl:1993}, but these are most
-likely from \GABA and \GAD immunoreactive periolivary neurons whose axons
-terminate in the \VCN (cats: \citep{Adams:1983,SpanglerCantEtAl:1987},guinea
-pig:
+observed in the \VCN \citep{AltschulerJuizEtAl:1993}, but these are most likely
+from \GABA and \GAD immunoreactive periolivary neurons whose axons terminate in
+the \VCN (cats: \citep{Adams:1983,SpanglerCantEtAl:1987},guinea pig:
 \citep{HelfertBonneauEtAl:1989,OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995}.
 rat: \citealt{CamposCaboEtAl:2001}.  Periolivary neurons receive afferent input
 from monotonic units in the \VCN \citep{Schofield:1995,Schofield:2002} and are
@@ -1034,17 +1067,17 @@ locking is measured by the synchronisation coefficient or vector strength
    SI = \frac{1}{N} \sqrt{\left(\sum_{i}^{N} x_i \right)^{2}+\left(\sum_{i}^{N} y_i \right)^{2}}
 \end{equation} 
 #+END_LaTeX
-\noindent where $x_{i} = \cos\theta_{i}$, $x_{i} = \sin\theta_{i}$, and /n/ is the number of
-spike times.  Each spike is treated as a vector of unit length and with phase
-$\theta_{i}$ between 0 and $2\pi$ measured as the spike time modulo of the stimulus
-period, $1/f_{m}$.  Perfect synchronisation will give SI = 1, whereas values below
-0.1 are considered insignificant.  The SI values are combined for each
-modulation frequency to create the \tMTF.  Statistical significance of
-synchronization is usually quantified with the Rayleigh test
+\noindent where $x_{i} = \cos\theta_{i}$, $x_{i} = \sin\theta_{i}$, and /n/ is
+the number of spike times.  Each spike is treated as a vector of unit length and
+with phase $\theta_{i}$ between 0 and $2\pi$ measured as the spike time modulo
+of the stimulus period, $1/f_{m}$.  Perfect synchronisation will give SI = 1,
+whereas values below 0.1 are considered insignificant.  The SI values are
+combined for each modulation frequency to create the \tMTF.  Statistical
+significance of synchronization is usually quantified with the Rayleigh test
 \cite{BuunenRhode:1978,MardiaJupp:1999}. Vector strength and Rayleigh
 coefficient, calculated to verify the statistical significance of
 synchronisation, can also be obtained from the Fourier spectrum of the \PSTH or
-period histogram. 
+period histogram.
 #, in which case it equals the magnitude of the first harmonic, normalised by the DC component (average firing rate).  
 Phase can also be retrieved with either technique.  The rate measure (\rMTF) is calculated from the mean
 firing rate in the \PSTH, between 20 ms and the end of the stimulus.
@@ -1094,9 +1127,9 @@ units (\ChS and \ChT) show considerable robustness maintaining spectral peak
 information across a wide range of intensity levels (right panels in
 Fig. \ref{fig:May2003}).  Suppression of spectral troughs in the rate-place
 representation of \ChT and \ChS units is greater than the suppression in \LSR
-\ANFs at high \SPL.  Spectral enhancement in \TS cells cannot be
-attributed to lateral suppression in the auditory nerve alone; it requires some
-form of lateral inhibitory mechanism that can perform spectral enhancement by
+\ANFs at high \SPL.  Spectral enhancement in \TS cells cannot be attributed to
+lateral suppression in the auditory nerve alone; it requires some form of
+lateral inhibitory mechanism that can perform spectral enhancement by
 suppression of noise between peaks.
 
 
@@ -1232,29 +1265,24 @@ Table \ref{tab:ModellingCNTable} gives a summary of all neural models and
 networks of the cochlear nucleus.
 
 
-\begin{landscape}
-{\small\LTXtable{210mm}{ModellingCNTable}}
-\end{landscape}
+#\begin{landscape}
+#{\small\LTXtable{210mm}{ModellingCNTable}}
+#\end{landscape}
 
 
+\yellownote{Summary of existing network models of the VCN}
 
-
-*** TODO \citep*{ErikssonRobert:1999}
-
+- \citep*{ErikssonRobert:1999}
  - current detailed network model to date
  - their own AN input model not up to date
-
-*** TODO \citep*{WiegrebeMeddis:2004}
-
+- \citep*{WiegrebeMeddis:2004}
  - incorrect use of recurrent network to produce desired outcome
  - AN model very old
  - again limited to their desired outcome of AM coding in the IC
-
-*** TODO \citep*{BahmerLangner:2006}
-
+- \citep*{BahmerLangner:2006}
  - incorrect use of recurrent \TS cells
-
-*** TODO \citep*{XuZhouEtAl:2011}
+- Others
+ - \citep*{XuZhouEtAl:2011}
 
 
 
@@ -1265,7 +1293,7 @@ networks of the cochlear nucleus.
 \todo[inline]{2 para graphs on limitations of current models.}
 
 
-* TODO Aims of this thesis
+* Aims of this thesis
 
 
 The current state of neural network models fail to deliver at producing a
@@ -1295,7 +1323,7 @@ Advancement of
    coding and vowel processing, with explicit analysis of \TS cells/choppers
 
 
-**  Define the hypotheses (from Confirmation Report)
+**  Definition of the thesis hypotheses 
 
 # from confirmation report
 
@@ -1312,8 +1340,9 @@ removed.
 
 *** Hypothesis 2
 Enhancement of the rate-place representation of spectral shape in \ChS and \ChT
-units, relative to \ANFs, is due in part to recurrent excitation by among \TS cells within the same frequency band. Intracellular and morphological
-evidence suggests recurrent excitation among \TS cells is likely to occur
+units, relative to \ANFs, is due in part to recurrent excitation by among \TS
+cells within the same frequency band. Intracellular and morphological evidence
+suggests recurrent excitation among \TS cells is likely to occur
 \citep{FerragamoGoldingEtAl:1998a,PalmerWallaceEtAl:2003}.  Recurrent excitation
 introduces considerable non-linearity to the network as regions of high energy
 will elicit self-excitation.  This mechanism could explain the steady response
@@ -1326,11 +1355,11 @@ vowels in chopper units, relative to \ANFs, is due to network mechanisms in the
 stellate microcircuit.  Synchronisation to regular envelope fluctuations in T
 stellate cells, particularly \ChT units, is enhanced relative to \ANFs
 \citep{FrisinaSmithEtAl:1990,RhodeGreenberg:1994}.  Enhanced synchronisation to
-the fundamental frequency of vowels in \TS cells could be used to
-segregate concurrent signals \citep{KeilsonRichardsEtAl:1997}.  Tonic inhibition
-from GABAergic sources and precise onset inhibition from glycinergic sources are
-critical mechanisms that allow \TS cells to accurately respond to
-pulsatile stimuli, such as the f0 of vowels.
+the fundamental frequency of vowels in \TS cells could be used to segregate
+concurrent signals \citep{KeilsonRichardsEtAl:1997}.  Tonic inhibition from
+GABAergic sources and precise onset inhibition from glycinergic sources are
+critical mechanisms that allow \TS cells to accurately respond to pulsatile
+stimuli, such as the f0 of vowels.
 
 \yellownote{Note: Hypothesis 4 in the confirmation regarding psychophysical
 limitations and forward masking has been removed}
@@ -1339,22 +1368,22 @@ limitations and forward masking has been removed}
 
 
 
-# *** Hypothesis 4
-# Lateral inhibition in the \TS network is responsible for setting the
-# upper limits of psychophysical simultaneous and forward masking \TS cells
-# convey important spectral information to higher auditory centres and are the
-# first to process across-spectral information in the auditory pathway. Forward
-# masking in \TS cells has been shown to be comparable to the limits of
-# psycho-physical perception \citep{BoettcherSalviEtAl:1990,Shore:1995} and is
-# heavily influenced by inhibition \citep{BackoffPalombiEtAl:1997,Shore:1998}.
-# Lateral suppression reduces the firing rate of \TS cells
-# \citep{BlackburnSachs:1992,RhodeGreenberg:1994a} indicating a spread of masking
-# to high and low frequency areas similar to the spreading function and offset of
-# \citet{Johnston:1988}.  I concede that there are significant masking effects
-# performed by other nuclei in the auditory pathway but these only add to the
-# masking performed in the cochlear nucleus. This hypothesis suggests the upper
-# limits of auditory detection for across-spectral and temporal masking is due
-# primarily to lateral inhibition in the stellate network.
+# *** Hypothesis 4 Lateral inhibition in the \TS network is responsible for
+# setting the upper limits of psychophysical simultaneous and forward masking
+# \TS cells convey important spectral information to higher auditory centres and
+# are the first to process across-spectral information in the auditory
+# pathway. Forward masking in \TS cells has been shown to be comparable to the
+# limits of psycho-physical perception
+# \citep{BoettcherSalviEtAl:1990,Shore:1995} and is heavily influenced by
+# inhibition \citep{BackoffPalombiEtAl:1997,Shore:1998}.  Lateral suppression
+# reduces the firing rate of \TS cells
+# \citep{BlackburnSachs:1992,RhodeGreenberg:1994a} indicating a spread of
+# masking to high and low frequency areas similar to the spreading function and
+# offset of \citet{Johnston:1988}.  I concede that there are significant masking
+# effects performed by other nuclei in the auditory pathway but these only add
+# to the masking performed in the cochlear nucleus. This hypothesis suggests the
+# upper limits of auditory detection for across-spectral and temporal masking is
+# due primarily to lateral inhibition in the stellate network.
 
 
 
