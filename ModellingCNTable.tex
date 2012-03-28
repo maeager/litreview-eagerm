@@ -64,177 +64,247 @@
 % \end{longtable}
 
 
-\begin{longtable}{cXXXXXX}%
+% \begin{longtable}{cXXXXXX}%
+% %
+% \caption{Connections used in modeling studies}\label{tab:ModellingCNTable} \\
+% \toprule  
+%                       Study                       &           Connections           & Synapse Model &           Connectivity Spread      (input BF rel to target BF)            & Synapse Strength                                                                & Delay \\ \midrule
+% \endfirsthead
+
+% \multicolumn{7}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+%                  \midrule  Study                  &           Connections           & Synapse Model &                            Connectivity Spread                            & Synapse Strength                                                                & Delay \\ \midrule
+% \endhead
+
+% \midrule \multicolumn{7}{c}{{Continued on next page}} \\ %\midrule
+% \endfoot
+% \bottomrule
+% \endlastfoot
+
+%             \citealp*{WangSachs:1995}             &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\
+%            &  Inhibitory\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\
+%          \citealp*{LaiWinslowEtAl:1994}           &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\ \midrule
+%            &  Inhibitory\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\
+%          \citealp*{ErikssonRobert:1999}           &  ANF\ensuremath{\rightarrow}TS  &     1 ms      &                                   on CF                                   & N = 6 or 15,        G =  8.5/n  or 2.0/n                    
+%                         %                         & 1) Dendrites only 2) Dendrites and Soma  
+%                                                   & 1.7 ms \\
+%                                                   & {ANF\ensuremath{\rightarrow}DS} &    {1 ms }    &                               $\pm$1 octave                               & {1/20 threshold for activation }                                                        & 1.7 ms \\
+%                                                   &  ANF\ensuremath{\rightarrow}TV  &     1 ms      &                               $\pm$0.1 oct                                & N = 21,   G=2.3/n,                                                          & 1.7 ms\\ 
+%                                                   &  DS\ensuremath{\rightarrow}TS   &     6 ms      &                                                                           & N = 3 or 8, G = 0.5/n or 1/n or 1.5/n                                                                       & 1.2$\pm$0.5 ms \\ 
+%                                                   &  DS\ensuremath{\rightarrow}TV   &     6 ms      &                               $\pm$0.4 oct                                & N = 8,     G = 1.5/n                                                          & \\ 
+%                                                   &  TV\ensuremath{\rightarrow}TS   &     6 ms      &                                                                           & N=3 or 8, G = 0.5/n or 1/n or 1.5/n                                                    & 1.2$\pm$0.5 ms \\ 
+%                                                   &  TV\ensuremath{\rightarrow}DS   &     6 ms      &                               $\pm$0.4 oct                                & N = 12, G = 2.3/N,                                                          & \\ 
+%          \citealp*{WiegrebeMeddis:2004}           &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\ 
+%                                                   &  TS\ensuremath{\rightarrow}TS   &               &                                                                           &                                                   & \\ \midrule
+% \citealp*{BahmerLangner:2006,BahmerLangner:2006a} &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\ 
+%                                                   &  TS\ensuremath{\rightarrow}TS   &               &                                                                           &                                                   & 0.4 ms\\ \midrule
+
+%       \citealp*{PressnitzerMeddisEtAl:2001}       &                                 &    {5 ms}     &                               {One channel}                               & N = 20,     I =  3 nA                       
+%                         %                         & Point model plus filtered \PSPs
+%                                                   & \\ 
+%                                                   &  ANF\ensuremath{\rightarrow}DS                               &    {1 ms}     &                 {10 channels (-2/+1 oct) even weighting }                 & N = 10*20 , I = 0.3 nA                      
+%                         %                         & 
+%                                                   & \\ 
+%                                                   & DS\ensuremath{\rightarrow}TS                                &     5 ms      &                     Onechannel (BF 1.1~kHz)                      & N = 50,   I = -1 nA   
+%                         %                         & 
+%                                                   & 2 ms \\ \midrule\midrule
+
+%           {\citealp*{ReissYoung:2005}}            & {ANF\ensuremath{\rightarrow}DS} &    {10 ms}    &                {3 oct (effectively 2 oct with Gaussian weights)}                 & N*g = 10.8                        
+%                         %                         & {}                     
+%                                                   & \\ 
+%                                                   &  ANF\ensuremath{\rightarrow}TV  &     10 ms     &                          0.2 integration window                           & N*g = 23                      
+%                         %                         & 
+%                                                   & \\ 
+%                                                   &  DS\ensuremath{\rightarrow}TV   &     10 ms     &                       0.05 oct with +0.3 oct offset                       & N*g = 7                      
+%                         %                         & 
+%                                                   & \\ \midrule
+%           \citealp*{LomakinDavis:2008}            & {ANF\ensuremath{\rightarrow}DS} &    {10 ms}    &    range 2.5 oct, effectively 0.83 octaves; $\sigma$=0.42 octaves;    & N = 140 g = 0.05                        
+%                         %                         & {}                     
+%                                                   & --\\ 
+%                                                   &  ANF\ensuremath{\rightarrow}TV  &     10 ms     &                                    0.4                                    & N = 48, g = 0.55                     
+%                         %                         & 
+%                                                   & --\\ 
+%                                                   &  DS\ensuremath{\rightarrow}TV   &     10 ms     & 0.1 to 3.0 octaves in steps of 0.5 octaves (offset fixed at +0.3 octaves) & N = 15, g=1.4                      
+%                         %                         & 
+%                                                   & --\\ \midrule
+
+% \citep{BlumReed:2000,BlumReed:1998,ReedBlum:1997} &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%      \citep{BlumReedEtAl:1995,ReedBlum:1995}      &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+
+%  \citealp*{ArleKim:1990,ArleKim:1991a,Arle:1992}  &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%            \citealp*{DavisVoigt:1991}             &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%            \citealp*{DavisVoigt:1994}             &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%            \citealp*{DavisVoigt:1996}             &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%         \citealp*{HancockDavisEtAl:1997}          &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%          \citealp*{SpirouDavisEtAl:1999}          &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%         \citealp*{HancockDavisEtAl:2001}          &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+
+%            \citealp*{YoungDavis:2002}             &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\ 
+%            \citealp*{BurckHemmen:2007}            &                                 &               &                                                                           & 
+%                         %                         & 
+%                                                   & \\
+%     %           \citealp*{RothmanManis:2003c}     &                                 &               &                                                                           & & {0.4 ms time to peak alpha at 22$^\circ$C (7.1ms half width in type 1, 1.6ms type 2) 0.07 ms alpha at 38C} & & n=1,3,10 or 50 & {gE$\Phi $ at 22$\circ$C=2 or 2.2 for type 1, subthreshold gE=0.5*gE$\Phi $,  }
+%                         %                         & {single compartment }           
+%                         %                         & none\\ 
+
+
+% \end{longtable}
+
+% \newlength\Tl \settowidth{\Tl}{Pressnitzer Meddis Et Al 2001} \setlength\tabcolsep{1mm}
+\begin{longtable}{XXXXc}%
 %
-\caption{Connections used in modeling studies}\label{tab:ModellingCNTable} \\
+\caption{Network model studies of the VCN}\label{tab:ModellingCNTable} \\
 \toprule  
-                      Study                       &           Connections           & Synapse Model &           Connectivity Spread      (input BF rel to target BF)            & Synapse Strength                                                                & Delay \\ \midrule
+                           Study                             &                     Input Model                      &                          Neural Model                          &                    Connections                     & Parameter Selection      %& Synapse Model & Comments                             
+\\ \midrule
 \endfirsthead
 
-\multicolumn{7}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
-                 \midrule  Study                  &           Connections           & Synapse Model &                            Connectivity Spread                            & Synapse Strength                                                                & Delay \\ \midrule
+\multicolumn{5}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+                      \midrule  Study                        &                     Input Model                      &                          Neural Model                          &                    Connections                     & Parameter Selection     % & Synapse Model & Comments  
+\\ \midrule
 \endhead
 
-\midrule \multicolumn{7}{c}{{Continued on next page}} \\ %\midrule
+\midrule \multicolumn{5}{c}{{Continued on next page}} \\ %\midrule
 \endfoot
 \bottomrule
 \endlastfoot
 
-            \citealp*{WangSachs:1995}             &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\
-           &  Inhibitory\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\
-         \citealp*{LaiWinslowEtAl:1994}           &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\ \midrule
-           &  Inhibitory\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\
-         \citealp*{ErikssonRobert:1999}           &  ANF\ensuremath{\rightarrow}TS  &     1 ms      &                                   on CF                                   & N = 6 or 15,        G =  8.5/n  or 2.0/n                    
-                        %                         & 1) Dendrites only 2) Dendrites and Soma  
-                                                  & 1.7 ms \\
-                                                  & {ANF\ensuremath{\rightarrow}DS} &    {1 ms }    &                               $\pm$1 octave                               & {1/20 threshold for activation }                                                        & 1.7 ms \\
-                                                  &  ANF\ensuremath{\rightarrow}TV  &     1 ms      &                               $\pm$0.1 oct                                & N = 21,   G=2.3/n,                                                          & 1.7 ms\\ 
-                                                  &  DS\ensuremath{\rightarrow}TS   &     6 ms      &                                                                           & N = 3 or 8, G = 0.5/n or 1/n or 1.5/n                                                                       & 1.2$\pm$0.5 ms \\ 
-                                                  &  DS\ensuremath{\rightarrow}TV   &     6 ms      &                               $\pm$0.4 oct                                & N = 8,     G = 1.5/n                                                          & \\ 
-                                                  &  TV\ensuremath{\rightarrow}TS   &     6 ms      &                                                                           & N=3 or 8, G = 0.5/n or 1/n or 1.5/n                                                    & 1.2$\pm$0.5 ms \\ 
-                                                  &  TV\ensuremath{\rightarrow}DS   &     6 ms      &                               $\pm$0.4 oct                                & N = 12, G = 2.3/N,                                                          & \\ 
-         \citealp*{WiegrebeMeddis:2004}           &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\ 
-                                                  &  TS\ensuremath{\rightarrow}TS   &               &                                                                           &                                                   & \\ \midrule
-\citealp*{BahmerLangner:2006,BahmerLangner:2006a} &  ANF\ensuremath{\rightarrow}TS  &               &                                                                           &                                                   & \\ 
-                                                  &  TS\ensuremath{\rightarrow}TS   &               &                                                                           &                                                   & 0.4 ms\\ \midrule
-
-      \citealp*{PressnitzerMeddisEtAl:2001}       &                                 &    {5 ms}     &                               {One channel}                               & N = 20,     I =  3 nA                       
-                        %                         & Point model plus filtered \PSPs
-                                                  & \\ 
-                                                  &  ANF\ensuremath{\rightarrow}DS                               &    {1 ms}     &                 {10 channels (-2/+1 oct) even weighting }                 & N = 10*20 , I = 0.3 nA                      
-                        %                         & 
-                                                  & \\ 
-                                                  & DS\ensuremath{\rightarrow}TS                                &     5 ms      &                     Onechannel (BF 1.1~kHz)                      & N = 50,   I = -1 nA   
-                        %                         & 
-                                                  & 2 ms \\ \midrule\midrule
-
-          {\citealp*{ReissYoung:2005}}            & {ANF\ensuremath{\rightarrow}DS} &    {10 ms}    &                {3 oct (effectively 2 oct with Gaussian weights)}                 & N*g = 10.8                        
-                        %                         & {}                     
-                                                  & \\ 
-                                                  &  ANF\ensuremath{\rightarrow}TV  &     10 ms     &                          0.2 integration window                           & N*g = 23                      
-                        %                         & 
-                                                  & \\ 
-                                                  &  DS\ensuremath{\rightarrow}TV   &     10 ms     &                       0.05 oct with +0.3 oct offset                       & N*g = 7                      
-                        %                         & 
-                                                  & \\ \midrule
-          \citealp*{LomakinDavis:2008}            & {ANF\ensuremath{\rightarrow}DS} &    {10 ms}    &    range 2.5 oct, effectively 0.83 octaves; $\sigma$=0.42 octaves;    & N = 140 g = 0.05                        
-                        %                         & {}                     
-                                                  & --\\ 
-                                                  &  ANF\ensuremath{\rightarrow}TV  &     10 ms     &                                    0.4                                    & N = 48, g = 0.55                     
-                        %                         & 
-                                                  & --\\ 
-                                                  &  DS\ensuremath{\rightarrow}TV   &     10 ms     & 0.1 to 3.0 octaves in steps of 0.5 octaves (offset fixed at +0.3 octaves) & N = 15, g=1.4                      
-                        %                         & 
-                                                  & --\\ \midrule
-
-\citep{BlumReed:2000,BlumReed:1998,ReedBlum:1997} &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-     \citep{BlumReedEtAl:1995,ReedBlum:1995}      &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-
- \citealp*{ArleKim:1990,ArleKim:1991a,Arle:1992}  &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-           \citealp*{DavisVoigt:1991}             &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-           \citealp*{DavisVoigt:1994}             &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-           \citealp*{DavisVoigt:1996}             &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-        \citealp*{HancockDavisEtAl:1997}          &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-         \citealp*{SpirouDavisEtAl:1999}          &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-        \citealp*{HancockDavisEtAl:2001}          &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-
-           \citealp*{YoungDavis:2002}             &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\ 
-           \citealp*{BurckHemmen:2007}            &                                 &               &                                                                           & 
-                        %                         & 
-                                                  & \\
-    %           \citealp*{RothmanManis:2003c}     &                                 &               &                                                                           & & {0.4 ms time to peak alpha at 22$^\circ$C (7.1ms half width in type 1, 1.6ms type 2) 0.07 ms alpha at 38C} & & n=1,3,10 or 50 & {gE$\Phi $ at 22$\circ$C=2 or 2.2 for type 1, subthreshold gE=0.5*gE$\Phi $,  }
-                        %                         & {single compartment }           
-                        %                         & none\\ 
 
 
-\end{longtable}
+                {\citealp*{WangSachs:1995}}                  &     Real ANF spikes \citep{WangSachs:1993}                                                 &          {\citet{BanksSachs:1991} conductance model}           &    \ANFTS, Inhibitory\ensuremath{\rightarrow}TS    & Hand-tuned
+                             %                               &                                                      & 
+\\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &        Inhibitory\ensuremath{\rightarrow}TS        & 
+                             %                               &                                                      & 
+%\\ \midrule                                                                                                                                                                                                                                           
+              {\citealp*{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}}               &   In-paper \citep{LaiWinslowEtAl:1994}                                                   &          {\citet{BanksSachs:1991} ball and stick conductance model plus additional potassium current \citep{Wang:1991}}           &                       \ANFTS, Inhibitory\ensuremath{\rightarrow}TS                       & Variable
+                             %                               &                                                      & 
+\\                                                                                                                                                                                                                                                    
+%                                                             &                                                      &                                                                &        Inhibitory\ensuremath{\rightarrow}TS        & Hand-tuned
+%                             %                               &                                                      & 
+%\\ \midrule                                                                                                                                                                                                                                           
+              {\citealp*{ErikssonRobert:1999}}               &            {\citet{RobertEriksson:1999} AN model}             &                         {Point neuron}                         & \ANFTS, \ANFDS, \ANFTV, \DSTV, \DSTS, \TVTS, \TVDS & Hand-tuned
+                             %                               &       N = 6 or 15,        G =  8.5/n  or 2.0/n       & 1.7 ms                                                                                                                  
+\\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                      {\ANFDS}                      & 
+            %                                  %             &           {1/20 threshold for activation }           & 1.7 ms                                                                                                                  
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \ANFTV                       & 
+            %                                  %             &                  N = 21,   G=2.3/n,                  & 1.7 ms                                                                                                                  
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \DSTS                        & 
+            %                                  %             &        N = 3 or 8, G = 0.5/n or 1/n or 1.5/n         & 1.2$\pm$0.5 ms                                                                                                          
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \DSTV                        & 
+            %                                  %             &                 N = 8,     G = 1.5/n                 & 
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \TVTS                        & 
+            %                                  %             &         N=3 or 8, G = 0.5/n or 1/n or 1.5/n          & 1.2$\pm$0.5 ms                                                                                                          
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \TVDS                        & 
+            %                                  %             &                  N = 12, G = 2.3/N,                  & 
+% \\ \midrule                                                                                                                                                                                                                                           
 
+              {\citealp*{WiegrebeMeddis:2004}}               & {DSAM \citep{MeddisOMardEtAl:2001}} &       {\citet{HewittMeddisEtAl:1992} point neuron model}       &                   \ANFTS, \TSTS                    & Hand-tuned
+                             %                               &                                                      & 
+\\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \TSTS                        &  
+            %                                 %              &                                                      & 
+%\\ \midrule                                                                                                                                                                                                                                           
 
-\newlength\Tl \settowidth{\Tl}{\citealp*{PressnitzerMeddisEtAl:2001}} \setlength\tabcolsep{1mm}
-\begin{longtable}{cXXXXXX}%
-%
-\caption{Connections used in modeling studies}\label{tab:ModellingCNTable} \\
-\toprule  
-                         Study                           &            Input Model            &          Neural Model          &             Connections              & Synapse Model &                            Connectivity Spread      (input BF rel to target BF)                            &             Synapse Strength             & Delay \\ \midrule
-\endfirsthead
+          {\citealp*{PressnitzerMeddisEtAl:2001}}            &         {DSAM \citep{MeddisOMardEtAl:2001}}          & {\citet{HewittMeddisEtAl:1992} point model plus filtered \PSPs}&               \ANFTS, \ANFDS, \DSTS                & Hand-tuned
+                             %                               &                N = 20,     I =  3 nA                 & 
+\\                                                                                                                                                                                                                                                    
+%                                                              &                                                      &                                                                &                       \ANFDS                       & 
+%                              %                               &                N = 10*20 , I = 0.3 nA                & 
+% \\                                                                                                                                                                                                                                                    
+%                                                              &                                                      &                                                                &                       \DSTS                        & 
+%                              %                               &                 N = 50,   I = -1 nA                  & 2 ms                                                                                                                    
+% \\ \midrule\midrule                                                                                                                                                                                                                                   
 
-\multicolumn{9}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
-                    \midrule  Study                      &            Input Model            &          Neural Model          &             Connections              & Synapse Model &                                            Connectivity Spread                                             &             Synapse Strength             & Delay \\ \midrule
-\endhead
+    {\citealp*{BahmerLangner:2006,BahmerLangner:2006a}}      & In-paper \citep{BahmerLangner:2006a}                                                       &  Onset neuron: \citet{RothmanManis:2003b} conductance model, Chopper neuron: leaky integrate and fire with PSP filter                                                              &                   \ANFTS, \TSTS, Octopus\ensuremath{\rightarrow}TS                    & Hand-tuned
+                             %                               &                                                      & 
+\\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \TSTS                        & 
+            %                                 %              &                                                      & 0.4 ms                                                                                                                  
+%\\ \midrule                                                                                                                                                                                                                                           
 
-\midrule \multicolumn{9}{c}{{Continued on next page}} \\ %\midrule
-\endfoot
-\bottomrule
-\endlastfoot
+ %            \multirow{3}{1in}{\citealp*{ReissYoung:2005}}  &                                                      &                                                                &                      {\ANFDS}                      & 
+            %                                  %             &                      N*g = 10.8                      & 
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \ANFTV                       & 
+            %                                  %             &                       N*g = 23                       & 
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \DSTV                        & 
+            %                                  %             &                       N*g = 7                        & 
+% \\ \midrule                                                                                                                                                                                                                                           
+%           \multirow{3}{1in}{\citealp*{LomakinDavis:2008}}  &                                                      &                                                                &                      {\ANFDS}                      & 
+            %                                  %             &                   N = 140 g = 0.05                   & --                                                                                                                      
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \ANFTV                       & 
+            %                                  %             &                   N = 48, g = 0.55                   & --                                                                                                                      
+% \\                                                                                                                                                                                                                                                    
+                             %                               &                                                      &                                                                &                       \DSTV                        & 
+            %                                  %             &                    N = 15, g=1.4                     & --
+% \\ \midrule
 
-       %           \citealp*{RothmanManis:2003c}         &                                   &                                &                                      &               & {0.4 ms time to peak alpha at 22$^\circ$C (7.1ms half width in type 1, 1.6ms type 2) 0.07 ms alpha at 38C} &                                          & n=1,3,10 or 50 & {gE$\Phi $ at 22$\circ$C=2 or 2.2 for type 1, subthreshold gE=0.5*gE$\Phi $,  }
-                           %                             & {single compartment }           
-                           %                             & none\\ 
+%          \citep{BlumReed:2000,BlumReed:1998,ReedBlum:1997} &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+  %               \citep{BlumReedEtAl:1995,ReedBlum:1995}    &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ \midrule
 
+%           \citealp*{ArleKim:1990,ArleKim:1991a,Arle:1992}  &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+     %                      \citealp*{DavisVoigt:1991}       &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+     %                      \citealp*{DavisVoigt:1994}       &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+     %                      \citealp*{DavisVoigt:1996}       &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+    %                   \citealp*{HancockDavisEtAl:1997}     &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+    %                   \citealp*{SpirouDavisEtAl:1999}      &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+    %                   \citealp*{HancockDavisEtAl:2001}     &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
 
-
-      \multirow{2}{\Tl}{\citealp*{WangSachs:1995}}       &                                   &          Conductance           &                \ANFTS                &               &                                                                                                            &                                          & \\
-                                                         &                                   &                                & Inhibitory\ensuremath{\rightarrow}TS &               &                                                                                                            &                                          & \\
-   \multirow{2}{\Tl}{ \citealp*{LaiWinslowEtAl:1994}}    &                                   &                                &                \ANFTS                &               &                                                                                                            &                                          & \\ \midrule
-                                                         &                                   &                                & Inhibitory\ensuremath{\rightarrow}TS &               &                                                                                                            &                                          & \\
-   \multirow{7}{\Tl}{\citealp*{ErikssonRobert:1999}}     &    \multirow{7}{\Tl}{\citep{RobertEriksson:1998}}    &             \multirow{7}{\Tl}{Point neuron}              &                \ANFTS                &     1 ms      &                                                   on CF                                                    & N = 6 or 15,        G =  8.5/n  or 2.0/n & 1.7 ms \\
-                                                         &                                   &                                &               {\ANFDS}               &    {1 ms }    &                                               $\pm$1 octave                                                &     {1/20 threshold for activation }     & 1.7 ms \\
-                                                         &                                   &                                &                \ANFTV                &     1 ms      &                                                $\pm$0.1 oct                                                &            N = 21,   G=2.3/n,            & 1.7 ms\\ 
-                                                         &                                   &                                &                \DSTS                 &     6 ms      &                                                                                                            &  N = 3 or 8, G = 0.5/n or 1/n or 1.5/n   & 1.2$\pm$0.5 ms \\ 
-                                                         &                                   &                                &                \DSTV                 &     6 ms      &                                                $\pm$0.4 oct                                                &           N = 8,     G = 1.5/n           & \\ 
-                                                         &                                   &                                &                \TVTS                 &     6 ms      &                                                                                                            &   N=3 or 8, G = 0.5/n or 1/n or 1.5/n    & 1.2$\pm$0.5 ms \\ 
-                                                         &                                   &                                &                \TVDS                 &     6 ms      &                                                $\pm$0.4 oct                                                &            N = 12, G = 2.3/N,            & \\ 
-
-   \multirow{2}{\Tl}{\citealp*{WiegrebeMeddis:2004}}     & DSAM \citep{MeddisOMardEtAl:2001} & \citep*{HewittMeddisEtAl:1992} &                \ANFTS                &               &                                                                                                            &                                          & \\ 
-                                                         &                                   &                                &                \TSTS                 &               &                                                                                                            &                                          & \\ \midrule
-   \citealp*{BahmerLangner:2006,BahmerLangner:2006a}     &                                   &                                &                \ANFTS                &               &                                                                                                            &                                          & \\ 
-                                                         &                                   &                                &                \TSTS                 &               &                                                                                                            &                                          & 0.4 ms\\ \midrule
-
-\multirow{3}{\Tl}{\citealp*{PressnitzerMeddisEtAl:2001}} &                                   & Point model plus filtered \PSPs&                \ANFTS                &    {5 ms}     &                                               {One channel}                                                &          N = 20,     I =  3 nA           & \\ 
-                                                         &                                   &                                &                \ANFDS                &    {1 ms}     &                                 {10 channels (-2/+1 oct) even weighting }                                  &          N = 10*20 , I = 0.3 nA          & \\ 
-                                                         &                                   &                                &                \DSTS                 &     5 ms      &                                          Onechannel (BF 1.1~kHz)                                           &           N = 50,   I = -1 nA            & 2 ms \\ \midrule\midrule
-
-    \multirow{3}{\Tl}{ {\citealp*{ReissYoung:2005}}}     &                                   &                                &               {\ANFDS}               &    {10 ms}    &                             {3 oct (effectively 2 oct with Gaussian weights)}                              &                N*g = 10.8                & \\ 
-                                                         &                                   &                                &                \ANFTV                &     10 ms     &                                           0.2 integration window                                           &                 N*g = 23                 & \\ 
-                                                         &                                   &                                &                \DSTV                 &     10 ms     &                                       0.05 oct with +0.3 oct offset                                        &                 N*g = 7                  & \\ \midrule
-    \multirow{3}{\Tl}{\citealp*{LomakinDavis:2008}}      &                                   &                                &               {\ANFDS}               &    {10 ms}    &                      range 2.5 oct, effectively 0.83 octaves; $\sigma$=0.42 octaves;                       &             N = 140 g = 0.05             & --\\ 
-                                                         &                                   &                                &                \ANFTV                &     10 ms     &                                                    0.4                                                     &             N = 48, g = 0.55             & --\\ 
-                                                         &                                   &                                &                \DSTV                 &     10 ms     &                 0.1 to 3.0 octaves in steps of 0.5 octaves (offset fixed at +0.3 octaves)                  &              N = 15, g=1.4               & --\\ \midrule
-
-   \citep{BlumReed:2000,BlumReed:1998,ReedBlum:1997}     &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-        \citep{BlumReedEtAl:1995,ReedBlum:1995}          &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-
-    \citealp*{ArleKim:1990,ArleKim:1991a,Arle:1992}      &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-               \citealp*{DavisVoigt:1991}                &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-               \citealp*{DavisVoigt:1994}                &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-               \citealp*{DavisVoigt:1996}                &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-            \citealp*{HancockDavisEtAl:1997}             &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-            \citealp*{SpirouDavisEtAl:1999}              &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-            \citealp*{HancockDavisEtAl:2001}             &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-
-               \citealp*{YoungDavis:2002}                &                                   &                                &                                      &               &                                                                                                            &                                          & \\ 
-              \citealp*{BurckHemmen:2007}                &                                   &                                &                                      &               &                                                                                                            &                                          & \\
-
+     %                      \citealp*{YoungDavis:2002}       &                                                      &                                                                & 
+            %                                  %             &                                                      & 
+% \\ 
+                \citealp*{BurckHemmen:2007}                  &  Poisson process \citep{BurckHemmen:2007}                                     & Integrate and fire neural model                    \ANFTS, \ANFTV, \TVTS                      &                                                    & 
+                             %                               &                                                      & 
+\\
+                 \citealp*{XuZhouEtAl:2011}                  &                                                      &                     \ANFTS, \ANFTV, \TVTS                      &                                                    & 
+                             %                               &                                                      & 
+\\
 
 \end{longtable}
 
