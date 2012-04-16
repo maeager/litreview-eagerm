@@ -88,7 +88,7 @@ examined in detail in various species (cat:
 \citealt{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}, mice:
 \citealt{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991},
 guinea pigs: \citealt{JuizHelfertEtAl:1996a,OstapoffBensonEtAl:1997}, rats:
-VCN\space \citealt{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}).
+VCN\space\citealt{FriedlandPongstapornEtAl:2003,RubioJuiz:2004}).
 Physiological studies combined with labelling have given greater certainty to
 correlations between physiological response types and morphological cell types
 \citep[e.g.,~][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
@@ -810,7 +810,6 @@ glomeruli \citep{OsenRoth:1969}.  In rats, onset choppers are monosynaptically
 excited by shocks to the \OCB
 \citep{MuldersPaoliniEtAl:2003,MuldersWinterEtAl:2002,MuldersPaoliniEtAl:2009}.
 
-
 The role of ACh neuromodulation in the stellate microcircuit is not fully
 understood.  Excitatory ACh input to TS cells, together with \OCB effects on the
 organ of Corti, could enhance spectral peaks in noise across the population of
@@ -827,7 +826,6 @@ chopper units \citep{FujinoOertel:2001,OertelWrightEtAl:2011}.
     - NE affects probability of release at calyx of Held
     - NE increases firing rate of choppers \citep{KosslVater:1989,Ebert:1996}
     - 5HT excites or inhibits choppers /in vivo/ \citep{EbertOstwald:1992}
-
 
 *** Major Ascending Output
 

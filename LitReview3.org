@@ -234,9 +234,9 @@ processing, to whatever extent it is limited by the information contained at the
 bottleneck of the auditory nerve.  Therefore, signal processing done by lateral
 inhibition and recurrent excitation in the cochlear nucleus has a significant
 influence on perception at higher levels of auditory processing.  Understanding
- the limitations of hearing-impairment devices.  Further
-understanding how the processing of sound in noisy environments works within the
 the complex processing done by the cochlear nucleus may also contribute to
+understanding the limitations of hearing-impairment devices.  Further
+understanding how the processing of sound in noisy environments works within the
 network could aid in developing new sound processing strategies for the cochlear
 implant and hearing aids.
 
@@ -672,7 +672,6 @@ response area to be transmitted to higher centres.
 #   information about the location of sound sources even in reverberant
 #   environments, critical in hearing
 #   \cite{DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c,DelgutteKiang:1984d,DavoreIhlefeldEtAl:2009}
-
 
 # CantBenson
 # The type I multipolar cells are narrowly tuned and respond to tone bursts with
