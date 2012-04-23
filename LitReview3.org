@@ -41,7 +41,7 @@
 \\documentclass[11pt,a4paper,twoside,openright]{book}
 \\usepackage{style/uomthesis}	   
 \\input{user-defined}		   
-\\usepackage[acronym]{glossaries}  
+\\usepackage[nonumberlist,acronym]{glossaries}  
 \\input{../hg/manuscript/misc/glossary}
 \\makeglossaries		   
 \\graphicspath{{./gfx/}}	   
@@ -172,7 +172,7 @@ separate simultaneously presented vowels.
 The fundamental rhetorical question in the literature comes down to whether
 intrinsic membrane mechanisms or network and synaptic mechanisms are more
 important for the behaviour of \TS cells \citep{OertelWrightEtAl:2011}.
-Other important questions may need to be addressed first: What mechanisms in TS
+Other important questions may need to be addressed first: What mechanisms in \TS
   cells are essential for sustained firing to constant sound level
 despite significant adaptation in \ANF input?  How are the different categories
 of \ANFs (\LSR and \HSR) processed by \TS cell microcircuit?  Is the loss
@@ -278,7 +278,7 @@ feed-forward and feed-back connections.
 
 # \todo[inline]{1 para on Spontaneous discharge rate (SR). More work on references here} 
 
-The physiology of auditory nerve fibres form a bimodal distribution where
+The acoustic physiology of auditory nerve fibres form a bimodal distribution where
 30--40\% of the fibres have \SR less than 2 spikes per second and 60--70\% have
 \SR above 30 spikes/s \citep{RyugoParks:2003}. Threshold is correlated to the
 amount of spontaneous spike activity that occurs in the absence of
@@ -289,19 +289,17 @@ spikes/s.  The bimodal \SR distribution is present across the entire audible
 frequency range for the animal, and implies a general organisational
 principle for the mammalian auditory nerve. Fibres of the different \SR groupings
 exhibit distinct physiologic features, especially in terms of their contribution
-to the dynamic range of hearing (Refs here) and representation of speech sounds
-(Refs here). The collective evidence suggests that different \SR groupings of
+to the dynamic range of hearing and representation of speech sounds \citep[see~][for review]{RyugoParks:2003}. The collective evidence suggests that different \SR groupings of
 auditory nerve fibres serve separate roles in acoustic information
 processing. It might be that the \HSR fibres with their low thresholds prefer to
 function in quiet, whereas \LSR fibres with their high thresholds operate better
 in loud and noisy environments.
 
+The morphology of LSR and HSR are essentially similar. Characterised as a
+bipolar neuron, their cell bodies lie in the retinal ganglion region (Rosenthal's canal)  of the
+cochlea and their peripheral process contacting one inner hair cell.
 
-## TODO next paragraph needs re-edit
-\todo[inline]{Expand further on the AN Projection to the Cochlear Nucleus.  More reference needed in this paragraph}
-
- Upon  entrance into the central nervous system individual auditory nerve
- fibres penetrate a variable distance into the nucleus, depending upon fibre \CF, and bifurcate into an ascending
+The axonal process is part of the auditory nerve (CN VII) enters the central nerous barriervariable distance into the nucleus, depending upon fibre \CF, and bifurcate into an ascending
  branch and a descending branch. The ascending branch has a
  relatively straight trajectory into the \AVCN and terminates
  as a large, axosomatic ending called the endbulb of Held.
@@ -314,6 +312,7 @@ Fibres of similar \CFs disperse to
  form a 3-dimensional sheet running through the nucleus,
  and stacks of these sheets represent the isofrequency con-
  tours of the nucleus (Fig. \ref{fig:CNschematic}). 
+
 #The sheets have a
 # horizontal orientation within the ventral cochlear nucleus
 # but twist caudally to form parasagittal sheets in the DCN.
