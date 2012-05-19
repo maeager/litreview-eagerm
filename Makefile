@@ -44,8 +44,8 @@ version		:= 2.2.1-alpha8
 -include $(HOME)/.latex-makefile/Variables.ini
 #
 # This can be pdflatex or latex - you can change this by adding the following line to your Makefile.ini:
-# BUILD_STRATEGY := latex
-BUILD_STRATEGY		?= pdflatex
+#BUILD_STRATEGY := latex
+#BUILD_STRATEGY		?= pdflatex
 # This can be used to pass extra options to latex.
 LATEX_OPTS		?=
 #
@@ -89,7 +89,7 @@ export LC_ALL		?= C
 #
 # If you list files or wildcards here, they will *not* be cleaned - default is
 # to allow everything to be cleaned.
-#neverclean		?= *.pdf
+neverclean		?= *.pdf
 #
 # Alternatively (recommended), you can add those lines to a Makefile.ini file
 # and it will get picked up automatically without your having to edit this
@@ -117,6 +117,8 @@ export LC_ALL		?= C
 #
 #
 # CHANGES:
+# Chris Monson (2011-11-10):
+# * Issue 144: Help patch from girard.nicolas applied
 # Andrew McNabb (2011-09-30):
 # * Bumped version to 2.2.1-alpha8
 # * Issue 141: No font embedding for gnuplot when not doing pdf
@@ -738,11 +740,13 @@ SLEEP		?= sleep
 BIBTEX		?= bibtex
 DVIPS		?= dvips
 LATEX		?= latex
+CHECK		?= lacheck
 PDFLATEX	?= pdflatex
 XELATEX		?= xelatex
 EPSTOPDF	?= epstopdf
 MAKEINDEX	?= makeindex
 XINDY		?= xindy
+MAKEGLOSSARY    ?= makeglossaries
 KPSEWHICH	?= kpsewhich
 GS		?= gs
 # = OPTIONAL PROGRAMS =
@@ -756,6 +760,8 @@ PYTHON		?= python
 RST2LATEX	?= rst2latex.py
 LHS2TEX		?= lhs2tex
 # == EPS Generation ==
+DIA		?= dia --nosplash # Diagram Editor
+OCTAVE		?= GNUTERM=dumb octave -q	# Matlab/Octave quiet, disable x11 terminal
 CONVERT		?= convert	# ImageMagick
 DOT		?= dot		# GraphViz
 DOT2TEX		?= dot2tex	# dot2tex - add options (not -o) as needed
@@ -808,7 +814,7 @@ ECHO		:= $(if $(FIXED_ECHO),$(FIXED_ECHO),$(ECHO))
 
 define determine-gnuplot-output-extension
 $(if $(shell $(WHICH) $(GNUPLOT) 2>/dev/null),
-     $(if $(findstring unknown or ambiguous, $(shell $(GNUPLOT) -e "set terminal pdf" 2>&1)),
+     $(if $(findstring unknown or ambiguous, $(shell $(GNUPLOT) -e "set terminal pdfcairo" 2>&1)),
 	  eps, pdf),
      none)
 endef
@@ -831,6 +837,17 @@ $(if \
     fsize FONTSIZE,\
     font ",FONTSIZE"),\
   FONTSIZE))
+
+define determine-octave-output-extension
+$(if $(shell $(WHICH) $(OCTAVE)),
+     $(if $(findstring unknown or ambiguous, $(shell $(OCTAVE) --eval "" 2>&1)),
+	  eps, pdf),
+     none)
+endef
+
+OCTAVE_OUTPUT_EXTENSION	?= $(strip $(call determine-octave-output-extension))
+
+
 
 # Directory into which we place "binaries" if it exists.
 # Note that this can be changed on the commandline or in Makefile.ini:
@@ -906,6 +923,22 @@ GRAY	?= $(call get-default,$(GREY),)
 #
 # Utility Functions and Definitions
 #
+#
+# Transcript
+# For debug/testing purposes: writes a message to
+# filename.transcript.make for each command that was run, including
+# some human-readable justification for why it had to be run.
+# For example: "Running latex (log-file indicated that this is necessary)"
+# Set WRITE_TRANSCRIPT to something to activate
+WRITE_TRANSCRIPT ?=
+# Set reason for the next run call
+# $(call set-run-reason,message)
+set-run-reason = export run_reason="$1"
+# Log command to the transcript file
+# $(call set-run-reason,command,job_name)
+transcript = $(if $(WRITE_TRANSCRIPT), \
+						 $(ECHO) "Running $1 ($$run_reason)" >> $2.transcript.make; \
+						 export run_reason="",$(sh_true))
 
 # Don't call this directly - it is here to avoid calling wildcard more than
 # once in remove-files.
@@ -959,6 +992,8 @@ escape-fname-regex	= $(subst /,\\/,$(subst .,\\.,$1))
 # Test that a file exists
 # $(call test-exists,file)
 test-exists		= [ -e '$1' ]
+# $(call test-not-exists,file)
+test-not-exists   = [ ! -e '$1' ]
 
 # $(call move-files,source,destination)
 move-if-exists		= $(call test-exists,$1) && $(MV) '$1' '$2'
@@ -1122,6 +1157,11 @@ endif
 # Names of sed scripts that morph gnuplot files -- only the first found is used
 GNUPLOT_SED	:= global-gpi.sed gnuplot.sed
 GNUPLOT_GLOBAL	:= global._include_.gpi gnuplot.global
+# Names of sed scripts that morph octave files -- only the first found is used
+OCTAVE_SED	:= global-octave.sed octave.sed
+OCTAVE_GLOBAL	:= global._include_.m octave.global
+
+
 
 ifeq "$(strip $(BUILD_STRATEGY))" "latex"
 default_graphic_extension	?= eps
@@ -1157,6 +1197,7 @@ all_files.lhs		?= $(wildcard *.lhs)
 all_files.mp		?= $(wildcard *.mp)
 all_files.fig		?= $(wildcard *.fig)
 all_files.gpi		?= $(wildcard *.gpi)
+all_files.m		?= $(wildcard *.m)
 all_files.dot		?= $(wildcard *.dot)
 all_files.xvg		?= $(wildcard *.xvg)
 all_files.svg		?= $(wildcard *.svg)
@@ -1204,6 +1245,7 @@ files.tex.py	:= $(call filter-buildable,tex.py)
 files.rst	:= $(call filter-buildable,rst)
 files.lhs	:= $(call filter-buildable,lhs)
 files.gpi	:= $(call filter-buildable,gpi)
+files.m		:= $(call filter-buildable,m)
 files.dot	:= $(call filter-buildable,dot)
 files.mp	:= $(call filter-buildable,mp)
 files.fig	:= $(call filter-buildable,fig)
@@ -1234,6 +1276,7 @@ default_files.tex.py	:= $(call filter-default,tex.py)
 default_files.rst	:= $(call filter-default,rst)
 default_files.lhs	:= $(call filter-default,lhs)
 default_files.gpi	:= $(call filter-default,gpi)
+default_files.m		:= $(call filter-default,m)
 default_files.dot	:= $(call filter-default,dot)
 default_files.mp	:= $(call filter-default,mp)
 default_files.fig	:= $(call filter-default,fig)
@@ -1278,6 +1321,7 @@ all_stems.lhs		:= $(call get-stems,lhs,all)
 all_stems.mp		:= $(call get-stems,mp,all)
 all_stems.fig		:= $(call get-stems,fig,all)
 all_stems.gpi		:= $(call get-stems,gpi,all)
+all_stems.m		:= $(call get-stems,m,all)
 all_stems.dot		:= $(call get-stems,dot,all)
 all_stems.xvg		:= $(call get-stems,xvg,all)
 all_stems.svg		:= $(call get-stems,svg,all)
@@ -1297,6 +1341,7 @@ default_stems.lhs		:= $(call get-stems,lhs,default)
 default_stems.mp		:= $(call get-stems,mp,default)
 default_stems.fig		:= $(call get-stems,fig,default)
 default_stems.gpi		:= $(call get-stems,gpi,default)
+default_stems.m			:= $(call get-stems,m,default)
 default_stems.dot		:= $(call get-stems,dot,default)
 default_stems.xvg		:= $(call get-stems,xvg,default)
 default_stems.svg		:= $(call get-stems,svg,default)
@@ -1316,6 +1361,7 @@ stems.lhs		:= $(call get-stems,lhs)
 stems.mp		:= $(call get-stems,mp)
 stems.fig		:= $(call get-stems,fig)
 stems.gpi		:= $(call get-stems,gpi)
+stems.m			:= $(call get-stems,m)
 stems.dot		:= $(call get-stems,dot)
 stems.xvg		:= $(call get-stems,xvg)
 stems.svg		:= $(call get-stems,svg)
@@ -1330,7 +1376,8 @@ stems.eps		:= $(call get-stems,eps)
 concat-stems	= $(sort $(foreach s,$1,$($(if $2,$2_,)stems.$s)))
 
 # The most likely to be source but not finished product go first
-graphic_source_extensions	:= mp \
+graphic_source_extensions	:= m \
+				   mp \
 				   fig \
 				   gpi \
 				   xvg \
@@ -1507,7 +1554,7 @@ endif
 # Extensions generated by LaTeX invocation that can be removed when complete
 rm_ext		:= \
 	log *.log aux $(pre_pdf_extensions) pdf blg bbl out nav snm toc lof lot lol pfg \
-	fls vrb idx ind ilg glg glo gls lox nls nlo nlg brf mtc* mlf* mlt* maf brf ist fmt
+	fls vrb idx ind ilg acr acn alg glg glo gls lox nls nlo nlg brf mtc* mlf* mlt* maf brf ist fmt
 backup_patterns	:= *~ *.bak *.backup body.tmp head.tmp
 
 graph_stem	:= _graph
@@ -1530,6 +1577,18 @@ gpi_sed		:= $(strip \
 	$(firstword $(foreach f,$(GNUPLOT_SED),$(wildcard $f))))
 gpi_global	:= $(strip \
 	$(firstword $(foreach f,$(GNUPLOT_GLOBAL),$(wildcard $f))))
+
+# These are the files that will affect .m transformation for all .m files.
+#
+# Use only the first one found.  Backward compatible values are at the end.
+# Note that we use foreach, even though wildcard also returns a list, to ensure
+# that the order in the uppercase variables is preserved.  Directory listings
+# provide no such guarantee, so we avoid relying on them.
+octave_sed		:= $(strip \
+	$(firstword $(foreach f,$(OCTAVE_SED),$(wildcard $f))))
+octave_global	:= $(strip \
+	$(firstword $(foreach f,$(OCTAVE_GLOBAL),$(wildcard $f))))
+
 
 #
 # Functions used in generating output
@@ -1940,6 +1999,18 @@ $(SED) \
 $1 > $2
 endef
 
+# Makes a .m.d file from a .m file
+# $(call make-octave-d,<.m>,<.m.d>)
+define make-octave-d
+$(ECHO) '# vim: ft=make' > $2; \
+$(ECHO) 'ifndef INCLUDED_$(call cleanse-filename,$2)' >> $2; \
+$(ECHO) 'INCLUDED_$(call cleanse-filename,$2) := 1' >> $2; \
+#$(ECHO) 'endif' >> $2;
+$(call get-octave-deps,$1,$(addprefix $(2:%.m.d=%).,$(OCTAVE_OUTPUT_EXTENSION) m.d)) >> $2; \
+$(ECHO) '' >> $2;
+endef
+
+
 # Makes a .gpi.d file from a .gpi file
 # $(call make-gpi-d,<.gpi>,<.gpi.d>)
 define make-gpi-d
@@ -1984,6 +2055,24 @@ $(SED) \
 -e 'd' \
 '$1'
 endef
+
+# Parse .m files for data and loaded dependencies, output to stdout
+#
+# The sed script here tries to be clever about obtaining valid
+# filenames from the gpi file.  It assumes that the plot command starts its own
+# line, which is not too difficult a constraint to satisfy.
+#
+# This command script also generates 'include' directives for every 'load'
+# command in the .gpi file.  The load command must appear on a line by itself
+# and the file it loads must have the suffix .gpi.  If you don't want it to be
+# compiled when running make graphics, then give it a suffix of ._include_.gpi.
+#
+# $(call get-octave-deps,<m file>,<targets>)
+define get-octave-deps
+$(AWK) '/^load[[:space:]]/ {print $2}'  $1.m | \
+       sed -e "s/'//g" -e 's/^\(.*\)/-include \1.d/'
+endef
+
 
 # Colorizes real, honest-to-goodness LaTeX errors that can't be overcome with
 # recompilation.
@@ -2310,7 +2399,7 @@ $(SED) \
 enlarge_beamer	= $(PSNUP) -l -1 -W128mm -H96mm -pletter
 
 # $(call test-run-again,<source stem>)
-test-run-again	= $(EGREP) -q '^(.*Rerun .*|No file $1\.[^.]+\.)$$' $1.log
+test-run-again	= $(EGREP) '^(.*Rerun .*|No file $1\.[^.]+\.)$$' $1.log | $(EGREP) -q -v '^(Package: rerunfilecheck.*Rerun checks for auxiliary files.*)$$'
 
 # This tests whether the build target commands should be run at all, from
 # viewing the log file.
@@ -2319,7 +2408,8 @@ define test-log-for-need-to-run
 $(SED) \
 -e '/^No file $(call escape-fname-regex,$1)\.aux\./d' \
 $1.log \
-| $(EGREP) -q '^(.*Rerun .*|No file $1\.[^.]+\.|No file .+\.tex\.|LaTeX Warning: File.*)$$'
+| $(EGREP) '^(.*Rerun .*|No file $1\.[^.]+\.|No file .+\.tex\.|LaTeX Warning: File.*)$$' \
+| $(EGREP) -q -v '^(Package: rerunfilecheck.*Rerun checks for auxiliary files.*)$$'
 endef
 
 # LaTeX invocations
@@ -2333,7 +2423,8 @@ endef
 #
 # $(call latex,<tex file stem, e.g., $*>,[extra LaTeX args])
 define run-latex
-$(latex_build_program) -jobname='$1' -interaction=batchmode -file-line-error $(LATEX_OPTS) $(if $2,$2,) $1 > /dev/null
+$(latex_build_program) -jobname='$1' -interaction=batchmode -file-line-error $(LATEX_OPTS) $(if $2,$2,) $1 > /dev/null; \
+$(call transcript,latex,$1)
 endef
 
 # $(call latex-color-log,<LaTeX stem>)
@@ -2347,6 +2438,7 @@ then \
 	$(call colorize-makeindex-errors,$3); \
 	$(RM) -f '$2'; \
 	success=0; \
+  $(call transcript,makeindex,$1) \
 fi; \
 [ "$$success" = "1" ] && $(sh_true) || $(sh_false);
 endef
@@ -2358,6 +2450,16 @@ if ! $(XINDY) -q -o $2 -L $(XINDYLANG) -C $(XINDYENC) -I xindy -M $3 -t $4 $1 > 
 	$(call colorize-xindy-errors,$4); \
 	$(RM) -f '$2'; \
 	success=0; \
+  $(call transcript,xindy,$1) \
+fi; \
+[ "$$success" = "1" ] && $(sh_true) || $(sh_false);
+endef
+
+# $(call run-makeindex,<input>,<output>,<log>,<extra flags>)
+define run-makeglossary
+success=1; \
+if ! $(MAKEGLOSSARY) $1> /dev/null || $(EGREP) -q '^!!' $3; then \
+	success=0; \
 fi; \
 [ "$$success" = "1" ] && $(sh_true) || $(sh_false);
 endef
@@ -2368,7 +2470,7 @@ endef
 #
 # $(call run-script,<interpreter>,<input>,<output>)
 define run-script
-[ ! -e '$2.cookie' ] && $(ECHO) "restarts=$(RESTARTS)" > $2.cookie && $(ECHO) "level=$(MAKELEVEL)" >> $2.cookie; \
+$(call test-not-exists,$2.cookie) && $(ECHO) "restarts=$(RESTARTS)" > $2.cookie && $(ECHO) "level=$(MAKELEVEL)" >> $2.cookie; \
 restarts=`$(SED) -n -e 's/^restarts=//p' $2.cookie`; \
 level=`$(SED) -n -e 's/^level=//p' $2.cookie`; \
 if $(EXPR) $(MAKELEVEL) '<=' $$level '&' $(RESTARTS) '<=' $$restarts >/dev/null; then \
@@ -2382,8 +2484,7 @@ endef
 # BibTeX invocations
 #
 # $(call run-bibtex,<tex stem>)
-run-bibtex	= $(BIBTEX) $1 | $(color_bib)
-
+run-bibtex	= $(BIBTEX) $1 | $(color_bib); $(call transcript,bibtex,$1)
 
 # $(call convert-eps-to-pdf,<eps file>,<pdf file>,[gray])
 # Note that we don't use the --filter flag because it has trouble with bounding boxes that way.
@@ -2421,14 +2522,15 @@ endef
 # Get the font entry given the output file (type) and the font size.  For PDF
 # it uses fsize or font, for eps it just uses the bare number.
 gpi-font-entry = $(if $(filter %.pdf,$1),$(subst FONTSIZE,$2,$(GPI_FSIZE_SYNTAX)),$2)
+gpi-fontname = Helvetica
 
 # $(call gpi-terminal,<gpi file><output file>,[gray])
 #
 # Get the terminal settings for a given gpi and its intended output file
 define gpi-terminal
-$(if $(filter %.pdf,$2),pdf enhanced,postscript enhanced eps) \
-$(call gpi-font-entry,$2,$(call gpi-fontsize,$1,$2)) \
-$(call gpi-monochrome,$1,$3)
+$(if $(filter %.pdf,$2),pdfcairo enhanced,postscript enhanced eps) \
+$(call gpi-monochrome,$1,$3) solid \
+font "$(call gpi-fontname),$(call gpi-font-entry,$2,$(call gpi-fontsize,$1,$2))" 
 endef
 
 # $(call gpi-embed-pdf-fonts,<input file>,<output file>)
@@ -2470,8 +2572,40 @@ elif [ x"$(suffix $2)" = x".pdf" ]; then \
 		$(call move-if-exists,$2.embed.tmp.make,$2); \
 	fi; \
 fi; \
-$(if $(gpi_sed),$(call remove-temporary-files,$1.temp.make);,) \
-$(call remove-temporary-files,$1head.make); \
+$(if $(gpi_sed),$(call remove-temporary-files,$1.temp.make);,) \  #$(call remove-temporary-files,$1head.make); 
+[ "$$success" = "1" ] && $(sh_true) || $(sh_false);
+endef
+
+# $(call convert-octave,<m file>,<output file>,[gray])
+#
+define convert-octave
+dir=$(shell dirname $1); \
+m_file=$(shell basename $1); \
+out_file=$(shell basename $2); \
+$(ECHO) $(if $(filter %.pdf,$2),fsize ,)$(call get-default,$(strip \
+$(firstword \
+	$(shell \
+		$(SED) \
+			-e 's/^\#\#FONTSIZE=\([[:digit:]]\{1,\}\)/\1/p' \
+			-e 'd' \
+			$(m_file) $(strip $(octave_global)) \
+	) \
+) \
+),$(if $(filter %.pdf,$2),$(DEFAULT_GPI_PDF_FONTSIZE),$(DEFAULT_GPI_EPS_FONTSIZE))) \
+$(if $(octave_global),$(CAT) $(octave_global) >> $(m_file)head.make;,) \
+$(ECHO) 'print $(if $(filter %.pdf,$2),-dpdf,$(if $3,-deps2,-depsc2)) "$out_file"' >> $(m_file)head.make; \
+fnames='$(m_file)head.make $(m_file)';\
+$(if $(octave_sed),\
+	$(SED) -f '$(octave_sed)' $$fnames > $(m_file).temp.make; \
+	fnames=$(m_file).temp.make;,\
+) \
+success=1; \
+if ! (cd dir;$(OCTAVE) $$fnames 2>$(m_file).log); then \
+	$(call colorize-octave-errors,$(m_file).log); \
+	success=0; \
+fi; \
+$(if $(octave_sed),$(call remove-temporary-files,$(m_file).temp.make);,) \
+$(call remove-temporary-files,$(m_file)head.make); \
 [ "$$success" = "1" ] && $(sh_true) || $(sh_false);
 endef
 
@@ -2520,7 +2654,12 @@ convert-dot-tex		= $(DOT2TEX) '$1' > '$2'
 
 # Converts svg files into .eps files
 #
-# $(call convert-svg,<svg file>,<eps/pdf file>,[gray])
+# $(call convert-dia,<dia file>,<eps file>,[gray])
+convert-dia	= $(DIA) $(if $(filter %.pdf,$2)--export=,--filter=eps-pango --export)='$2' '$1'
+
+# Converts svg files into .eps files
+#
+# $(call convert-svg,<svg file>,<eps file>,[gray])
 convert-svg	= $(INKSCAPE) --without-gui $(if $(filter %.pdf,$2),--export-pdf,--export-eps)='$2' '$1'
 
 # Converts xvg files into .eps files
@@ -2730,6 +2869,7 @@ show: all
 #
 source_includes	:= $(addsuffix .d,$(source_stems_to_include))
 graphic_includes := $(addsuffix .gpi.d,$(graphic_stems_to_include))
+graphic_includes := $(addsuffix .m.d,$(graphic_stems_to_include))
 
 # Check the version of the makefile
 ifneq "" "$(filter 3.79 3.80,$(MAKE_VERSION))"
@@ -2780,7 +2920,8 @@ ifeq "$(strip $(BUILD_STRATEGY))" "latex"
 	    $(CAT) $@.log; \
 	    $(call remove-temporary-files,'$@.temp'); \
 	    $(sh_false); \
-	fi
+	fi; \
+	$(RM) -f %.ps %.dvi
 
 .SECONDARY: $(all_ps_targets)
 %.ps: %.dvi %.paper.make %.beamer.make
@@ -2856,24 +2997,29 @@ endif
 	run=0; \
 	for i in 1; do \
 		if $(call test-exists,$*.bbl.cookie); then \
+			$(call set-run-reason,$*.bbl.cookie is present); \
 			run=1; \
 			break; \
 		fi; \
 		if $(call test-exists,$*.run.cookie); then \
+			$(call set-run-reason,$*.run.cookie is present); \
 			run=1; \
 		    	break; \
 		fi; \
 		if $(call \
 		test-exists-and-different,$*.auxtarget.cookie,$*.auxtarget.make);\
 		then \
+			$(call set-run-reason,$*.auxtarget.cookie differs from $*.auxtarget.make); \
 			run=1; \
 			break; \
 		fi; \
 		if $(call test-log-for-need-to-run,$*); then \
+			$(call set-run-reason,$*.log indicated that this is necessary); \
 			run=1; \
 			break; \
 		fi; \
-		if [ ! -e $*.1st.*.make ]; then \
+		if $(call test-not-exists,$@.1st.make); then \
+			$(call set-run-reason,$@.1st.make does not exist); \
 			run=1; \
 			break; \
 		fi; \
@@ -2881,7 +3027,6 @@ endif
 	$(call remove-temporary-files,$*.bbl.cookie $*.run.cookie); \
 	$(MV) $*.auxtarget.cookie $*.auxtarget.make; \
 	if [ x"$$run" = x"1" ]; then \
-		$(call remove-files,$@.1st.make); \
 		for i in 2 3 4 5; do \
 			$(if $(findstring 3.79,$(MAKE_VERSION)),\
 				$(call echo-build,$*.tex,$@,$(RESTARTS)-$$$$i),\
@@ -2889,10 +3034,14 @@ endif
 			); \
 			$(call run-latex,$*); \
 			$(CP) '$*.log' '$*.'$(RESTARTS)-$$i'.log'; \
-			$(call test-run-again,$*) || break; \
+			if $(call test-run-again,$*); then \
+				$(call set-run-reason,rerun requested by $*.log); \
+			else \
+				break; \
+			fi; \
 		done; \
 	else \
-		$(MV) '$@.1st.make' '$@'; \
+		$(CP) '$@.1st.make' '$@'; \
 	fi; \
 	$(call copy-with-logging,$@,$(BINARY_TARGET_DIR)); \
 	$(call latex-color-log,$*)
@@ -2913,6 +3062,7 @@ endif
 	$(QUIET)\
 	$(if $(filter %.bib,$^),\
 		$(call echo-build,$(filter %.bib,$?) $*.aux,$@); \
+		$(call set-run-reason,dependencies of $@ changed); \
 		$(call run-bibtex,$*); \
 		$(TOUCH) $@.cookie; \
 	) \
@@ -2954,6 +3104,12 @@ endif
 %.gls:	%.glo %.tex $(call path-norm,$(shell $(KPSEWHICH) nomencl.ist || $(ECHO) nomencl.ist))
 	$(QUIET)$(call echo-build,$<,$@)
 	$(QUIET)$(call run-makeindex,$<,$@,$*.glg,nomencl.ist)
+
+# Create the glossary and acronym files from makeglossaries
+%.acn:	%.acr %.tex
+	$(QUIET)$(call echo-build,$<,$@)
+	$(QUIET)$(call run-makeglossary,$*) #,-s nomencl.ist)
+
 
 # Create the nomenclature file
 %.nls:	%.nlo %.tex $(call path-norm,$(shell $(KPSEWHICH) nomencl.ist || $(ECHO) nomencl.ist))
@@ -3019,15 +3175,16 @@ $(gray_eps_file):
 	$(QUIET)$(call create-gray-eps-file,$@)
 
 ifeq "$(strip $(BUILD_STRATEGY))" "pdflatex"
-%.pdf: %.eps $(if $(GRAY),$(gray_eps_file))
-	$(QUIET)$(call echo-graphic,$^,$@)
-	$(QUIET)$(call convert-eps-to-pdf,$<,$@,$(GRAY))
 
 ifeq "$(strip $(GPI_OUTPUT_EXTENSION))" "pdf"
 %.pdf:	%.gpi %.gpi.d $(gpi_sed) $(gpi_global)
 	$(QUIET)$(call echo-graphic,$^,$@)
 	$(QUIET)$(call convert-gpi,$<,$@,$(GRAY))
 endif
+
+%.pdf: %.eps $(if $(GRAY),$(gray_eps_file))
+	$(QUIET)$(call echo-graphic,$^,$@)
+	$(QUIET)$(call convert-eps-to-pdf,$<,$@,$(GRAY))
 
 %.pdf:	%.fig
 	$(QUIET)$(call echo-graphic,$^,$@)
@@ -3065,6 +3222,10 @@ endif
 	$(QUIET)$(call move-if-exists,$*.log,$*.log.make)
 	$(QUIET)$(call move-if-exists,$*.mpx,$*.mpx.make)
 
+%.eps:	%.m %.m.d $(octave_sed)
+	$(QUIET)$(call echo-graphic,$^,$@)
+	$(QUIET)$(call convert-octave,$<,$@,$(GRAY))
+
 %.eps:	%.gpi %.gpi.d $(gpi_sed) $(gpi_global)
 	$(QUIET)$(call echo-graphic,$^,$@)
 	$(QUIET)$(call convert-gpi,$<,$@,$(GRAY))
@@ -3097,6 +3258,10 @@ ifneq "$(default_graphic_extension)" "pdf"
 %.eps: %.jpeg $(if $(GRAY),$(gray_eps_file))
 	$(QUIET)$(call echo-graphic,$^,$@)
 	$(QUIET)$(call convert-jpg,$<,$@,$(GRAY))
+
+%.eps: %.dia $(if $(GRAY),$(gray_eps_file))
+	$(QUIET)$(call echo-graphic,$^,$@)
+	$(QUIET)$(call convert-dia,$<,$@,$(GRAY))
 
 %.eps: %.png $(if $(GRAY),$(gray_eps_file))
 	$(QUIET)$(call echo-graphic,$^,$@)
@@ -3165,6 +3330,7 @@ endif
 %.$(build_target_extension).1st.make %.d %.aux %.aux.make %.fls: %.tex
 	$(QUIET)$(call echo-build,$<,$*.d $*.$(build_target_extension).1st.make,$(RESTARTS)-1)
 	$(QUIET)\
+	$(call set-run-reason,need to build .d and .$(build_target_extension).1st.make); \
 	$(call run-latex,$*,-recorder) || $(sh_true); \
 	$(CP) '$*.log' '$*.$(RESTARTS)-1.log'; \
 	$(call die-on-import-sty,$*.log); \
@@ -3207,6 +3373,14 @@ endif
 %.gpi.d: %.gpi
 	$(QUIET)$(call echo-build,$<,$@)
 	$(QUIET)$(call make-gpi-d,$<,$@)
+
+# Build a dependency file for .m files.  These often plot data files that
+# also reside in the directory, so if a data file changes, it's nice to know
+# about it.  This also handles loaded .m files, whose filename should have
+# _include_. in it.
+%.m.d: %.m
+	$(QUIET)$(call echo-build,$<,$@)
+	$(QUIET)$(call make-octave-d,$<,$@)
 
 # Get source specials, e.g., paper size and special %% comments.
 %.specials.make: %.tex
@@ -3286,6 +3460,23 @@ _check_gpi_files:
 	fi; \
 	done; \
 	$(ECHO)
+
+.PHONY: _check_octave_files
+_check_octave_files:
+	$(QUIET)$(ECHO) "== Checking all .m files for common errors =="; \
+	$(ECHO); \
+	for f in $(files.m); do \
+	result=`$(EGREP) '^([^#%]*print)' $$f`; \
+	$(ECHO) -n "$$f: "; \
+	if [ x"$$result" = x"" ]; then \
+		$(ECHO) "$(C_SUCCESS)Okay$(C_RESET)"; \
+	else \
+		$(ECHO) "$(C_FAILURE)Warning: Problematic commands:$(C_RESET)";\
+		$(ECHO) "$(C_ERROR)$$result$(C_RESET)"; \
+	fi; \
+	done; \
+	$(ECHO)
+
 
 .PHONY: _all_stems
 _all_stems:
@@ -3389,11 +3580,18 @@ clean-auxiliary:
 clean-nographics: clean-tex clean-deps clean-backups clean-auxiliary ;
 
 .PHONY: clean
-clean: clean-generated clean-tex clean-graphics clean-deps clean-backups clean-auxiliary ;
+clean:	clean-tex clean-deps clean-backups clean-auxiliary ;
+
+.PHONY: clean-all
+clean-all: clean-generated clean-tex clean-graphics clean-deps clean-backups clean-auxiliary ;
+
 
 #
 # HELP TARGETS
 #
+.PHONY: check-syntax
+check-syntax: 
+	$(CHECK) $(default_stems_ss)
 
 .PHONY: help
 help:
@@ -3484,7 +3682,7 @@ define help_text
 #             ./generating_script.weird_lang > $$@
 #
 #          In this file, you have access to all of the variables that the
-#          makefile creates, like $(onlysources.tex).  While accessing those can
+#          makefile creates, like $$(onlysources.tex).  While accessing those can
 #          be somewhat brittle (they are implementation details and may change),
 #          it is a great way to test your ideas when submitting feature requests.
 #
@@ -3990,7 +4188,7 @@ endef
 #
 #     eps [
 #         shape=Mrecord
-#         label="{{<fig> XFig|<epsgz> GZip|<gpi> GNUplot|<dot> Dot}|<eps> eps}"
+#         label="{{<gpi> GNUplot|<epsgz> GZip|<dot> Dot|<fig> XFig}|<eps> eps}"
 #         ]
 #     pstex [label="%.pstex"]
 #     pstex_t [label="%.pstex_t"]
