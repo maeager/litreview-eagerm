@@ -17,7 +17,8 @@
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
-#+TEXT:\setcounter{chapter}{0}\chapter{Introduction}
+
+\setcounter{chapter}{0}\chapter{Introduction}
 
 
 * Prelude                                                          :noexport:
@@ -61,7 +62,6 @@
 #+RESULTS:
 : {\singlespacing\tableofcontents}
 : \setcounter{chapter}{0}
-
 
 * New Layout 							   :noexport:
 
@@ -247,30 +247,50 @@ strategies for the cochlear implant and hearing aids.
 
 * Auditory System 
 
-
-Speech is a unique and fundamental tool in communication between
-humans.  We continually deal with various distortions of the acoustic
-environment (e.g., background noise and reverberation) to extract
-information from signals entering the ear.  Vowels provide a salient
-feature of speech that is spectrally and temporally distinct from
-other natural sounds.  The spectrum of each vowel is distinguished by
-the location of high energy spectral peaks called formants. Robust
-representation of spectrum at different intensities is important for
-speech and other auditory communication \citep{YoungOertel:2004}.  The
-main tasks of the auditory system are to (1) separate out individual
-frequency components of sound; (2) enhance spectral and temporal
-contrasts to improve meaningful \SNR; and (3) extract behavioural
-frequency cues \citep{Evans:1992}.
+Speech is a unique and fundamental tool in communication between humans.  We
+continually deal with various distortions of the acoustic environment (e.g.,
+background noise and reverberation) to extract information from signals entering
+the ear.  Vowels provide a salient feature of speech that is spectrally and
+temporally distinct from other natural sounds.  The spectrum of each vowel is
+distinguished by the location of high energy spectral peaks called
+formants. Robust representation of spectrum at different intensities is
+important for speech and other auditory communication \citep{YoungOertel:2004}.
+The main tasks of the auditory system are to (1) separate out individual
+frequency components of sound; (2) enhance spectral and temporal contrasts to
+improve meaningful \SNR; and (3) extract behavioural frequency cues
+\citep{Evans:1992}.
 # \todo[inline]{FIX last sentence (check Evans citation)}
 
-Rough frequency decomposition is performed by the basilar membrane and
-organ of Corti in the mammalian cochlea, which transforms mechanical
-signals to neural signals in \ANFs.  The next element of the auditory
-process occurs in the cochlear nucleus, the first processing stage of
-the central auditory pathway in which all \ANFs end. Enhancing
-spectral and temporal contrasts requires sophisticated parallel
-processing strategies involving networks of neurons with feed-forward
+
+Advanced auditory fidelity and localisation is an exceptional feature of hearing
+perception in animals.  This speciality works to a high degree despite the input
+at the round window of the cochlea being one dimensional and very noisy.  Rough
+frequency decomposition is performed by the basilar membrane and organ of Corti
+in the mammalian cochlea, which transforms mechanical signals to neural signals
+in \ANFs.  The next element of the auditory process occurs in the cochlear
+nucleus, the first processing stage of the central auditory pathway in which all
+\ANFs end. Enhancing spectral and temporal contrasts requires sophisticated
+parallel processing strategies involving networks of neurons with feed-forward
 and feed-back connections.
+
+
+The auditory system is topographically ordered from the basilar membrane to the
+cortex in terms of frequency selectivity, also called tonotopicity
+\citep{YoungOertel:2004}.  The population of auditory nerve fibres (ANFs, Figure
+\ref{fig:CNCatHuman}) bifurcate after entering the cochlear nucleus to innervate
+the \VCN and \DCN, retaining their tonotopic order
+\citep{Lorente:1981,Liberman:1982,Liberman:1993}.  Type 1 \ANFs are categorised
+into \HSR and \LSR fibres \citep{Liberman:1978}, where \LSR fibres have a higher
+threshold and wider dynamic range than \HSR fibres.  They also project to the
+\GCD \citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
+unmyelinated type 2 \ANFs, which suggests they play a different role in sound
+processing to \HSR fibres.
+
+#+ATTR_LaTeX: width=0.6\textwidth
+#+CAPTION: [Tonotopic ANF innervation in the CN of man and cat]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in man and cat \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from \citep{} \yellownote{Get reference}}
+#+LABEL: fig:CNCatHuman
+[[./gfx/Cat_Human_CN.jpg]]
+
 
 
 # \todo[inline]{Intro to section on peripheral AN}
@@ -532,7 +552,6 @@ anteroventral section (\AVCN)
 for the recognition of natural sounds and are a major source of
 excitatory input to the inferior colliculus
 \citep{OertelWrightEtAl:2011}.
-
 
 # distinction between \TS and \DS cells is made by their axonal projections,
 # dendritic projections, and their immunohistochemistry.
@@ -830,7 +849,6 @@ terminals and functional studies of the inputs to the inferior
 colliculi is consistent with their being excitatory
 \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
 
-
 *** Major Ascending Output
 
 \TS cell axons exit the \CN through the trapezoidal body, cross the
@@ -883,7 +901,6 @@ or in rats and guinea pig the \SPN, \citealt{FriaufOstwald:1988},
 # to the ventral nucleus of the trapezoid body [64,215] and to the ventral nucleus
 # of the lateral lemniscus [64,91,206,215].  The cells that give rise to these
 # projections are probably the
-
 
 *** Summary
 
@@ -1219,6 +1236,21 @@ the rate.
 # previous work, their faults, i.e.\ HOW my work fits in}
 
 
+
+** Modelling of the Auditory Periphery
+
+Computational models of cochlear nucleus neurons requires adequate representation of their inputs, \ANFs.
+Models of the auditory periphery over the last 30 years have expanded our
+understanding of the mechanical processes in the middle ear and cochlea,
+and the specialised synapse between the inner hair cell and the auditory
+nerve \citep{DavisVoigt:1991,Carney:1993,MeddisHewittEtAl:1990}. Modelling in the auditory periphery has
+benefited extensively from the work of Liberman, Greenwood, Patterson,
+Young, Sachs and others, in acoustic /in vivo/ experiments.
+
+\yellownote{ see review by Lopez-Poveda,  Discuss patterson/Meddis versus Carney/Bruce model }
+
+\yellownote{ importance of temporal  phenomena in ANFs, good representation of LSR and HSR }
+
 ** Single neuron models of the chopper unit
 
 A number of neural models of cochlear nucleus neurons have been
@@ -1283,12 +1315,9 @@ from \IKLT up-regulation to reduce membrane time constant, reduce EPSP
 height and width.  Enhanced temporal acuity at onset, reduced firing
 during sustained period, reduced spontaneous activity, reduction in
 refractory period that leads to faster firing rates.  Increasing \IKLT
-drops Vrevst, hence Ih must be used to counterbalance \IKLT.
-
-
+drops Vrev, hence Ih must be used to counterbalance \IKLT.
 
 ** Microcircuit Models in the Cochlear Nucleus
-
 
 The first network models of the cochlear nucleus were in the \DCN
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
@@ -1297,7 +1326,6 @@ behaviours were modelled by Blum and colleagues
 \citep{BlumReed:2000,BlumReed:1998,ReedBlum:1997,BlumReedEtAl:1995,ReedBlum:1995}
 and in greater detail by Davis and colleagues
 \citep{DavisVoigt:1996,HancockDavisEtAl:1997,SpirouDavisEtAl:1999,HancockDavisEtAl:2001}.
-
 
 The role of \DS cell inhibition in the \DCN circuitry, particularly on
 \TV cells \citep{SpirouDavisEtAl:1999}, is fundamentally important to
