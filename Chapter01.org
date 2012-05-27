@@ -4,21 +4,20 @@
 #+OPTIONS: toc:nil H:5 <:t >:t
 #+LANGUAGE: en_GB
 #+STARTUP: showall
-#+LATEX_HEADER:\graphicspath{{./}{./gfx/}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
-#+LATEX_HEADER:\setcounter{secnumdepth}{5}
+
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
 #+LATEX_HEADER:\pretolerance=150
 #+LATEX_HEADER:\tolerance=100
 #+LATEX_HEADER:\setlength{\emergencystretch}{3em}
 #+LATEX_HEADER:\overfullrule=1mm
-#+LATEX_HEADER:\usepackage{transparent}
-# + LATEX_HEADER:\newcommand{\pm}{\ensuremath{\pm}}
+
 #+LaTeX_CLASS: UoM-draft-org-article
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
 
-\setcounter{chapter}{0}\chapter{Introduction}
+\setcounter{chapter}{0}
+\chapter{Introduction}\label{sec:Chapter1}
 
 
 * Prelude                                                          :noexport:
@@ -26,36 +25,41 @@
 #+name: changeset
 #+BEGIN_SRC awk :results none :export none :in-file .hg/cache/tags
 {print $1}
-#+END_SRC 
+#+END_SRC
 
 
 
 #+begin_src emacs-lisp results: silent
-   (setq org-latex-to-pdf-process '("fuser -k %b.pdf" "pdflatex %f || exit 0"
-  "makeglossaries %b" "bibtex %b" "pdflatex -interaction nonstopmode %f" "pdflatex
-  -interaction nonstopmode %f" )) 
-  ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
-  ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
-  ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
-                                     
-  (add-to-list 'org-export-latex-classes '("UoM-draft-org-article" "
-    \\documentclass[11pt,a4paper,twoside,openright]{book}
-    \\usepackage{style/uomthesis} \\input{user-defined}
-    \\usepackage[nonumberlist,acronym]{glossaries}
-    \\input{../hg/manuscript/misc/glossary} \\makeglossaries
-    \\graphicspath{{./gfx/}} \\pretolerance=150 \\tolerance=100
-    \\setlength{\\emergencystretch}{3em} \\overfullrule=1mm %
-    \\usepackage[notcite]{showkeys} \\lfoot{\\footnotesize\\today\\ at \\thistime
-    Hg:70} \\usepackage{rotating,calc} \\usepackage{booktabs,ltxtable,lscape}
-    [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" ("\\section{%s}" . "\n\\section{%s}")
-    ("\\subsection{%s}" . "\n\\subsection{%s}") ("\\subsubsection{%s}"
-    . "\n\\subsubsection{%s}") ("\\paragraph{%s}" . "\n\\paragraph{%s}")
-    ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
+     (setq org-latex-to-pdf-process '("pdfquick %f" )) 
+    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
+    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
+    ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
+                                       
+    (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
+      "\\documentclass[11pt,a4paper,twoside,openright]{book}
+      \\usepackage{style/uomthesis} \\input{user-defined}
+      \\usepackage[nonumberlist,acronym]{glossaries}
+      \\input{../hg/manuscript/misc/glossary} 
+      \\makeglossaries
+      \\setcounter{secnumdepth}{5}      
+      \\graphicspath{{./}{./gfx/}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+      \\pretolerance=150 \\tolerance=100
+      \\setlength{\\emergencystretch}{3em} 
+      \\overfullrule=1mm %
+      % \\usepackage[notcite]{showkeys} 
+      \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
   
-   (setq org-export-latex-title-command
-  "{\\singlespacing\\tableofcontents}\n\\setcounter{chapter}{0}") ; (setq
-  org-entities-user '(("space" "\\ " nil " " " " " " " ")))
-  
+      [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
+      ("\\section{%s}" . "\n\\section{%s}")
+      ("\\subsection{%s}" . "\n\\subsection{%s}") 
+      ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
+      ("\\paragraph{%s}" . "\n\\paragraph{%s}")
+      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
+    
+     (setq org-export-latex-title-command
+           "{\\singlespacing\\tableofcontents\\printglossaries}") 
+  ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+    
 #+end_src
 
 
@@ -95,12 +99,12 @@
 
 The development of biophysically-realistic neural network models is a
 major objective of computational neuroscience.  Recent advances in the
-field have meant that this goal is now more achievable than it has
-ever been before.  In the auditory system, the high fidelity of
-acoustic information mean synaptic interactions on the millisecond
-scale are needed to modulate activity to enhance the representation of
-the stimulus spectrum and temporal periodicities. In the \CN, the
-first processing stage in the auditory brainstem, histological and
+field have meant that this goal is now more achievable than it has ever
+been before.  In the auditory system, the high fidelity of acoustic
+information mean synaptic interactions on the millisecond scale are
+needed to modulate activity to enhance the representation of the
+stimulus spectrum and temporal periodicities. In the \CN, the first
+processing stage in the auditory brainstem, histological and
 pharmacological labelling techniques have produced a flood of
 information about the anatomy, physiology, immunohistochemistry,
 pharmacology and intrinsic membrane properties of the different cell
@@ -114,28 +118,28 @@ Physiological studies combined with labelling have given greater
 certainty to correlations between physiological response types and
 morphological cell types
 \citep[e.g.,~][]{SmithRhode:1989,OstapoffFengEtAl:1994,PalmerWallaceEtAl:2003,ArnottWallaceEtAl:2004}.
-Intracellular recordings have ascertained the electrical properties
-and the different synaptic inputs of \TS, \DS and \TV cells
+Intracellular recordings have ascertained the electrical properties and
+the different synaptic inputs of \TS, \DS and \TV cells
 \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}.  Descriptions of
 current dynamics for synaptic receptors
 \citep{GardnerTrussellEtAl:1999,HartyManis:1998} and membrane channels
-\citep{RothmanManis:2003,RothmanManis:2003a} specific to the \VCN
-enable accurate mathematical models to be developed at the cell and
-synaptic level.  With this information a realistic biological model of
-the stellate network is attainable and can provide further insight
-into processing of acoustic information.
+\citep{RothmanManis:2003,RothmanManis:2003a} specific to the \VCN enable
+accurate mathematical models to be developed at the cell and synaptic
+level.  With this information a realistic biological model of the
+stellate network is attainable and can provide further insight into
+processing of acoustic information.
 
 
 \Gls{TS} cells of the \VCN encode a robust representation of the
 stimulus spectrum in their average rate and a temporal representation
 essential for speech \citep{KeilsonRichardsEtAl:1997}. They project
 directly to the inferior colliculus, and are therefore important in
-conveying information to higher auditory centres. \TS cells are known
-to form a local microcircuit network with neurons within its
-isofrequency lamina and across the frequency range of the nucleus. The
-microcircuit includes \DS cells, a wide-band inhibitory cell in the
-\VCN, \TV cells, a narrowband inhibitory cell in the \DCN, and Golgi
-cells, a GABAergic neuron in the outer granule shell of the \CN
+conveying information to higher auditory centres. \TS cells are known to
+form a local microcircuit network with neurons within its isofrequency
+lamina and across the frequency range of the nucleus. The microcircuit
+includes \DS cells, a wide-band inhibitory cell in the \VCN, \TV cells,
+a narrowband inhibitory cell in the \DCN, and Golgi cells, a GABAergic
+neuron in the outer granule shell of the \CN
 \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
 known to play a key role in shaping the average rate response,
 synchronisation to modulation and onset delay of cells in the cochlear
@@ -149,8 +153,8 @@ output.  The tonic behaviour suits encoding of spectrum across
 population since encoding the peaks and valleys is relatively
 independent of time after onset of sound; and also suits encoding of
 envelope of sounds, which is important for speech
-\citep{OertelWrightEtAl:2011}.  Presence of active membrane channels
-at rest means that \TS cells are sensitive to neuromodulatory currents
+\citep{OertelWrightEtAl:2011}.  Presence of active membrane channels at
+rest means that \TS cells are sensitive to neuromodulatory currents
 \citep{FerragamoGoldingEtAl:1998a,FujinoOertel:2001,RothmanManis:2003}
 and increases its response time to temporally important features like
 vowel transitions and glottal pulses
@@ -163,29 +167,29 @@ the cochlear nucleus has also been studied extensively with AM tones
 \citep{FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,RhodeGreenberg:1994},
 and ripple noise \citep{WinterPalmerEtAl:1993}; however, it was
 \citet{KeilsonRichardsEtAl:1997} who went further in showing that
-chopper cells provide a periodicity-tagged spectral representation
-that can be used to separate simultaneously presented vowels.
+chopper cells provide a periodicity-tagged spectral representation that
+can be used to separate simultaneously presented vowels.
 
 
 The fundamental rhetorical question in the literature comes down to
-whether intrinsic membrane mechanisms or network and synaptic
-mechanisms are more important for the behaviour of \TS cells
-\citep{OertelWrightEtAl:2011}.  Other important questions may need to
-be addressed first: What mechanisms in \TS cells are essential for
-sustained firing to constant sound level despite significant
-adaptation in \ANF input?  How are the different categories of \ANFs
-(\LSR and \HSR) processed by \TS cell microcircuit?  Is the loss of
-temporal information at high frequencies due to intrinsic properties
-or tonic inhibition and to what extent does this influence higher
-auditory systems?  What is the functional difference between the
-heterogeneous \TS cell population (i.e., \ChT and \ChS units)?  What
-is the purpose of the polysynaptic recurrent inhibition between Golgi,
-\DS and \TV cells, and what is their direct influence on \TS cells?
-What are the effects of asymmetric or non-Gaussian topographic
-connections across isofrequency laminae and how does this effect the
-spectral representation across the population of \TS cells?  The
-purpose of developing the network surrounding \TS cells is to answer
-these questions.
+whether intrinsic membrane mechanisms or network and synaptic mechanisms
+are more important for the behaviour of \TS cells
+\citep{OertelWrightEtAl:2011}.  Other important questions may need to be
+addressed first: What mechanisms in \TS cells are essential for
+sustained firing to constant sound level despite significant adaptation
+in \ANF input?  How are the different categories of \ANFs (\LSR and
+\HSR) processed by \TS cell microcircuit?  Is the loss of temporal
+information at high frequencies due to intrinsic properties or tonic
+inhibition and to what extent does this influence higher auditory
+systems?  What is the functional difference between the heterogeneous
+\TS cell population (i.e., \ChT and \ChS units)?  What is the purpose of
+the polysynaptic recurrent inhibition between Golgi, \DS and \TV cells,
+and what is their direct influence on \TS cells?  What are the effects
+of asymmetric or non-Gaussian topographic connections across
+isofrequency laminae and how does this effect the spectral
+representation across the population of \TS cells?  The purpose of
+developing the network surrounding \TS cells is to answer these
+questions.
 
 # generalise and abstract the features of the network that make it unique.
 # \yellownote{Why do DS cell connections to TV cells project to slightly higher
@@ -203,20 +207,19 @@ these questions.
 
 This doctoral thesis is aimed at investigating the important
 physiological mechanisms involved in the processing of sounds,
-specifically spectral and temporal enhancement, in the cochlear
-nucleus of mammals.  Computer modelling enhances our knowledge of
-complex neural interactions in \TS cells and provides further
-understanding of inputs to higher centres.  The cochlear nucleus
-stellate network contains many independent simple components that are
-combined in non-linear feedback and feed-forward processes.  Intuition
-and simple calculation cannot serve to predict the response of such a
-complex system, therefore a more complex model must be used.  A
-biological neural network that contains a high degree of realism at
-the individual cell level may contribute to our knowledge of synaptic
-organisation in producing physiological behaviour.  The complexity of
-synaptic organisation is compounded by inter-species and
-within-species variation in computer models. Variation is managed by
-constraining the parameters to a range of values to elicit
+specifically spectral and temporal enhancement, in the cochlear nucleus
+of mammals.  Computer modelling enhances our knowledge of complex neural
+interactions in \TS cells and provides further understanding of inputs
+to higher centres.  The cochlear nucleus stellate network contains many
+independent simple components that are combined in non-linear feedback
+and feed-forward processes.  Intuition and simple calculation cannot
+serve to predict the response of such a complex system, therefore a more
+complex model must be used.  A biological neural network that contains a
+high degree of realism at the individual cell level may contribute to
+our knowledge of synaptic organisation in producing physiological
+behaviour.  The complexity of synaptic organisation is compounded by
+inter-species and within-species variation in computer models. Variation
+is managed by constraining the parameters to a range of values to elicit
 physiological behaviour observed in vivo.
 
 The implications of lateral inhibition and recurrent excitation on
@@ -224,67 +227,69 @@ signal processing by \TS cells are two fold: enhanced spectral
 representation and enhanced synchronisation to the fundamental
 frequency.  The physiological and signal processing significance of
 particular components in the network are addressed in the three
-hypotheses of this thesis.  Rate-place representation of vowel
-spectrum are analysed for the effects of lateral inhibition and
-recurrent excitation.  Spectral shape enhancement is important for a
-stable representation of stimulus spectrum to be conveyed to higher
-auditory centres. Clarifying the roles of glycinergic and GABAergic
-inhibition contributes to the understanding of spectral and temporal
-influences of inhibitory circuits in the cochlear nucleus.
+hypotheses of this thesis.  Rate-place representation of vowel spectrum
+are analysed for the effects of lateral inhibition and recurrent
+excitation.  Spectral shape enhancement is important for a stable
+representation of stimulus spectrum to be conveyed to higher auditory
+centres. Clarifying the roles of glycinergic and GABAergic inhibition
+contributes to the understanding of spectral and temporal influences of
+inhibitory circuits in the cochlear nucleus.
 
 Higher processing stages in the auditory system also perform advanced
-auditory processing, to whatever extent it is limited by the
-information contained at the bottleneck of the auditory nerve.
-Therefore, signal processing done by lateral inhibition and recurrent
-excitation in the cochlear nucleus has a significant influence on
-perception at higher levels of auditory processing.  Understanding the
-complex processing done by the cochlear nucleus may also contribute to
-understanding the limitations of hearing-impairment devices.  Further
-understanding how the processing of sound in noisy environments works
-within the network could aid in developing new sound processing
-strategies for the cochlear implant and hearing aids.
+auditory processing, to whatever extent it is limited by the information
+contained at the bottleneck of the auditory nerve.  Therefore, signal
+processing done by lateral inhibition and recurrent excitation in the
+cochlear nucleus has a significant influence on perception at higher
+levels of auditory processing.  Understanding the complex processing
+done by the cochlear nucleus may also contribute to understanding the
+limitations of hearing-impairment devices.  Further understanding how
+the processing of sound in noisy environments works within the network
+could aid in developing new sound processing strategies for the cochlear
+implant and hearing aids.
 
 
 * Auditory System 
 
-Speech is a unique and fundamental tool in communication between humans.  We
-continually deal with various distortions of the acoustic environment (e.g.,
-background noise and reverberation) to extract information from signals entering
-the ear.  Vowels provide a salient feature of speech that is spectrally and
-temporally distinct from other natural sounds.  The spectrum of each vowel is
-distinguished by the location of high energy spectral peaks called
-formants. Robust representation of spectrum at different intensities is
-important for speech and other auditory communication \citep{YoungOertel:2004}.
-The main tasks of the auditory system are to (1) separate out individual
-frequency components of sound; (2) enhance spectral and temporal contrasts to
-improve meaningful \SNR; and (3) extract behavioural frequency cues
-\citep{Evans:1992}.
+Speech is a unique and fundamental tool in communication between humans.
+We continually deal with various distortions of the acoustic environment
+(e.g., background noise and reverberation) to extract information from
+signals entering the ear.  Vowels provide a salient feature of speech
+that is spectrally and temporally distinct from other natural sounds.
+The spectrum of each vowel is distinguished by the location of high
+energy spectral peaks called formants. Robust representation of spectrum
+at different intensities is important for speech and other auditory
+communication \citep{YoungOertel:2004}.  The main tasks of the auditory
+system are to (1) separate out individual frequency components of sound;
+(2) enhance spectral and temporal contrasts to improve meaningful \SNR;
+and (3) extract behavioural frequency cues \citep{Evans:1992}.
 # \todo[inline]{FIX last sentence (check Evans citation)}
 
 
-Advanced auditory fidelity and localisation is an exceptional feature of hearing
-perception in animals.  This speciality works to a high degree despite the input
-at the round window of the cochlea being one dimensional and very noisy.  Rough
-frequency decomposition is performed by the basilar membrane and organ of Corti
-in the mammalian cochlea, which transforms mechanical signals to neural signals
-in \ANFs.  The next element of the auditory process occurs in the cochlear
-nucleus, the first processing stage of the central auditory pathway in which all
-\ANFs end. Enhancing spectral and temporal contrasts requires sophisticated
-parallel processing strategies involving networks of neurons with feed-forward
-and feed-back connections.
+Advanced auditory fidelity and localisation is an exceptional feature of
+hearing perception in animals.  This speciality works to a high degree
+despite the input at the round window of the cochlea being one
+dimensional and very noisy.  Rough frequency decomposition is performed
+by the basilar membrane and organ of Corti in the mammalian cochlea,
+which transforms mechanical signals to neural signals in \ANFs.  The
+next element of the auditory process occurs in the cochlear nucleus, the
+first processing stage of the central auditory pathway in which all
+\ANFs end. Enhancing spectral and temporal contrasts requires
+sophisticated parallel processing strategies involving networks of
+neurons with feed-forward and feed-back connections.
 
 
-The auditory system is topographically ordered from the basilar membrane to the
-cortex in terms of frequency selectivity, also called tonotopicity
-\citep{YoungOertel:2004}.  The population of auditory nerve fibres (ANFs, Figure
-\ref{fig:CNCatHuman}) bifurcate after entering the cochlear nucleus to innervate
-the \VCN and \DCN, retaining their tonotopic order
-\citep{Lorente:1981,Liberman:1982,Liberman:1993}.  Type 1 \ANFs are categorised
-into \HSR and \LSR fibres \citep{Liberman:1978}, where \LSR fibres have a higher
-threshold and wider dynamic range than \HSR fibres.  They also project to the
-\GCD \citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
-unmyelinated type 2 \ANFs, which suggests they play a different role in sound
-processing to \HSR fibres.
+The auditory system is topographically ordered from the basilar membrane
+to the cortex in terms of frequency selectivity, also called
+tonotopicity \citep{YoungOertel:2004}.  The population of auditory nerve
+fibres (ANFs, Figure \ref{fig:CNCatHuman}) bifurcate after entering the
+cochlear nucleus to innervate the \VCN and \DCN, retaining their
+tonotopic order \citep{Lorente:1981,Liberman:1982,Liberman:1993}.  Type
+1 \ANFs are categorised into \HSR and \LSR fibres \citep{Liberman:1978},
+where \LSR fibres have a higher threshold and wider dynamic range than
+\HSR fibres.  They also project to the \GCD
+\citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
+unmyelinated type 2 \ANFs, which suggests they play a different role in
+sound processing to \HSR fibres.
 
 #+ATTR_LaTeX: width=0.6\textwidth
 #+CAPTION: [Tonotopic ANF innervation in the CN of man and cat]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in man and cat \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from \citep{} \yellownote{Get reference}}
@@ -449,22 +454,20 @@ Fibres of similar \CFs disperse to form a 3-dimensional sheet running
 
 * Cochlear Nucleus 
 
-The cochlear nucleus receives the primary ascending input from \ANFs
-and contains a heterogeneous population of cell types.  Cell types
-have been classified using criteria including morphology,
-immunohistochemistry, synaptic organisation, response to acoustic
-stimuli and frequency tuning
+The cochlear nucleus receives the primary ascending input from \ANFs and
+contains a heterogeneous population of cell types.  Cell types have been
+classified using criteria including morphology, immunohistochemistry,
+synaptic organisation, response to acoustic stimuli and frequency tuning
 \citep[see~reviews][]{RyugoParks:2003,CantBenson:2003,YoungOertel:2004}.
 The two major divisions are the \VCN and \DCN.  The different
 projections out of the nucleus reflect the highly specialised parallel
-processing that is performed to extract particular acoustic
-information contained in the auditory nerve.  The \DCN in mammals
-generally has a cerebellar-like laminar structure with many
-interneurons, whereas the \VCN consists of a magnocellular core and a
-marginal shell (otherwise called the \GCD in rodents).  The marginal
-shell is thought to be involved in regulating the gain in the
-magnocellular core from inputs outside the \CN
-\citep{EvansZhao:1993,GhoshalKim:1997}.
+processing that is performed to extract particular acoustic information
+contained in the auditory nerve.  The \DCN in mammals generally has a
+cerebellar-like laminar structure with many interneurons, whereas the
+\VCN consists of a magnocellular core and a marginal shell (otherwise
+called the \GCD in rodents).  The marginal shell is thought to be
+involved in regulating the gain in the magnocellular core from inputs
+outside the \CN \citep{EvansZhao:1993,GhoshalKim:1997}.
 
 Recent reviews of characterised cells have examined the association
 between the corresponding projection characteristics and physiological
@@ -478,14 +481,14 @@ primary-like, chopper, or onset chopper
 \citep{Bourk:1976,Pfeiffer:1963,SmithJorisEtAl:1993,ShofnerYoung:1985,YoungRobertEtAl:1988,BlackburnSachs:1989}.
 
 
-The afferent and intrinsic synaptic connectivity in the cochlear
-nucleus have also shown wide interest in the literature
+The afferent and intrinsic synaptic connectivity in the cochlear nucleus
+have also shown wide interest in the literature
 \citep[see~reviews][]{YoungOertel:2004,OertelWrightEtAl:2011}.  The
-network in Figure \ref{fig:CNschematic} shows the connections,
-regarded in the literature with sufficient evidence, among cochlear
-nucleus that are involved in modulating \TS cells.  The cells and
-their synaptic interaction will be discussed in the following sections
-and will form the basis of investigation for this thesis.
+network in Figure \ref{fig:CNschematic} shows the connections, regarded
+in the literature with sufficient evidence, among cochlear nucleus that
+are involved in modulating \TS cells.  The cells and their synaptic
+interaction will be discussed in the following sections and will form
+the basis of investigation for this thesis.
 
 
 
@@ -1337,8 +1340,9 @@ offset of the \DS connections from high \CF to low \CF frequency bands
 \citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}
 
 #+BEGIN_LaTeX
-\begin{landscape} {\tiny\LTXtable{210mm}{ModellingCNTable}}
-\end{landscape}
+  \begin{landscape} 
+  {\tiny\LTXtable{210mm}{/home/eagerm/Work/thesis/LiteratureReview/ModellingCNTable}}
+  \end{landscape}
 #+END_LaTeX
 
 # Network models of the \DCN that also include \VCN \DS cell inputs.
@@ -1523,10 +1527,9 @@ psychophysical limitations and forward masking has been removed}
 
 
 
-
-\newpage \singlespacing \listoftodos \printglossaries
-\bibliographystyle{plainnat} \bibliography{MyBib}
-
-# #+BEGIN_LaTeX
-# #+END_LaTeX
+## BIBLIOGRAPHY
+\newpage \singlespacing \bibliographystyle{plainnat} 
+\bibliography{MyBib}
+\newpage \listoftodos
+## BIBLIOGRAPHY
 
