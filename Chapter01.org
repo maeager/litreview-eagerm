@@ -1,97 +1,21 @@
 #+TITLE: Introduction
 #+DATE:
 #+AUTHOR: Michael A Eager
-#+OPTIONS: toc:nil H:5 <:t >:t
+#+OPTIONS: toc:nil H:5 author:nil <:t >:t 
+#+STARTUP: oddeven hideblocks fold align hidestars
+#+TODO: REFTEX
 #+LANGUAGE: en_GB
-#+STARTUP: showall
 
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
-#+LATEX_HEADER:\pretolerance=150
-#+LATEX_HEADER:\tolerance=100
-#+LATEX_HEADER:\setlength{\emergencystretch}{3em}
-#+LATEX_HEADER:\overfullrule=1mm
 
 #+LaTeX_CLASS: UoM-draft-org-article
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
 
-\setcounter{chapter}{0}
+
+
 \chapter{Introduction}\label{sec:Chapter1}
-
-
-* Prelude                                                          :noexport:
-
-#+name: changeset
-#+BEGIN_SRC awk :results none :export none :in-file .hg/cache/tags
-{print $1}
-#+END_SRC
-
-
-
-#+begin_src emacs-lisp results: silent
-     (setq org-latex-to-pdf-process '("pdfquick %f" )) 
-    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
-    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
-    ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
-                                       
-    (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
-      "\\documentclass[11pt,a4paper,twoside,openright]{book}
-      \\usepackage{style/uomthesis} \\input{user-defined}
-      \\usepackage[nonumberlist,acronym]{glossaries}
-      \\input{../hg/manuscript/misc/glossary} 
-      \\makeglossaries
-      \\setcounter{secnumdepth}{5}      
-      \\graphicspath{{./}{./gfx/}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
-      \\pretolerance=150 \\tolerance=100
-      \\setlength{\\emergencystretch}{3em} 
-      \\overfullrule=1mm %
-      % \\usepackage[notcite]{showkeys} 
-      \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
-  
-      [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
-      ("\\section{%s}" . "\n\\section{%s}")
-      ("\\subsection{%s}" . "\n\\subsection{%s}") 
-      ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
-      ("\\paragraph{%s}" . "\n\\paragraph{%s}")
-      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
-    
-     (setq org-export-latex-title-command
-           "{\\singlespacing\\tableofcontents\\printglossaries}") 
-  ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
-    
-#+end_src
-
-
-#+RESULTS:
-: {\singlespacing\tableofcontents}
-: \setcounter{chapter}{0}
-
-* New Layout 							   :noexport:
-
- | Section      |              |             | Pages | Actual | TODO/DONE |
- |--------------+--------------+-------------+-------+--------+-----------|
- | Introduction |              |             |     3 |   2.75 | [90%]     |
- | AN           |              |             |  1--2 |        | [50%]     |
- | CN           | Overview     |             |     1 |        |           |
- |              | TS           |             |     5 |        | [95%]     |
- |              |              | morph       |       |        |           |
- |              |              | intrinsic   |       |        |           |
- |              |              | acoustic    |       |        |           |
- |              | Microcircuit |             |     5 |        | [75%]     |
- |              |              | Overview    |       |      2 |           |
- |              |              | Cell types  |       |        |           |
- |              |              | Connections |       |        |           |
- |              |              | Function    |       |      6 |           |
- | Modelling    |              |             |     5 |        | [40%]     |
- |              | Choppers     |             |       |        |           |
- |              | Circuits     |             |       |        |           |
- |              | Limitations  |             |       |        |           |
- | Aims         |              |             |     2 |      2 | [75%]     |
-
-
-
-  \newpage
 
 
 * Literature Review  
@@ -294,7 +218,7 @@ sound processing to \HSR fibres.
 #+ATTR_LaTeX: width=0.6\textwidth
 #+CAPTION: [Tonotopic ANF innervation in the CN of man and cat]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in man and cat \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from \citep{} \yellownote{Get reference}}
 #+LABEL: fig:CNCatHuman
-[[./gfx/Cat_Human_CN.jpg]]
+[[../SimpleResponsesChapter/gfx/Cat_Human_CN.jpg]]
 
 
 
@@ -495,12 +419,12 @@ the basis of investigation for this thesis.
 # #+ Attr_LATEX: width=0.9\linewidth
 # #+ CAPTION: Schematic of the cochlear nucleus stellate network showing connections between T stellate (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green diamonds indicates glycinergic inhibition, red diamonds indicate GABAergic inhibition. Dotted lines are likely connections; solid lines are experimentally confirmed connections; strength of connections are indicated by thickness.  Arrows are excitatory connections. \TS cells excite \DS and \TV cells and recurrently excite other \TS cells.  \DS cells are wide-band inhibitory cells that inhibit \TS and \TV cells.  \TV cells are narrow-band inhibitory cells from the DCN that inhibit \TS and \DS cells.  GLG cells are GABAergic inhibitory cells that are thought to strongly inhibit \DS cells and moderately inhibit \TS cells. Auditory nerve fibre inputs are not shown.
 # #+ LABEL: fig:CNschematic
-#    [[file:./gfx/CNcircuit-nodetail.pdf]]
+#    [[file:../LiteratureReview/gfx/CNcircuit-nodetail.pdf]]
 
 #+BEGIN_LaTeX
   \begin{figure}[htb] 
     \centering \def\svgwidth{5.5in}
-    \input{./gfx/CNcircuit-nodetail.pdf_tex} 
+    \input{../LiteratureReview/gfx/CNcircuit-nodetail.pdf_tex} 
     \caption[Schematic of the cochlear nucleus stellate network]{Schematic of the
       cochlear nucleus stellate network showing connections between T stellate
       (TS), D stellate (DS), Tuberculoventral (TV) and Golgi (GLG) cells.  Green
@@ -1341,7 +1265,7 @@ offset of the \DS connections from high \CF to low \CF frequency bands
 
 #+BEGIN_LaTeX
   \begin{landscape} 
-  {\tiny\LTXtable{210mm}{/home/eagerm/Work/thesis/LiteratureReview/ModellingCNTable}}
+  {\tiny\LTXtable{210mm}{../LiteratureReview/ModellingCNTable}}
   \end{landscape}
 #+END_LaTeX
 
@@ -1424,7 +1348,7 @@ networks \citep{VreeswijkAbbottEtAl:1995}.
 
 
 
-* Aims of this thesis 
+* Objectives
 
 
 The current state of neural network models fail to deliver at
@@ -1432,10 +1356,13 @@ producing a biophysically-realistic model of the cochlear nucleus,
 specifically the microcircuit regulating the main output neurons, \TS
 cells.
 
-Realistic models of the cochlear nucleus are dependent on the
-performance and realism of the input.  Phenomenological models of the
-auditory nerve have advanced \citep{ZilanyBruceEtAl:2009} frequency
-decomposition, adaptation, offset recovery and replication of temporal
+Realistic models of the cochlear nucleus are dependent on the performance and
+realism of the input, the accuracy of the current models, and the assumptions
+and reasonable measures used to obtain network parameters.  Phenomenological
+models of the auditory nerve have advanced \citep{ZilanyBruceEtAl:2009}
+frequency decomposition, adaptation, offset recovery and replication of temporal
+The membrane currents in \VCN neurons have already been investigated and
+accurate models have been identified \citep{RothmanManis:2003b}.
 
 Advancement of
  - poor use of phenomenologically accurate AN models in existing CN
@@ -1446,15 +1373,14 @@ Advancement of
  - Parameter optimisation typically hand tuned or not explained
 
 *Goals*
- - biophysically realistic neural network model of the cochlear
-nucleus stellate microcircuit.
- - explore streamlined optimisation of all parameters in simplified
-CNSM using genetic algorithms
- - explore detailed, sequential optimisation of cochlear nucleus
-T-stellate microcircuit's parameters through simple responses
- - verification of optimised cochlear nucleus T-stellate microcircuit
-with \AM coding and vowel processing, with explicit analysis of \TS
-cells/choppers
+ - biophysically realistic neural network model of the cochlear nucleus stellate
+   microcircuit.
+ - explore streamlined optimisation of all parameters in simplified CNSM using
+   genetic algorithms
+ - explore detailed, sequential optimisation of cochlear nucleus T-stellate
+   microcircuit's parameters through simple responses
+ - verification of optimised cochlear nucleus T-stellate microcircuit with \AM
+   coding and vowel processing, with explicit analysis of \TS cells/choppers
 
 
 **  Definition of the thesis hypotheses 
@@ -1532,4 +1458,79 @@ psychophysical limitations and forward masking has been removed}
 \bibliography{MyBib}
 \newpage \listoftodos
 ## BIBLIOGRAPHY
+
+
+* Prelude                                                          :noexport:
+
+#+name: changeset
+#+BEGIN_SRC awk :results none :export none :in-file .hg/cache/tags
+{print $1}
+#+END_SRC
+
+
+
+#+begin_src emacs-lisp results: silent
+     (setq org-latex-to-pdf-process '("pdfquick %f" )) 
+    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
+    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
+    ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
+                                       
+    (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
+      "\\documentclass[11pt,a4paper,twoside,openright]{book}
+      \\usepackage{style/uomthesis} \\input{user-defined}
+      \\usepackage[nonumberlist,acronym]{glossaries}
+      \\input{../hg/manuscript/misc/glossary} 
+      \\makeglossaries
+      \\setcounter{secnumdepth}{5}      
+      \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+      \\pretolerance=150 
+      \\tolerance=100
+      \\setlength{\\emergencystretch}{3em} 
+      \\overfullrule=1mm %
+      % \\usepackage[notcite]{showkeys} 
+      \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
+  
+      [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
+      ("\\section{%s}" . "\n\\section{%s}")
+      ("\\subsection{%s}" . "\n\\subsection{%s}") 
+      ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
+      ("\\paragraph{%s}" . "\n\\paragraph{%s}")
+      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
+    
+     (setq org-export-latex-title-command
+           "{\\singlespacing\\tableofcontents\\printglossaries}") 
+  ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+    
+#+end_src
+
+
+#+RESULTS:
+: {\singlespacing\tableofcontents}
+: \setcounter{chapter}{0}
+
+* New Layout 							   :noexport:
+
+ | Section      |              |             | Pages | Actual | TODO/DONE |
+ |--------------+--------------+-------------+-------+--------+-----------|
+ | Introduction |              |             |     3 |   2.75 | [90%]     |
+ | AN           |              |             |  1--2 |        | [50%]     |
+ | CN           | Overview     |             |     1 |        |           |
+ |              | TS           |             |     5 |        | [95%]     |
+ |              |              | morph       |       |        |           |
+ |              |              | intrinsic   |       |        |           |
+ |              |              | acoustic    |       |        |           |
+ |              | Microcircuit |             |     5 |        | [75%]     |
+ |              |              | Overview    |       |      2 |           |
+ |              |              | Cell types  |       |        |           |
+ |              |              | Connections |       |        |           |
+ |              |              | Function    |       |      6 |           |
+ | Modelling    |              |             |     5 |        | [40%]     |
+ |              | Choppers     |             |       |        |           |
+ |              | Circuits     |             |       |        |           |
+ |              | Limitations  |             |       |        |           |
+ | Aims         |              |             |     2 |      2 | [75%]     |
+
+
+
+  \newpage
 
