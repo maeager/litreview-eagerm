@@ -1453,11 +1453,12 @@ psychophysical limitations and forward masking has been removed}
 
 
 
-## BIBLIOGRAPHY
-\newpage \singlespacing \bibliographystyle{plainnat} 
-\bibliography{MyBib}
-\newpage \listoftodos
-## BIBLIOGRAPHY
+#+BEGIN_LaTeX
+
+  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../hg/manuscript/bib/MyBib}\newpage \listoftodos}{}
+
+#+END_LaTeX
+
 
 
 * Prelude                                                          :noexport:
@@ -1470,43 +1471,44 @@ psychophysical limitations and forward masking has been removed}
 
 
 #+begin_src emacs-lisp results: silent
-     (setq org-latex-to-pdf-process '("pdfquick %f" )) 
-    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
-    ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
-    ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
-                                       
-    (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
-      "\\documentclass[11pt,a4paper,twoside,openright]{book}
-      \\usepackage{style/uomthesis} \\input{user-defined}
-      \\usepackage[nonumberlist,acronym]{glossaries}
-      \\input{../hg/manuscript/misc/glossary} 
-      \\makeglossaries
-      \\setcounter{secnumdepth}{5}      
-      \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
-      \\pretolerance=150 
-      \\tolerance=100
-      \\setlength{\\emergencystretch}{3em} 
-      \\overfullrule=1mm %
-      % \\usepackage[notcite]{showkeys} 
-      \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
-  
-      [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
-      ("\\section{%s}" . "\n\\section{%s}")
-      ("\\subsection{%s}" . "\n\\subsection{%s}") 
-      ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
-      ("\\paragraph{%s}" . "\n\\paragraph{%s}")
-      ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
-    
-     (setq org-export-latex-title-command
-           "{\\singlespacing\\tableofcontents\\printglossaries}") 
-  ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
-    
+      (setq org-latex-to-pdf-process '("pdfquick %f" )) 
+     ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
+     ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
+     ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
+                                        
+     (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
+       "\\documentclass[11pt,a4paper,twoside,openright]{book}
+       \\usepackage{../hg/manuscript/style/uomthesis} 
+       \\input{../hg/manuscript/user-defined}
+       \\usepackage[nonumberlist,acronym]{glossaries}
+       \\input{../hg/manuscript/misc/glossary} 
+       \\makeglossaries
+       \\setcounter{secnumdepth}{5}      
+       \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+       \\pretolerance=150 
+       \\tolerance=100
+       \\setlength{\\emergencystretch}{3em} 
+       \\overfullrule=1mm %
+       % \\usepackage[notcite]{showkeys} 
+       \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
+       \\usepackage{ifthen}
+   
+       [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
+       ("\\section{%s}" . "\n\\section{%s}")
+       ("\\subsection{%s}" . "\n\\subsection{%s}") 
+       ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
+       ("\\paragraph{%s}" . "\n\\paragraph{%s}")
+       ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
+     
+      (setq org-export-latex-title-command
+            "{\\singlespacing\\tableofcontents\\printglossaries}") 
+   ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+     
 #+end_src
 
 
 #+RESULTS:
-: {\singlespacing\tableofcontents}
-: \setcounter{chapter}{0}
+: {\singlespacing\tableofcontents\printglossaries}
 
 * New Layout 							   :noexport:
 
