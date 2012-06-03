@@ -15,12 +15,13 @@
 
 
 
+
+\setcounter{chapter}{0}
 \chapter{Introduction}\label{sec:Chapter1}
 
 
 * Literature Review  
-
-
+  
 The development of biophysically-realistic neural network models is a
 major objective of computational neuroscience.  Recent advances in the
 field have meant that this goal is now more achievable than it has ever
@@ -1078,7 +1079,7 @@ large dynamic range to tones \citep{RhodeGreenberg:1994a}.  GABAergic
 \citep{GhoshalKim:1996}, and are proposed as a regulator of gain in
 the activity of \TS cells \citep{FerragamoGoldingEtAl:1998}.  These
 mechanisms have not been fully explored and will be discussed further
-in Chapter \ref{sec:VowelChapter}.
+in Chapter \ref{sec:Chapter4}.
 
 
 Chopper units generally have band-pass \tMTF at high \SPL, with the
