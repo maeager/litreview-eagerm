@@ -5,9 +5,7 @@
 #+STARTUP: oddeven hideblocks fold align hidestars
 #+TODO: REFTEX
 #+LANGUAGE: en_GB
-
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
-
 #+LaTeX_CLASS: UoM-draft-org-article
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
@@ -16,8 +14,83 @@
 
 
 
-\setcounter{chapter}{0}
-\chapter{Introduction}\label{sec:Chapter1}
+#+LaTeX: \chapter{Introduction}\label{sec:Chapter1}
+
+* Prelude                                                          :noexport:
+
+#+name: changeset
+#+BEGIN_SRC awk :results none :export none :in-file .hg/cache/tags
+{print $1}
+#+END_SRC
+
+
+
+#+begin_src emacs-lisp results: silent
+      (setq org-latex-to-pdf-process '("pdfquick %f" )) 
+     ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
+     ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
+     ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
+                                        
+     (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
+       "\\documentclass[11pt,a4paper,twoside,openright]{book}
+       \\usepackage{../hg/manuscript/style/uomthesis} 
+       \\input{../hg/manuscript/user-defined}
+       \\usepackage[nonumberlist,acronym]{glossaries}
+       \\input{../hg/manuscript/misc/glossary} 
+       \\makeglossaries
+       \\setcounter{secnumdepth}{5}      
+       \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+       \\pretolerance=150 
+       \\tolerance=100
+       \\setlength{\\emergencystretch}{3em} 
+       \\overfullrule=1mm %
+       % \\usepackage[notcite]{showkeys} 
+       \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
+       \\usepackage{ifthen}
+   
+       [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
+       ("\\section{%s}" . "\n\\section{%s}")
+       ("\\subsection{%s}" . "\n\\subsection{%s}") 
+       ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
+       ("\\paragraph{%s}" . "\n\\paragraph{%s}")
+       ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
+     
+      (setq org-export-latex-title-command
+            "{\\singlespacing\\tableofcontents\\printglossaries}") 
+   ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
+     
+#+end_src
+
+
+#+RESULTS:
+: {\singlespacing\tableofcontents\printglossaries}
+
+* New Layout 							   :noexport:
+
+ | Section      |              |             | Pages | Actual | TODO/DONE |
+ |--------------+--------------+-------------+-------+--------+-----------|
+ | Introduction |              |             |     3 |   2.75 | [90%]     |
+ | AN           |              |             |  1--2 |        | [50%]     |
+ | CN           | Overview     |             |     1 |        |           |
+ |              | TS           |             |     5 |        | [95%]     |
+ |              |              | morph       |       |        |           |
+ |              |              | intrinsic   |       |        |           |
+ |              |              | acoustic    |       |        |           |
+ |              | Microcircuit |             |     5 |        | [75%]     |
+ |              |              | Overview    |       |      2 |           |
+ |              |              | Cell types  |       |        |           |
+ |              |              | Connections |       |        |           |
+ |              |              | Function    |       |      6 |           |
+ | Modelling    |              |             |     5 |        | [40%]     |
+ |              | Choppers     |             |       |        |           |
+ |              | Circuits     |             |       |        |           |
+ |              | Limitations  |             |       |        |           |
+ | Aims         |              |             |     2 |      2 | [75%]     |
+
+
+
+  \newpage
+
 
 
 * Literature Review  
@@ -1389,6 +1462,7 @@ Advancement of
 # from confirmation report
 
 *** Hypothesis 1
+
 Enhancement of the rate-place representation of spectral shape in \ChS
 and \ChT units, relative to \ANFs, is owing to lateral inhibitory
 mechanisms chopper units maintain a robust representation of stimulus
@@ -1400,7 +1474,9 @@ cells. This mechanism implies that the rate-place representation of
 complex stimuli will be significantly reduced if any sources of
 inhibition are removed.
 
+
 *** Hypothesis 2
+
 Enhancement of the rate-place representation of spectral shape in \ChS
 and \ChT units, relative to \ANFs, is due in part to recurrent
 excitation by among \TS cells within the same frequency
@@ -1412,7 +1488,9 @@ regions of high energy will elicit self-excitation.  This mechanism
 could explain the steady response of \ChT cells despite a reduction in
 sustained firing rate of \ANFs due to transient adaptation.
 
+
 *** Hypothesis 3
+
 Enhancement of the temporal representation of the fundamental
 frequency of vowels in chopper units, relative to \ANFs, is due to
 network mechanisms in the stellate microcircuit.  Synchronisation to
@@ -1428,9 +1506,6 @@ pulsatile stimuli, such as the f0 of vowels.
 
 \yellownote{Note: Hypothesis 4 in the confirmation regarding
 psychophysical limitations and forward masking has been removed}
-
-
-
 
 
 # *** Hypothesis 4 Lateral inhibition in the \TS network is responsible for
@@ -1455,85 +1530,8 @@ psychophysical limitations and forward masking has been removed}
 
 
 #+BEGIN_LaTeX
-
   \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../hg/manuscript/bib/MyBib}\newpage \listoftodos}{}
-
 #+END_LaTeX
 
 
-
-* Prelude                                                          :noexport:
-
-#+name: changeset
-#+BEGIN_SRC awk :results none :export none :in-file .hg/cache/tags
-{print $1}
-#+END_SRC
-
-
-
-#+begin_src emacs-lisp results: silent
-      (setq org-latex-to-pdf-process '("pdfquick %f" )) 
-     ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=xelatex LitReview2.pdf")) 
-     ;; (setq org-latex-to-pdf-process '("make BUILD_STRATEGY=pdflatex LitReview2.pdf")) 
-     ;; (setq org-latex-to-pdf-process '("xelatex -interaction nonstopmode %f" "makeglossaries %b" "bibtex %b" "xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f" ))
-                                        
-     (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
-       "\\documentclass[11pt,a4paper,twoside,openright]{book}
-       \\usepackage{../hg/manuscript/style/uomthesis} 
-       \\input{../hg/manuscript/user-defined}
-       \\usepackage[nonumberlist,acronym]{glossaries}
-       \\input{../hg/manuscript/misc/glossary} 
-       \\makeglossaries
-       \\setcounter{secnumdepth}{5}      
-       \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
-       \\pretolerance=150 
-       \\tolerance=100
-       \\setlength{\\emergencystretch}{3em} 
-       \\overfullrule=1mm %
-       % \\usepackage[notcite]{showkeys} 
-       \\lfoot{\\footnotesize\\today\\ at \\thistime  Hg:70} 
-       \\usepackage{ifthen}
-   
-       [NO-DEFAULT-PACKAGES] [NO-PACKAGES]" 
-       ("\\section{%s}" . "\n\\section{%s}")
-       ("\\subsection{%s}" . "\n\\subsection{%s}") 
-       ("\\subsubsection{%s}" . "\n\\subsubsection{%s}") 
-       ("\\paragraph{%s}" . "\n\\paragraph{%s}")
-       ("\\subparagraph{%s}" . "\n\\subparagraph{%s}")))
-     
-      (setq org-export-latex-title-command
-            "{\\singlespacing\\tableofcontents\\printglossaries}") 
-   ; (setq org-entities-user '(("space" "\\ " nil " " " " " " " ")))
-     
-#+end_src
-
-
-#+RESULTS:
-: {\singlespacing\tableofcontents\printglossaries}
-
-* New Layout 							   :noexport:
-
- | Section      |              |             | Pages | Actual | TODO/DONE |
- |--------------+--------------+-------------+-------+--------+-----------|
- | Introduction |              |             |     3 |   2.75 | [90%]     |
- | AN           |              |             |  1--2 |        | [50%]     |
- | CN           | Overview     |             |     1 |        |           |
- |              | TS           |             |     5 |        | [95%]     |
- |              |              | morph       |       |        |           |
- |              |              | intrinsic   |       |        |           |
- |              |              | acoustic    |       |        |           |
- |              | Microcircuit |             |     5 |        | [75%]     |
- |              |              | Overview    |       |      2 |           |
- |              |              | Cell types  |       |        |           |
- |              |              | Connections |       |        |           |
- |              |              | Function    |       |      6 |           |
- | Modelling    |              |             |     5 |        | [40%]     |
- |              | Choppers     |             |       |        |           |
- |              | Circuits     |             |       |        |           |
- |              | Limitations  |             |       |        |           |
- | Aims         |              |             |     2 |      2 | [75%]     |
-
-
-
-  \newpage
 
