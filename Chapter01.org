@@ -1272,6 +1272,31 @@ the spiking behaviour of bushy and stellate cells is explored in their
 single-compartment modelling study \citep{RothmanManis:2003b}.
 
 
+# FROM ROTHMAN 2003c Because little was known about the Naϩ and Kϩ currents in VCN
+# stellate cells before 1991, Banks and Sachs used modified
+# versions of the Hodgkin and Huxley (HH) equations (1952),
+# which included a fast Naϩ current (INa) and a high-threshold
+# Kϩ current (IHT). Wang and Sachs (1995) presented a modified
+# version of the Banks and Sachs stellate cell model where, to
+# account for a higher spike threshold observed in vitro, the
+# activation curves of INa and IHT were shifted 10 mV positive.
+# Arle and Kim (1991) and Hewitt et al. (1992) presented
+# “MacGregor-type” stellate cell models in which IHT was
+# treated as a digital entity; that is, it was “on” during an action
+# potential (AP) but “off” at other times. In general, the preced-
+# ing HH-like and MacGregor-like stellate models were success-
+# ful in that they replicated many of the response characteristics
+# of stellate cells in vitro and in vivo. For example, during a
+# depolarizing current pulse, the models exhibited repetitive fir-
+# ing (i.e. a Type I current-clamp response) and when stimulated
+# with auditory-nerve-like synaptic input, the models exhibit a
+# “chopping” response in their poststimulus time histograms
+# (PSTHs), reflecting their regular discharge. These models were
+# also successful in replicating responses to more complex stim-
+# uli (Arle and Kim 1991; Hewitt et al. 1992; Wang and Sachs
+# 1995).
+
+
 These models have been used to explore some basic responses of
 stellate cells seen physiologically, for example:
 - Simple regular chopping behaviour
