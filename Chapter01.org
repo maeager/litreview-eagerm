@@ -203,22 +203,23 @@ questions.
 # nucleus.
 
 
-This doctoral thesis is aimed at investigating the important
-physiological mechanisms involved in the processing of sounds,
-specifically spectral and temporal enhancement, in the cochlear nucleus
-of mammals.  Computer modelling enhances our knowledge of complex neural
-interactions in \TS cells and provides further understanding of inputs
-to higher centres.  The cochlear nucleus stellate network contains many
-independent simple components that are combined in non-linear feedback
-and feed-forward processes.  Intuition and simple calculation cannot
-serve to predict the response of such a complex system, therefore a more
-complex model must be used.  A biological neural network that contains a
-high degree of realism at the individual cell level may contribute to
-our knowledge of synaptic organisation in producing physiological
-behaviour.  The complexity of synaptic organisation is compounded by
-inter-species and within-species variation in computer models. Variation
-is managed by constraining the parameters to a range of values to elicit
-physiological behaviour observed in vivo.
+This thesis investigates the important physiological mechanisms involved in the
+processing of sounds. It achieves this through the development and testing of a novel 
+\CNSM model.
+focuses specifically on the spectral and temporal enhancement, in the
+cochlear nucleus stellate microcircuit of mammals.  Computer modelling enhances
+our knowledge of complex neural interactions in \TS cells and provides further
+understanding of inputs to higher centres.  The cochlear nucleus stellate
+network contains many independent simple components that are combined in
+non-linear feedback and feed-forward processes.  Intuition and simple
+calculation cannot serve to predict the response of such a complex system,
+therefore a more complex model must be used.  A biological neural network that
+contains a high degree of realism at the individual cell level may contribute to
+our knowledge of synaptic organisation in producing physiological behaviour.
+The complexity of synaptic organisation is compounded by inter-species and
+within-species variation in computer models. Variation is managed by
+constraining the parameters to a range of values to elicit physiological
+behaviour observed in vivo.
 
 The implications of lateral inhibition and recurrent excitation on
 signal processing by \TS cells are two fold: enhanced spectral
