@@ -204,10 +204,10 @@ questions.
 
 
 This thesis investigates the important physiological mechanisms involved in the
-processing of sounds. It achieves this through the development and testing of a novel 
-\CNSM model.
-focuses specifically on the spectral and temporal enhancement, in the
-cochlear nucleus stellate microcircuit of mammals.  Computer modelling enhances
+processing of sounds. It focuses specifically on the spectral and temporal enhancement, in the
+microcircuits regulating the output of \TS cells. It achieves this through the 
+development and testing of a novel 
+\CNSM model. Computer modelling enhances
 our knowledge of complex neural interactions in \TS cells and provides further
 understanding of inputs to higher centres.  The cochlear nucleus stellate
 network contains many independent simple components that are combined in
