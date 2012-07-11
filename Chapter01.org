@@ -4,14 +4,12 @@
 #+OPTIONS: toc:nil H:5 author:nil <:t >:t 
 #+STARTUP: oddeven hideblocks fold align hidestars
 #+TODO: REFTEX
-#+LANGUAGE: en_GB
+#+LANGUAGE: en_GB-ise-wo_accents
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
 #+LaTeX_CLASS: UoM-draft-org-article
 #+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
-
-
 
 
 #+LaTeX: \chapter{Introduction}\label{sec:Chapter1}
