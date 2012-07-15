@@ -1554,7 +1554,7 @@ psychophysical limitations and forward masking has been removed}
 
 
 #+BEGIN_LaTeX
-  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../hg/manuscript/bib/MyBib}\newpage \listoftodos}{}
+  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../MyBib}\newpage \listoftodos}{}
 #+END_LaTeX
 
 
