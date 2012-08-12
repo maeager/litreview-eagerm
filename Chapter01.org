@@ -1234,6 +1234,76 @@ the rate.
 
 # \todo[inline]{Needs more work on introduction of this section, vast amount of
 # previous work, their faults, i.e.\ HOW my work fits in}
+\begin{quote}
+A more elaborate model with detailed simulation of dendritic
+effects, a full range of other excitatory and inhibitory inputs
+and a complete representation of all voltage controlled
+ion-channels would be very-interesting but would not help us to
+hypothesise as to which factors are controlling which aspects of
+the response.
+\end{quote}
+#+LATEX: {\hfill\citep[p.~389]{MeddisHewitt:1993}}
+
+
+
+\begin{quote}
+Clearly, the properties which can be simulated by a model, the
+more useful the model will be.  Ideally, the model should simulate
+all known properties.  At this point the model needs no further
+modification until experimenters generate new results which cannot
+be simulated by the model.
+
+It is also increasingly clear that we need to develop strong and
+productive hypotheses concerning the functions of the many
+inhibitory cells which operate in the cochlear nucleus and the
+inhibitory inputs which originate in other nuclei.  Obviously,
+progress can be made using purely experimental methods.  However,
+it is likely that the modeller also has a role to play here by
+constructing models which are faithful to both anatomy (in terms
+of connectivity and morphology) and the cells' known physiology.
+These can then act as a basis for exploring the potential
+behaviour of the system.  It is likely that analyis will reveal a
+number of distinct types of functions for inhibitory systems \\
+
+Modellers are yet to make a strong contribution in this area but
+the possibilities  are obvious both when modelling known circuits
+and also when modelling types of circuits so that an anatomist can
+make more sense of the functional significance of the patterns
+that are reconstructed from the light and electron microscope.
+\end{quote}
+#+LATEX: {\hfill\citep[p.~390]{MeddisHewitt:1993}}
+
+
+The idea espoused by Meddis and Hewitt in their review of the state of
+computational modelling of the cochlear nucleus \citep{MeddisHewitt:1993}, may have been relevant at the time but advances in the knowledge of CN membrane kinetics and improved
+understanding of the synaptic organisation make investigation of synaptic
+influences more feasible. Combined with massively increased computational
+power available to researchers, a highly detailed model  can provide greater insight into the function of regulatory mechanisms within
+and outside the cochlear nucleus. This knowledge can also drive methods for
+constraining such detailed models based on physiological responses in other
+neural networks of the brain.
+
+Only limited assumptions are made as to particular values any
+variable may take, the rest is up to the optimisation algorithm.
+Underlying the success of the algorithm is a suitable fitness
+function, which captures the particular response properties in
+real cells.
+
+Accurate in vivo modelling of stellate cell responses would not be
+complete without a complete characterisation of the cells and
+their inputs.  Firstly an accurate phenomenological auditory nerve
+model.  Dendritic effects simulated in the model cells.  AND ...
+synaptic inputs from known sources of inhibition.  That includes
+D-stellate, Tuberculoventral and golgi cells.
+
+# Reasons for using a multi-compartmental model: Building on Banks
+# and Sachs, Wang and Sachs;\\
+# analyse distribution of inputs\\
+# analyse active dendrites?\\
+# analyse axo-axonic conections\\
+# point neuron not sufficient\\
+# accurate currents of Rothman and Manis\\
+
 
 
 
