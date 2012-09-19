@@ -63,6 +63,7 @@
 #+RESULTS:
 : {\singlespacing\tableofcontents\printglossaries}
 
+
 * New Layout 							   :noexport:
 
  | Section      |              |             | Pages | Actual | TODO/DONE |
@@ -1514,6 +1515,85 @@ phasic inputs at improving synchronisation in recurrent neural
 networks \citep{VreeswijkAbbottEtAl:1995}.
 
 
+
+
+* Survey of optimisation in neural modeling
+
+\todo{Combine with CN models }
+
+- The Problem of Optimisation
+  - Realistic neural networks
+    - Large parameter space
+    - Input noise, synaptic noise, indeterminate connectivity
+  - Computationally difficult, \textbf{NP}-hard problem, (\textbf{N}on-deterministic \textbf{P}olynomial time)
+  - Evolutionary programming makes these problems solvable
+    - Genetic Algorithms
+
+
+
+A survey of current methods in constraining spiking networks shows that current methods can be categorised as follows:
+ - \textbf{Self-organising maps} are used in artificial neural networks for
+   finding topographic relationships between feature detectors (input layers)
+   and some sensory or abstract feature output
+   \citep[SOM,~][]{Kohonen:2001}. There are two major difficulties in applying
+   SOMs to realistic neural networks: the SOM does not transfer signal patterns
+   due the singular response of the `winner-take-all' function
+   \citep{Kohonen:2006} and Hodgkin-Huxley models are not analytical (in terms
+   of its input/output relationship), rendering SOMs unsuitable for error
+   back-propagation.
+ - \textbf{Reverse correlation and principle component analysis} can be grouped
+   into a class of statistical methods that use covariance in network activity
+   to infer underlying connectivity
+   \citep{DahlhausEichlerEtAl:1997,Chichilnisky:2001,EichlerDahlhausEtAl:2003}.
+ - \textbf{Information Theoretic Analysis} includes coherence-based causality
+   chains and directed transfer functions that can be used to identify feedback
+   relationships between neurons
+   \citep{KaminskiDingEtAl:2001,KorzeniewskaManczakEtAl:2003}.
+#  , uses Granger causality (Granger, 1969) to expose the direction of information flow. Further two more methods: direct causality (), and direct directed  have been introduced. These methods allow identifying the presence of feedback between two or more neurons, but coupling polarities are not directly accessible. Although these methods have been successfully applied on simulated networks of randomly spiking coupled neurons, their application to real data is basically limited because: (i) they do not allow resolving mutual couplings between neurons and/or do not distinguish the type of such couplings; (ii) as a rule their application assumes the use of relatively large spike trains with constant statistical properties, a condition difficult to be satisfied in the experiments; (iii) they usually fail when applied to excessively rhythmic neural assemblies, a rather common situation which may just represent an objective of the research.all these methods deal only with the connectivity patterns, i.e. only presence and sometime type and direction of the couplings between neurons can be estimated. No knowledge about absolute values of couplings or other parameters of the network can be drawn.
+ - \textbf{Single Neuron Dynamics} determine the effects of the activity of a
+   network on biophysically realistic neural models
+   \citep{PillowPaninskiEtAL:2005}. Makarov
+   et~al. \citet{MakarovPanetsosEtAl:2005} extended this method to include
+   observations of neural architecture derived from extracellular recordings.
+
+
+\yellownote{Most computational neuroscientists collaborate closely with
+experimentalists in analyzing novel data and synthesizing new models of
+biological phenomena.  Even single neurons have complex biophysical
+characteristics. Hodgkin and Huxley's original model only employed two
+voltage-sensitive currents, the fast-acting sodium and the inward-rectifying
+potassium. Though successful in predicting the timing and qualitative features
+of the action potential, it nevertheless failed to predict a number of important
+features such as adaptation and shunting. Scientists now believe that there are
+a wide variety of voltage-sensitive currents, and the implications of the
+differing dynamics, modulations and sensitivity of these currents is an
+important topic of computational neuroscience.}
+
+\yellownote{ Sensory processing.  Early models of sensory processing understood
+within a theoretical framework is credited to Horace Barlow. Somewhat similar to
+the minimal wiring hypothesis described in the preceding section, Barlow
+understood the processing of the early sensory systems to be a form of efficient
+coding, where the neurons encoded information which minimized the number of
+spikes. Experimental and computational work have since supported this hypothesis
+in one form or another.  } 
+
+\yellownote{ Memory and synaptic plasticity.  Earlier models -> Hebbian learning
+for ANN. Biologically relevant models such as Hopfield net have been developed
+to address the properties of associative, rather than content-addressable style
+of memory that occur in biological systems.  Models of working memory, relying
+on theories of network oscillations and persistent activity, have been built to
+capture some features of the prefrontal cortex in context-related memory. (For
+review, see Durstewitz et al, 2000) One of the major problems in biological
+memory is how it is maintained and changed through multiple time
+scales. Unstable synapses are easy to train but also prone to stochastic
+disruption. Stable synapses forget less easily, but they are also harder to
+consolidate. One recent computational hypothesis involves cascades of plasticity
+(Fusi et al, 2005) that allow synapses to function at multiple time
+scales. Stereochemically detailed models of the acetylcholine receptor-based
+synapse with Monte Carlo method, working at the time scale of microseconds, have
+been built (Coggan et al, 2005). It is likely that computational tools will
+contribute greatly to our understanding of how synapses function and change in
+relation to external stimulus in the coming decades.  }
 
 
 * Objectives
