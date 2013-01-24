@@ -969,7 +969,7 @@ through \NMDA receptors
 \newpage
 
 
-** Function of the Stellate Microcircuit
+** Function of the Cochlear Nucleus Stellate Microcircuit
 
 *** Functional Role of Inhibition
 
@@ -977,8 +977,20 @@ The actions of glycinergic and GABAergic inhibition are thought to
 play different spectro-temporal processing roles in the cochlear
 nucleus.  Glycinergic inputs from \DS and \TV cells are predominantly
 active at the onset of stimuli; accordingly they provide enhanced
-temporal acuity and dynamic range at onset.  Post onset and tonic
-inhibition is provided by \GABA inputs.  GABAergic inhibition acting
+temporal acuity and dynamic range at onset.  
+
+# ArnottWalacePalmer
+# Either way, it seems likely the On-C cells are in-
+# volved in the first binaural interaction underlying
+# absolute sound localization of elevation and azimuth
+# using spectral cues. They are apparently not involved
+# in the azimuthal discrimination between two sound
+# sources as this has a different mechanism (May 2000).
+
+
+
+Post onset and tonic
+inhibition is provided by \GABA-ergic neurons in the \CNSM.  GABAergic inhibition acting
 on slow and fast receptors (\GABAa and GABAB respectively) is likely
 to mediate the strong post-onset inhibition in \DS cells
 \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are
