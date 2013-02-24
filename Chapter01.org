@@ -7,14 +7,12 @@
 #+LANGUAGE: en_GB-ise-wo_accents
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
 #+LaTeX_CLASS: UoM-draft-org-article
-#+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
-#+TODO: REFTEX                           
-# allows using the reftex/auctex citation command in org-mode
-#+BIBLIOGRAPHY: ../MyBib plainnat
+#+TODO: REFTEX                           # allows using the reftex/auctex citation command in org-mode
+#+BIBLIOGRAPHY: MyBib plainnat
 # unsrtnat
 
 
-#+LaTeX: \chapter{Introduction and Literature Review}\label{sec:Chapter1}
+#+LaTeX: \chapter{Introduction}\label{sec:Chapter1}
 
 * Prelude                                                          :noexport:
 
@@ -95,7 +93,7 @@
 
 
 
-* Introduction  
+* Literature Review  
   
 The development of biophysically-realistic neural network models is a
 major objective of computational neuroscience.  Recent advances in the
@@ -249,9 +247,7 @@ could aid in developing new sound processing strategies for the cochlear
 implant and hearing aids.
 
 
-* Literature Review
-
-** Auditory System 
+* Auditory System 
 
 Speech is a unique and fundamental tool in communication between humans.
 We continually deal with various distortions of the acoustic environment
@@ -306,7 +302,7 @@ sound processing to \HSR fibres.
 # \citep{EvansNelson:1973,SpirouYoung:1991,YoungSpirouEtAl:1992,SpirouDavisEtAl:1999,YoungNelkenEtAl:1993,ArleKim:1991a}
 
 
-*** Auditory Nerve Fibres
+** Auditory Nerve Fibres
 
 # \todo[inline]{Small and concise lit review of ANFs}
 
@@ -455,7 +451,7 @@ Fibres of similar \CFs disperse to form a 3-dimensional sheet running
 \yellownote{Paragraph on ANF modalities: HSR and LSR }
 
 
-** Cochlear Nucleus 
+* Cochlear Nucleus 
 
 The cochlear nucleus receives the primary ascending input from \ANFs and
 contains a heterogeneous population of cell types.  Cell types have been
@@ -548,7 +544,7 @@ the basis of investigation for this thesis.
 
 
 
-*** T Stellate Cells
+** T Stellate Cells
 
 \TS cells lie in the core region of the \VCN, primarily in the
 posteroventral section (\PVCN) with some in the posterior part of the
@@ -571,7 +567,7 @@ acoustic behaviour in different chopper subtypes is still to be
 discovered.
 
 
-**** Morphology of T Stellate Cells
+*** Morphology of T Stellate Cells
 
 Histology staining of the cochlear nucleus began almost a century ago
 \citep{Lorente:1933}, and the role of classification and naming of
@@ -610,7 +606,7 @@ different animals, with closest association with rodents and cats. The
 \DS cell type includes all those previously named as \DS, type-2
 multipolar, radial, and units classified as \OnC \PSTH units.
 
-**** Intrinsic Mechanisms of T Stellate Cells
+*** Intrinsic Mechanisms of T Stellate Cells
 
 The intrinsic cell-based properties of \VCN neurons have typically
 been investigated using /in vitro/ current clamp experiments
@@ -661,7 +657,7 @@ activation \cite{PaoliniClareyEtAl:2004}.
 
  
 
-**** Acoustic Responses of T Stellate Cells
+*** Acoustic Responses of T Stellate Cells
 
 \TS cells receive a narrow frequency band of \ANF inputs and have a
 chopping response to \CF tone bursts
@@ -781,7 +777,7 @@ centres.
 # responses of cells in the VCN to auditory nerve stimulation
 # (e.g., [61]).{\textquotedblright}
 
-**** Synaptic Inputs to T Stellate Cells
+*** Synaptic Inputs to T Stellate Cells
 
    - sensitive to neuromodulatory currents \citep{FujinoOertel:2001}
    - high input resistance \rightarrow amplify small current inputs
@@ -795,7 +791,7 @@ modulating current \rightarrow Ih can be modulated by G-protein
 coupled receptors, hence making \TS more excitable when Ih activated
 \citep{RodriguesOertel:2006}
 
-***** Driving inputs
+**** Driving inputs
 
    - Proximal dendrites and at the soma:
      - \ANF provide glutamatergic excitation for \TS
@@ -805,7 +801,7 @@ coupled receptors, hence making \TS more excitable when Ih activated
      - Recurrent excitation from other \TS cells
        \citep{FerragamoGoldingEtAl:1998a}
 
-***** Glycinergic DS and TV Cells
+**** Glycinergic DS and TV Cells
 
    - Glycine from \DS cells \citep{FerragamoGoldingEtAl:1998a}
    - Glycine from \TV cells
@@ -816,7 +812,7 @@ but \TS terminals absent on \TV cells in rat microscopy study
        - if present this could directly regulate the sustained
 activity in \TS cells
 
-***** GABAergic Golgi cells
+**** GABAergic Golgi cells
 
     - no \IPSPs or \IPSCs but presence of \GABAa receptors and
 response changes to bicuculine
@@ -826,7 +822,7 @@ response changes to bicuculine
 domains around the \VCN and terminate near the fine distal dendrites
 of \TS cells
 
-***** Recurrent local excitation between T stellate cells
+**** Recurrent local excitation between T stellate cells
 
 \todo[inline]{Needs correcting}
 
@@ -855,7 +851,7 @@ terminals and functional studies of the inputs to the inferior
 colliculi is consistent with their being excitatory
 \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
 
-**** Major Ascending Output
+*** Major Ascending Output
 
 \TS cell axons exit the \CN through the trapezoidal body, cross the
  midline and ultimately terminate in the contralateral \IC
@@ -908,7 +904,7 @@ or in rats and guinea pig the \SPN, \citealt{FriaufOstwald:1988},
 # of the lateral lemniscus [64,91,206,215].  The cells that give rise to these
 # projections are probably the
 
-**** Summary
+*** Summary
 
 In summary, steady depolarising current shows intracellular ability of
 \TS cells to be tonic and integrate inputs
@@ -974,16 +970,28 @@ through \NMDA receptors
 \newpage
 
 
-*** Function of the Stellate Microcircuit
+** Function of the Cochlear Nucleus Stellate Microcircuit
 
-**** Functional Role of Inhibition
+*** Functional Role of Inhibition
 
 The actions of glycinergic and GABAergic inhibition are thought to
 play different spectro-temporal processing roles in the cochlear
 nucleus.  Glycinergic inputs from \DS and \TV cells are predominantly
 active at the onset of stimuli; accordingly they provide enhanced
-temporal acuity and dynamic range at onset.  Post onset and tonic
-inhibition is provided by \GABA inputs.  GABAergic inhibition acting
+temporal acuity and dynamic range at onset.  
+
+# ArnottWalacePalmer
+# Either way, it seems likely the On-C cells are in-
+# volved in the first binaural interaction underlying
+# absolute sound localization of elevation and azimuth
+# using spectral cues. They are apparently not involved
+# in the azimuthal discrimination between two sound
+# sources as this has a different mechanism (May 2000).
+
+
+
+Post onset and tonic
+inhibition is provided by \GABA-ergic neurons in the \CNSM.  GABAergic inhibition acting
 on slow and fast receptors (\GABAa and GABAB respectively) is likely
 to mediate the strong post-onset inhibition in \DS cells
 \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are
@@ -1054,7 +1062,7 @@ in sound duration
   - Cortico-cochlear, thalamo-cochlear and collilulo-cochlear
 efferents connecting in the VCN
 
-**** Intrinsic Mechanisms
+*** Intrinsic Mechanisms
 
 \todo[inline]{This section to be completed}
 
@@ -1096,7 +1104,7 @@ through \NMDA receptors
 \citep{WuOertel:1987,ChandaXu-Friedman:2010,CaoOertel:2010}
      - excitation of \TS adapts less than other \VCN neurons
 
-**** Temporal Behaviour of Choppers Important for Pitch and Streaming
+*** Temporal Behaviour of Choppers Important for Pitch and Streaming
 
 \todo[inline]{This section to be completed}
  - s.d. \FSL largest in \TS of core \VCN units by 1msec \to onset
@@ -1112,7 +1120,7 @@ inhibition + longer integration time
 activation + \TV inhibition (+ small \DS inhibition) + \GABA
 inhibition = stable excitation but loss of temporal features
 
-**** Synchronisation to Amplitude Modulated Tones
+*** Synchronisation to Amplitude Modulated Tones
 
 
 The temporal \MTF measures the precision of phase-locking to envelope
@@ -1180,7 +1188,7 @@ accurate information about the location of sound sources even in
 reverberant environments, critical in hearing
 \cite{DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c,DelgutteKiang:1984d,DavoreIhlefeldEtAl:2009}
 
-**** Vowel Representation in the Auditory Periphery
+*** Vowel Representation in the Auditory Periphery
 
 The representation of vowels in the auditory periphery has been
 studied using recordings from a large population of auditory nerve
@@ -1236,7 +1244,7 @@ the rate.
 \newpage
 
  
-** Computational Models of the Cochlear Nucleus
+* Computational Models of the Cochlear Nucleus
 
 # \todo[inline]{Needs more work on introduction of this section, vast amount of
 # previous work, their faults, i.e.\ HOW my work fits in}
@@ -1313,7 +1321,7 @@ D-stellate, Tuberculoventral and golgi cells.
 
 
 
-*** Modelling of the Auditory Periphery
+** Modelling of the Auditory Periphery
 
 Computational models of cochlear nucleus neurons requires adequate representation of their inputs, \ANFs.
 Models of the auditory periphery over the last 30 years have expanded our
@@ -1327,7 +1335,7 @@ Young, Sachs and others, in acoustic /in vivo/ experiments.
 
 \yellownote{ importance of temporal  phenomena in ANFs, good representation of LSR and HSR }
 
-*** Single neuron models of the chopper unit
+** Single neuron models of the chopper unit
 
 A number of neural models of cochlear nucleus neurons have been
 developed previously.  The basic approaches include point neuron
@@ -1418,7 +1426,7 @@ during sustained period, reduced spontaneous activity, reduction in
 refractory period that leads to faster firing rates.  Increasing \IKLT
 drops Vrev, hence Ih must be used to counterbalance \IKLT.
 
-*** Microcircuit Models in the Cochlear Nucleus
+** Microcircuit Models in the Cochlear Nucleus
 
 The first network models of the cochlear nucleus were in the \DCN
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
