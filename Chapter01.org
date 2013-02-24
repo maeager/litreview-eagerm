@@ -1,8 +1,8 @@
 #+TITLE: Introduction
 #+DATE:
 #+AUTHOR: Michael A Eager
-#+OPTIONS: toc:nil H:5 author:nil <:t >:t 
-#+STARTUP: oddeven hideblocks fold align hidestars
+#+OPTIONS: toc:nil H:5  <:t >:t 
+#+STARTUP: oddeven inlineimages hideblocks fold align hidestars 
 #+TODO: REFTEX
 #+LANGUAGE: en_GB-ise-wo_accents
 #+LATEX_HEADER:\lfoot{\footnotesize\today\ at \thistime}
@@ -37,7 +37,7 @@
        \\input{../org-manuscript/misc/glossary} 
        \\makeglossaries
        \\setcounter{secnumdepth}{5}      
-       \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+       \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
        \\pretolerance=150 
        \\tolerance=100
        \\setlength{\\emergencystretch}{3em} 
@@ -689,7 +689,7 @@ centres.
 
 #+CAPTION: Chopper subtypes
 #+LABEL: fig:chopping
-[[file:../figures/NoFigure.pdf]]
+[[file:../LiteratureReview/gfx/NoFigure.pdf]]
 
 # - regular, tonic response to tones
 #   \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
@@ -1218,7 +1218,7 @@ peaks.
 #+CAPTION: [Vowel representation in CN]{Rate-place representation in auditory nerve and cochlear nucleus neurons.  May and colleagues used a spectral manipulation procedure to change the location of the first and second formant and the first trough frequencies to coincide with the CF of a recorded cell. HSR high spontaneous rate, LSR low spontaneous rate, ANF auditory nerve fibre, PL primary-like VCN unit.  Figure reprinted from \citealt{May:2003}.}
 #+Attr_LATEX: width=0.9\textwidth
 #+LABEL: fig:May2003
-[[file:../figures/May2003-Fig3.png]]
+[[file:../LiteratureReview/gfx/May2003-Fig3.png]]
 
 
 Lateral inhibition in varying strengths is found in the responses of
