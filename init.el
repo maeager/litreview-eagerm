@@ -215,7 +215,6 @@
 	    (goto-char (mark))
 	    (while (re-search-forward "\\\\{\\(.*\\)\\\\}" nil t)
 	      (replace-match "{\\1}" nil nil))
-
 	    ))
 
 
