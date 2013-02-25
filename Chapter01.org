@@ -12,6 +12,7 @@
 # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: ../MyBib plainnat
 # unsrtnat
+#+LATEX_HEADER: \graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
 
 
 #+LaTeX: \chapter{Introduction and Literature Review}\label{sec:Chapter1}
@@ -35,12 +36,12 @@
      (add-to-list 'org-export-latex-classes '("UoM-draft-org-article"
        "\\documentclass[11pt,a4paper,twoside,openright]{book}
        \\usepackage{../org-manuscript/style/uomthesis} 
-       \\input{../org-manuscript/user-defined}
+       \\input{../org-manuscript/misc/user-defined}
        \\usepackage[nonumberlist,acronym]{glossaries}
        \\input{../org-manuscript/misc/glossary} 
        \\makeglossaries
        \\setcounter{secnumdepth}{5}      
-       \\graphicspath{{./}{./LiteratureReview/gfx}{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+       \\graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
        \\pretolerance=150 
        \\tolerance=100
        \\setlength{\\emergencystretch}{3em} 
@@ -294,8 +295,9 @@ where \LSR fibres have a higher threshold and wider dynamic range than
 unmyelinated type 2 \ANFs, which suggests they play a different role in
 sound processing to \HSR fibres.
 
+\yellownote{Get reference to Cat Human CN jpg}
 #+ATTR_LaTeX: width=0.6\textwidth
-#+CAPTION: [Tonotopic ANF innervation in the CN of man and cat]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in man and cat \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from \citep{} \yellownote{Get reference}}
+#+CAPTION: [Tonotopic ANF innervation in the CN of man and cat]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in man and cat \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from REFERENCE}
 #+LABEL: fig:CNCatHuman
 [[../SimpleResponsesChapter/gfx/Cat_Human_CN.jpg]]
 
@@ -694,7 +696,7 @@ centres.
 
 #+CAPTION: Chopper subtypes
 #+LABEL: fig:chopping
-[[file:../figures/NoFigure.pdf]]
+[[file:../LiteratureReview/gfx/NoFigure.pdf]]
 
 # - regular, tonic response to tones
 #   \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
@@ -1211,7 +1213,7 @@ peaks.
 #+CAPTION: [Vowel representation in CN]{Rate-place representation in auditory nerve and cochlear nucleus neurons.  May and colleagues used a spectral manipulation procedure to change the location of the first and second formant and the first trough frequencies to coincide with the CF of a recorded cell. HSR high spontaneous rate, LSR low spontaneous rate, ANF auditory nerve fibre, PL primary-like VCN unit.  Figure reprinted from \citealt{May:2003}.}
 #+Attr_LATEX: width=0.9\textwidth
 #+LABEL: fig:May2003
-[[file:../figures/May2003-Fig3.png]]
+[[file:../LiteratureReview/gfx/May2003-Fig3.png]]
 
 
 Lateral inhibition in varying strengths is found in the responses of
@@ -1708,9 +1710,9 @@ psychophysical limitations and forward masking has been removed}
 
 
 
-#+BEGIN_LaTeX
-  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../MyBib}\newpage \listoftodos}{}
-#+END_LaTeX
 
+#+BEGIN_LaTeX
+  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../MyBib}\newpage \printglossaries\newpage\listoftodos}{}
+#+END_LaTeX
 
 

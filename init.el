@@ -10,7 +10,6 @@
 ;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 ;; (setq reftex-plug-into-auctex t)
 ;; (setq reftex-cite-format 'natbib)
-;; (setq reftex-default-bibliography (quote ("~/Work/thesis/MyBib.bib")))
 
 ;; flyspell mode for spell checking everywhere
 ;; (add-hook 'org-mode-hook 'turn-off-flyspell 'append)
@@ -134,6 +133,8 @@
 	    (search-forward "\\begin{document}")
 	    (push-mark)
 	    ;; Force hard space before references
+;	    (replace-regexp "\\( \\|\n\\)\\\\ref"
+;			    "~\\\\ref")
 	    (while (re-search-forward "\\( \\|\n\\)\\\\ref" nil t)
 	      (replace-match "~\\\\ref" nil nil))
 	    ;; Force space before citation
@@ -160,12 +161,12 @@
 
 	    ;; Force space between double acronyms or acronyms and slashs
 	    (goto-char (mark))
-; 	    (replace-regexp "\\([A-Zu][A-Zsm]\\) \\([\\\\A-Z]\\)"
+	    ;(replace-regexp "\\([A-Zu][A-Zsm]\\) \\([\\\\A-Z]\\)"
 ;		    "\\1\\\\ \\2")
 	    (while (re-search-forward  "\\([A-Zu][A-Zsm]\\) \\([\\\\A-Z]\\)" nil t)
 	      (replace-match "\\1\\\\ \\2" nil nil))
 
- 	    ;; Acronyms or Capitals at the end of a sentence cause poor spacing.
+	    ;; Acronyms or Capitals at the end of a sentence cause poor spacing.
 	    ;; White space reproduced for occurance preceeding \item
 	    ;; (goto-char (mark))
 	    ;; (replace-regexp "\\([A-Z][A-Zs]\\)\\.\\( \\|\n\\)"
@@ -193,7 +194,8 @@
 
 	    ;; Force  floating tables and figures to be at the top
 	    (goto-char (mark))
-	    ;;(replace-regexp "htb"		    "t!")
+	    ;(replace-regexp "htb"
+	;		    "t!")
 	    (while (re-search-forward "htb" nil t)
 	      (replace-match "t!" nil nil))
 
@@ -204,7 +206,7 @@
 	    (while (re-search-forward "\\\\texttt{\\\\$\\(.*\\)\\\\$}" nil t)
 	      (replace-match "$\\1$" nil nil))
 
-	    ;;(goto-char (mark))
+	    (goto-char (mark))
 	    ;; Correct for poor tilda conversions
 					;                  (goto-char (mark))
 					;                  (replace-regexp "\\\\~\\{\\}"
@@ -213,7 +215,6 @@
 	    (goto-char (mark))
 	    (while (re-search-forward "\\\\{\\(.*\\)\\\\}" nil t)
 	      (replace-match "{\\1}" nil nil))
-
 	    ))
 
 
@@ -233,7 +234,7 @@
 	       "\% -*- mode: latex; mode: visual-line; TeX-master: t; TeX-PDF-mode: t -*-
      \\documentclass[11pt,a4paper,twoside,openright]{book}
        \\usepackage{../org-manuscript/style/uomthesis} 
-       \\input{../SimpleResponsesChapter/user-defined}
+       \\input{../org-manuscript/misc/user-defined}
        \\usepackage[nonumberlist,acronym]{glossaries}
        \\input{../org-manuscript/misc/glossary} 
        \\makeglossaries

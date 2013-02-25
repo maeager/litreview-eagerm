@@ -14,7 +14,7 @@
    stroke-miterlimit="10"
    style="font-weight:normal;fill-rule:nonzero;stroke-miterlimit:10;font-family:Times New Roman"
    id="svg2"
-   inkscape:version="0.48.1 r9760"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="CNcircuit-detailed.svg">
   <metadata
      id="metadata200">
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1020"
-     inkscape:window-height="573"
+     inkscape:window-width="1381"
+     inkscape:window-height="775"
      id="namedview198"
      showgrid="false"
-     inkscape:zoom="1.6466021"
-     inkscape:cx="361.38076"
-     inkscape:cy="257.66356"
-     inkscape:window-x="-2"
-     inkscape:window-y="0"
+     inkscape:zoom="2.1992288"
+     inkscape:cx="156.23129"
+     inkscape:cy="196.94148"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2"
      inkscape:snap-global="true"
@@ -879,7 +879,7 @@
          x="84.218437"
          y="113.02257" /></flowRegion><flowPara
        id="flowPara3868-2">Ch/Un</flowPara></flowRoot>  <path
-     style="font-weight:normal;fill:#fefffd;fill-opacity:0.99074073;stroke:#000000;stroke-width:0.3006773;stroke-miterlimit:10;stroke-dasharray:none;marker-end:url(#DotL);font-family:Times New Roman"
+     style="font-weight:normal;fill:#fefffd;fill-opacity:0.99074072999999996;stroke:#000000;stroke-width:0.30056668;stroke-miterlimit:10;stroke-dasharray:1.80340006,1.80340006;marker-end:url(#DotL);font-family:Times New Roman;stroke-dashoffset:0"
      d="m 100.76919,-52.215604 c -6.811377,1.2959 -17.786103,1.76243 -19.280496,1.94513 -0.674252,-0.0295 -13.124024,0.10051 -19.341215,-0.72917"
      id="path46-3"
      sodipodi:nodetypes="ccc"
