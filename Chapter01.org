@@ -354,8 +354,7 @@ The axonal process is part of the auditory nerve (CN VII) enters the
 Fibres of similar \CFs disperse to form a 3-dimensional sheet running
  through the nucleus, and stacks of these sheets represent the
  isofrequency con- tours of the nucleus (Fig. \ref{fig:CNschematic}).
-
-#The sheets have a
+# The sheets have a
 # horizontal orientation within the ventral cochlear nucleus
 # but twist caudally to form parasagittal sheets in the DCN.
  These projections underlie the tonotopic organisation of the resident
@@ -546,7 +545,7 @@ the basis of investigation for this thesis.
 # of multipolar cells.
 
 # reviews \citep{BruggeGeisler:1978}
-#** Cell Types
+# ** Cell Types
 
 
 
