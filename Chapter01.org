@@ -12,7 +12,7 @@
 # allows using the reftex/auctex citation command in org-mode
 #+BIBLIOGRAPHY: ../MyBib plainnat
 # unsrtnat
-#+LATEX_HEADER: \graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+#+LATEX_HEADER: \graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}}
 
 
 #+LaTeX: \chapter{Introduction and Literature Review}\label{sec:Chapter1}
@@ -39,7 +39,6 @@
        \\input{../org-manuscript/misc/glossary} 
        \\makeglossaries
        \\setcounter{secnumdepth}{5}      
-       \\graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
        \\pretolerance=150 
        \\tolerance=100
        \\setlength{\\emergencystretch}{3em} 
@@ -1599,7 +1598,7 @@ psychophysical limitations and forward masking has been removed}
 
 
 #+BEGIN_LaTeX
-  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../MyBib}\newpage \printglossaries\newpage\listoftodos}{}
+  \ifthenelse{\isundefined{\manuscript}}{\newpage\singlespacing\bibliographystyle{plainnat} \bibliography{../org-manuscript/bib/MyBib}\newpage \printglossaries\newpage\listoftodos}{}
 #+END_LaTeX
 
 
