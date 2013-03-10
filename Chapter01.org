@@ -1049,8 +1049,8 @@ relative, since choppers only phase-lock to modulations below 500Hz,
 The dynamic range of chopper neurons to \AM tones
 \citep[90~dB][]{FrisinaSmithEtAl:1990a} is significantly greater than
 individual \ANFs \citep[30--40~dB][]{FrisinaSmithEtAl:1985}.
-#The answer which is suggested by our model is that chop-
-#per neurons receive input from onset neurons which
+# The answer which is suggested by our model is that chop-
+# per neurons receive input from onset neurons which
 The change in \AM dynamic range may be due to a number of mechanisms in the
 stellate microcircuit.  Selective processing of \HSR\slash \LSR fibres
 \citep{WinslowBartaEtAl:1987,LaiWinslowEtAl:1994} is one proposed mechanism,
@@ -1347,7 +1347,7 @@ properties of \TS cells, limited by outdated input models, or contain errors in
 their network connectivity.
 
 # did not include recurrent \TS connections or
-#GABAergic inhibition.
+# GABAergic inhibition.
 
 Selective processing of different \ANF inputs using some form of inhibition was
 the first step toward including interneurons in a \TS cell model
@@ -1364,8 +1364,8 @@ Lateral inhibition has been a strong feature in most \VCN network models.
 a means of enhancing rate-place processing, and led to biologically-inspired
 automatic speech recognition models
 \citep{Shamma:1998,XuZhouEtAl:2011,WesargBrucknerEtAl:1996}.
-#The only model to consider a network with \TV and \DS
-#cells in a \VCN chopper model was \citet{ErikssonRobert:1999}.
+# The only model to consider a network with \TV and \DS
+# cells in a \VCN chopper model was \citet{ErikssonRobert:1999}.
 \citet{ErikssonRobert:1999} was the first \VCN stellate network model to include
 topographically connected \TV and \DS cells.  The \citet{ErikssonRobert:1999}
 model included their own AN input model \citep{RobertEriksson:1999}, a
