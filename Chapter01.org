@@ -1205,7 +1205,7 @@ That includes D-stellate, Tuberculoventral and golgi cells.
 # point neuron not sufficient\\
 # accurate currents of Rothman and Manis\\
 
-
+\yellownote{First model of CN circuit \citep{RasmussenGacekEtAl:1960}}
 
 
 *** Modelling of the Auditory Periphery
@@ -1314,6 +1314,9 @@ refractory period that leads to faster firing rates.  Increasing \IKLT
 drops Vrev, hence Ih must be used to counterbalance \IKLT.
 
 *** Microcircuit Models in the Cochlear Nucleus
+
+
+
 
 The first network models of the cochlear nucleus were in the \DCN
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
