@@ -174,7 +174,7 @@ cortex in terms of frequency selectivity, also known as tonotopicity
 bifurcate after entering the \CN to innervate the \VCN and \DCN, retaining their
 tonotopic order \citep{Lorente:1981,Liberman:1982,Liberman:1993}.  The different
 cell types of the \CN, each with unique cell properties and synapto-physiology,
-produce six major outputs from the \CN \citep{CantBenson:2003}. Binaural pathways
+produce six major outputs from the \CN\space \citep{CantBenson:2003}. Binaural pathways
 converge in the \IC before projecting to the medial geniculate nucleus in the
 thalamus and then to the auditory cortex.
 
@@ -223,7 +223,7 @@ nervous barrier at the \CN root. It then bifurcates into an ascending branch and
 a descending branch. The ascending branch has a relatively straight trajectory
 into the \AVCN and terminates as a large, axosomatic ending called the endbulb
 of Held.  The descending branch passes through the \PVCN and octopus cell region
-before entering the \DCN.
+before entering the \DCN\@.
 # Along the
 # way, these main branches give rise to short collaterals. The
 # collaterals ramify further and exhibit en passant swellings
@@ -235,7 +235,7 @@ Fibres of similar \CFs disperse to form a 3-dimensional sheet running through
 # horizontal orientation within the ventral cochlear nucleus
 # but twist caudally to form parasagittal sheets in the DCN.
 These projections underlie the tonotopic organisation of the resident neurons of
-the \CN \citep{RyugoParks:2003}. \LSR fibres also project to the \GCD
+the \CN\space \citep{RyugoParks:2003}. \LSR fibres also project to the \GCD\space
 \citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
 unmyelinated type 2 \ANFs, which suggests they play a different role in sound
 processing to \HSR fibres.
@@ -342,7 +342,7 @@ processing to \HSR fibres.
     indicate glycinergic inhibition, and solid rectangles indicate GABAergic
     inhibition. Dotted lines are likely connections; solid lines are
     experimentally confirmed connections.  TS cells excite DS and TV cells (and
-    possibly recurrently excite other TS cells) as well as projecting to nuclei in the superior olive and the IC.
+    possibly recurrently excite other TS cells) as well as projecting to nuclei in the superior olive and the IC\@.
     DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV
     cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS
     cells.  GLG cells are GABAergic inhibitory cells that are thought to
@@ -381,14 +381,14 @@ heterogeneous population of cell types.  Cell types have been classified using
 criteria including morphology, immunohistochemistry, synaptic organisation,
 response to acoustic stimuli and frequency tuning
 \citep{RyugoParks:2003,CantBenson:2003,YoungOertel:2004}.  The two major
-divisions are the \VCN and \DCN.  The different projections out of the nucleus
+divisions are the \VCN and \DCN\@.  The different projections out of the nucleus
 reflect the highly specialised parallel processing that is performed to extract
 particular acoustic information contained in the \AN.  The \DCN in mammals
 generally has a cerebellar-like laminar structure with many interneurons,
 whereas the \VCN consists of a magnocellular core and a marginal shell
 (otherwise called the \GCD in rodents).  The marginal shell is thought to be
 involved in regulating the gain in the magnocellular core from inputs outside
-the \CN \citep{EvansZhao:1993,GhoshalKim:1997}.
+the \CN\space \citep{EvansZhao:1993,GhoshalKim:1997}.
 
 Recent reviews of characterised cells in the \CN have examined the association
 between the projection characteristics and the corresponding physiological
@@ -448,11 +448,11 @@ heterogeneous acoustic behaviour of different \TS cell subtypes is still to be
 authoritatively determined.
 
 \Gls{TS} cells are located in the core region of the \VCN, primarily in the
-\PVCN with some in the posterior part of the \AVCN
+\PVCN with some in the posterior part of the \AVCN\space 
 \citep{Osen:1969,Lorente:1981,BrawerMorestEtAl:1974,OertelWuEtAl:1990,DoucetRyugo:2006,DoucetRyugo:1997}.
 \TS cells encode complex features of the stimulus that are important for the
 recognition of natural sounds and are a major source of excitatory input to the
-\IC \citep{OertelWrightEtAl:2011}.  \Gls{TS} cells of the \VCN encode a robust
+\IC\space \citep{OertelWrightEtAl:2011}.  \Gls{TS} cells of the \VCN encode a robust
 representation of the stimulus spectrum in their average rate and a temporal
 representation essential for speech \citep{KeilsonRichardsEtAl:1997}. They
 project directly to the \IC, and are therefore important in conveying
@@ -463,7 +463,7 @@ wide-band inhibitory cell in the \VCN, \TV cells, a narrow-band inhibitory cell
 in the \DCN, and Golgi cells, a GABAergic neuron in the outer granule shell of
 the \CN \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
 known to play a key role in shaping the average rate response, synchronisation
-to modulation and onset delay of cells in the \CN
+to modulation and onset delay of cells in the \CN\space 
 \citep{CasparyBackoffEtAl:1994,EvansZhao:1998,BackoffShadduckEtAl:1999,PaoliniClareyEtAl:2004}.
 
 \TS cells are integrators in their intrinsic behaviour, which allows phasic
@@ -806,7 +806,7 @@ their being excitatory \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
      \citep{DarrowMaisonEtAl:2006}
   5. \VNLL The functional consequences of these direct and indirect connections
      with \TS cells with the \IC are not well understood central nucleus of the
-     \IC.
+     \IC\@.
 
 
 Type I multipolar cells in the VCN give rise to projections to the periolivary
@@ -883,10 +883,10 @@ provide enhanced temporal acuity and dynamic range at onset.  Post-onset and
 tonic inhibition is provided by \GABA inputs.  GABAergic inhibition acting on
 slow and fast receptors (\GABAa and subtype B (GABA_B) respectively) is likely to
 mediate the strong post-onset inhibition in \DS cells
-\citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are weakly
-inhibited by \GABA \citep{FerragamoGoldingEtAl:1998}, reflecting the smaller
+ \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are weakly
+inhibited by \GABA \citep{FerragamoGoldingEtAl:1998} reflecting the smaller
 number of GABAergic synapses on their dendrites
-\citep{FriedlandPongstapornEtAl:2003,SmithRhode:1989}.  GABAergic inhibition in
+ \citep{FriedlandPongstapornEtAl:2003,SmithRhode:1989}.  GABAergic inhibition in
 the \VCN derives from a number of possible sources, intrinsically from Golgi
 cells in the granule cell layer of the \VCN or extrinsically from olivocochlear
 efferents \citep{OstapoffBensonEtAl:1997}.
@@ -894,15 +894,15 @@ efferents \citep{OstapoffBensonEtAl:1997}.
 Axo-somatic inhibition from flat and pleomorphic terminals has been observed
 adjoining prominently on \DS cells and could possibly explain the \OnC response
 to tones and noise.  Evidence of axo-dendritic inhibition on \TS cells
-\citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that \TS
+ \citep{Cant:1981,SmithRhode:1989} led Sachs and colleagues to suggest that \TS
 cells overcome saturation of high spontaneous rate \AN fibres by proximal
 inhibitory inputs that shunt excitation from more distal inputs
-\citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored using
+ \citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored using
 steady-state continuous inputs \citep{LaiWinslowEtAl:1994} and there is strong
 potential to explore this using more realistic inhibitory circuits.
 
 
-GABAergic inhibition regulates the level of activity in the \VCN
+GABAergic inhibition regulates the level of activity in the \VCN\space
 \citep{PalombiCaspary:1992}. The application of bicuculine abolishes the onset
 response of \OnC and \OnL units \citep{EvansZhao:1998,PalombiCaspary:1992}.
 Bicuculine, a \GABAa antagonist, raises the threshold and significantly
@@ -926,12 +926,12 @@ may be modulated by the activation of pre- and post-synaptic \GABAa receptors
 \citep{LimAlvarezEtAl:2000}.
 
 Mixed glycine and \GABA terminals, with pleomorphic vesicles, have been
-observed in the \VCN \citep{AltschulerJuizEtAl:1993}, but these are most likely
+observed in the \VCN\space \citep{AltschulerJuizEtAl:1993}, but these are most likely
 from \GABA and \GAD immunoreactive periolivary neurons whose axons terminate in
-the \VCN (cats \citep{Adams:1983,SpanglerCantEtAl:1987}; guinea pig
+the \VCN\space (cats \citep{Adams:1983,SpanglerCantEtAl:1987}; guinea pig
 \citep{HelfertBonneauEtAl:1989,OstapoffMorestEtAl:1990,Schofield:1991,QiuWangEtAl:1995};
 rat \citep{CamposCaboEtAl:2001}).  Periolivary neurons receive afferent inputs
-from monotonic units in the \VCN \citep{Schofield:1995,Schofield:2002} and are
+from monotonic units in the \VCN\space \citep{Schofield:1995,Schofield:2002} and are
 thought to play a role in sound duration
 \citep{DehmelKopp-ScheinpflugEtAl:2002,KadnerKuleszaEtAl:2006,KuleszaKadnerEtAl:2007}.
 
@@ -1008,11 +1008,11 @@ thought to play a role in sound duration
 The temporal \MTF measures the precision of phase-locking to envelope
 modulations of a \CF tone by different modulation frequencies (\fm).  Frisina
 and colleagues first showed that phase-locking to \AM in the \CN is enhanced
-relative to the \AN \citep{Frisina:1983,FrisinaSmithEtAl:1990}.  A number of
+relative to the \AN\space \citep{Frisina:1983,FrisinaSmithEtAl:1990}.  A number of
 studies have shown that the fundamental frequency is represented as an interval
 code in most \CN units
 \citep{CarianiDelgutte:1996,Rhode:1995,Rhode:1998}.  Modulated signals have been
-used extensively to analyse temporal coding in the \CN
+used extensively to analyse temporal coding in the \CN\space 
 \citep{Moller:1976,FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,KimSirianniEtAl:1990,RhodeGreenberg:1994,Rhode:1994}.
 Some response types in the \CN preserve envelope information over a wide range
 of stimulus levels, even above 100 dB \SPL, where \ANFs have reduced
@@ -1035,7 +1035,7 @@ The change in \AM dynamic range may be due to a number of mechanisms in the
 stellate microcircuit.  Selective processing of \HSR\slash \LSR fibres
 \citep{WinslowBartaEtAl:1987,LaiWinslowEtAl:1994} is one proposed mechanism,
 however, this is unlikely due to the degradation of temporal information in
-\ANFs at high \SPL \citep{JorisSchreinerEtAl:2004}.  Inhibition from \DS cells
+\ANFs at high \SPL\space \citep{JorisSchreinerEtAl:2004}.  Inhibition from \DS cells
 is a more likely mechanism. \DS cells integrate \ANFs over a wide frequency range
 \citep{PalmerJiangEtAl:1996,OertelBalEtAl:2000,GoldingFerragamoEtAl:1999},
 enhance temporal information \citep{RhodeGreenberg:1994}, and have a large
@@ -1047,9 +1047,9 @@ explored and will be discussed further in Chapter \ref{sec:Chapter4}.
 
 
 Chopper units generally have band-pass \tMTF at high \SPL, with the \fm inducing
-the highest synchronisation called the \BMF \citep{FrisinaSmithEtAl:1990}.
+the highest synchronisation called the \BMF\space \citep{FrisinaSmithEtAl:1990}.
 Chopper units are important in the transition of a temporal-place code in the
-\AN to a rate-based coding of \BMF in the \IC
+\AN to a rate-based coding of \BMF in the \IC\space 
 \citep{JorisSchreinerEtAl:2004}. Rhode and colleagues confirmed the presence of
 band-pass \tMTFs as well as some band-pass rate-based \MTFs in chopper units in
 the cat \citep{Rhode:1994,RhodeGreenberg:1994}. The \BMF of chopper units lie
@@ -1072,21 +1072,22 @@ The representation of vowels in the auditory periphery has been studied using
 recordings from a large population of \ANFs
 \citep{SachsYoung:1979,YoungSachs:1979,DelgutteKiang:1984,DelgutteKiang:1984a,DelgutteKiang:1984b,DelgutteKiang:1984c}
 and \CN cells
-\citep{BlackburnSachs:1990,KeilsonRichardsEtAl:1997,RecioRhode:2000}.  Reviews of vowel encoding in the \VCN \citep{May:2003,PalmerShamma:2003}
-highlight the spectral enhancement of formant peaks and suppression of formant
-troughs by chopper units. Figure \ref{fig:May2003} shows the estimated
-rate-place representation of \ANF and \VCN units.  \HSR\space \ANFs and
-primary-like \VCN units show saturation of trough frequencies at moderate sound
-levels.  \LSR units in the \AN and primary-like \VCN units are 
-able to encode spectrum at high \SPL.  The rate-place representation in chopper
-units (\ChS and \ChT) shows considerable robustness, maintaining spectral peak
-information across a wide range of intensity levels (right panels in
-Figure \ref{fig:May2003}).  Suppression of spectral troughs in the rate-place
-representation of \ChT and \ChS units is greater than the suppression in \LSR\space
-\ANFs at high \SPL.  Spectral enhancement in \TS cells cannot be attributed to
-lateral suppression in the \AN alone; it requires some form of
-lateral inhibitory mechanism that can perform spectral enhancement by
-suppression of noise between peaks \citep{Shamma:1985}.
+\citep{BlackburnSachs:1990,KeilsonRichardsEtAl:1997,RecioRhode:2000}.  Reviews
+of vowel encoding in the \VCN\space \citep{May:2003,PalmerShamma:2003} highlight
+the spectral enhancement of formant peaks and suppression of formant troughs by
+chopper units. Figure \ref{fig:May2003} shows the estimated rate-place
+representation of \ANF and \VCN units.  \HSR\space \ANFs and primary-like \VCN
+units show saturation of trough frequencies at moderate sound levels.  \LSR
+units in the \AN and primary-like \VCN units are able to encode spectrum at high
+\SPL\@.  The rate-place representation in chopper units (\ChS and \ChT) shows
+considerable robustness, maintaining spectral peak information across a wide
+range of intensity levels (right panels in Figure \ref{fig:May2003}).
+Suppression of spectral troughs in the rate-place representation of \ChT and
+\ChS units is greater than the suppression in \LSR\space \ANFs at high \SPL\@.
+Spectral enhancement in \TS cells cannot be attributed to lateral suppression in
+the \AN alone; it requires some form of lateral inhibitory mechanism that can
+perform spectral enhancement by suppression of noise between peaks
+\citep{Shamma:1985}.
 
 
 #+CAPTION: [Vowel representation in AN and CN]{Rate-place representation in \AN and \CN neurons.  May and colleagues used a spectral manipulation procedure to change the location of the first and second formant and the first trough frequencies to coincide with the CF of a recorded cell. HSR high spontaneous rate, LSR low spontaneous rate, ANF auditory nerve fibre, PL primary-like VCN unit.  Figure reprinted from \citealt{May:2003}.}
@@ -1096,7 +1097,7 @@ suppression of noise between peaks \citep{Shamma:1985}.
 
 
 Lateral inhibition of varying strengths is found in the responses of most cell
-types in all divisions of the \CN
+types in all divisions of the \CN\space 
 \citep{EvansNelson:1973,Young:1984,RhodeGreenberg:1994a}.  \ChT\space \TS cells
 exhibit strong side-band inhibition and respond to vowels with a clear and
 stable representation of acoustic spectrum in their average firing rate at all
@@ -1184,7 +1185,7 @@ neural networks of the brain.
 Computational models of \CN neurons requires adequate
 representation of their inputs, \ANFs.  Models of the auditory periphery over
 the last 30 years have expanded our understanding of the mechanical processes in
-the middle ear and cochlea, and the specialised synapse between the \IHC and the \AN
+the middle ear and cochlea, and the specialised synapse between the \IHC and the \AN\space 
 \citep{DavisVoigt:1991,Carney:1993,MeddisHewittEtAl:1990}. Modelling in the
 auditory periphery has benefited extensively from the work of Liberman,
 Greenwood, Patterson, Young, Sachs and others, in acoustic /in vivo/
@@ -1203,10 +1204,10 @@ This thesis uses the Carney model for all \AN simulations.
 
 *** Single neuron models of the chopper unit
 
-A number of neural models of \CN neurons have been developed.  The
-basic approaches include point neuron models
-\citep{ArleKim:1991,HewittMeddisEtAl:1992} and conductance based, \HH-like compartmental
-models
+A number of neural models of \CN neurons have been developed.  The basic
+approaches include point neuron models
+\citep{ArleKim:1991,HewittMeddisEtAl:1992} and conductance based, \HH-like
+compartmental models
 \citep{BanksSachs:1991,WhiteYoungEtAl:1994,LaiWinslowEtAl:1994,WangSachs:1995}.
 Point neuron models based on \citet{MacGregor:1993} were able to replicate
 intrinsic chopping behaviour \citep{ArleKim:1991,HewittMeddisEtAl:1992} and
@@ -1218,8 +1219,8 @@ modified \HH equations \citep{HodgkinHuxley:1952} to develop a fast sodium
 (\INa) current and a high-threshold (\IKHT) potassium current. Further
 modifications of the \citet{BanksSachs:1991} conductance model improved the
 adaptive chopping behaviour due to inhibition
-\citep{WangSachs:1995,LaiWinslowEtAl:1994} and the model's synchronisation to envelope
-\citep{WangSachs:1995}.
+\citep{WangSachs:1995,LaiWinslowEtAl:1994} and the model's synchronisation to
+envelope \citep{WangSachs:1995}.
 
  
 A single compartment model with accurate membrane conductances was developed
@@ -1286,7 +1287,7 @@ with local interneurons have not utilised the important membrane cell properties
 of \TS cells, are limited by outdated input \AN models, have insufficiently complex neural
 models, or contain errors in their network connectivity.
 
-The first network models of the \CN were in the \DCN
+The first network models of the \CN were in the \DCN\space 
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
 cerebellar-like circuitry of the \DCN and its complex \EIRA cell type
 behaviours were modelled by Blum and colleagues
@@ -1352,7 +1353,7 @@ studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}. Neither study provides a
 realistic implementation of the stellate microcircuit, however.  In a
 speculative model, \citet{WiegrebeMeddis:2004} included a range of \TS cells in
 each frequency band, each with a different intrinsic firing rate.  The goal of
-their model was decoding \AM properties in the \IC.  Unfortunately, the
+their model was decoding \AM properties in the \IC\@.  Unfortunately, the
 intrinsic firing rate of the \TS cell model exceeded physiologically observed
 rates.  Additionally, the \AN model used was limited by the dated nature of the
 experimental data \citep{MeddisOMardEtAl:2001}.  
@@ -1362,9 +1363,9 @@ The network model by \citet{BahmerLangner:2006} proposed a new \VCN network
 design, with an excitatory onset unit contacting recurrently connected \TS
 cells.  The purpose of this model was to show that recurrently connected \TS
 cells, with synaptic delay of 0.4 ms, form the best basis for modulation
-frequency peaks in the \IC.  \citet{BahmerLangner:2006} assert that octopus
+frequency peaks in the \IC\@.  \citet{BahmerLangner:2006} assert that octopus
 cells form excitatory synapses with \TS cells.  Octopus cells do not have axonal
-collaterals in the \VCN \citep{Adams:1997,CantBenson:2003}; consequently, the
+collaterals in the \VCN\space \citep{Adams:1997,CantBenson:2003}; consequently, the
 inclusion of octopus cells in a network of the \VCN is speculative. Despite
 using the most up-to-date currents in the onset neural model
 \citep{RothmanManis:2003b}, \citet{BahmerLangner:2006a} failed to include the
