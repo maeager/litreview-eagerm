@@ -1193,10 +1193,10 @@ experiments.
 
 A review by \citet{Lopez-Poveda:2005}, shows the two groups with the strongest correlation
 between known phenomenological behaviour and model outputs are the DSAM model
-\cite{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002}\footnote{DSAM 
+\citep{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002}\footnote{DSAM 
 http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
 Carney model
-\cite{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006}\footnote{Carney
+\citep{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006}\footnote{Carney
 model
 http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
 These models both show good representation of rate behaviour in \LSR and \HSR models, as well as temporal phenomena in ANFs.
