@@ -1151,14 +1151,14 @@ remains unknown about the functioning of neural processing in the \CNSM.
 # \end{quote}
 # #+LATEX: {\hfill\citep[p.~390]{MeddisHewitt:1993}}
 
-Advances in understanding \CN membrane
-kinetics and improved understanding of the synaptic organisation have increased the feasibility of
-investigations of synaptic influences more feasible \citep[cf.~][]{MeddisHewitt:1993}. Combined with massively
-increased computational power available to researchers, a highly detailed model
-can provide greater insight into the function of regulatory mechanisms within
-and outside the cochlear nucleus. This knowledge can also drive methods for
-constraining such detailed models based on physiological responses in other
-neural networks of the brain.
+Advances in understanding \CN membrane kinetics and improved understanding of
+the synaptic organisation have increased the feasibility of investigations of
+synaptic influences more feasible \citep[cf.~][]{MeddisHewitt:1993}. Combined
+with massively increased computational power available to researchers, a highly
+detailed model can provide greater insight into the function of regulatory
+mechanisms within and outside the cochlear nucleus. This knowledge can also
+drive methods for constraining such detailed models based on physiological
+responses in other neural networks of the brain.
 
 # Only limited assumptions are made as to particular values any variable may take,
 # the rest is up to the optimisation algorithm.  Underlying the success of the
@@ -1504,7 +1504,7 @@ expedient optimisation method for large \BNNs, even where experimental data are
 limited.
 
 
-Chapter \ref{sec:Discussion} draws together the findings of the design, optimisation and analysis of the
+Chapter \ref{sec:FinalChapter} draws together the findings of the design, optimisation and analysis of the
 CNSM model. It describes the usefulness of the model as well as the optimisation
 methods used throughout the thesis. It canvases the limitations of the research
 and makes recommendations for future work arising out of the thesis.
