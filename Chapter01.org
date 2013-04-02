@@ -15,7 +15,7 @@
 #+LATEX_HEADER: \graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}}
 
 
-#+LaTeX: \chapter{Introduction and Literature Review}\label{sec:Chapter1}
+#+LaTeX: \chapter{Introduction and Literature Review}\label{sec:IntroChapter}
 
 * Prelude                                                          :noexport:
 
@@ -1043,7 +1043,7 @@ dynamic range to tones \citep{RhodeGreenberg:1994a}.  GABAergic \GLG cells have
 a large dynamic range to tones and noise \citep{GhoshalKim:1996}, and are
 proposed as a regulator of gain in the activity of \TS cells
 \citep{FerragamoGoldingEtAl:1998}.  These mechanisms have not been fully
-explored and will be discussed further in Chapter \ref{sec:Chapter4}.
+explored and will be discussed further in Chapter \ref{sec:AMChapter}.
 
 
 Chopper units generally have band-pass \tMTF at high \SPL, with the \fm inducing
@@ -1474,16 +1474,16 @@ techniques. This thesis seeks to address these deficiencies through the design a
 optimisation of the \CNSM model.  The remainder of this chapter introduces the
 work undertaken in this thesis to develop and test the \CNSM model.
 
-Chapter 2 establishes the general methods for use in the design of the \CNSM
+Chapter \ref{sec:MethodsChapter} establishes the general methods for use in the design of the \CNSM
 model.  It introduces the basic building blocks of individual cells (membrane
 currents, different cell types and characteristics), and their neural
 connectivity (including synapse types and kinetics), and cell type to cell type
 connections within and across frequency channels.  The
 chapter describes the the \AN input model and the stimuli used to generate
 acoustic input to the \AN model.  Finally, it foreshadows the optimisation
-techniques deployed in Chapters 3 and 5.
+techniques deployed in Chapters \ref{sec:ModelChapter} and \ref{sec:GAChapter}.
 
-Chapter 3 presents the detailed design of the \CNSM model using a sequential
+Chapter \ref{sec:ModelChapter} presents the detailed design of the \CNSM model using a sequential
 method of optimisation. The cells of the \CNSM model (Golgi, \DS, \TV and 3
 categories of \TS cells) and the cost function used to fit the model to
 experimental data are each laid out in turn.  The \CNSM model was tested using a
@@ -1491,20 +1491,20 @@ series of tone and noise stimuli for validation with experimental data not
 utilised in the optimisation procedure.
 
 
-Chapter 4 presents a case study involving the validation of the \CNSM model
+Chapter \ref{sec:AMChapter} presents a case study involving the validation of the \CNSM model
 using complex stimuli, \AM, which is a key component of animal communication.
-Through this application of the \CNSM, Chapter 4 demonstrates that connectivity
+Through this application of the \CNSM, Chapter \ref{sec:AMChapter} demonstrates that connectivity
 within the microcircuit enhances temporal coding from the \AN to higher centres
 through the \TS cells.
 
-Chapter 5 uses a simplified version of the \CNSM model to explore simultaneous
+Chapter \ref{sec:GAChapter} uses a simplified version of the \CNSM model to explore simultaneous
 optimisation, a faster means of establishing network parameters in \BNNs.
 Through this analysis, Chapter 5 demonstrates that \GAs may have utility as an
 expedient optimisation method for large \BNNs, even where experimental data are
 limited.
 
 
-Chapter 6 draws together the findings of the design, optimisation and analysis of the
+Chapter \ref{sec:Discussion} draws together the findings of the design, optimisation and analysis of the
 CNSM model. It describes the usefulness of the model as well as the optimisation
 methods used throughout the thesis. It canvases the limitations of the research
 and makes recommendations for future work arising out of the thesis.
