@@ -1,0 +1,290 @@
+\documentclass[10pt,a4paper,twoside,openright]{book}
+
+\usepackage{nag}
+\usepackage{../hg/manuscript/style/uomthesis}
+\input{../hg/manuscript/user-defined}
+\usepackage[acronym,nonumberlist]{glossaries}
+\input{../hg/manuscript/misc/glossary}
+\makeglossaries
+
+\usepackage{appendix}
+\graphicspath{{../SimpleResponsesChapter/gfx/}{../figures/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/ResponsesNoComp/ModulationTransferFunction/}}
+\usepackage{rotating,calc}
+\usepackage{booktabs,ltxtable,lscape}
+
+\usepackage[displaymath,floats,graphics,textmath,sections,footnotes,showlabels,psfixbb]{preview}
+\ifPreview
+\PreviewEnvironment[{*[][]{}}]{tabularx}
+\PreviewMacro[{*[][]{}}]{\yellownote}
+\fi
+
+\lfoot{\footnotesize\today\ at \thistime}
+
+\pretolerance=150
+\tolerance=100
+\setlength{\emergencystretch}{3em}
+
+\overfullrule=1mm
+% \usepackage[notcite]{showkeys}
+
+\graphicspath{{../../figures/}{./gfx/}{/media/data/Work/thesis/SimpleResponsesChapter/}{/media/data/Work/thesis/SimpleResponsesChapter/gfx/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/golgi/}{/media/data/Work/cnstellate/}{/media/data/Work/cnstellate/TV_Notch/}}
+
+% \newcommand{\um}{$\mu$m}
+% \newcommand{\umsq}{$\mu$m$^2$}
+
+\hypersetup{
+pdftitle = Literature Review Chapter,
+pdfauthor = Michael Eager
+%pdfsubject= , 
+%pdfkeywords = keyword1 keyword2 keyword3
+}
+%\setcitestyle{numbers}
+
+
+
+% xelatex font
+% \usepackage[T1]{fontenc}
+% \usepackage{fontspec}
+% \usepackage{graphicx}
+% \defaultfontfeatures{Mapping=tex-text}
+% \setromanfont{Gentium}
+% \setromanfont [BoldFont={Gentium Basic Bold},
+%                 ItalicFont={Gentium Basic Italic}]{Gentium Basic}
+% \setsansfont{Charis SIL}
+% \setmonofont[Scale=0.8]{DejaVu Sans Mono}
+
+
+\begin{document}
+		% TOC, LOF, LOT
+		{%
+			\singlespacing%
+			\tableofcontents%
+			\listoffigures%
+			% Do not include a list of tables if you have less
+			% than 10 tables, as per SGS suggestion.
+			\listoftables
+                        \printglossaries
+		   \clearpage%
+		}%
+\setcounter{chapter}{0}
+%\chapter{Literature Review}
+%\medskip{}
+%\centerline{\today\\ Draft Version:  \input{.hg/tags.cache}
+
+%************************************************
+\chapter{Introduction}\label{Ch1:introduction}
+%************************************************
+%   This section should give a rough introduction to the themes
+%   included in the thesis and how the thesis is structured
+%*****************************************
+
+%\PARstart{A}{ }
+
+\glsresetall[main,acronym]
+%*****************************************
+%*****************************************
+%*****************************************
+%*****************************************
+\section{Literature Review}\label{Ch1:litreview}
+%*****************************************
+
+\section{Auditory System}\label{Ch1:AuditorySystem}
+
+\input{Peripheral.tex}
+
+
+
+%*****************************************
+\section{Cochlear Nucleus}\label{Ch1:CochelarNucleus}
+
+
+Recent Reviews of characterised cells and projections
+\citep{CantBenson:2003,RyugoParks:2003,SmithMassieEtAl:2005,YoungOertel:2004,OertelWrightEtAl:2010}
+
+%\citep{CantBenson:2003}
+% Except for a few differences to be mentioned later, cell types in
+% rat and cat appear to be quite similar and are also identifiable
+% in a number of other species, including human [6,87,136]
+% and other primates [87,141]; chinchilla [138,165]; gerbil
+% [145,165]; guinea pig [75,76,133]; kangaroo rat [45,251];
+% mole [114]; mouse [239,252,262,264]; porpoise [162];
+% rabbit [53,172] and several species of bats [59,208,269].
+
+% Smith and Rhode [220] were able to divide the large mul-
+% tipolar neurons in the posterior part of the AVCN and the
+% anterior part of the PVCN of the cat into two groups based
+% on differences in physiological response properties, synaptic
+% organization, the pathway taken by the axons, and the types
+% of vesicles contained in their synaptic terminals. Their com-
+% prehensive study has provided a framework for a synthesis
+% of results from a number of laboratories, all of which are
+% compatible with the conclusion that the ventral cochlear nu-
+% cleus contains at least two functionally distinct populations
+% of multipolar cells.
+
+
+
+reviews \citep{BruggeGeisler:1978}
+
+\citet{DoucetRyugo:2006} showed the limited number of VCN multipolar neuron
+studies that have performed physiological unit assessments as well as
+classification of morphology via labelling.
+
+% auditory brain stem. Most of the different neuron popula-
+% tions in the magnocellular core are contacted by individual
+% auditory nerve fibres. These cells, along with the incoming
+% auditory nerve fibres, are arranged in isofrequency contours
+% and have identical CFs. They can, however, exhibit different
+% thresholds and temporal patterns in their spike discharges.
+% That is, when presented with short tone bursts at CF, the
+% PSTH can display reliable but distinctly different patterns
+% [16,18,147,156]. These PSTHs are named by their shapes,
+% such as primary-like, chopper, onset, pauser, or build-up.
+% Intracellular recording and staining methods have demon-
+% strated that neurons with different firing patterns generally
+% manifest different morphological features, including but not
+% limited to, dendritic appearance, cell body size and shape,
+% and axonal projections (e.g. [53,157,158,164]). Some of
+% these differences are attributed, at least in part, to the nature
+% of the neuron’s input from the auditory nerve [86,117], but
+% intrinsic membrane properties assume equal prominence
+% [5,61,107,108,129].
+
+
+% 6.3. Receptors and transmitters
+% The auditory system has demanding functions with re-
+% spect to processing sound for localization, identification,
+% and communication. Key to these functions is the ability to
+% receive and transmit faithfully rapid changes in the acoustic
+% signal. The large endbulbs of Held reﬂect one specialization
+% for secure transmission [130,146,168] and the amino acid
+% glutamate is the most likely candidate that facilitates rapid
+% transmission [57,119,150]. One difficulty in the identifica-
+% tion of glutamate as the auditory nerve neurotransmitter is its
+% ubiquitous distribution in tissue and the inability to measure
+% its release during synaptic activity. Consequently, research
+% efforts have been directed towards the study of pharmaco-
+% logic agonists and antagonists of glutamate, the analysis of
+% glutamate receptor subunits, and/or the role of glutamate
+% transporters. As in birds, the bulk of available evidence im-
+% plicates glutamate as the neurotransmitter for the auditory
+% nerve. Quantitative immunogold staining methods revealed
+% significantly greater labelling over primary endings com-
+% pared to nonprimary endings (containing ﬂat or pleomorphic
+% vesicles) and glia [64]. Furthermore, immunogold staining
+% was significantly lower in primary terminals that had been
+% depleted of glutamate by potassium-induced depolarization.
+% The production and/or utilization of glutamate is mediated
+% by aspartate aminotransferase. The soluble cytoplasmic
+% fraction of this amino acid has been immunolocalized to
+% endings of auditory nerve fibres [2,166]. The presence of
+% glutamate and one of its metabolic precursors in the presy-
+% naptic endings is complemented by glutamate receptors
+% in cochlear nucleus neurons (e.g. [143,144,167,213,217]).
+% These receptors include ionotropic receptors that are formed
+% by several subunits surrounding a central ion channel, and
+% metabotropic receptors that associate with G-proteins and
+% tend to mediate long-term responses.
+% The ionotropic receptors include AMPA, kainate, delta,
+% and NMDA types. AMPA receptors mediate the fast exci-
+% tatory transmission and consist of four subunits, GluR1–4
+% with ﬂip, ﬂop, and other splice variants. Primary endings
+% in the cochlear nucleus oppose AMPA receptors composed
+% mainly of GluR3 and GluR4 [143,167,213]. The GluR4 sub-
+% units gate rapidly and are specialized for auditory nerve in-
+% put [119]. The GluR2 subunits, which exhibit slower AMPA
+% kinetics, are associated with parallel fibre inputs in the DCN
+% [56]. Primary endings are also associated with delta recep-
+% tors but it is not known if delta receptors form functional
+% receptors.
+
+% NMDA receptors are characterized by a voltage-dependent
+% calcium channel. It is thought that depolarization via the
+% AMPA receptors is required for the NMDA receptor to
+% open. The calcium-permeability of NMDA is presumed to
+% form the basis of the long-term effects underlying learn-
+% ing and memory. There are a number of NMDA receptors,
+% including NR1 (with eight splice variants), NR2A-D, and
+% NR3. Receptors are composed of NR1 plus one or more
+% variants of NR2 which determine their physiological prop-
+% erties. NR1 has a widespread distribution in the cochlear
+% nucleus [15,143]. NR2A and NR2C are found in the su-
+% perficial granule cell layer of the ventral cochlear nucleus
+% and in medium sized neurons of the deeper layers of the
+% DCN. NR2A is in the large neurons of the rostral AVCN
+% and NR2B is in pyramidal cells of the DCN. There is
+% pharmacologic evidence that reveals an early presence of
+% NMDA receptors in the developing auditory system that di-
+% minishes shortly after weaning [54,73]. Such data indicate
+% that NMDA receptors may play a role in the development
+% of the non-NMDA receptors.
+
+% Metabotropic glutamate receptors are thought of as sin-
+% gle molecules coupled to G-proteins. The G-proteins are
+% linked to intracellular transduction pathways that may un-
+% derlie plasticity. There are three types of metabotropic re-
+% ceptors based on their pharmacologic properties and second
+% messenger cascades [126]. In the cochlear nucleus, immuno-
+% cytochemical staining demonstrates labeling of mGluR1␣
+% and mGluR5 [143], which are involved in the initiation
+% of the phosphoinositol transduction pathway [127]. These
+% metabotropic receptors are distributed in the perisynaptic
+% membrane that ﬂanks the postsynaptic membrane density
+% [128,145].
+
+% Transmitter released from auditory nerve endings must be
+% rapidly removed from the synaptic cleft so that the postsy-
+% naptic cell is prepared for the next transmission. The removal
+% and inactivation of neurotransmitter is accomplished by a
+% highly efficient system of uptake and transporter molecules
+% that surround glutamatergic synapses [9,10,46]. It has been
+% speculated that glial processes and neuronal membranes lin-
+% ing the intercellular cisternae between primary endings and
+% cochlear nucleus neurons might house the relevant trans-
+% porter molecules [154]. Regulation of residual transmitter
+% by glial transporters has been suggested as a means to con-
+% trol synaptic strength [210]. A preference for transporter
+% molecules to be distributed along the membranes lining these
+% perisynaptic cisternae could provide important insights into
+% synaptic function.
+
+
+
+\input{TStellate.tex}
+\input{DStellate.tex}
+\input{Tuberculo.tex}
+\input{Golgi.tex}
+
+
+
+%*****************************************
+%\section{Summary of T~Stellate Microcircuit Connections}
+
+
+\section{Summary of Cell Morphology}
+
+
+\begin{landscape}
+%\afterpage
+{\small\LTXtable{210mm}{CellMorphologyTable}}
+\end{landscape}
+
+
+
+%\citep[e.g.][]{FerragamoGoldingEtAl:1998a}
+
+%*****************************************
+%\setcitestyle{numbers}
+\bibliographystyle{unsrtnat}%plainnat}%abbrvnat}%bmc_article} % Style BST file
+\bibliography{../hg/manuscript/bib/MyBib}
+\newpage
+\listoftodos
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: tex-fold
+%%% TeX-PDF-mode: nil
+%%% TeX-master t
+%%% End:
