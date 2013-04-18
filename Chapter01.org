@@ -82,12 +82,12 @@ extensive exploitation of this experimental data in the design and optimisation
 of computational models.  Success in this endeavour will enable us to improve
 the accuracy and value of \BNNs for use in the investigation of brain networks.
 
-This thesis presents a novel \BNN model of the stellate cell microcircuit in the
-cochlear nucleus (hereafter, the ‘CNSM model’). This microcircuit provides a robust
+This thesis presents a novel \BNN model of the \CN stellate cell microcircuit
+ (hereafter, the ‘CNSM model’). This microcircuit provides a robust
 spectral representation of sound and plays an essential part in speech
 communication. The model was optimised using rigorous sequential methods and
 simultaneous genetic algorithms. The analyses of the results demonstrate the
-utility of this approach for improving \BNN models to help us better
+utility of this approach for using \BNN models to help us better
 understand complex neural processing.
 
 \glsunset{CNSM}
@@ -141,32 +141,29 @@ verification of the \CNSM model in the remainder of the thesis.
 
 ** Auditory System 
 
-Speech is a unique and fundamental tool in communication between humans.  We
-continually deal with various distortions of the acoustic environment (for
-example, background noise and reverberation) as we extract information from
-signals entering the ear.  Vowels are a salient feature of speech that is
-spectrally and temporally distinct from other natural sounds.  The spectrum of
-each vowel is distinguished by the location of high-energy spectral peaks, known
-as formants. Robust representation of spectra at different intensities is
-important for speech and other auditory communication \citep{YoungOertel:2004}.
-The main tasks of the auditory system are to (1) separate out individual
-frequency components of sound; (2) enhance spectral and temporal contrasts to
-improve meaningful \SNR; and (3) extract behavioural frequency cues
-\citep{Evans:1992}.
-
-
+Speech is a unique and fundamental tool for communication between humans.  We
+continually deal with various distortions of the acoustic environment, such as
+background noise and reverberation, as we extract information from signals
+entering the ear.  Vowels are a salient feature of speech that is spectrally and
+temporally distinct from other natural sounds.  The spectrum of each vowel is
+distinguished by the location of high-energy spectral peaks, known as
+formants. Robust representation of spectra at different intensities is important
+for speech and other auditory communication 
+\citep[for~a~review of CN neural processing see][]{YoungOertel:2004}.  The main
+tasks of the auditory system are to (1) separate out individual frequency
+components of sound, (2) enhance spectral and temporal contrasts to improve
+meaningful \SNR, and (3) extract behavioural frequency cues \citep{Evans:1992}.
 
 Advanced auditory fidelity and localisation are exceptional features of hearing
 perception in animals.  These specialities work to a high degree despite the
-input at the round window of the cochlea being one dimensional and very noisy.
+input at the round window of the cochlea being one-dimensional.
 Rough frequency decomposition is performed by the basilar membrane and organ of
 Corti in the mammalian cochlea, which transforms mechanical signals to neural
 signals in \ANFs.  The next stage of the auditory process occurs in the \CN, the
 first processing stage of the central auditory pathway in which all \ANFs
 end. Enhancing spectral and temporal contrasts requires sophisticated parallel
 processing strategies involving networks of neurons with feed-forward and
-feed-back connections.
-
+feedback connections.
 
 The auditory system is topographically ordered from the basilar membrane to the
 cortex in terms of frequency selectivity, also known as tonotopicity
@@ -200,7 +197,9 @@ thalamus and then to the auditory cortex.
 Type 1 \ANFs are categorised into \HSR and \LSR fibres \citep{Liberman:1978}.
 The acoustic physiology of \ANFs forms a bi-modal distribution where 30--40\% of
 the fibres have \SR less than 2 spikes/s and 60--70\% have \SR above 30 spikes/s
-\citep{RyugoParks:2003}. Threshold is correlated to the amount of spontaneous
+\citep[see review][]{RyugoParks:2003}. 
+\yellownote{define threshold and bandwidth} 
+Threshold is correlated to the amount of spontaneous
 spike activity that occurs in the absence of experimenter-controlled
 stimulation. \LSR fibres have relatively high thresholds, whereas \HSR fibres
 have low thresholds. Fibres of similar \CF can vary in \SR from near 0 to 100
@@ -211,18 +210,21 @@ physiological features, especially in terms of their contribution to the dynamic
 range of hearing and representation of speech sounds
 \citep{RyugoParks:2003}. The collective evidence suggests that different \SR
 groupings of \ANFs play distinct roles in acoustic information processing. It
-might be that the \HSR fibres with their low thresholds prefer to function in
+might be that the \HSR fibres with their low thresholds function in
 quiet, whereas \LSR fibres with their high thresholds operate better in loud and
 noisy environments.
+\yellownote{imprecise definition in last sentence -see meeting conversation}
 
-The morphology of \LSR and \HSR fibres is essentially similar. Characterised as
-bipolar neurons, their cell bodies lie in the retinal ganglion region
-(Rosenthal's canal) of the cochlea and their peripheral process contacts one
-inner hair cell.  The axonal process is part of the \AN and enters the central
-nervous barrier at the \CN root. It then bifurcates into an ascending branch and
-a descending branch. The ascending branch has a relatively straight trajectory
-into the \AVCN and terminates as a large, axosomatic ending called the endbulb
-of Held.  The descending branch passes through the \PVCN and octopus cell region
+The morphology of \LSR and \HSR\space \ANFs are essentially
+similar. Characterised as bipolar neurons, their cell bodies lie in the retinal
+ganglion region (Rosenthal's canal) of the cochlea and their peripheral process
+contact one inner hair cell.  The myenilated \AN axonal processes form the
+vestibulocochlear nerve (the 8th cranial nerve) and enter the brainstem at the
+\CN root. The \AN fibres bifurcate into both the ascending and descending
+branches. The ascending branch has a relatively straight trajectory into the
+\AVCN (many small collaterals with terminal boutons contacting cell bodies and
+dendrites) and terminate as a large, axosomatic ending called the endbulb of
+Held.  The descending branch passes through the \PVCN and octopus cell region
 before entering the \DCN\@.
 # Along the
 # way, these main branches give rise to short collaterals. The
@@ -237,7 +239,7 @@ Fibres of similar \CFs disperse to form a 3-dimensional sheet running through
 These projections underlie the tonotopic organisation of the resident neurons of
 the \CN\space \citep{RyugoParks:2003}. \LSR fibres also project to the \GCD\space
 \citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
-unmyelinated type 2 \ANFs, which suggests they play a different role in sound
+unmyelinated type 2 \ANFs, which suggests that they play a different role in sound
 processing to \HSR fibres.
 
 # 5. Structure-function correlates
@@ -355,8 +357,10 @@ processing to \HSR fibres.
 
 ** Cochlear Nucleus 
 
+\glsset{TS}
+
 There is a rich tradition of experimental investigation of the \CN, dating back
-more than eighty years \citep[see,~for~example,~]{Lorente:1933}.  The synaptic
+more than eighty years \citep[for~example~see]{Lorente:1933}.  The synaptic
 organisation of cells in the \CN has been examined in detail in various species
 including cats \citep{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}; mice
 \citep{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991};
@@ -405,7 +409,7 @@ The afferent and intrinsic synaptic connectivity in the \CN have also been the
 subject of intense interest in the literature
 \citep{YoungOertel:2004,OertelWrightEtAl:2011}. The network in Figure
 \ref{fig:CNschematic} shows the connections within the \CN that are involved in
-modulating \TS cells. The \TS cells and their synaptic interactions are the
+modulating \TS cells' activity. The \TS cells and their synaptic interactions are the
 focus of the \CNSM model and are discussed in detail in the next section.
 
 
@@ -445,7 +449,8 @@ This section provides an overview of \TS cells, including their cell morphology,
 immuno-histochemistry, intrinsic membrane properties, synaptic contacts and
 physiological properties. The respective contribution of these elements to the
 heterogeneous acoustic behaviour of different \TS cell subtypes is still to be
-authoritatively determined.
+thoroughly determined.
+\yellownote{DG authoritatively is unclear: synonyms thoroughly, persuasive, influentially, credible, valid, effective, plausible, reasonable}
 
 \Gls{TS} cells are located in the core region of the \VCN, primarily in the
 \PVCN with some in the posterior part of the \AVCN\space 
@@ -458,17 +463,19 @@ representation essential for speech \citep{KeilsonRichardsEtAl:1997}. They
 project directly to the \IC, and are therefore important in conveying
 information to higher auditory centres. \TS cells are known to form a local
 microcircuit network with neurons within their isofrequency lamina and across
-the frequency range of the nucleus. The microcircuit includes \DS cells, a
-wide-band inhibitory cell in the \VCN, \TV cells, a narrow-band inhibitory cell
-in the \DCN, and Golgi cells, a GABAergic neuron in the outer granule shell of
-the \CN \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
+the frequency range of the nucleus. The microcircuit includes \DS cells (a
+wide-band inhibitory cell in the \VCN), \TV cells (a narrow-band inhibitory cell
+in the \DCN) and Golgi cells (a GABAergic neuron in the \GCD, an outer shell of
+the \CN) \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
 known to play a key role in shaping the average rate response, synchronisation
 to modulation and onset delay of cells in the \CN\space 
 \citep{CasparyBackoffEtAl:1994,EvansZhao:1998,BackoffShadduckEtAl:1999,PaoliniClareyEtAl:2004}.
 
-\TS cells are integrators in their intrinsic behaviour, which allows phasic
+Intracellular current-clamp recordings of \TS cells have categorised 
+them as type 1 \citep{Oertel:1983,OertelWuEtAl:1988,FerragamoGoldingEtAl:1998a} 
+This integrative intrinsic cell membrane behaviour allows phasic
 input from \ANFs to be converted to a tonic or chopping output.  The tonic
-behaviour suits encoding of spectrum across populations since encoding the peaks
+behaviour enables encoding of spectrum across populations since encoding the peaks
 and valleys is relatively independent of time after onset of sound. It also
 suits encoding of envelopes of sounds, which is important for speech
 \citep{OertelWrightEtAl:2011}. The presence of active membrane channels at rest
@@ -481,7 +488,7 @@ rate of the two chopper populations provides either a low-contrast
 representation independent of level (\ChS) or a high-contrast representation of
 stimulus spectrum (\ChT) \citep{BlackburnSachs:1990,May:2003}. The temporal
 coding of cells in the \CN has also been studied extensively with \AM tones
-\citep{FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,RhodeGreenberg:1994}, and
+\citep{FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,RhodeGreenberg:1994} and
 ripple noise \citep{WinterPalmerEtAl:1993}.  \citet{KeilsonRichardsEtAl:1997}
 went further, showing that chopper cells provide a periodicity-tagged spectral
 representation that can be used to separate simultaneously presented vowels.
@@ -899,7 +906,7 @@ cells overcome saturation of high spontaneous rate \AN fibres by proximal
 inhibitory inputs that shunt excitation from more distal inputs
  \citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored using
 steady-state continuous inputs \citep{LaiWinslowEtAl:1994} and there is strong
-potential to explore this using more realistic inhibitory circuits.
+potential to explore this using more realist ic inhibitory circuits.
 
 
 GABAergic inhibition regulates the level of activity in the \VCN\space
