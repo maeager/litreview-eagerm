@@ -63,6 +63,7 @@
 #+RESULTS:
 : {\singlespacing\tableofcontents\printglossaries}
 
+
 * Introduction  
   
 The development of \BNN models is a major objective of computational
@@ -1374,17 +1375,19 @@ frequency peaks in the \IC\@.  \citet{BahmerLangner:2006} assert that octopus
 cells form excitatory synapses with \TS cells.  Octopus cells do not have axonal
 collaterals in the \VCN\space \citep{Adams:1997,CantBenson:2003}; consequently, the
 inclusion of octopus cells in a network of the \VCN is speculative. Despite
-using the most up-to-date currents in the onset neural model
+using the most up-to-date currents in the onset neural model 
 \citep{RothmanManis:2003b}, \citet{BahmerLangner:2006a} failed to include the
 \Ih current, a unique characteristic of octopus cells \citep{CaiMcGeeEtAl:2000}.
 Recurrent networks in the cortex prefer inhibition for synchronisation
 \citep{LyttonSejnowski:1991,BushSejnowski:1996}.  In theoretical terms,
 inhibitory phasic input is significantly better than excitatory phasic inputs at
-improving synchronisation in recurrent neural networks
+improving synchronisation in recurrent      networks
 \citep{VreeswijkAbbottEtAl:1995}. The lack of inclusion of contemporary \AN
 models as input to the \citet{BahmerLangner:2006a} CN model means that there is
 much scope for improvement in computational modelling in the \CN stellate
 microcircuit.
+
+
 
 
 ** Optimisation in Neural Modeling
@@ -1471,6 +1474,8 @@ Current methods used in constraining spiking networks can be categorised as foll
 # been built (Coggan et al, 2005). It is likely that computational tools will
 # contribute greatly to our understanding of how synapses function and change in
 # relation to external stimulus in the coming decades.  }
+
+\yellownote{Include \citep{RossantGoodmanEtAl:2010,BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
 
 
 * Overview of Thesis

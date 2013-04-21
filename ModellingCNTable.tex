@@ -172,14 +172,14 @@
 % \newlength\Tl \settowidth{\Tl}{Pressnitzer Meddis Et Al 2001} \setlength\tabcolsep{1mm}
 \begin{longtable}{XXXXc}%
 %
-\caption{Network model studies of the VCN}\label{tab:ModellingCNTable} \\
+\caption[BNN model studies of the VCN]{BNN model studies of the VCN.  These papers were selected for their attempts to replicate the T stellate cell microcircuit, which excludes \DCN neural network models. The studies in the left column were analysed for the types of neural model, AN input model, the connectivity between cells types, and methods for parameter selection used in the paper.  Parameter selection methods: UD (undisclosed), VI (visual inspection), HD (hand-tuned), FV (Fixed values), V (variable)  }\label{tab:ModellingCNTable} \\
 \toprule  
                            Study                             &                     Input Model                      &                          Neural Model                          &                    Connections                     & Parameter Selection      %& Synapse Model & Comments                             
 \\ \midrule
 \endfirsthead
 
 \multicolumn{5}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
-                      \midrule  Study                        &                     Input Model                      &                          Neural Model                          &                    Connections                     & Parameter Selection     % & Synapse Model & Comments  
+                      \midrule  Study                        &                     Input AN Model                      &                          Neural Model                          &                    Connections                     & Parameter Selection     % & Synapse Model & Comments  
 \\ \midrule
 \endhead
 
@@ -190,19 +190,38 @@
 
 
 
-                {\citealp*{WangSachs:1995}}                  &     Real ANF spikes \citep{WangSachs:1993}                                                 &          {\citet{BanksSachs:1991} conductance model}           &    \ANFTS, Inhibitory\ensuremath{\rightarrow}TS    & Hand-tuned
-                             %                               &                                                      & 
-\\                                                                                                                                                                                                                                                    
+                {\citealp*{WangSachs:1995}}                  &     Real ANF spikes \citep{WangSachs:1993}                                                 &          \HH-like conductance model with passive dendrite, current models updated from {\citet{BanksSachs:1991}}           &   %
+\begin{minipage}[c]{0.9in}  
+\ANFTS\\
+Inhibitory (Poisson model) \ensuremath{\rightarrow} TS
+\end{minipage}      & \begin{minipage}[c]{0.9in}  
+UD,\\
+UD,%fixed or variable
+\end{minipage}  \\
                              %                               &                                                      &                                                                &        Inhibitory\ensuremath{\rightarrow}TS        & 
                              %                               &                                                      & 
 %\\ \midrule                                                                                                                                                                                                                                           
-              {\citealp*{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}}               &   In-paper \citep{LaiWinslowEtAl:1994}                                                   &          {\citet{BanksSachs:1991} ball and stick conductance model plus additional potassium current \citep{Wang:1991}}           &                       \ANFTS, Inhibitory\ensuremath{\rightarrow}TS                       & Variable
-                             %                               &                                                      & 
-\\                                                                                                                                                                                                                                                    
+              {\citealp*{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a}}               &   In-paper \citep{LaiWinslowEtAl:1994}, simple rate responses                                                   &          \HH-like conductance model with passive dendrite based on {\citet{BanksSachs:1991}.  Additional potassium current \citep{Wang:1991}}.           &  
+%
+\begin{minipage}[c]{0.9in}  
+\ANFTS\\
+Inhibitory (Poisson model) \ensuremath{\rightarrow} TS
+\end{minipage}      & \begin{minipage}[c]{0.9in}  
+Hand-tuned\\
+Hand-tuned%fixed or variable
+\end{minipage}  \\
 %                                                             &                                                      &                                                                &        Inhibitory\ensuremath{\rightarrow}TS        & Hand-tuned
 %                             %                               &                                                      & 
 %\\ \midrule                                                                                                                                                                                                                                           
-              {\citealp*{ErikssonRobert:1999}}               &            {\citet{RobertEriksson:1999} AN model}             &                         {Point neuron}                         & \ANFTS, \ANFDS, \ANFTV, \DSTV, \DSTS, \TVTS, \TVDS & Hand-tuned
+              {\citealp*{ErikssonRobert:1999}}               &           In co-paper {\citet{RobertEriksson:1999}}, simple rate responses with onset adaptation            &                         {Point neuron}                         & %
+\begin{minipage}[c]{0.9in}  
+\ANFTS, \ANFDS, \ANFTV\\
+\DSTV, \DSTS, \TVTS, \TVDS
+\end{minipage}      & \begin{minipage}[c]{0.9in}  
+Hand-tuned,fixed\\
+Hand-tuned,variable
+\end{minipage}  \\
+ & Hand-tuned
                              %                               &       N = 6 or 15,        G =  8.5/n  or 2.0/n       & 1.7 ms                                                                                                                  
 \\                                                                                                                                                                                                                                                    
                              %                               &                                                      &                                                                &                      {\ANFDS}                      & 
@@ -224,14 +243,26 @@
             %                                  %             &                  N = 12, G = 2.3/N,                  & 
 % \\ \midrule                                                                                                                                                                                                                                           
 
-              {\citealp*{WiegrebeMeddis:2004}}               & {DSAM \citep{MeddisOMardEtAl:2001}} &       {\citet{HewittMeddisEtAl:1992} point neuron model}       &                   \ANFTS, \TSTS                    & Hand-tuned
-                             %                               &                                                      & 
-\\                                                                                                                                                                                                                                                    
+   {\citealp*{WiegrebeMeddis:2004}}               & {DSAM \citep{MeddisOMardEtAl:2001}}, phenomenologically realistic model &       {\citet{HewittMeddisEtAl:1992} point neuron model}       & %
+\begin{minipage}[c]{0.9in}  
+\ANFTS\\
+\TSTS
+\end{minipage}      & \begin{minipage}[c]{0.9in}  
+Hand-tuned,fixed\\
+Hand-tuned,fixed
+\end{minipage}  \\
                              %                               &                                                      &                                                                &                       \TSTS                        &  
             %                                 %              &                                                      & 
 %\\ \midrule                                                                                                                                                                                                                                           
 
-          {\citealt{PressnitzerMeddisEtAl:2001}}            &         {DSAM \citep{MeddisOMardEtAl:2001}}          & {\citet{HewittMeddisEtAl:1992} point model plus filtered \PSPs}&               \ANFTS, \ANFDS, \DSTS                & Hand-tuned
+          {\citealt{PressnitzerMeddisEtAl:2001}}            &         {DSAM \citep{MeddisOMardEtAl:2001}}          & {\citet{HewittMeddisEtAl:1992} point model plus filtered \PSPs}&%
+\begin{minipage}[c]{0.9in}  
+\ANFTS\\
+\TSTS
+\end{minipage}      & \begin{minipage}[c]{0.9in}  
+Hand-tuned,fixed\\
+Hand-tuned,fixed
+\end{minipage}  \\               \ANFTS, \ANFDS, \DSTS                & Hand-tuned
                              %                               &                N = 20,     I =  3 nA                 & 
 \\                                                                                                                                                                                                                                                    
 %                                                              &                                                      &                                                                &                       \ANFDS                       & 
@@ -241,7 +272,7 @@
 %                              %                               &                 N = 50,   I = -1 nA                  & 2 ms                                                                                                                    
 % \\ \midrule\midrule                                                                                                                                                                                                                                   
 
-    {\citealt{BahmerLangner:2006,BahmerLangner:2006a}}      & In-paper \citep{BahmerLangner:2006a}                                                       &  Onset neuron: \citet{RothmanManis:2003b} conductance model, chopper neuron: leaky integrate and fire with PSP filter                                                              &                   \ANFTS, \TSTS, Octopus\ensuremath{\rightarrow}TS                    & Hand-tuned
+    {\citealt{BahmerLangner:2006,BahmerLangner:2006a}}      & In-paper \citep{BahmerLangner:2006a}, simple rate responses                                                       &  Onset neuron: \citet{RothmanManis:2003b} conductance model, chopper neuron: leaky integrate and fire with PSP filter                                                              &                   \ANFTS, \TSTS, Octopus\ensuremath{\rightarrow}TS                    & Hand-tuned
                              %                               &                                                      & 
 \\                                                                                                                                                                                                                                                    
                              %                               &                                                      &                                                                &                       \TSTS                        & 
@@ -299,10 +330,10 @@
      %                      \citealp*{YoungDavis:2002}       &                                                      &                                                                & 
             %                                  %             &                                                      & 
 % \\ 
-                \citealp*{BurckHemmen:2007}                  &  Poisson process \citep{BurckHemmen:2007}                                     & Integrate and fire neural model                &    \ANFTS, \ANFTV, \TVTS                                                                          & 
+                \citealp*{BurckHemmen:2007}                  &  In-paper, Poisson process, simple rate responses                               & Integrate and fire neural model                &    \ANFTS, \ANFTV, \TVTS                                                                          & 
                              %                               &                                                      & 
 \\
-                 \citealp*{XuZhouEtAl:2011}                  &                                                      &                   &  \ANFTS, \ANFTV, \TVTS                                                                         & 
+                 \citealp*{XuZhouEtAl:2011}                  &  In-paper, Poisson process, simple rate and temporal responses                                                   &                   &  \ANFTS, \ANFTV, \TVTS                                                                         & 
                              %                               &                                                      & 
 \\
 
