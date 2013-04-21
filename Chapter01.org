@@ -1332,7 +1332,7 @@ frequency bands \citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}.
 Selective processing of different \ANF inputs using some form of inhibition was
 the first step toward including interneurons in a \TS cell model
 \citep{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a,WangSachs:1995}.
-\citet{LaiWinslowEtAl:1994a} used the ball and stick \HH conductance neural
+\citet{LaiWinslowEtAl:1994a} used the ball-and-stick (i.e.\space soma and dendrite) \HH conductance neural
 model based on \citet{BanksSachs:1991}.  The mechanism of selective processing
 removes the saturation of \HSR fibres by shunting inhibition at synapses
 proximal to the soma.  This group of models enhanced the dynamic range of the
@@ -1357,14 +1357,15 @@ to reproduce chopper-like \PSTH and rate-level responses to tones.
 
 Recurrent excitation between \TS cells has been observed in mice
 \citep{FerragamoGoldingEtAl:1998a} and has been investigated in two modelling
-studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}. Neither study provides a
-realistic implementation of the stellate microcircuit, however.  In a
+studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}. However, neither study provides a
+realistic implementation of the stellate microcircuit.  In a
 speculative model, \citet{WiegrebeMeddis:2004} included a range of \TS cells in
 each frequency band, each with a different intrinsic firing rate.  The goal of
-their model was decoding \AM properties in the \IC\@.  Unfortunately, the
-intrinsic firing rate of the \TS cell model exceeded physiologically observed
-rates.  Additionally, the \AN model used was limited by the dated nature of the
-experimental data \citep{MeddisOMardEtAl:2001}.  
+their model was decoding \AM properties in the \IC\@.  
+Unfortunately, the intrinsic firing rate of the \TS cell model exceeded physiologically observed rates.
+\yellownote{Fix this sentence}
+Additionally, the \AN model, developed in-paper, used was 
+limited by the dated nature of the experimental data \citep{MeddisOMardEtAl:2001}.
 
 
 The network model by \citet{BahmerLangner:2006} proposed a new \VCN network
@@ -1376,12 +1377,12 @@ cells form excitatory synapses with \TS cells.  Octopus cells do not have axonal
 collaterals in the \VCN\space \citep{Adams:1997,CantBenson:2003}; consequently, the
 inclusion of octopus cells in a network of the \VCN is speculative. Despite
 using the most up-to-date currents in the onset neural model 
-\citep{RothmanManis:2003b}, \citet{BahmerLangner:2006a} failed to include the
+\citep{RothmanManis:2003b}, \citet{BahmerLangner:2006a} did not include the
 \Ih current, a unique characteristic of octopus cells \citep{CaiMcGeeEtAl:2000}.
 Recurrent networks in the cortex prefer inhibition for synchronisation
 \citep{LyttonSejnowski:1991,BushSejnowski:1996}.  In theoretical terms,
 inhibitory phasic input is significantly better than excitatory phasic inputs at
-improving synchronisation in recurrent      networks
+improving synchronisation in recurrent networks
 \citep{VreeswijkAbbottEtAl:1995}. The lack of inclusion of contemporary \AN
 models as input to the \citet{BahmerLangner:2006a} CN model means that there is
 much scope for improvement in computational modelling in the \CN stellate
