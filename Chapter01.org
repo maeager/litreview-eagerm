@@ -83,12 +83,12 @@ extensive exploitation of this experimental data in the design and optimisation
 of computational models.  Success in this endeavour will enable us to improve
 the accuracy and value of \BNNs for use in the investigation of brain networks.
 
-This thesis presents a novel \BNN model of the stellate cell microcircuit in the
-cochlear nucleus (hereafter, the ‘CNSM model’). This microcircuit provides a robust
+This thesis presents a novel \BNN model of the cochlear nucleus stellate cell microcircuit
+(hereafter, the ‘CNSM model’). This microcircuit provides a robust
 spectral representation of sound and plays an essential part in speech
 communication. The model was optimised using rigorous sequential methods and
 simultaneous genetic algorithms. The analyses of the results demonstrate the
-utility of this approach for improving \BNN models to help us better
+utility of this approach for using \BNN models to help us better
 understand complex neural processing.
 
 \glsunset{CNSM}
@@ -142,42 +142,44 @@ verification of the \CNSM model in the remainder of the thesis.
 
 ** Auditory System 
 
-Speech is a unique and fundamental tool in communication between humans.  We
-continually deal with various distortions of the acoustic environment (for
-example, background noise and reverberation) as we extract information from
+Speech is a unique and fundamental tool for communication between humans.  We
+continually deal with various distortions of the acoustic environment, such as
+background noise and reverberation, as we extract information from
 signals entering the ear.  Vowels are a salient feature of speech that is
 spectrally and temporally distinct from other natural sounds.  The spectrum of
 each vowel is distinguished by the location of high-energy spectral peaks, known
 as formants. Robust representation of spectra at different intensities is
-important for speech and other auditory communication \citep{YoungOertel:2004}.
+important for speech and other auditory communication 
+\citep[for~a~review~see][]{Bregman:1990}.
 The main tasks of the auditory system are to (1) separate out individual
-frequency components of sound; (2) enhance spectral and temporal contrasts to
-improve meaningful \SNR; and (3) extract behavioural frequency cues
+frequency components of sound, (2) enhance spectral and temporal contrasts to
+improve meaningful \SNR, and (3) extract behavioural frequency cues
 \citep{Evans:1992}.
-
 
 
 Advanced auditory fidelity and localisation are exceptional features of hearing
 perception in animals.  These specialities work to a high degree despite the
-input at the round window of the cochlea being one dimensional and very noisy.
+input at the round window of the cochlea being one-dimensional.
 Rough frequency decomposition is performed by the basilar membrane and organ of
 Corti in the mammalian cochlea, which transforms mechanical signals to neural
 signals in \ANFs.  The next stage of the auditory process occurs in the \CN, the
 first processing stage of the central auditory pathway in which all \ANFs
 end. Enhancing spectral and temporal contrasts requires sophisticated parallel
 processing strategies involving networks of neurons with feed-forward and
-feed-back connections.
+feedback connections.
 
 
-The auditory system is topographically ordered from the basilar membrane to the
-cortex in terms of frequency selectivity, also known as tonotopicity
-\citep{YoungOertel:2004}.  The population of \ANFs (Figure \ref{fig:CNCatHuman})
-bifurcate after entering the \CN to innervate the \VCN and \DCN, retaining their
-tonotopic order \citep{Lorente:1981,Liberman:1982,Liberman:1993}.  The different
-cell types of the \CN, each with unique cell properties and synapto-physiology,
-produce six major outputs from the \CN\space \citep{CantBenson:2003}. Binaural pathways
-converge in the \IC before projecting to the medial geniculate nucleus in the
-thalamus and then to the auditory cortex.
+The auditory system is topographically ordered from the basilar
+membrane to the cortex in terms of frequency selectivity, also known
+as tonotopicity
+\citep[for~a~review~of~cochlear~nucleus~synapto-physiology~and~topology~see][]{YoungOertel:2004}.
+The population of \ANFs (Figure \ref{fig:CNCatHuman}) bifurcate after
+entering the \CN to innervate the \VCN and \DCN, retaining their
+tonotopic order \citep{Lorente:1981,Liberman:1982,Liberman:1993}.  The
+different cell types of the \CN, each with unique cell properties and
+synapto-physiology, produce six major outputs from the \CN\space \citep{CantBenson:2003}. Binaural pathways converge in the \IC before
+projecting to the medial geniculate nucleus in the thalamus and then
+to the auditory cortex.
 
 
 #+ATTR_LaTeX: width=0.6\textwidth
@@ -207,7 +209,7 @@ stimulation. \LSR fibres have relatively high thresholds, whereas \HSR fibres
 have low thresholds. Fibres of similar \CF can vary in \SR from near 0 to 100
 spikes/s.  The bi-modal \SR distribution is present across the entire audible
 frequency range for the animal, and implies a general organisational principle
-for the mammalian \AN. Fibres of the different \SR groupings exhibit distinct
+for the mammalian \AN\@. Fibres of the different \SR groupings exhibit distinct
 physiological features, especially in terms of their contribution to the dynamic
 range of hearing and representation of speech sounds
 \citep{RyugoParks:2003}. The collective evidence suggests that different \SR
@@ -384,7 +386,7 @@ response to acoustic stimuli and frequency tuning
 \citep{RyugoParks:2003,CantBenson:2003,YoungOertel:2004}.  The two major
 divisions are the \VCN and \DCN\@.  The different projections out of the nucleus
 reflect the highly specialised parallel processing that is performed to extract
-particular acoustic information contained in the \AN.  The \DCN in mammals
+particular acoustic information contained in the \AN\@.  The \DCN in mammals
 generally has a cerebellar-like laminar structure with many interneurons,
 whereas the \VCN consists of a magnocellular core and a marginal shell
 (otherwise called the \GCD in rodents).  The marginal shell is thought to be
@@ -462,7 +464,7 @@ microcircuit network with neurons within their isofrequency lamina and across
 the frequency range of the nucleus. The microcircuit includes \DS cells, a
 wide-band inhibitory cell in the \VCN, \TV cells, a narrow-band inhibitory cell
 in the \DCN, and Golgi cells, a GABAergic neuron in the outer granule shell of
-the \CN \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
+the \CN\space \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
 known to play a key role in shaping the average rate response, synchronisation
 to modulation and onset delay of cells in the \CN\space 
 \citep{CasparyBackoffEtAl:1994,EvansZhao:1998,BackoffShadduckEtAl:1999,PaoliniClareyEtAl:2004}.
@@ -563,7 +565,7 @@ In recent experiments with mice, a fast transient-deactivating potassium current
 \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b}.  \Ih and \IKA
 are active at rest and play a role in modulating the rate of repetitive firing
 of \TS cells \citep{RothmanManis:2003b}.  The effect of inhibition on \TS cells
-could be to reset \IKA \citep{RothmanManis:2003b}, thus priming cells for
+could be to reset \IKA\space \citep{RothmanManis:2003b}, thus priming cells for
 oncoming activation \citep{KanoldManis:2001,KanoldManis:2005}.  This has been
 shown to enhance place-coding across \TS cells by enhancing the first-responder
 activation \citep{PaoliniClareyEtAl:2004}.
@@ -599,7 +601,7 @@ activation \citep{PaoliniClareyEtAl:2004}.
 \TS cells receive a narrow frequency band of \ANF inputs and have a chopping
 response to \CF tone bursts \citep{SmithRhode:1989,BlackburnSachs:1989}.  Few
 synaptic terminals contact on their soma; the majority of inputs contact the
-output to the \IC \citep{SmithRhode:1989,OertelWuEtAl:1990}.  proximal dendrites
+output to the \IC\space \citep{SmithRhode:1989,OertelWuEtAl:1990}.  proximal dendrites
 \citep{Cant:1981}. \TS cells are the primary excitatory The response to acoustic
 stimulation is measured from a \PSTH to short tone bursts
 \citep{Pfeiffer:1966,BlackburnSachs:1989}. The level of tuning and suppression
@@ -711,10 +713,11 @@ response area to be transmitted to higher centres.
 
 **** Synaptic Inputs to T Stellate Cells
 
+\glsunset{AMPA}
 
 The driving excitatory inputs of \TS cells come from afferent \ANFs.  \ANFs
-provide glutamatergic excitation using AMPA receptors
-\citep{Cant:1981,FerragamoGoldingEtAl:1998a,Alibardi:1998a}.  AMPA \EPSCs have a
+provide glutamatergic excitation using \AMPA receptors
+\citep{Cant:1981,FerragamoGoldingEtAl:1998a,Alibardi:1998a}.  \AMPA\space \EPSCs have a
 time constant of 0.36 ms in \TS and \DS cells, with a slight deviation in \TV
 neurons (0.4 ms) \citep{Gardner:2000,GardnerTrussellEtAl:1999}.  
 \ANF synapses are commonly located on \TS cells' proximal dendrites and rarely
@@ -758,7 +761,7 @@ network, \TS cells.
 
 Sources of polysynaptic excitation, observed with late \EPSPs observed in \TS
 cells, indicate that \TS cells receive excitatory input from excitatory
-interneurons within the in \VCN \citep{FerragamoGoldingEtAl:1998a}. When
+interneurons within the in \VCN\space \citep{FerragamoGoldingEtAl:1998a}. When
 separated from their natural synaptic inputs, isolated axons cannot contribute
 to polysynaptic responses.  Monosynaptic responses have latencies between 0.5
 (synaptic delay) and 3 ms (2.5 ms conduction delay for an unmyelinated fibre of
@@ -771,7 +774,7 @@ interneurons. Furthermore, the activation of \EPSPs with the application of
 glutamate indicates that the dendrites of excitatory interneurons are accessible
 from the bath.  \TS cells are excitatory neurons known to terminate in the
 vicinity of \TS cells. \TS cells terminate locally in the multipolar cell area
-of the \PVCN \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS
+of the \PVCN\space \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS
 cells and occasionally \DS and bushy cells, some or all of which are therefore
 presumably their targets. The ultrastructure of \TS cell terminals and
 functional studies of the inputs to the inferior colliculi is consistent with
@@ -780,25 +783,25 @@ their being excitatory \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
 **** Major Ascending Output
 
 \TS cell axons exit the \CN through the trapezoidal body, cross the midline and
- ultimately terminate in the contralateral \IC \citep{Adams:1979}. Other
+ ultimately terminate in the contralateral \IC\space \citep{Adams:1979}. Other
  collaterals: local \VCN, \DCN, \LSO, c\VNTB c\VNLL
  \citep{Warr:1969,SmithJorisEtAl:1993,Thompson:1998,DoucetRyugo:2003} review
  \citep{DoucetRyugo:2006}.
 
   1. Deep \DCN (bulk of acoustic input?) in rats *No* terminals assoc with \TS
      cells on \TV cells, most \TS inputs on fusiform \citep{RubioJuiz:2004}. In
-     mice \TS terminals \ANF \citep{CaoMcGinleyEtAl:2008} on \CF
+     mice \TS terminals \ANF\space \citep{CaoMcGinleyEtAl:2008} on \CF
      \citep{SmithRhode:1989,FriedlandPongstapornEtAl:2003,DoucetRyugo:1997}. See
      \DCN review \citep{OertelYoung:2004}
-  2. \LSO excitation: \TS project to \LSO
+  2. \LSO excitation: \TS project to \LSO\space 
      \citep{Thompson:1998,DoucetRyugo:2003,ThompsonThompson:1991a}. \LSO detect
      interaural intensity differences primarily from ipsi Bushy cells and contra
      \MNTB (inhib)
   3. Olivocochlear feedback: \MOC c\VNTB excitation involved in efferent
-     feedback loop, Cholinergic \MOC neurons \TS synapses in c\VNTB
+     feedback loop, Cholinergic \MOC neurons \TS synapses in c\VNTB\space 
      \citep{WarrBeck:1996,Warr:1992,Warr:1982,VeneciaLibermanEtAl:2005,ThompsonThompson:1991,SmithJorisEtAl:1993}. Feedback
      direct to \TS is positive, but efferent \MOC-OHC-\ANF reduces activation of
-     \ANF \citep{WarrenLiberman:1989,WiederholdKiang:1970}, other
+     \ANF\space \citep{WarrenLiberman:1989,WiederholdKiang:1970}, other
      \citep{RobertsonMulders:2000,WinterRobertsonEtAl:1989}.  
   4. \TS axons terminate in vicinity of \LOC neurons
      \citep{Warr:1982,ThompsonThompson:1988,ThompsonThompson:1991,DoucetRyugo:2003}
@@ -812,7 +815,7 @@ their being excitatory \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
 
 Type I multipolar cells in the VCN give rise to projections to the periolivary
 nucleus, the \DMPN in cats: \citealt{SmithJorisEtAl:1993}, or in rats and guinea
-pig the \SPN, \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
+pig the \SPN\space \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
 
 
 #  FIX
@@ -878,7 +881,7 @@ regulation by extra-nuclei inputs \citep{RothmanManis:2003b,FerragamoGoldingEtAl
 \glsunset{GABA}
 
 Glycinergic and GABAergic inhibition are thought to play different
-spectro-temporal processing roles in the \CN.  Glycinergic inputs from \DS and
+spectro-temporal processing roles in the \CN\@.  Glycinergic inputs from \DS and
 \TV cells are predominantly active at the onset of stimuli; accordingly, they
 provide enhanced temporal acuity and dynamic range at onset.  Post-onset and
 tonic inhibition is provided by \GABA inputs.  GABAergic inhibition acting on
@@ -1111,7 +1114,7 @@ candidates for operation of lateral inhibition.  Recurrent excitation by
 \TS cells within the same frequency band could also increase the rate \citep{FerragamoGoldingEtAl:1998a}.
 
 Taken together, the experimental evidence demonstrates that there is much that
-remains unknown about the functioning of neural processing in the \CNSM.
+remains unknown about the functioning of neural processing in the \CN stellate cell microcircuit.
  
 ** Computational Models of the Cochlear Nucleus
 
