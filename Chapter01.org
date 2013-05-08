@@ -83,8 +83,8 @@ extensive exploitation of this experimental data in the design and optimisation
 of computational models.  Success in this endeavour will enable us to improve
 the accuracy and value of \BNNs for use in the investigation of brain networks.
 
-This thesis presents a novel \BNN model of the cochlear nucleus stellate cell microcircuit
-(hereafter, the ‘CNSM model’). This microcircuit provides a robust
+This thesis presents a novel \BNN model of the \CN stellate cell microcircuit
+ (hereafter, the ‘CNSM model’). This microcircuit provides a robust
 spectral representation of sound and plays an essential part in speech
 communication. The model was optimised using rigorous sequential methods and
 simultaneous genetic algorithms. The analyses of the results demonstrate the
@@ -203,7 +203,9 @@ to the auditory cortex.
 Type 1 \ANFs are categorised into \HSR and \LSR fibres \citep{Liberman:1978}.
 The acoustic physiology of \ANFs forms a bi-modal distribution where 30--40\% of
 the fibres have \SR less than 2 spikes/s and 60--70\% have \SR above 30 spikes/s
-\citep{RyugoParks:2003}. Threshold is correlated to the amount of spontaneous
+\citep[see review][]{RyugoParks:2003}. 
+\yellownote{define threshold and bandwidth} 
+Threshold is correlated to the amount of spontaneous
 spike activity that occurs in the absence of experimenter-controlled
 stimulation. \LSR fibres have relatively high thresholds, whereas \HSR fibres
 have low thresholds. Fibres of similar \CF can vary in \SR from near 0 to 100
@@ -214,18 +216,21 @@ physiological features, especially in terms of their contribution to the dynamic
 range of hearing and representation of speech sounds
 \citep{RyugoParks:2003}. The collective evidence suggests that different \SR
 groupings of \ANFs play distinct roles in acoustic information processing. It
-might be that the \HSR fibres with their low thresholds prefer to function in
+might be that the \HSR fibres with their low thresholds function in
 quiet, whereas \LSR fibres with their high thresholds operate better in loud and
 noisy environments.
+\yellownote{imprecise definition in last sentence -see meeting conversation}
 
-The morphology of \LSR and \HSR fibres is essentially similar. Characterised as
-bipolar neurons, their cell bodies lie in the retinal ganglion region
-(Rosenthal's canal) of the cochlea and their peripheral process contacts one
-inner hair cell.  The axonal process is part of the \AN and enters the central
-nervous barrier at the \CN root. It then bifurcates into an ascending branch and
-a descending branch. The ascending branch has a relatively straight trajectory
-into the \AVCN and terminates as a large, axosomatic ending called the endbulb
-of Held.  The descending branch passes through the \PVCN and octopus cell region
+The morphology of \LSR and \HSR\space \ANFs are essentially
+similar. Characterised as bipolar neurons, their cell bodies lie in the retinal
+ganglion region (Rosenthal's canal) of the cochlea and their peripheral process
+contact one inner hair cell.  The myenilated \AN axonal processes form the
+vestibulocochlear nerve (the 8th cranial nerve) and enter the brainstem at the
+\CN root. The \AN fibres bifurcate into both the ascending and descending
+branches. The ascending branch has a relatively straight trajectory into the
+\AVCN (many small collaterals with terminal boutons contacting cell bodies and
+dendrites) and terminate as a large, axosomatic ending called the endbulb of
+Held.  The descending branch passes through the \PVCN and octopus cell region
 before entering the \DCN\@.
 # Along the
 # way, these main branches give rise to short collaterals. The
@@ -240,7 +245,7 @@ Fibres of similar \CFs disperse to form a 3-dimensional sheet running through
 These projections underlie the tonotopic organisation of the resident neurons of
 the \CN\space \citep{RyugoParks:2003}. \LSR fibres also project to the \GCD\space
 \citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
-unmyelinated type 2 \ANFs, which suggests they play a different role in sound
+unmyelinated type 2 \ANFs, which suggests that they play a different role in sound
 processing to \HSR fibres.
 
 # 5. Structure-function correlates
@@ -358,8 +363,10 @@ processing to \HSR fibres.
 
 ** Cochlear Nucleus 
 
+\glsset{TS}
+
 There is a rich tradition of experimental investigation of the \CN, dating back
-more than eighty years \citep[see,~for~example,~]{Lorente:1933}.  The synaptic
+more than eighty years \citep[for~example~see]{Lorente:1933}.  The synaptic
 organisation of cells in the \CN has been examined in detail in various species
 including cats \citep{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}; mice
 \citep{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991};
@@ -408,7 +415,7 @@ The afferent and intrinsic synaptic connectivity in the \CN have also been the
 subject of intense interest in the literature
 \citep{YoungOertel:2004,OertelWrightEtAl:2011}. The network in Figure
 \ref{fig:CNschematic} shows the connections within the \CN that are involved in
-modulating \TS cells. The \TS cells and their synaptic interactions are the
+modulating \TS cells' activity. The \TS cells and their synaptic interactions are the
 focus of the \CNSM model and are discussed in detail in the next section.
 
 
@@ -448,7 +455,8 @@ This section provides an overview of \TS cells, including their cell morphology,
 immuno-histochemistry, intrinsic membrane properties, synaptic contacts and
 physiological properties. The respective contribution of these elements to the
 heterogeneous acoustic behaviour of different \TS cell subtypes is still to be
-authoritatively determined.
+thoroughly determined.
+\yellownote{DG authoritatively is unclear: synonyms thoroughly, persuasive, influentially, credible, valid, effective, plausible, reasonable}
 
 \Gls{TS} cells are located in the core region of the \VCN, primarily in the
 \PVCN with some in the posterior part of the \AVCN\space 
@@ -461,17 +469,19 @@ representation essential for speech \citep{KeilsonRichardsEtAl:1997}. They
 project directly to the \IC, and are therefore important in conveying
 information to higher auditory centres. \TS cells are known to form a local
 microcircuit network with neurons within their isofrequency lamina and across
-the frequency range of the nucleus. The microcircuit includes \DS cells, a
-wide-band inhibitory cell in the \VCN, \TV cells, a narrow-band inhibitory cell
-in the \DCN, and Golgi cells, a GABAergic neuron in the outer granule shell of
-the \CN\space \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
+the frequency range of the nucleus. The microcircuit includes \DS cells (a
+wide-band inhibitory cell in the \VCN), \TV cells (a narrow-band inhibitory cell
+in the \DCN) and Golgi cells (a GABAergic neuron in the \GCD, an outer shell of
+the \CN) \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
 known to play a key role in shaping the average rate response, synchronisation
 to modulation and onset delay of cells in the \CN\space 
 \citep{CasparyBackoffEtAl:1994,EvansZhao:1998,BackoffShadduckEtAl:1999,PaoliniClareyEtAl:2004}.
 
-\TS cells are integrators in their intrinsic behaviour, which allows phasic
+Intracellular current-clamp recordings of \TS cells have categorised 
+them as type 1 \citep{Oertel:1983,OertelWuEtAl:1988,FerragamoGoldingEtAl:1998a}. 
+This integrative intrinsic cell membrane behaviour allows phasic
 input from \ANFs to be converted to a tonic or chopping output.  The tonic
-behaviour suits encoding of spectrum across populations since encoding the peaks
+behaviour enables encoding of spectrum across populations since encoding the peaks
 and valleys is relatively independent of time after onset of sound. It also
 suits encoding of envelopes of sounds, which is important for speech
 \citep{OertelWrightEtAl:2011}. The presence of active membrane channels at rest
@@ -484,7 +494,7 @@ rate of the two chopper populations provides either a low-contrast
 representation independent of level (\ChS) or a high-contrast representation of
 stimulus spectrum (\ChT) \citep{BlackburnSachs:1990,May:2003}. The temporal
 coding of cells in the \CN has also been studied extensively with \AM tones
-\citep{FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,RhodeGreenberg:1994}, and
+\citep{FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,RhodeGreenberg:1994} and
 ripple noise \citep{WinterPalmerEtAl:1993}.  \citet{KeilsonRichardsEtAl:1997}
 went further, showing that chopper cells provide a periodicity-tagged spectral
 representation that can be used to separate simultaneously presented vowels.
@@ -885,12 +895,12 @@ spectro-temporal processing roles in the \CN\@.  Glycinergic inputs from \DS and
 \TV cells are predominantly active at the onset of stimuli; accordingly, they
 provide enhanced temporal acuity and dynamic range at onset.  Post-onset and
 tonic inhibition is provided by \GABA inputs.  GABAergic inhibition acting on
-slow and fast receptors (\GABAa and subtype B (GABA_B) respectively) is likely to
-mediate the strong post-onset inhibition in \DS cells
- \citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are weakly
+slow and fast receptors (\GABAa and subtype B (GABA_B) respectively) is likely
+to mediate the strong post-onset inhibition in \DS cells
+\citep{FerragamoGoldingEtAl:1998,EvansZhao:1998}.  \TS cells are weakly
 inhibited by \GABA \citep{FerragamoGoldingEtAl:1998} reflecting the smaller
 number of GABAergic synapses on their dendrites
- \citep{FriedlandPongstapornEtAl:2003,SmithRhode:1989}.  GABAergic inhibition in
+\citep{FriedlandPongstapornEtAl:2003,SmithRhode:1989}.  GABAergic inhibition in
 the \VCN derives from a number of possible sources, intrinsically from Golgi
 cells in the granule cell layer of the \VCN or extrinsically from olivocochlear
 efferents \citep{OstapoffBensonEtAl:1997}.
@@ -1023,7 +1033,7 @@ of stimulus levels, even above 100 dB \SPL, where \ANFs have reduced
 synchronisation \citep{FrisinaSmithEtAl:1990,FrisinaWaltonEtAl:1994,Rhode:1994}.
 
 Studies of modulation in the \AVCN show a
-hierarchy of enhancement: \OnC \to \ChS\slash \ChT \to \PL\slash \PLn
+hierarchy of temporal enhancement: \OnC \to \ChS\slash \ChT \to \PL\slash \PLn
 \citep{WangSachs:1994,Rhode:1998,RecioRhode:2000}. This enhancement is
 relative; since choppers only phase-lock to modulations below 500Hz,
 \PL and \PLn units perform better at higher modulation frequencies
@@ -1036,7 +1046,7 @@ individual \ANFs (30--40 dB) \citep{FrisinaSmithEtAl:1985}.
 # The answer which is suggested by our model is that chop-
 # per neurons receive input from onset neurons which
 The change in \AM dynamic range may be due to a number of mechanisms in the
-stellate microcircuit.  Selective processing of \HSR\slash \LSR fibres
+stellate microcircuit.  Selective processing of \HSR and \LSR fibres
 \citep{WinslowBartaEtAl:1987,LaiWinslowEtAl:1994} is one proposed mechanism,
 however, this is unlikely due to the degradation of temporal information in
 \ANFs at high \SPL\space \citep{JorisSchreinerEtAl:2004}.  Inhibition from \DS cells
@@ -1056,9 +1066,9 @@ Chopper units are important in the transition of a temporal-place code in the
 \AN to a rate-based coding of \BMF in the \IC\space 
 \citep{JorisSchreinerEtAl:2004}. Rhode and colleagues confirmed the presence of
 band-pass \tMTFs as well as some band-pass rate-based \MTFs in chopper units in
-the cat \citep{Rhode:1994,RhodeGreenberg:1994}. The \BMF of chopper units lie
+the cat \citep{Rhode:1994,RhodeGreenberg:1994}. The \BMFs of chopper units lie
 between 50 and 500Hz \citep{FrisinaSmithEtAl:1990,RhodeGreenberg:1994}, which is
-a critical in speech modulation and segregation of sounds \citep{Bregman:1990}.
+critical in speech modulation and segregation of sounds \citep{Bregman:1990}.
 \OnC units are well suited to encode a wide range of \fm with strong
 synchronisation due their precise onset
 \citep{KimRhodeEtAl:1986,JorisSmith:1998,RhodeGreenberg:1994,Rhode:1998}.  
@@ -1108,8 +1118,9 @@ stable representation of acoustic spectrum in their average firing rate at all
 stimulus levels \citep{BlackburnSachs:1990,MayPrellEtAl:1998,RecioRhode:2000}.
 Selective listening to \LSR and \HSR\space \ANFs could be one possible
 mechanism \citep{WinslowBartaEtAl:1987}.
+\yellownote{DG: unclear sentence}
 \TS cells do receive inhibitory inputs
-\citep{Cant:1981,SmithRhode:1989,FerragamoGoldingEtAl:1998} hence they are
+\citep{Cant:1981,SmithRhode:1989,FerragamoGoldingEtAl:1998} so they are
 candidates for operation of lateral inhibition.  Recurrent excitation by
 \TS cells within the same frequency band could also increase the rate \citep{FerragamoGoldingEtAl:1998a}.
 
@@ -1157,7 +1168,7 @@ remains unknown about the functioning of neural processing in the \CN stellate c
 
 Advances in understanding \CN membrane kinetics and improved understanding of
 the synaptic organisation have increased the feasibility of investigations of
-synaptic influences more feasible \citep[cf.~][]{MeddisHewitt:1993}. Combined
+synaptic influences \citep[cf~][]{MeddisHewitt:1993}. Combined
 with massively increased computational power available to researchers, a highly
 detailed model can provide greater insight into the function of regulatory
 mechanisms within and outside the cochlear nucleus. This knowledge can also
@@ -1197,12 +1208,9 @@ experiments.
 
 A review by \citet{Lopez-Poveda:2005}, shows the two groups with the strongest correlation
 between known phenomenological behaviour and model outputs are the DSAM model
-\citep{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002}\footnote{DSAM 
-http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
+(\citet{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002})\footnote{DSAM  http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
 Carney model
-\citep{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006}\footnote{Carney
-model
-http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
+(\citet{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006})\footnote{Carney model http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
 These models both show good representation of rate behaviour in \LSR and \HSR models, as well as temporal phenomena in ANFs.
 This thesis uses the Carney model for all \AN simulations.
 
@@ -1211,12 +1219,14 @@ This thesis uses the Carney model for all \AN simulations.
 A number of neural models of \CN neurons have been developed.  The basic
 approaches include point neuron models
 \citep{ArleKim:1991,HewittMeddisEtAl:1992} and conductance based, \HH-like
-compartmental models
-\citep{BanksSachs:1991,WhiteYoungEtAl:1994,LaiWinslowEtAl:1994,WangSachs:1995}.
+compartmental models (Original: \citet{HodgkinHuxley:1952}, \CN \HH models: 
+\citet{BanksSachs:1991,WhiteYoungEtAl:1994,LaiWinslowEtAl:1994,WangSachs:1995}).
 Point neuron models based on \citet{MacGregor:1993} were able to replicate
 intrinsic chopping behaviour \citep{ArleKim:1991,HewittMeddisEtAl:1992} and
 synchronisation to stimulus envelope \citep{GhoshalKimEtAl:1992} with simple
-mathematical models.  Little was known about the specialised potassium and
+mathematical models.  
+\yellownote{DG improve next sentence - unclear}
+Little was known about the specialised potassium and
 sodium currents in the \VCN before
 \citet{WhiteYoungEtAl:1990,ManisMarx:1991}. \citet{BanksSachs:1991} used
 modified \HH equations \citep{HodgkinHuxley:1952} to develop a fast sodium
@@ -1289,7 +1299,7 @@ Table \ref{tab:ModellingCNTable} summarises neural network studies of the
 \VCN with emphasis on the output of \TS cells.  Studies investigating \TS cells
 with local interneurons have not utilised the important membrane cell properties
 of \TS cells, are limited by outdated input \AN models, have insufficiently complex neural
-models, or contain errors in their network connectivity.
+models or contain errors in their network connectivity.
 
 The first network models of the \CN were in the \DCN\space 
 \citep{DavisVoigt:1991,ArleKim:1990,ArleKim:1991a,Arle:1992}.  The
@@ -1328,7 +1338,7 @@ frequency bands \citep{ReissYoung:2005,LomakinDavis:2008,YoungDavis:2002}.
 Selective processing of different \ANF inputs using some form of inhibition was
 the first step toward including interneurons in a \TS cell model
 \citep{LaiWinslowEtAl:1994,LaiWinslowEtAl:1994a,WangSachs:1995}.
-\citet{LaiWinslowEtAl:1994a} used the ball and stick \HH conductance neural
+\citet{LaiWinslowEtAl:1994a} used the ball-and-stick (i.e.\space soma and dendrite) \HH conductance neural
 model based on \citet{BanksSachs:1991}.  The mechanism of selective processing
 removes the saturation of \HSR fibres by shunting inhibition at synapses
 proximal to the soma.  This group of models enhanced the dynamic range of the
@@ -1353,14 +1363,15 @@ to reproduce chopper-like \PSTH and rate-level responses to tones.
 
 Recurrent excitation between \TS cells has been observed in mice
 \citep{FerragamoGoldingEtAl:1998a} and has been investigated in two modelling
-studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}. Neither study provides a
-realistic implementation of the stellate microcircuit, however.  In a
+studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}. However, neither study provides a
+realistic implementation of the stellate microcircuit.  In a
 speculative model, \citet{WiegrebeMeddis:2004} included a range of \TS cells in
 each frequency band, each with a different intrinsic firing rate.  The goal of
-their model was decoding \AM properties in the \IC\@.  Unfortunately, the
-intrinsic firing rate of the \TS cell model exceeded physiologically observed
-rates.  Additionally, the \AN model used was limited by the dated nature of the
-experimental data \citep{MeddisOMardEtAl:2001}.  
+their model was decoding \AM properties in the \IC\@.  
+Unfortunately, the intrinsic firing rate of the \TS cell model exceeded physiologically observed rates.
+\yellownote{Fix this sentence}
+Additionally, the \AN model, developed in-paper, used was 
+limited by the dated nature of the experimental data \citep{MeddisOMardEtAl:2001}.
 
 
 The network model by \citet{BahmerLangner:2006} proposed a new \VCN network
@@ -1371,8 +1382,8 @@ frequency peaks in the \IC\@.  \citet{BahmerLangner:2006} assert that octopus
 cells form excitatory synapses with \TS cells.  Octopus cells do not have axonal
 collaterals in the \VCN\space \citep{Adams:1997,CantBenson:2003}; consequently, the
 inclusion of octopus cells in a network of the \VCN is speculative. Despite
-using the most up-to-date currents in the onset neural model
-\citep{RothmanManis:2003b}, \citet{BahmerLangner:2006a} failed to include the
+using the most up-to-date currents in the onset neural model 
+\citep{RothmanManis:2003b}, \citet{BahmerLangner:2006a} did not include the
 \Ih current, a unique characteristic of octopus cells \citep{CaiMcGeeEtAl:2000}.
 Recurrent networks in the cortex prefer inhibition for synchronisation
 \citep{LyttonSejnowski:1991,BushSejnowski:1996}.  In theoretical terms,
@@ -1382,6 +1393,8 @@ improving synchronisation in recurrent neural networks
 models as input to the \citet{BahmerLangner:2006a} CN model means that there is
 much scope for improvement in computational modelling in the \CN stellate
 microcircuit.
+
+
 
 
 ** Optimisation in Neural Modeling
@@ -1469,50 +1482,51 @@ Current methods used in constraining spiking networks can be categorised as foll
 # contribute greatly to our understanding of how synapses function and change in
 # relation to external stimulus in the coming decades.  }
 
+\yellownote{Include \citep{RossantGoodmanEtAl:2010,BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
+
 
 * Overview of Thesis
 
 As the foregoing literature review has demonstrated, current \TS cell
 microcircuit models make insufficient use of experimental data and optimisation
-techniques. This thesis seeks to address these deficiencies through the design
-and optimisation of the \CNSM model.  The remainder of this chapter introduces
-the work undertaken in this thesis to develop and test the \CNSM model.
+techniques. This thesis seeks to address these deficiencies through the design and
+optimisation of the \CNSM model.  The remainder of this chapter introduces the
+work undertaken in this thesis to develop and test the \CNSM model.
 
-Chapter \ref{sec:MethodsChapter} establishes the general methods for use in the
-design of the \CNSM model.  It introduces the basic building blocks of
-individual cells (membrane currents, different cell types and characteristics),
-and their neural connectivity (including synapse types and kinetics), and cell
-type to cell type connections within and across frequency channels.  The chapter
-describes the the \AN input model and the stimuli used to generate acoustic
-input to the \AN model.  Finally, it foreshadows the optimisation techniques
-deployed in Chapters \ref{sec:ModelChapter} and \ref{sec:GAChapter}.
+Chapter \ref{sec:MethodsChapter} establishes the general methods for use in the design of the \CNSM
+model.  It introduces the basic building blocks of individual cells (membrane
+currents, different cell types and characteristics), and their neural
+connectivity (including synapse types and kinetics), and cell type to cell type
+connections within and across frequency channels.  The
+chapter describes the the \AN input model and the stimuli used to generate
+acoustic input to the \AN model.  Finally, it foreshadows the optimisation
+techniques deployed in Chapters \ref{sec:ModelChapter} and \ref{sec:GAChapter}.
 
-Chapter \ref{sec:ModelChapter} presents the detailed design of the \CNSM model
-using a sequential method of optimisation. The cells of the \CNSM model (Golgi,
-\DS, \TV and 3 categories of \TS cells) and the cost function used to fit the
-model to experimental data are each laid out in turn.  The \CNSM model was
-tested using a series of tone and noise stimuli for validation with experimental
-data not utilised in the optimisation procedure.
-
-
-Chapter \ref{sec:AMChapter} presents a case study involving the validation of
-the \CNSM model using complex stimuli, \AM, which is a key component of animal
-communication.  Through this application of the \CNSM, Chapter
-\ref{sec:AMChapter} demonstrates that connectivity within the microcircuit
-enhances temporal coding from the \AN to higher centres through the \TS cells.
-
-Chapter \ref{sec:GAChapter} uses a simplified version of the \CNSM model to
-explore simultaneous optimisation, a faster means of establishing network
-parameters in \BNNs.  Through this analysis, Chapter 5 demonstrates that \GAs
-may have utility as an expedient optimisation method for large \BNNs, even where
-experimental data are limited.
+Chapter \ref{sec:ModelChapter} presents the detailed design of the \CNSM model using a sequential
+method of optimisation. The cells of the \CNSM model (Golgi, \DS, \TV and 3
+categories of \TS cells) and the cost function used to fit the model to
+experimental data are each laid out in turn.  The \CNSM model was tested using a
+series of tone and noise stimuli for validation with experimental data not
+utilised in the optimisation procedure.
 
 
-Chapter \ref{sec:FinalChapter} draws together the findings of the design,
-optimisation and analysis of the CNSM model. It describes the usefulness of the
-model as well as the optimisation methods used throughout the thesis. It
-canvases the limitations of the research and makes recommendations for future
-work arising out of the thesis.
+Chapter \ref{sec:AMChapter} presents a case study involving the validation of the \CNSM model
+using complex stimuli, \AM, which is a key component of animal communication.
+Through this application of the \CNSM, Chapter \ref{sec:AMChapter} demonstrates that connectivity
+within the microcircuit enhances temporal coding from the \AN to higher centres
+through the \TS cells.
+
+Chapter \ref{sec:GAChapter} uses a simplified version of the \CNSM model to explore simultaneous
+optimisation, a faster means of establishing network parameters in \BNNs.
+Through this analysis, Chapter 5 demonstrates that \GAs may have utility as an
+expedient optimisation method for large \BNNs, even where experimental data are
+limited.
+
+
+Chapter \ref{sec:FinalChapter} draws together the findings of the design, optimisation and analysis of the
+CNSM model. It describes the usefulness of the model as well as the optimisation
+methods used throughout the thesis. It canvases the limitations of the research
+and makes recommendations for future work arising out of the thesis.
 
 
 
