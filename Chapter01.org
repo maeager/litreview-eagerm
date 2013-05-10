@@ -363,7 +363,7 @@ processing to \HSR fibres.
 
 ** Cochlear Nucleus 
 
-\glsset{TS}
+\glsunset{TS}
 
 There is a rich tradition of experimental investigation of the \CN, dating back
 more than eighty years \citep[for~example~see]{Lorente:1933}.  The synaptic
@@ -763,11 +763,11 @@ present, this creates a complicated recurrent loop in the \CN stellate
 microcircuit and would develop non-linear activity in the main output of the
 network, \TS cells.
 
- *GABAergic Golgi cells*
-
+\yellownote{ GABAergic Golgi cells
 - no \IPSPs or \IPSCs but presence of \GABAa receptors and response changes   to bicuculine   \citep{WuOertel:1986,OertelWickesberg:1993,FerragamoGoldingEtAl:1998a}
 - dend filter obscures \PSPs
 - Golgi cells are GABAergic and lie within the granule cell domains around   the \VCN and terminate near the fine distal dendrites of \TS cells
+}
 
 Sources of polysynaptic excitation, observed with late \EPSPs observed in \TS
 cells, indicate that \TS cells receive excitatory input from excitatory
@@ -790,42 +790,42 @@ presumably their targets. The ultrastructure of \TS cell terminals and
 functional studies of the inputs to the inferior colliculi is consistent with
 their being excitatory \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
 
-**** Major Ascending Output
+# **** Major Ascending Output
 
-\TS cell axons exit the \CN through the trapezoidal body, cross the midline and
- ultimately terminate in the contralateral \IC\space \citep{Adams:1979}. Other
- collaterals: local \VCN, \DCN, \LSO, c\VNTB c\VNLL
- \citep{Warr:1969,SmithJorisEtAl:1993,Thompson:1998,DoucetRyugo:2003} review
- \citep{DoucetRyugo:2006}.
+# \TS cell axons exit the \CN through the trapezoidal body, cross the midline and
+#  ultimately terminate in the contralateral \IC\space \citep{Adams:1979}. Other
+#  collaterals: local \VCN, \DCN, \LSO, c\VNTB c\VNLL
+#  \citep{Warr:1969,SmithJorisEtAl:1993,Thompson:1998,DoucetRyugo:2003} review
+#  \citep{DoucetRyugo:2006}.
 
-  1. Deep \DCN (bulk of acoustic input?) in rats *No* terminals assoc with \TS
-     cells on \TV cells, most \TS inputs on fusiform \citep{RubioJuiz:2004}. In
-     mice \TS terminals \ANF\space \citep{CaoMcGinleyEtAl:2008} on \CF
-     \citep{SmithRhode:1989,FriedlandPongstapornEtAl:2003,DoucetRyugo:1997}. See
-     \DCN review \citep{OertelYoung:2004}
-  2. \LSO excitation: \TS project to \LSO\space 
-     \citep{Thompson:1998,DoucetRyugo:2003,ThompsonThompson:1991a}. \LSO detect
-     interaural intensity differences primarily from ipsi Bushy cells and contra
-     \MNTB (inhib)
-  3. Olivocochlear feedback: \MOC c\VNTB excitation involved in efferent
-     feedback loop, Cholinergic \MOC neurons \TS synapses in c\VNTB\space 
-     \citep{WarrBeck:1996,Warr:1992,Warr:1982,VeneciaLibermanEtAl:2005,ThompsonThompson:1991,SmithJorisEtAl:1993}. Feedback
-     direct to \TS is positive, but efferent \MOC-OHC-\ANF reduces activation of
-     \ANF\space \citep{WarrenLiberman:1989,WiederholdKiang:1970}, other
-     \citep{RobertsonMulders:2000,WinterRobertsonEtAl:1989}.  
-  4. \TS axons terminate in vicinity of \LOC neurons
-     \citep{Warr:1982,ThompsonThompson:1988,ThompsonThompson:1991,DoucetRyugo:2003}
-     feedback through \LOC \rightarrow cochlea \rightarrow \ANF loop.  \TS affect/regulate response
-     of \LOC, hence \ANF, \LOC balance inputs from both ears
-     \citep{DarrowMaisonEtAl:2006}
-  5. \VNLL The functional consequences of these direct and indirect connections
-     with \TS cells with the \IC are not well understood central nucleus of the
-     \IC\@.
+#   1. Deep \DCN (bulk of acoustic input?) in rats *No* terminals assoc with \TS
+#      cells on \TV cells, most \TS inputs on fusiform \citep{RubioJuiz:2004}. In
+#      mice \TS terminals \ANF\space \citep{CaoMcGinleyEtAl:2008} on \CF
+#      \citep{SmithRhode:1989,FriedlandPongstapornEtAl:2003,DoucetRyugo:1997}. See
+#      \DCN review \citep{OertelYoung:2004}
+#   2. \LSO excitation: \TS project to \LSO\space 
+#      \citep{Thompson:1998,DoucetRyugo:2003,ThompsonThompson:1991a}. \LSO detect
+#      interaural intensity differences primarily from ipsi Bushy cells and contra
+#      \MNTB (inhib)
+#   3. Olivocochlear feedback: \MOC c\VNTB excitation involved in efferent
+#      feedback loop, Cholinergic \MOC neurons \TS synapses in c\VNTB\space 
+#      \citep{WarrBeck:1996,Warr:1992,Warr:1982,VeneciaLibermanEtAl:2005,ThompsonThompson:1991,SmithJorisEtAl:1993}. Feedback
+#      direct to \TS is positive, but efferent \MOC-OHC-\ANF reduces activation of
+#      \ANF\space \citep{WarrenLiberman:1989,WiederholdKiang:1970}, other
+#      \citep{RobertsonMulders:2000,WinterRobertsonEtAl:1989}.  
+#   4. \TS axons terminate in vicinity of \LOC neurons
+#      \citep{Warr:1982,ThompsonThompson:1988,ThompsonThompson:1991,DoucetRyugo:2003}
+#      feedback through \LOC \rightarrow cochlea \rightarrow \ANF loop.  \TS affect/regulate response
+#      of \LOC, hence \ANF, \LOC balance inputs from both ears
+#      \citep{DarrowMaisonEtAl:2006}
+#   5. \VNLL The functional consequences of these direct and indirect connections
+#      with \TS cells with the \IC are not well understood central nucleus of the
+#      \IC\@.
 
 
-Type I multipolar cells in the VCN give rise to projections to the periolivary
-nucleus, the \DMPN in cats: \citealt{SmithJorisEtAl:1993}, or in rats and guinea
-pig the \SPN\space \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
+# Type I multipolar cells in the VCN give rise to projections to the periolivary
+# nucleus, the \DMPN in cats: \citealt{SmithJorisEtAl:1993}, or in rats and guinea
+# pig the \SPN\space \citealt{FriaufOstwald:1988}, \citealt{Schofield:1995}).
 
 
 #  FIX
@@ -867,22 +867,22 @@ regulation by extra-nuclei inputs \citep{RothmanManis:2003b,FerragamoGoldingEtAl
 # that T stellate-like cells have for hearing in vertebrates.
 
 
-- selective processing of \HSR and \LSR input
-- feed-forward excitation in \TS cells
-- axon collaterals in local isofrequency (most cells in \PVCN are  \TS cells)
-- co-activation of phasic inhibition
-- \DS inhibition ispi and contralaterally
-- onset inhibition strongest, affecting \TS cells after first spike
-- broad tuning sharpens \FSL
-- \TV sharply tuned inhibition (Ferr98)
-- \TV response variable and non-monotonic
-- \citep{Rhode:1999} labelled \TV cells phasic in anaesthetised  cats
-- unanaesthetised cats and gerbils are phasic or tonic \citep{DingVoigt:1997,ShofnerYoung:1985}
-- Others: Glycine from ipsi periolivary region, \GABA from both periolivary regions \citep{AdamsWarr:1976,ShoreHelfertEtAl:1991,OstapoffBensonEtAl:1997}
-- Absence of LT potassium in \TS  labelled \citep{ManisMarx:1991,BalOertel:2001,FerragamoOertel:2002,CaoShatadalEtAl:2007}, unlabelled \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b,Rothman:1999}
-- Activation of \NMDA,  \citep{CaoOertel:2010} shows \TS cells activate large currents through \NMDA receptors
-- \NMDA longer lasting, reducing phasic nature of input
-- Little synaptic depression: SD less than bushy and octopus \citep{WuOertel:1987,ChandaXu-Friedman:2010,CaoOertel:2010} excitation of \TS adapts less than other \VCN neurons
+# - selective processing of \HSR and \LSR input
+# - feed-forward excitation in \TS cells
+# - axon collaterals in local isofrequency (most cells in \PVCN are  \TS cells)
+# - co-activation of phasic inhibition
+# - \DS inhibition ispi and contralaterally
+# - onset inhibition strongest, affecting \TS cells after first spike
+# - broad tuning sharpens \FSL
+# - \TV sharply tuned inhibition (Ferr98)
+# - \TV response variable and non-monotonic
+# - \citep{Rhode:1999} labelled \TV cells phasic in anaesthetised  cats
+# - unanaesthetised cats and gerbils are phasic or tonic \citep{DingVoigt:1997,ShofnerYoung:1985}
+# - Others: Glycine from ipsi periolivary region, \GABA from both periolivary regions \citep{AdamsWarr:1976,ShoreHelfertEtAl:1991,OstapoffBensonEtAl:1997}
+# - Absence of LT potassium in \TS  labelled \citep{ManisMarx:1991,BalOertel:2001,FerragamoOertel:2002,CaoShatadalEtAl:2007}, unlabelled \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b,Rothman:1999}
+# - Activation of \NMDA,  \citep{CaoOertel:2010} shows \TS cells activate large currents through \NMDA receptors
+# - \NMDA longer lasting, reducing phasic nature of input
+# - Little synaptic depression: SD less than bushy and octopus \citep{WuOertel:1987,ChandaXu-Friedman:2010,CaoOertel:2010} excitation of \TS adapts less than other \VCN neurons
 
 
 ** Function of the Stellate Microcircuit
@@ -1125,7 +1125,8 @@ candidates for operation of lateral inhibition.  Recurrent excitation by
 \TS cells within the same frequency band could also increase the rate \citep{FerragamoGoldingEtAl:1998a}.
 
 Taken together, the experimental evidence demonstrates that there is much that
-remains unknown about the functioning of neural processing in the \CN stellate cell microcircuit.
+remains unknown about the functioning of neural processing in the \CN stellate
+cell microcircuit.
  
 ** Computational Models of the Cochlear Nucleus
 
