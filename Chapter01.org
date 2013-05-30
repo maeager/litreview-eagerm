@@ -763,10 +763,10 @@ present, this creates a complicated recurrent loop in the \CN stellate
 microcircuit and would develop non-linear activity in the main output of the
 network, \TS cells.
 
-\yellownote{ GABAergic Golgi cells
+\yellownote{ GABAergic 
 - no \IPSPs or \IPSCs but presence of \GABAa receptors and response changes   to bicuculine   \citep{WuOertel:1986,OertelWickesberg:1993,FerragamoGoldingEtAl:1998a}
 - dend filter obscures \PSPs
-- Golgi cells are GABAergic and lie within the granule cell domains around   the \VCN and terminate near the fine distal dendrites of \TS cells
+Golgi cells are GABAergic and lie within the \GCD surrounding the \VCN. Their axons terminate in the \GCD, near to the fine distal dendrites of \DS and \TS cells.
 }
 
 Sources of polysynaptic excitation, observed with late \EPSPs observed in \TS
@@ -1445,6 +1445,8 @@ Current methods used in constraining spiking networks can be categorised as foll
    \citep{KerenPeledEtAl:2005,VanierBower:1999,VanDeEtAl:2008} or small \BNNs
    \citep{TaylorEnoka:2004}.
 
+\yellownote{Include \citep{BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
+
 # \yellownote{Many computational neuroscientists collaborate closely with
 # experimentalists in analysing novel data and synthesising new models of
 # biological phenomena.  Even single neurons have complex biophysical
@@ -1483,7 +1485,7 @@ Current methods used in constraining spiking networks can be categorised as foll
 # contribute greatly to our understanding of how synapses function and change in
 # relation to external stimulus in the coming decades.  }
 
-\yellownote{Include \citep{RossantGoodmanEtAl:2010,BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
+
 
 
 * Overview of Thesis
