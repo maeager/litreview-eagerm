@@ -886,7 +886,9 @@ regulation by extra-nuclei inputs \citep{RothmanManis:2003b,FerragamoGoldingEtAl
 
 
 ** Function of the Stellate Microcircuit
-
+:PROPERTIES:
+:CUSTOM_ID: sec:Ch1:FunctionCNSM
+:END:
 # *** Functional Role of Inhibition
 \glsunset{GABA}
 
@@ -914,7 +916,6 @@ inhibitory inputs that shunt excitation from more distal inputs
  \citep{WinslowBartaEtAl:1987,WangSachs:1994}. This mechanism was explored using
 steady-state continuous inputs \citep{LaiWinslowEtAl:1994} and there is strong
 potential to explore this using more realistic inhibitory circuits.
-
 
 GABAergic inhibition regulates the level of activity in the \VCN\space
 \citep{PalombiCaspary:1992}. The application of bicuculine abolishes the onset
@@ -1286,6 +1287,9 @@ input changes.
 # - Modulation of \IKLT: Coincidence detection neurons would benefit from \IKLT up-regulation to reduce membrane time constant, reduce EPSP height and width.  Enhanced temporal acuity at onset, reduced firing during sustained period, reduced spontaneous activity, reduction in refractory period that leads to faster firing rates.  Increasing \IKLT drops Vrev, hence Ih must be used to counterbalance \IKLT.
 
 *** Microcircuit Models in the Cochlear Nucleus
+:PROPERTIES:
+:CUSTOM_ID: sec:Ch1:OtherCSNMmodels
+:END:
 
 # These models have been used to explore some basic responses of
 # stellate cells seen physiologically, for example:
