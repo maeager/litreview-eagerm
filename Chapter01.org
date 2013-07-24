@@ -609,21 +609,25 @@ fall into either the Type I or Type III \EIRA category.
 
 
 The regular-firing chopping pattern shown in Figure \ref{fig:chopping} is
-characteristic of \TS cells. \ChS and \ChT are differentiated by the regularity
-of discharge throughout the stimulus using the \CV statistic
-\citep{YoungRobertEtAl:1988}.  Recurrent excitation among \TS cells of similar
-\CFs was first suggested by \citet{FerragamoGoldingEtAl:1998a}.  The small
-numbers of axonal collaterals are confined to the same frequency band as their
-dendrites, indicating recurrent connections are between cells encoding a similar
-frequency \citep{FerragamoGoldingEtAl:1998a,PalmerWallaceEtAl:2003}.  This could
-compensate for rapid transient adaptation in \AN excitation, allowing
-a robust representation of the spectral energy falling within the cell's
-response area to be transmitted to higher centres.
+characteristic of \TS cells \citep{BlackburnSachs:1989}. \ChS and \ChT are
+differentiated by the regularity of discharge throughout the stimulus using the
+\CV statistic \citep{YoungRobertEtAl:1988}.  These classification techniques
+expanded the level of physiological understanding in the complex neural
+processes in the \CN and their relationships with intracellular behaviour
+\citep{BlackburnSachs:1989,SmithRhode:1989,OstapoffFengEtAl:1994}.  Recurrent
+excitation among \TS cells of similar \CFs was first suggested by
+\citet{FerragamoGoldingEtAl:1998a}.  The small numbers of axonal collaterals are
+confined to the same frequency band as their dendrites, indicating recurrent
+connections are between cells encoding a similar frequency
+\citep{FerragamoGoldingEtAl:1998a,PalmerWallaceEtAl:2003}.  This could
+compensate for rapid transient adaptation in \AN excitation, allowing a robust
+representation of the spectral energy falling within the cell's response area to
+be transmitted to higher centres.
 
 #+ATTR_LATEX: width=0.6\textwidth
-#+CAPTION: TS cell chopper characteristic subtypes
+#+CAPTION: [Characteristic PSTH, ISI and CV responses in TS cells]{TS cell characteristic PSTH, ISI and CV responses to a short 25 msec \CF tone. PSTH (left) with first spike (inset above) and long tone PSTH (inset). Mean and standard deviation of ISI (right) with CV (inset). Sound level was 30 dB above threshold for each unit. Figure reproduced from figure 4 in \citet{BlackburnSachs:1989}.}
 #+LABEL: fig:chopping
-[[file:../LiteratureReview/gfx/NoFigure.pdf]]
+[[../LiteratureReview/gfx/BlackburnSachs89-Fig4.png]]
 
 # - regular, tonic response to tones
 #   \citep{RhodeOertelEtAl:1983,SmithRhode:1989,BlackburnSachs:1989}
@@ -1255,7 +1259,8 @@ in modulating the response of \TS cells, enhancing their sensitivity to small
 input changes.
 
 
-# FROM ROTHMAN 2003c Because little was known about the Naϩ and Kϩ currents in VCN
+# FROM ROTHMAN 2003c
+# Because little was known about the Naϩ and Kϩ currents in VCN
 # stellate cells before 1991, Banks and Sachs used modified
 # versions of the Hodgkin and Huxley (HH) equations (1952),
 # which included a fast Naϩ current (INa) and a high-threshold
@@ -1444,8 +1449,12 @@ Current methods used in constraining spiking networks can be categorised as foll
 #  , uses Granger causality (Granger, 1969) to expose the direction of information flow. Further two more methods: direct causality (), and direct directed  have been introduced. These methods allow identifying the presence of feedback between two or more neurons, but coupling polarities are not directly accessible. Although these methods have been successfully applied on simulated networks of randomly spiking coupled neurons, their application to real data is basically limited because: (i) they do not allow resolving mutual couplings between neurons and/or do not distinguish the type of such couplings; (ii) as a rule their application assumes the use of relatively large spike trains with constant statistical properties, a condition difficult to be satisfied in the experiments; (iii) they usually fail when applied to excessively rhythmic neural assemblies, a rather common situation which may just represent an objective of the research.all these methods deal only with the connectivity patterns, i.e. only presence and sometime type and direction of the couplings between neurons can be estimated. No knowledge about absolute values of couplings or other parameters of the network can be drawn.
  - \textbf{Single Neuron Dynamics} determine the effects of the activity of a
    network on \BNNs
-   \citep{PillowPaninskiEtAL:2005}. \citet{MakarovPanetsosEtAl:2005} extended this method to include
-   observation of neural architecture derived from extracellular recordings.
+   \citep{PillowPaninskiEtAL:2005}. \citet{MakarovPanetsosEtAl:2005} extended
+   this method to include observation of neural architecture derived from
+   extracellular recordings. Further advancements using analytical methods
+   enable ensembles of integrate and fire neurons can be precisely fit to
+   spiking data \citep{Brette:2006,Brette:2007,BretteGuigon:2003} and
+   experimental data \citep{RossantGoodmanEtAl:2010}.
  - \textbf{Evolutionary algorithms} has been shown to be suitable for noisy,
    large parameter spaces of spiking neural networks
    \citep{TakahamaSakai:2005,Yao:1999}. \GAs have been used to constrain
@@ -1453,7 +1462,7 @@ Current methods used in constraining spiking networks can be categorised as foll
    \citep{KerenPeledEtAl:2005,VanierBower:1999,VanDeEtAl:2008} or small \BNNs
    \citep{TaylorEnoka:2004}.
 
-\yellownote{Include \citep{BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
+# \note{Include \citep{BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
 
 # \yellownote{Many computational neuroscientists collaborate closely with
 # experimentalists in analysing novel data and synthesising new models of
