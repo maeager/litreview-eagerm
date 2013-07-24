@@ -1538,7 +1538,7 @@ enhances temporal coding from the \AN to higher centres through the \TS cells.
 
 Chapter \ref{sec:GAChapter} uses a simplified version of the \CNSM model to
 explore simultaneous optimisation, a faster means of establishing network
-parameters in \BNNs.  Through this analysis, Chapter 5 demonstrates that \GAs
+parameters in \BNNs.  Through this analysis, Chapter \ref{sec:GAChapter} demonstrates that \GAs
 may have utility as an expedient optimisation method for large \BNNs, even where
 experimental data are limited.
 
