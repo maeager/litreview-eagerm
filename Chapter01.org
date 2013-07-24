@@ -736,7 +736,7 @@ Fast, glycinergic synapses arrive on TS cells from \DS and \TV cells
 The \GlyR in \VCN and other auditory brainstem units has a faster rise time (0.4
 msec) and decay time (2.5 msec) compared with other glycinergic synapses in the
 brain, which is critical for fast encoding of sounds
-\citep{LimOleskevichEtAl:2003,AwatramaniTurecekEtAl:2005,LeaoOleskevichEtAl:2004,HartManis:1998}.
+\citep{LimOleskevichEtAl:2003,AwatramaniTurecekEtAl:2005,LeaoOleskevichEtAl:2004,HartyManis:1998}.
 The function of \DS cell inputs has been suggested to include: wide-band lateral
 suppression (especially in noise) \citep{RecioRhode:2000a,RhodeGreenberg:1994a};
 enhancement of modulated inputs by providing phase-locked inhibition
@@ -797,7 +797,7 @@ of the \PVCN\space \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by 
 cells and occasionally \DS and bushy cells, some or all of which are therefore
 presumably their targets. The ultrastructure of \TS cell terminals and
 functional studies of the inputs to the inferior colliculi is consistent with
-their being excitatory \citep{Oliver:1984,Oliver:1987,SmithRhode:1989}.
+their being excitatory \citep{SmithRhode:1989,CantBenson:2006,CantBenson:2003}.
 
 # **** Major Ascending Output
 
