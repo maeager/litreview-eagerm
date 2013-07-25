@@ -1209,7 +1209,7 @@ responses in other neural networks of the brain.
 # point neuron not sufficient\\
 # accurate currents of Rothman and Manis\\
 
-# \yellownote{First model of CN circuit \citep{RasmussenGacekEtAl:1960}}
+# \note{First model of CN circuit \citep{RasmussenGacekEtAl:1960}}
 
 *** Modelling of the Auditory Periphery
 
@@ -1225,11 +1225,9 @@ experiments.
 A review by \citet{Lopez-Poveda:2005}, shows the two groups with the strongest
 correlation between known phenomenological behaviour and model outputs are the
 DSAM model
-(\citet{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002})\footnote{DSAM
-http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
+(\citet{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002})\footnote{DSAM http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
 Carney model
-(\citet{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006})\footnote{Carney
-model http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
+(\citet{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006})\footnote{Carney model http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
 These models both show good representation of rate behaviour in \LSR and \HSR
 models, as well as temporal phenomena in ANFs.  This thesis uses the Carney
 model for all \AN simulations.
@@ -1292,7 +1290,7 @@ input changes.
 # also successful in replicating responses to more complex stim-
 # uli (Arle and Kim 1991; Hewitt et al. 1992; Wang and Sachs
 # 1995).
-# \yellownote{Paragraph on Rothman and Manis Current Models in VCN Bushy and Stellate Cells}
+# \note{Paragraph on Rothman and Manis Current Models in VCN Bushy and Stellate Cells}
 # Present a robust model of \VCN neurons based on previous experimental studies.
 # The RM neural model presents a robust model of \VCN neurons and replicates behaviour including
 # - current clamp responses of type I (stellate cells) and type II (bushy cells) units.
@@ -1392,7 +1390,7 @@ speculative model, \citet{WiegrebeMeddis:2004} included a range of \TS cells in
 each frequency band, each with a different intrinsic firing rate.  The goal of
 their model was decoding \AM properties in the \IC\@.  Unfortunately, the
 intrinsic firing rate of the \TS cell model exceeded physiologically observed
-rates.  \yellownote{Fix this sentence} Additionally, the \AN model, developed
+rates.  Additionally, the \AN model, developed
 in-paper, used was limited by the dated nature of the experimental data
 \citep{MeddisOMardEtAl:2001}.
 
@@ -1473,7 +1471,7 @@ Current methods used in constraining spiking networks can be categorised as foll
 
 # \note{Include \citep{BretteRudolphEtAl:2007,Brette:2006,Brette:2007,BretteGuigon:2003,RossantGoodmanEtAl:2010}}
 
-# \yellownote{Many computational neuroscientists collaborate closely with
+# \note{Many computational neuroscientists collaborate closely with
 # experimentalists in analysing novel data and synthesising new models of
 # biological phenomena.  Even single neurons have complex biophysical
 # characteristics. Hodgkin and Huxley's original model only employed two
@@ -1485,7 +1483,7 @@ Current methods used in constraining spiking networks can be categorised as foll
 # implications of the differing dynamics, modulations and sensitivity of these
 # currents is an important topic of computational neuroscience.}
 
-# \yellownote{ Sensory processing.  Early models of sensory processing understood
+# \note{ Sensory processing.  Early models of sensory processing understood
 # within a theoretical framework are credited to Horace Barlow . Somewhat similar to
 # the minimal wiring hypothesis described in the preceding section, Barlow
 # understood the processing of the early sensory systems to be a form of efficient
@@ -1493,7 +1491,7 @@ Current methods used in constraining spiking networks can be categorised as foll
 # spikes. Experimental and computational work have since supported this hypothesis
 # in one form or another.  }
 
-# \yellownote{ Memory and synaptic plasticity.  Earlier models -> Hebbian learning
+# \note{ Memory and synaptic plasticity.  Earlier models -> Hebbian learning
 # for ANN. Biologically relevant models such as Hopfield net have been developed
 # to address the properties of associative, rather than content-addressable style
 # of memory that occur in biological systems.  Models of working memory, relying
