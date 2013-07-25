@@ -171,13 +171,13 @@ The auditory system is topographically ordered from the basilar
 membrane to the cortex in terms of frequency selectivity, also known
 as tonotopicity
 \citep[for~a~review~of~cochlear~nucleus~synapto-physiology~and~topology~see][]{YoungOertel:2004}.
-The population of \ANFs (Figure \ref{fig:CNCatHuman}) bifurcate after
-entering the \CN to innervate the \VCN and \DCN, retaining their
-tonotopic order \citep{Lorente:1981,Liberman:1982,Liberman:1993}.  The
-different cell types of the \CN, each with unique cell properties and
-synapto-physiology, produce six major outputs from the \CN\space \citep{CantBenson:2003}. Binaural pathways converge in the \IC before
-projecting to the medial geniculate nucleus in the thalamus and then
-to the auditory cortex.
+The population of \ANFs (Figure \ref{fig:CNCatHuman}) bifurcate after entering
+the \CN to innervate the \VCN and \DCN, retaining their tonotopic order
+\citep{Lorente:1981,Liberman:1982,Liberman:1993}.  The different cell types of
+the \CN, each with unique cell properties and synapto-physiology, produce six
+major outputs from the \CN\space \citep{CantBenson:2003}. Binaural pathways
+converge in the \IC before projecting to the medial geniculate nucleus in the
+thalamus and then to the auditory cortex.
 
 
 #+ATTR_LaTeX: width=0.6\textwidth
@@ -200,9 +200,10 @@ to the auditory cortex.
 
 \ANFs are narrowly tuned to their \CF, the frequency at the minimal point of its
 acoustic threshold curve.  Acoustic threshold is defined as the \SPL where the
-neuron's firing rate is significantly above their \SR.   The average bandwidth of \ANFs is \Qten
-= 6.3 octaves \citep{JiangPalmerEtAl:1996}; where \Qten is the width of the
-tuning curve at 10 dB above acoustic threshold at \CF divded by the \CF.
+neuron's firing rate is significantly above their \SR.  The average bandwidth of
+\ANFs is \Qten = 6.3 octaves \citep{JiangPalmerEtAl:1996}; where \Qten is the
+width of the tuning curve at 10 dB above acoustic threshold at \CF divded by the
+\CF.
 # \note{define threshold and bandwidth}
 # Threshold is correlated to the amount of spontaneous
 # spike activity that occurs in the absence of experimenter-controlled
@@ -245,10 +246,10 @@ Fibres of similar \CFs disperse to form a 3-dimensional sheet running through
 # horizontal orientation within the ventral cochlear nucleus
 # but twist caudally to form parasagittal sheets in the DCN.
 These projections underlie the tonotopic organisation of the resident neurons of
-the \CN\space \citep{RyugoParks:2003}. \LSR fibres also project to the \GCD\space
-\citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the smaller,
-unmyelinated type 2 \ANFs, which suggests that they play a different role in sound
-processing to \HSR fibres.
+the \CN\space \citep{RyugoParks:2003}. \LSR fibres also project to the
+\GCD\space \citep{RyugoParks:2003,RyugoHaenggeliEtAl:2003} along with the
+smaller, unmyelinated type 2 \ANFs, which suggests that they play a different
+role in sound processing to \HSR fibres.
 
 # 5. Structure-function correlates
 # 5.1. SR and peripheral correlates
@@ -381,8 +382,8 @@ different synaptic inputs of \TS, \DS and \TV cells
 \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}.  Descriptions of current
 dynamics for synaptic receptors \citep{GardnerTrussellEtAl:1999,HartyManis:1998}
 and membrane channels \citep{RothmanManis:2003,RothmanManis:2003a} specific to
-the \VCN have enabled accurate mathematical models to be developed at the cell and
-synaptic level.
+the \VCN have enabled accurate mathematical models to be developed at the cell
+and synaptic level.
 # With this information a realistic biological model of the
 # stellate network is attainable and can provide further insight into processing
 # of acoustic information.
@@ -416,8 +417,9 @@ The afferent and intrinsic synaptic connectivity in the \CN have also been the
 subject of intense interest in the literature
 \citep{YoungOertel:2004,OertelWrightEtAl:2011}. The network in Figure
 \ref{fig:CNschematic} shows the connections within the \CN that are involved in
-modulating \TS cells' activity. The \TS cells and their synaptic interactions are the
-focus of the \CNSM model and are discussed in detail in the next section.
+modulating \TS cells' activity. The \TS cells and their synaptic interactions
+are the focus of the \CNSM model and are discussed in detail in the next
+section.
 
 
 
@@ -462,27 +464,28 @@ thoroughly determined.
 \citep{Osen:1969,Lorente:1981,BrawerMorestEtAl:1974,OertelWuEtAl:1990,DoucetRyugo:2006,DoucetRyugo:1997}.
 \TS cells encode complex features of the stimulus that are important for the
 recognition of natural sounds and are a major source of excitatory input to the
-\IC\space \citep{OertelWrightEtAl:2011}.  \Gls{TS} cells of the \VCN encode a robust
-representation of the stimulus spectrum in their average rate and a temporal
-representation essential for speech \citep{KeilsonRichardsEtAl:1997}. They
-project directly to the \IC, and are therefore important in conveying
-information to higher auditory centres. \TS cells are known to form a local
-microcircuit network with neurons within their isofrequency lamina and across
-the frequency range of the nucleus. The microcircuit includes \DS cells (a
-wide-band inhibitory cell in the \VCN), \TV cells (a narrow-band inhibitory cell
-in the \DCN) and Golgi cells (a GABAergic neuron in the \GCD, an outer shell of
-the \CN) \citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is
-known to play a key role in shaping the average rate response, synchronisation
-to modulation and onset delay of cells in the \CN\space
+\IC\space \citep{OertelWrightEtAl:2011}.  \Gls{TS} cells of the \VCN encode a
+robust representation of the stimulus spectrum in their average rate and a
+temporal representation essential for speech
+\citep{KeilsonRichardsEtAl:1997}. They project directly to the \IC, and are
+therefore important in conveying information to higher auditory centres. \TS
+cells are known to form a local microcircuit network with neurons within their
+isofrequency lamina and across the frequency range of the nucleus. The
+microcircuit includes \DS cells (a wide-band inhibitory cell in the \VCN), \TV
+cells (a narrow-band inhibitory cell in the \DCN) and Golgi cells (a GABAergic
+neuron in the \GCD, an outer shell of the \CN)
+\citep{FerragamoGoldingEtAl:1998a,ZhangOertel:1993b}. Inhibition is known to
+play a key role in shaping the average rate response, synchronisation to
+modulation and onset delay of cells in the \CN\space
 \citep{CasparyBackoffEtAl:1994,EvansZhao:1998,BackoffShadduckEtAl:1999,PaoliniClareyEtAl:2004}.
 
-Intracellular current-clamp recordings of \TS cells have categorised
-them as type 1 \citep{Oertel:1983,OertelWuEtAl:1988,FerragamoGoldingEtAl:1998a}.
-This integrative intrinsic cell membrane behaviour allows phasic
-input from \ANFs to be converted to a tonic or chopping output.  The tonic
-behaviour enables encoding of spectrum across populations since encoding the peaks
-and valleys is relatively independent of time after onset of sound. It also
-suits encoding of envelopes of sounds, which is important for speech
+Intracellular current-clamp recordings of \TS cells have categorised them as
+type 1 \citep{Oertel:1983,OertelWuEtAl:1988,FerragamoGoldingEtAl:1998a}.  This
+integrative intrinsic cell membrane behaviour allows phasic input from \ANFs to
+be converted to a tonic or chopping output.  The tonic behaviour enables
+encoding of spectrum across populations since encoding the peaks and valleys is
+relatively independent of time after onset of sound. It also suits encoding of
+envelopes of sounds, which is important for speech
 \citep{OertelWrightEtAl:2011}. The presence of active membrane channels at rest
 means that \TS cells are sensitive to neuromodulatory currents
 \citep{FerragamoGoldingEtAl:1998a,FujinoOertel:2001,RothmanManis:2003} and
@@ -720,16 +723,17 @@ be transmitted to higher centres.
 
 The driving excitatory inputs of \TS cells come from afferent \ANFs.  \ANFs
 provide glutamatergic excitation using \AMPA receptors
-\citep{Cant:1981,FerragamoGoldingEtAl:1998a,Alibardi:1998a}.  \AMPA\space \EPSCs have a
-time constant of 0.36 msec in \TS and \DS cells, with a slight deviation in \TV
-neurons (0.4 msec) \citep{Gardner:2000,GardnerTrussellEtAl:1999}.
-\ANF synapses are commonly located on \TS cells' proximal dendrites and rarely
-on the soma, which distinguishes them from \DS cells (cat
-\citep{SmithRhode:1989}; mice \citep{FerragamoGoldingEtAl:1998a,CaoOertel:2010};
-chinchilla \citep{JosephsonMorest:1998}).  Variability in the number and location of
-\ANF inputs to TS cells, and the type of \ANFs (\HSR or \LSR) results in a
+\citep{Cant:1981,FerragamoGoldingEtAl:1998a,Alibardi:1998a}.  \AMPA\space \EPSCs
+have a time constant of 0.36 msec in \TS and \DS cells, with a slight deviation
+in \TV neurons (0.4 msec) \citep{Gardner:2000,GardnerTrussellEtAl:1999}.  \ANF
+synapses are commonly located on \TS cells' proximal dendrites and rarely on the
+soma, which distinguishes them from \DS cells (cat \citep{SmithRhode:1989}; mice
+\citep{FerragamoGoldingEtAl:1998a,CaoOertel:2010}; chinchilla
+\citep{JosephsonMorest:1998}).  Variability in the number and location of \ANF
+inputs to TS cells, and the type of \ANFs (\HSR or \LSR) results in a
 heterogeneous classification of \TS cells based on their chopper-like
-physiological responses \citep{SmithRhode:1989,YoungRobertEtAl:1988,PaoliniClareyEtAl:2005}.
+physiological responses
+\citep{SmithRhode:1989,YoungRobertEtAl:1988,PaoliniClareyEtAl:2005}.
 
 Fast, glycinergic synapses arrive on TS cells from \DS and \TV cells
 \citep{SmithRhode:1989,FerragamoGoldingEtAl:1998a,WickesbergOertel:1990,ZhangOertel:1993b}.
@@ -756,25 +760,25 @@ present, this creates a complicated recurrent loop in the \CN stellate
 microcircuit and would develop non-linear activity in the main output of the
 network, \TS cells.
 
-GABAergic inputs to \TS cells have been verified by
-optical microscopy immunohistochemistry
-\citep{SmithRhode:1989,AwatramaniTurecekEtAl:2005,BabalianRyugoEtAl:2003} and electrophysiological
-through the use of ionotopopheretic
-application of the \GABAa antagonist, bicuculine
+GABAergic inputs to \TS cells have been verified by optical microscopy
+immunohistochemistry
+\citep{SmithRhode:1989,AwatramaniTurecekEtAl:2005,BabalianRyugoEtAl:2003} and
+electrophysiological through the use of ionotopopheretic application of the
+\GABAa antagonist, bicuculine
 \citep{EvansZhao:1998,CasparyBackoffEtAl:1994,BackoffShadduckEtAl:1999,FerragamoGoldingEtAl:1998a}.
 The source of GABAergic inputs to cells in the mammalian \CN is somewhat
 contentious.  Studies show that GABAergic inputs to the \CN generally arise in
-the peri-olivary regions of the medulla in cats \citep{OstapoffBensonEtAl:1997}.  Slice
-preparations of the isolated murine \VCN show strong and immediate sensitivity
-to bicuculine in \TS and \DS cells from a source within the \CN complex
-\citep{FerragamoGoldingEtAl:1998a}.  The only known source of \GABA intrinsic to
-the \VCN is the \GLG cells of the \GCD overlying the \VCN
-\citep{Mugnaini:1985,FerragamoGoldingEtAl:1998}.
-Only one electrophysiological study of the \GCD (or marginal shell
-of the \VCN in cats) has been done and found monotonic responses in units assumed to be \GLG cells
-\citep{GhoshalKim:1997}.
-The assumed functional role of \GLG cells is to regulate granule cells but
-the may also regulate the level of excitability in \DS and \TS cells \citep{GhoshalKim:1997,FerragamoGoldingEtAl:1998a}.
+the peri-olivary regions of the medulla in cats \citep{OstapoffBensonEtAl:1997}.
+Slice preparations of the isolated murine \VCN show strong and immediate
+sensitivity to bicuculine in \TS and \DS cells from a source within the \CN
+complex \citep{FerragamoGoldingEtAl:1998a}.  The only known source of \GABA
+intrinsic to the \VCN is the \GLG cells of the \GCD overlying the \VCN
+\citep{Mugnaini:1985,FerragamoGoldingEtAl:1998}.  Only one electrophysiological
+study of the \GCD (or marginal shell of the \VCN in cats) has been done and
+found monotonic responses in units assumed to be \GLG cells
+\citep{GhoshalKim:1997}.  The assumed functional role of \GLG cells is to
+regulate granule cells but the may also regulate the level of excitability in
+\DS and \TS cells \citep{GhoshalKim:1997,FerragamoGoldingEtAl:1998a}.
 
 
 
@@ -783,9 +787,9 @@ cells, indicate that \TS cells receive excitatory input from excitatory
 interneurons within the in \VCN\space \citep{FerragamoGoldingEtAl:1998a}. When
 separated from their natural synaptic inputs, isolated axons cannot contribute
 to polysynaptic responses.  Monosynaptic responses have latencies between 0.5
-(synaptic delay) and 3 msec (2.5 msec conduction delay for an unmyelinated fibre of
-0.5 mm plus 0.5 msec synaptic delay). Therefore \EPSPs with latencies of 3 msec are
-polysynaptic and must be generated by excitatory interneurons
+(synaptic delay) and 3 msec (2.5 msec conduction delay for an unmyelinated fibre
+of 0.5 mm plus 0.5 msec synaptic delay). Therefore \EPSPs with latencies of 3
+msec are polysynaptic and must be generated by excitatory interneurons
 \citep{FerragamoGoldingEtAl:1998a}. Two other experimental observations confirm
 this conclusion. As cut axons have not been observed to fire spontaneously, the
 presence of spontaneous \EPSPs is an indication of the existence of excitatory
@@ -793,9 +797,9 @@ interneurons. Furthermore, the activation of \EPSPs with the application of
 glutamate indicates that the dendrites of excitatory interneurons are accessible
 from the bath.  \TS cells are excitatory neurons known to terminate in the
 vicinity of \TS cells. \TS cells terminate locally in the multipolar cell area
-of the \PVCN\space \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by \TS
-cells and occasionally \DS and bushy cells, some or all of which are therefore
-presumably their targets. The ultrastructure of \TS cell terminals and
+of the \PVCN\space \citep{FerragamoGoldingEtAl:1998a}. This area is occupied by
+\TS cells and occasionally \DS and bushy cells, some or all of which are
+therefore presumably their targets. The ultrastructure of \TS cell terminals and
 functional studies of the inputs to the inferior colliculi is consistent with
 their being excitatory \citep{SmithRhode:1989,CantBenson:2006,CantBenson:2003}.
 
@@ -929,17 +933,17 @@ GABAergic inhibition regulates the level of activity in the \VCN\space
 \citep{PalombiCaspary:1992}. The application of bicuculine abolishes the onset
 response of \OnC and \OnL units \citep{EvansZhao:1998,PalombiCaspary:1992}.
 Bicuculine, a \GABAa antagonist, raises the threshold and significantly
-increases the \OnC receptive field to high and low frequencies, to up to 10 times the
-receptive field width of \AN fibres \citep{EvansZhao:1998}.  Facilitation of
-response by spectral inputs outside the conventional receptive field
-\citep{WinterPalmer:1995,JiangPalmerEtAl:1996} indicates the presence of tonic
-inhibition in \OnC units.  Inhibition acting post-onset is likely to be a
+increases the \OnC receptive field to high and low frequencies, to up to 10
+times the receptive field width of \AN fibres \citep{EvansZhao:1998}.
+Facilitation of response by spectral inputs outside the conventional receptive
+field \citep{WinterPalmer:1995,JiangPalmerEtAl:1996} indicates the presence of
+tonic inhibition in \OnC units.  Inhibition acting post-onset is likely to be a
 dominant factor in their onset response properties rather than membrane-based
 mechanisms \citep{EvansZhao:1998}.  \OnC showed little difference in response to
 cosine or random phase harmonics, which improves temporal encoding of
 fundamental in echoic situations \citep{EvansZhao:1998}. The post-onset
-inhibition can last for up to 400 msec, as observed by hyperpolarisation of
-the soma potential \citep{PaoliniClareyEtAl:2004} and a reduction in spontaneous
+inhibition can last for up to 400 msec, as observed by hyperpolarisation of the
+soma potential \citep{PaoliniClareyEtAl:2004} and a reduction in spontaneous
 firing rate \citep{RhodeGreenberg:1994a}. \citet{MahendrasingamWallamEtAl:2004}
 demonstrated the co-localisation of glycine and \GABA transporters by
 immunofluorescence labelling of endings contacting spherical bushy cells. The
@@ -1031,9 +1035,9 @@ thought to play a role in sound duration
 The temporal \MTF measures the precision of phase-locking to envelope
 modulations of a \CF tone by different modulation frequencies (\fm).  Frisina
 and colleagues first showed that phase-locking to \AM in the \CN is enhanced
-relative to the \AN\space \citep{Frisina:1983,FrisinaSmithEtAl:1990}.  A number of
-studies have shown that the fundamental frequency is represented as an interval
-code in most \CN units
+relative to the \AN\space \citep{Frisina:1983,FrisinaSmithEtAl:1990}.  A number
+of studies have shown that the fundamental frequency is represented as an
+interval code in most \CN units
 \citep{CarianiDelgutte:1996,Rhode:1995,Rhode:1998}.  Modulated signals have been
 used extensively to analyse temporal coding in the \CN\space
 \citep{Moller:1976,FrisinaSmithEtAl:1990,FrisinaSmithEtAl:1990a,KimSirianniEtAl:1990,RhodeGreenberg:1994,Rhode:1994}.
@@ -1058,8 +1062,9 @@ The change in \AM dynamic range may be due to a number of mechanisms in the
 stellate microcircuit.  Selective processing of \HSR and \LSR fibres
 \citep{WinslowBartaEtAl:1987,LaiWinslowEtAl:1994} is one proposed mechanism,
 however, this is unlikely due to the degradation of temporal information in
-\ANFs at high \SPL\space \citep{JorisSchreinerEtAl:2004}.  Inhibition from \DS cells
-is a more likely mechanism. \DS cells integrate \ANFs over a wide frequency range
+\ANFs at high \SPL\space \citep{JorisSchreinerEtAl:2004}.  Inhibition from \DS
+cells is a more likely mechanism. \DS cells integrate \ANFs over a wide
+frequency range
 \citep{PalmerJiangEtAl:1996,OertelBalEtAl:2000,GoldingFerragamoEtAl:1999},
 enhance temporal information \citep{RhodeGreenberg:1994}, and have a large
 dynamic range to tones \citep{RhodeGreenberg:1994a}.  GABAergic \GLG cells have
@@ -1217,13 +1222,17 @@ auditory periphery has benefited extensively from the work of Liberman,
 Greenwood, Patterson, Young, Sachs and others, in acoustic /in vivo/
 experiments.
 
-A review by \citet{Lopez-Poveda:2005}, shows the two groups with the strongest correlation
-between known phenomenological behaviour and model outputs are the DSAM model
-(\citet{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002})\footnote{DSAM  http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
+A review by \citet{Lopez-Poveda:2005}, shows the two groups with the strongest
+correlation between known phenomenological behaviour and model outputs are the
+DSAM model
+(\citet{Meddis:2006,MeddisHewittEtAl:1990,SumnerLopez-PovedaEtAl:2002})\footnote{DSAM
+http://www.essex.ac.uk/psychology/department/HearingLab/modelling.html} and the
 Carney model
-(\citet{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006})\footnote{Carney model http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
-These models both show good representation of rate behaviour in \LSR and \HSR models, as well as temporal phenomena in ANFs.
-This thesis uses the Carney model for all \AN simulations.
+(\citet{Carney:1993,TanCarney:2001,ZhangHeinzEtAl:2001,HeinzZhangEtAl:2001,TanCarney:2003,JacksonCarney:2005,ZilanyBruceEtAl:2009,ZilanyCarney:2010,ZilanyBruce:2006})\footnote{Carney
+model http://www.urmc.rochester.edu/labs/Carney-Lab/publications/auditory-models.cfm}.
+These models both show good representation of rate behaviour in \LSR and \HSR
+models, as well as temporal phenomena in ANFs.  This thesis uses the Carney
+model for all \AN simulations.
 
 *** Single neuron models of the chopper unit
 
@@ -1538,9 +1547,9 @@ enhances temporal coding from the \AN to higher centres through the \TS cells.
 
 Chapter \ref{sec:GAChapter} uses a simplified version of the \CNSM model to
 explore simultaneous optimisation, a faster means of establishing network
-parameters in \BNNs.  Through this analysis, Chapter \ref{sec:GAChapter} demonstrates that \GAs
-may have utility as an expedient optimisation method for large \BNNs, even where
-experimental data are limited.
+parameters in \BNNs.  Through this analysis, Chapter \ref{sec:GAChapter}
+demonstrates that \GAs may have utility as an expedient optimisation method for
+large \BNNs, even where experimental data are limited.
 
 
 Chapter \ref{sec:FinalChapter} draws together the findings of the design,
