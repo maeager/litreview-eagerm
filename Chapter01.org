@@ -67,7 +67,7 @@
 The development of \BNN models is a major objective of computational
 neuroscience.  Recent advances in the field have made this goal more achievable
 than it has ever been before.  The auditory system is characterised by the high
-fidelity of acoustic information. Consequently, modelling of neural processing
+fidelity of acoustic information it processes. Consequently, modelling of neural processing
 in the auditory system should be conducted on a fine-grained scale to enhance
 the representation of the stimulus spectrum and temporal periodicities.  Given
 this complexity, \BNNs are a promising avenue by which we can expand our
@@ -93,7 +93,7 @@ understand complex neural processing.
 
 This chapter critically reviews the major bodies of literature relevant to the
 design and optimisation of the \CNSM model, and provides an overview of the
-thesis.  The next section presents the auditory system, the \CN, existing
+thesis.  The next section introduces the auditory system, the \CN, existing
 computational models of the \CN and optimisation methods in neural
 modelling. This evidence is drawn upon in the development, analysis and
 verification of the \CNSM model in the remainder of the thesis.
@@ -143,12 +143,12 @@ verification of the \CNSM model in the remainder of the thesis.
 Speech is a unique and fundamental tool for communication between humans.  We
 continually deal with various distortions of the acoustic environment, such as
 background noise and reverberation, as we extract information from
-signals entering the ear.  Vowels are a salient feature of speech that is
+signals entering the ear.  Vowels are a salient feature of speech and are
 spectrally and temporally distinct from other natural sounds.  The spectrum of
 each vowel is distinguished by the location of high-energy spectral peaks, known
 as formants. Robust representation of spectra at different intensities is
 important for speech and other auditory communication
-\citep[for~a~review~see][]{Bregman:1990}.
+\citep[for~review~see][]{Bregman:1990}.
 The main tasks of the auditory system are to (1) separate out individual
 frequency components of sound, (2) enhance spectral and temporal contrasts to
 improve meaningful \SNR, and (3) extract behavioural frequency cues
@@ -160,7 +160,7 @@ perception in animals.  These specialities work to a high degree despite the
 input at the round window of the cochlea being one-dimensional.
 Rough frequency decomposition is performed by the basilar membrane and organ of
 Corti in the mammalian cochlea, which transforms mechanical signals to neural
-signals in \ANFs.  The next stage of the auditory process occurs in the \CN, the
+signals in the \AN.  The next stage of the auditory process occurs in the \CN, the
 first processing stage of the central auditory pathway in which all \ANFs
 end. Enhancing spectral and temporal contrasts requires sophisticated parallel
 processing strategies involving networks of neurons with feed-forward and
@@ -181,7 +181,7 @@ thalamus and then to the auditory cortex.
 
 
 #+ATTR_LaTeX: width=0.6\textwidth
-#+CAPTION: [Tonotopic ANF innervation in the CN in cats and humans]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in cats and humans \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from \citep{MooreOsen:1979}.}
+#+CAPTION: [Tonotopic ANF innervation in the CN in cats and humans]{Cochlear nucleus innervation by ANFs follows the same tonotopic organisation in cats and humans \citep{RyugoParks:2003,Ryugo:1992,Spoendlin:1973}. Image reprinted from \citet{MooreOsen:1979}.}
 #+LABEL: fig:CNCatHuman
 [[../SimpleResponsesChapter/gfx/Cat_Human_CN.jpg]]
 
@@ -200,8 +200,8 @@ thalamus and then to the auditory cortex.
 
 \ANFs are narrowly tuned to their \CF, the frequency at the minimal point of its
 acoustic threshold curve.  Acoustic threshold is defined as the \SPL where the
-neuron's firing rate is significantly above their \SR.  The average bandwidth of
-\ANFs is \Qten = 6.3 octaves \citep{JiangPalmerEtAl:1996}; where \Qten is the
+neuron's firing rate is significantly above its \SR.  The average bandwidth of
+\ANFs is \Qten = 6.3 octaves \citep{JiangPalmerEtAl:1996}, where \Qten is the
 width of the tuning curve at 10 dB above acoustic threshold at \CF divded by the
 \CF.
 # \note{define threshold and bandwidth}
@@ -210,36 +210,37 @@ width of the tuning curve at 10 dB above acoustic threshold at \CF divded by the
 # stimulation.
 The acoustic physiology of \ANFs form a bi-modal distribution where 30--40\% of
 the fibres have \SR less than 2 spikes/s and 60--70\% have \SR above 30 spikes/s
-\citep[see~review][]{RyugoParks:2003}.  Type 1 \ANFs are categorised into \HSR
-and \LSR fibres \citep{Liberman:1978}.  \LSR fibres have relatively higher
-thresholds, whereas \HSR fibres have thresholds close to 0 dB \SPL. Fibres of
-similar \CF can vary in \SR from near 0 to 100 spikes/s.  The bi-modal \SR
-distribution is present across the entire audible frequency range for the
-animal, and implies a general organisational principle for the mammalian
-\AN\@. \ANFs of the different \SR groupings exhibit distinct physiological
-features, especially in terms of their contribution to the dynamic range of
-hearing and representation of speech sounds \citep{RyugoParks:2003}.  The
-collective evidence suggests that different \SR groupings of \ANFs play distinct
-roles in acoustic information processing. It might be that the \HSR fibres with
-their low thresholds function in quiet, whereas \LSR fibres with their high
-thresholds operate better in loud and noisy environments.
+\citep{RyugoParks:2003}.  Type 1 \ANFs are categorised into \HSR and \LSR fibres
+\citep{Liberman:1978}.  \LSR fibres have relatively higher thresholds, whereas
+\HSR fibres have thresholds close to 0 dB \SPL. Fibres of similar \CF can vary
+in \SR from near 0 to 100 spikes/s.  The bi-modal \SR distribution is present
+across the entire audible frequency range for the animal, and implies a general
+organisational principle for the mammalian \AN
+\citep{ArnesenOsen:1978,Liberman:1993,Liberman:1991}. \ANFs of the different \SR
+groupings exhibit distinct physiological features, especially in terms of their
+contribution to the dynamic range of hearing and representation of speech sounds
+\citep{RyugoParks:2003}.  The collective evidence suggests that different \SR
+groupings of \ANFs play distinct roles in acoustic information processing. It
+might be that the \HSR fibres with their low thresholds function in quiet settings,
+whereas \LSR fibres with their high thresholds operate better in loud and noisy
+environments.
 
-The morphology of \LSR and \HSR\space \ANFs are essentially
+The morphology of \LSR and \HSR\space \ANFs is essentially
 similar. Characterised as bipolar neurons, their cell bodies lie in the retinal
 ganglion region (Rosenthal's canal) of the cochlea and their peripheral process
-contact one inner hair cell.  The myenilated \AN axonal processes form the
-vestibulocochlear nerve (the 8th cranial nerve) and enter the brainstem at the
-\CN root. The \AN fibres bifurcate into both the ascending and descending
+contacts one \IHC.  The myenilated \AN axonal processes form the
+vestibulocochlear nerve (the eighth cranial nerve) and enter the brainstem at the
+\CN root. The \AN fibres bifurcate into the ascending and descending
 branches. The ascending branch has a relatively straight trajectory into the
 \AVCN (many small collaterals with terminal boutons contacting cell bodies and
 dendrites) and terminate as a large, axosomatic ending called the endbulb of
 Held.  The descending branch passes through the \PVCN and octopus cell region
-before entering the \DCN\@.
+before entering the \DCN.
 # Along the
 # way, these main branches give rise to short collaterals. The
 # collaterals ramify further and exhibit en passant swellings
 # and terminal boutons.
-Fibres of similar \CFs disperse to form a 3-dimensional sheet running through
+Fibres of similar \CFs disperse to form a three-dimensional sheet running through
  the nucleus, and stacks of these sheets represent the isofrequency contours of
  the nucleus (Figure \ref{fig:CNschematic}).
 # The sheets have a
@@ -353,7 +354,7 @@ role in sound processing to \HSR fibres.
     indicate glycinergic inhibition, and solid rectangles indicate GABAergic
     inhibition. Dotted lines are likely connections; solid lines are
     experimentally confirmed connections.  TS cells excite DS and TV cells (and
-    possibly recurrently excite other TS cells) as well as projecting to nuclei in the superior olive and the IC\@.
+    possibly recurrently excite other TS cells) as well as projecting to nuclei in the superior olive and the IC.
     DS cells are wide-band inhibitory cells that inhibit TS and TV cells.  TV
     cells are narrow-band inhibitory cells from the DCN that inhibit TS and DS
     cells.  GLG cells are GABAergic inhibitory cells that are thought to
@@ -368,7 +369,7 @@ role in sound processing to \HSR fibres.
 \glsunset{TS}
 
 There is a rich tradition of experimental investigation of the \CN, dating back
-more than eighty years \citep[for~example~see]{Lorente:1933}.  The synaptic
+more than eighty years \citep{Lorente:1933}.  The synaptic
 organisation of cells in the \CN has been examined in detail in various species
 including cats \citep{Cant:1981,TolbertMorest:1982,SaintMorestEtAl:1989}; mice
 \citep{WickesbergOertel:1988,WickesbergOertel:1990,WickesbergWhitlonEtAl:1991};
@@ -393,9 +394,9 @@ heterogeneous population of cell types.  Cell types have been classified using
 criteria including morphology, immunohistochemistry, synaptic organisation,
 response to acoustic stimuli and frequency tuning
 \citep{RyugoParks:2003,CantBenson:2003,YoungOertel:2004}.  The two major
-divisions are the \VCN and \DCN\@.  The different projections out of the nucleus
+divisions are the \VCN and \DCN.  The different projections out of the nucleus
 reflect the highly specialised parallel processing that is performed to extract
-particular acoustic information contained in the \AN\@.  The \DCN in mammals
+particular acoustic information contained in the \AN.  The \DCN in mammals
 generally has a cerebellar-like laminar structure with many interneurons,
 whereas the \VCN consists of a magnocellular core and a marginal shell
 (otherwise called the \GCD in rodents).  The marginal shell is thought to be
@@ -414,7 +415,7 @@ used to classify \CN neurons into primary-like, chopper, or onset chopper
 
 
 The afferent and intrinsic synaptic connectivity in the \CN have also been the
-subject of intense interest in the literature
+subject of sustained attention in the literature
 \citep{YoungOertel:2004,OertelWrightEtAl:2011}. The network in Figure
 \ref{fig:CNschematic} shows the connections within the \CN that are involved in
 modulating \TS cells' activity. The \TS cells and their synaptic interactions
@@ -456,7 +457,7 @@ section.
 This section provides an overview of \TS cells, including their cell morphology,
 immuno-histochemistry, intrinsic membrane properties, synaptic contacts and
 physiological properties. The respective contribution of these elements to the
-heterogeneous acoustic behaviour of different \TS cell subtypes is still to be
+heterogeneous acoustic behaviour of different \TS cell subtypes is yet to be
 thoroughly determined.
 
 \Gls{TS} cells are located in the core region of the \VCN, primarily in the
@@ -465,7 +466,7 @@ thoroughly determined.
 \TS cells encode complex features of the stimulus that are important for the
 recognition of natural sounds and are a major source of excitatory input to the
 \IC\space \citep{OertelWrightEtAl:2011}.  \Gls{TS} cells of the \VCN encode a
-robust representation of the stimulus spectrum in their average rate and a
+robust representation of the stimulus spectra in their average rate and a
 temporal representation essential for speech
 \citep{KeilsonRichardsEtAl:1997}. They project directly to the \IC, and are
 therefore important in conveying information to higher auditory centres. \TS
@@ -522,13 +523,12 @@ dorsal acoustic stria (hence D in D stellate), while \TS cells leave the \CN
 ventrally through the ventral acoustic stria or trapezoid body (hence T)
 \citep{OertelWuEtAl:1990}. Some \DS cells are also commissural, exiting the \CN
 via the dorsal acoustic stria and crossing the midline to terminate in the
-contralateral \CN
-\citep{OertelWuEtAl:1990,NeedhamPaolini:2007,SmithMassieEtAl:2005}.
+contralateral \CN\space \citep{OertelWuEtAl:1990,NeedhamPaolini:2007,SmithMassieEtAl:2005}.
 # distinction between \TS and \DS cells is made by their axonal projections,
 # dendritic projections, and their immunohistochemistry.
 
 For consistency, the \TS cell modelled in this thesis represents each of the
-various names given to neurons with similar characteristics (T stellate, type I
+various names given to neurons with similar characteristics (\TS, type I
 multipolar, planar, and chopper \PSTH units) in different animals, with closest
 association with rodents and cats. The \DS cell type includes all those
 previously named as \DS, type II multipolar, radial, and units classified as
@@ -539,7 +539,7 @@ previously named as \DS, type II multipolar, radial, and units classified as
 The intrinsic cell-based properties of \VCN neurons have typically been
 investigated using /in vitro/ current clamp experiments
 \citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,WuOertel:1984}.  \TS cells
-are classified as type I due to the regularly spaced firing of action potentials
+are classified as type I due to the regularly spaced firing of \APs
 to steady depolarising current, and can be classified as simple integrators.
 They have a linear current-voltage response
 \citep{Oertel:1983,OertelWuEtAl:1988,ManisMarx:1991,RhodeOertelEtAl:1983,SmithRhode:1989,FengKuwadaEtAl:1994}.
@@ -551,22 +551,24 @@ mixed cation current \Ih
 octopus cells, so that it is less active at rest and produces a higher membrane
 resistance.  This high resistance induces greater voltage changes in small
 modulating current, which enhances \Ih, making \TS more sensitive to
-neuromodulatory currents \citep{FujinoOertel:2001,RodriguesOertel:2006}
+neuromodulatory currents \citep{FujinoOertel:2001,RodriguesOertel:2006}.
 
 The \TS cell \AP has a single exponential undershoot that shows the absence of
 \IKLT, which is strongly present in bushy cells, and to a moderate degree in \DS
-cells threshold potassium current in bushy cells is responsible for their phasic
-response (i.e. \PSTH classified primary-like units) and in \DS cells enhances
+cells
 \citep{FengKuwadaEtAl:1994,ManisMarx:1991,WuOertel:1984,RothmanManis:2003}.  Low
-coincidence detection at onset \citep{ManisMarx:1991,RothmanManis:2003b}.
+threshold potassium current (\IKLT) in bushy cells is responsible for their
+phasic response (i.e. \PSTH classified primary-like units) and its moderate
+effect in \DS cells is to enhance coincidence detection at stimulus onset
+\citep{ManisMarx:1991,RothmanManis:2003b}.
 
-In recent experiments with mice, a fast transient-deactivating potassium current
+In recent experiments with mice, a fast, transient-deactivating potassium current
 (\IKA) has been found only in \TS cells
 \citep{RothmanManis:2003,RothmanManis:2003a,RothmanManis:2003b}.  \Ih and \IKA
 are active at rest and play a role in modulating the rate of repetitive firing
 of \TS cells \citep{RothmanManis:2003b}.  The effect of inhibition on \TS cells
 could be to reset \IKA\space \citep{RothmanManis:2003b}, thus priming cells for
-oncoming activation \citep{KanoldManis:2001,KanoldManis:2005}.  This has been
+oncoming activation \citep{KanoldManis:2001,KanoldManis:2005}.  Fast onset inhibition has been
 shown to enhance place-coding across \TS cells by enhancing the first-responder
 activation \citep{PaoliniClareyEtAl:2004}.
 
@@ -599,11 +601,11 @@ activation \citep{PaoliniClareyEtAl:2004}.
 \TS cells receive a narrow frequency band of \ANF inputs and have a chopping
 response to \CF tone bursts \citep{SmithRhode:1989,BlackburnSachs:1989}.  Few
 synaptic terminals contact on their soma; the majority of inputs contact the
-output to the \IC\space \citep{SmithRhode:1989,OertelWuEtAl:1990}.  proximal
-dendrites \citep{Cant:1981}. \TS cells are the primary excitatory The response
-to acoustic stimulation is measured from a \PSTH to short tone bursts
-\citep{Pfeiffer:1966,BlackburnSachs:1989}. The level of tuning and suppression
-of neurons receptive field is examined using the \EIRA method
+proximal dendrites \citep{Cant:1981}. \TS cells are the primary excitatory
+output to the \IC \citep{SmithRhode:1989,OertelWuEtAl:1990}.
+The response to acoustic stimulation is measured from a \PSTH to short tone
+bursts \citep{Pfeiffer:1966,BlackburnSachs:1989}. The level of tuning and
+suppression of neurons receptive field is examined using the \EIRA method
 \citep{EvansNelson:1973,SpirouYoung:1991,YoungSpirouEtAl:1992,SpirouDavisEtAl:1999,YoungNelkenEtAl:1993,ArleKim:1991a}.
 \ANFs have a Type I \EIRA with narrow tuning and no inhibitory areas. \TV cells
 are narrowly tuned but have strong wide-band inhibition, creating a Type II
@@ -833,7 +835,7 @@ their being excitatory \citep{SmithRhode:1989,CantBenson:2006,CantBenson:2003}.
 #      \citep{DarrowMaisonEtAl:2006}
 #   5. \VNLL The functional consequences of these direct and indirect connections
 #      with \TS cells with the \IC are not well understood central nucleus of the
-#      \IC\@.
+#      \IC.
 
 
 # Type I multipolar cells in the VCN give rise to projections to the periolivary
@@ -905,7 +907,7 @@ regulation by extra-nuclei inputs \citep{RothmanManis:2003b,FerragamoGoldingEtAl
 \glsunset{GABA}
 
 Glycinergic and GABAergic inhibition are thought to play different
-spectro-temporal processing roles in the \CN\@.  Glycinergic inputs from \DS and
+spectro-temporal processing roles in the \CN.  Glycinergic inputs from \DS and
 \TV cells are predominantly active at the onset of stimuli; accordingly, they
 provide enhanced temporal acuity and dynamic range at onset.  Post-onset and
 tonic inhibition is provided by \GABA inputs.  GABAergic inhibition acting on
@@ -1107,11 +1109,11 @@ chopper units. Figure \ref{fig:May2003} shows the estimated rate-place
 representation of \ANF and \VCN units.  \HSR\space \ANFs and primary-like \VCN
 units show saturation of trough frequencies at moderate sound levels.  \LSR
 units in the \AN and primary-like \VCN units are able to encode spectrum at high
-\SPL\@.  The rate-place representation in chopper units (\ChS and \ChT) shows
+\SPL.  The rate-place representation in chopper units (\ChS and \ChT) shows
 considerable robustness, maintaining spectral peak information across a wide
 range of intensity levels (right panels in Figure \ref{fig:May2003}).
 Suppression of spectral troughs in the rate-place representation of \ChT and
-\ChS units is greater than the suppression in \LSR\space \ANFs at high \SPL\@.
+\ChS units is greater than the suppression in \LSR\space \ANFs at high \SPL.
 Spectral enhancement in \TS cells cannot be attributed to lateral suppression in
 the \AN alone; it requires some form of lateral inhibitory mechanism that can
 perform spectral enhancement by suppression of noise between peaks
@@ -1388,7 +1390,7 @@ studies \citep{BahmerLangner:2006,WiegrebeMeddis:2004}. However, neither study
 provides a realistic implementation of the stellate microcircuit.  In a
 speculative model, \citet{WiegrebeMeddis:2004} included a range of \TS cells in
 each frequency band, each with a different intrinsic firing rate.  The goal of
-their model was decoding \AM properties in the \IC\@.  Unfortunately, the
+their model was decoding \AM properties in the \IC.  Unfortunately, the
 intrinsic firing rate of the \TS cell model exceeded physiologically observed
 rates.  Additionally, the \AN model, developed
 in-paper, used was limited by the dated nature of the experimental data
@@ -1399,7 +1401,7 @@ The network model by \citet{BahmerLangner:2006} proposed a new \VCN network
 design, with an excitatory onset unit contacting recurrently connected \TS
 cells.  The purpose of this model was to show that recurrently connected \TS
 cells, with synaptic delay of 0.4 msec, form the best basis for modulation
-frequency peaks in the \IC\@.  \citet{BahmerLangner:2006} assert that octopus
+frequency peaks in the \IC.  \citet{BahmerLangner:2006} assert that octopus
 cells form excitatory synapses with \TS cells.  Octopus cells do not have axonal
 collaterals in the \VCN\space \citep{Adams:1997,CantBenson:2003}; consequently,
 the inclusion of octopus cells in a network of the \VCN is speculative. Despite
