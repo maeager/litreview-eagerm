@@ -11,8 +11,9 @@
 #+BIBLIOGRAPHY: ../org-manuscript/bib/MyBib plainnat
 # unsrtnat
 #+LATEX_HEADER: \graphicspath{{../LiteratureReview/gfx/}{../SimpleResponsesChapter/gfx/}}
-
 #+LATEX_HEADER: \setcounter{secnumdepth}{5}
+
+#+LaTeX: \glsresetall[main,acronym]
 #+LaTeX: \chapter{Introduction and Literature Review}\label{sec:IntroChapter}
 
 * Prelude                                                          :noexport:
@@ -1392,7 +1393,7 @@ Current methods used in constraining spiking networks can be categorised as foll
    enable ensembles of integrate and fire neurons to be precisely fit to
    spiking data \citep{Brette:2006,Brette:2007,BretteGuigon:2003} and
    experimental data \citep{RossantGoodmanEtAl:2010}.
- - \textbf{Evolutionary algorithms} has been shown to be suitable for noisy,
+ - \textbf{Evolutionary algorithms} have been shown to be suitable for noisy,
    large parameter spaces of spiking neural networks
    \citep{TakahamaSakai:2005,Yao:1999}. \Glspl{GA} have been used to constrain
    parameters in single cell models
