@@ -35,13 +35,14 @@
 
 
 ;; org-babel
-					;(add-to-list 'load-path "~/elisp/org-mode/contrib/babel/")
-					;(add-to-list 'load-path "~/elisp/org-mode/contrib/babel/lisp/")
-					;(add-to-list 'load-path "~/elisp/org-mode/contrib/babel/lisp/langs/")
+;(add-to-list 'load-path "~/elisp/org-mode/contrib/babel/")
+;(add-to-list 'load-path "~/elisp/org-mode/contrib/babel/lisp/")
+;(add-to-list 'load-path "~/elisp/org-mode/contrib/babel/lisp/langs/")
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((R . t)
+ '(
+   ;;(R . t)
    (C . t)
    (awk . t)
    ;;     (ditaa . t)
@@ -237,7 +238,7 @@
        \\lfoot{\\footnotesize\\today\\ at \\thistime}"
 ; [NO-DEFAULT-PACKAGES]
 ;       [NO-PACKAGES]" 
-	       ("\n\\section{%s}" . "\n\\section{%s}")
+	       ("\n\\section{%s}" . "\n\n\\section{%s}")
 	       ("\\subsection{%s}"         . "\n\\subsection{%s}") 
 	       ("\\subsubsection{%s}"      . "\n\\subsubsection{%s}") 
 	       ("\\paragraph{%s}"          . "\n\\paragraph{%s}"))) 
